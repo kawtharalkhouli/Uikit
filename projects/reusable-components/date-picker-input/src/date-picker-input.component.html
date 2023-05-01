@@ -1,0 +1,51 @@
+<ng-container *ngTemplateOutlet="multi === true ? multiple : single"></ng-container>
+
+<ng-template #single>
+    <mat-form-field class="__realsoft-form-field" appearance="outline">
+        <mat-label *ngIf="appearance === 'outline'">{{label}}</mat-label>
+        <input class="realsoft-input-element" matInput [matDatepicker]="dp" [placeholder]="placeholder" [disabled]="isDisabled"
+        [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()"
+         [required]="required ? required : isRequired" [min]="min" [max]="max" [readonly]="readonly"
+        >
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp [startView]="startView" [startAt]="startAt"></mat-datepicker>   
+    </mat-form-field> 
+</ng-template>
+
+<ng-template #multiple>
+    <mat-form-field class="__realsoft-form-field" appearance="outline">
+        <mat-label *ngIf="appearance==='outline'">{{label}}</mat-label>
+        <mat-chip-list #chipList (click)="dp.open()">
+          <mat-chip
+            *ngFor="let value of model"
+            [selectable]="false"
+            [removable]="true"
+            (removed)="remove(value)"
+          >
+            {{ value | date }}
+            <mat-icon matChipRemove *ngIf="true">cancel</mat-icon>
+          </mat-chip>
+          <input
+            class="realsoft-input-element"
+            [value]="resetModel"
+            matInput
+            [matDatepicker]="dp" [placeholder]="placeholder" [disabled]="isDisabled"
+            [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()"
+            [required]="required ? required : isRequired"
+            (dateChange)="dateChanged($event)"
+            [matChipInputFor]="chipList"
+            hidden
+            [min]="min" [max]="max" [readonly]="readonly"
+          />
+        </mat-chip-list>
+        <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker
+          #dp
+          [startView]="startView" [startAt]="startAt"
+          [dateClass]="dateClass"
+        ></mat-datepicker>
+      </mat-form-field>
+</ng-template>
+
+
+

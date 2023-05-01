@@ -1,0 +1,107 @@
+<ng-container *ngTemplateOutlet="orientation === 'ltr' ? ltr : ttb"></ng-container>
+
+<ng-template #ttb>
+  <div class="wrapper" #zoom>
+    <div class="top">
+      <div class="level top" (click)="hideAll=!hideAll">
+              <div class="department">{{data?.title}}</div>
+              <span class="material-icons arrow">arrow_drop_down</span>
+            </div>
+    </div>
+    
+    <ul class="orgchart">
+      <li [hidden]="hideAll" *ngFor="let dept of data?.children; let i = index"> 
+
+          <div class="level first" (click)="hideme[dept?.id] = !hideme[dept?.id]">
+            <div class="department">{{dept?.title}}</div>
+            <span class="material-icons second-arrow" *ngIf="dept?.children?.length > 0">arrow_drop_down</span>
+          </div>
+
+        <ul *ngIf="dept?.children?.length > 0">
+          <li *ngFor="let subDept of dept?.children" [hidden]="hideme[dept.id]">
+
+            <div class="level second" (click)="hideme[subDept?.id] = !hideme[subDept?.id]">
+              <div class="department">{{subDept?.title}}</div>
+              <span class="material-icons second-arrow" *ngIf="subDept?.children?.length > 0">arrow_drop_down</span>
+            </div>
+
+            <ul *ngIf="subDept?.children?.length > 0">
+              <li *ngFor="let Dept of subDept?.children" [hidden]="hideme[subDept?.id]">
+
+                <div class="level third" (click)="hideme[Dept?.id] = !hideme[Dept?.id]">
+                  <div class="department">{{Dept?.title}}</div>
+                  <span class="material-icons second-arrow" *ngIf="Dept?.children?.length > 0">arrow_drop_down</span>
+                </div>
+
+                <ul *ngIf="Dept?.children?.length > 0">
+                  <li *ngFor="let nestedSubDept of Dept?.children" [hidden]="hideme[Dept?.id]">
+
+                    <div class="level fourth">
+                      <div class="department">{{nestedSubDept?.title}}</div>
+                    </div>
+                    
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+
+<ng-template #ltr>
+  <div class="treeview" #zoom>
+    <ul>
+      <li>
+        <div class="treeview__level_top parent" (click)="hideAll=!hideAll">
+          <span class="level-title">{{data?.title}}</span>
+           <span class="material-icons arrow__first">arrow_drop_down</span>
+        </div>
+
+        <ul>
+          <li *ngFor="let dept of data?.children; let i = index" [hidden]="hideAll">
+
+            <div class="treeview__level first" (click)="hideme[dept?.id] = !hideme[dept?.id]">
+              <span class="level-title">{{dept?.title}}</span>
+              <span class="material-icons ltr-arrow" *ngIf="dept?.children?.length > 0">arrow_drop_down</span>
+            </div>
+
+            <ul *ngIf="dept?.children?.length > 0">
+              <li *ngFor="let subDept of dept?.children" [hidden]="hideme[dept.id]">
+
+                <div class="treeview__level second" (click)="hideme[subDept?.id] = !hideme[subDept?.id]">
+                  <span class="level-title">{{subDept?.title}}</span>
+                  <span class="material-icons ltr-arrow" *ngIf="subDept?.children?.length > 0">arrow_drop_down</span>
+                </div>
+
+                <ul *ngIf="subDept?.children?.length > 0">
+                  <li *ngFor="let Dept of subDept?.children" [hidden]="hideme[subDept?.id]">
+
+                    <div class="treeview__level third" (click)="hideme[Dept?.id] = !hideme[Dept?.id]">
+                      <span class="level-title">{{Dept?.title}}</span>
+                      <span class="material-icons ltr-arrow" *ngIf="Dept?.children?.length > 0">arrow_drop_down</span>
+                    </div>
+
+                    <ul *ngIf="Dept?.children?.length > 0">
+                      <li *ngFor="let nestedDept of Dept?.children" [hidden]="hideme[Dept?.id]">
+
+                        <div class="treeview__level fourth">
+                          <span class="level-title">{{nestedDept?.title}}</span>
+                        </div>
+
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+</ng-template>

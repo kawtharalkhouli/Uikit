@@ -1,0 +1,127 @@
+@import 'variables.scss';
+//Horizontal Wizard Styling
+.horizontal-wizard{
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+    & li{
+        list-style: none;
+        text-align: center;
+        color: $dark-gray;
+        &::after{
+            content: "";
+            height: 3px;
+            width: 25%;
+            background-color: $stroked-focus;
+            display: block;
+            position: absolute;
+            top: 38%;
+            z-index: -1;
+        }
+        &:last-child::after{
+            display: none;
+        }
+        &.active{
+            color: $primary-color;
+            font-family: myfont;
+            & .horizontal-wizard__step{
+                background-color: $primary-color;
+            }
+        }
+        &.completed{
+            color: $sec-color;
+            & .horizontal-wizard__step{
+                background-color: $sec-color;
+            }
+            & .material-icons{
+                position: relative;
+                top: 5px;
+            }
+        }
+    }
+    &__step{
+        background-color: $dark-gray;
+        border: 3px solid $stroked-focus;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: block;
+        line-height: 48px;
+        text-align: center;
+        color: $white-color;
+        cursor: pointer;
+        font-family: myfont;
+        font-size: 20px;
+    }
+}
+//Vertical Wizard Styling
+.vertical-wizard{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    position: relative;
+& li{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    color: $dark-gray;
+    &::after{
+        content: "";
+        width: 3px;
+        height: 25%;
+        background-color: $stroked-focus;
+        display: block;
+        position: absolute;
+        z-index: -1;
+        margin-top: 7%;
+        left: 30px;
+    }
+    &:lang(ar)::after{
+        left: unset;
+        right: 30px;
+    }
+    &:last-child::after{
+        display: none;
+    }
+    &.active{
+        color: $primary-color;
+        font-family: myfont;
+    & .vertical-wizard__step{
+        background-color: $primary-color;
+        }
+    }
+    &.completed{
+    color: $sec-color;
+         & .vertical-wizard__step{
+            background-color: $sec-color;
+            }
+            & .material-icons{
+                position: relative;
+                top: 5px;
+            }
+        }
+    }
+    &__step{
+        background-color: $dark-gray;
+        border: 3px solid $stroked-focus;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: block;
+        line-height: 48px;
+        text-align: center !important;
+        color: $white-color;
+        margin: 6px;
+        cursor: pointer;
+        font-family: myfont;
+        font-size: 20px;
+    }
+  }
+  

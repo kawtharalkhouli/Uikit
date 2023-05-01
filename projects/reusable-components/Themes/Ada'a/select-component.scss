@@ -1,0 +1,97 @@
+@import 'variables.scss';
+.status {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap:10px;
+    padding: 20px;
+    &__state {
+        width: 140px;
+        height: 90px;
+        border: 1px solid $hover-color;
+        border-radius: 4px;
+        text-align: center;
+        position: relative;
+        margin-inline-end: 14px;
+        margin-block-end: 16px;
+        .mat-checkbox-frame, .mat-radio-outer-circle {
+            border-color: #e3e3e3;
+       }
+        &:hover {
+            border: 1px solid $dark-gray;
+            .material-icons, p {
+                color: $dark-gray;
+           }
+            .mat-checkbox-frame, .mat-radio-outer-circle {
+                border-color: $dark-gray;
+           }
+       }
+        &.active {
+            border: 1px solid $primary-color;
+            .material-icons, p {
+                color: $primary-color;
+           }
+            .mat-checkbox-frame, .mat-radio-outer-circle {
+                border-color: $primary-color;
+           }
+            .mat-radio-button.mat-accent .mat-radio-inner-circle {
+                background-color: $primary-color;
+           }
+            .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+                border-color: $primary-color;
+           }
+       }
+        cursor: pointer;
+        .material-icons {
+            font-size: 24px;
+            color: $gray-color;
+            padding-top: 12px;
+  
+       }
+        p {
+            color: $gray-color;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 5px;
+            line-height: 18px;
+            width: 79px;
+            margin: 0 auto;
+            margin-top: 5px;
+       }
+        mat-radio-button {
+            position: absolute;
+            top: 5px;
+            right: -6px;
+       }
+   }
+}
+  //for style text dont add
+  .status__state p.denied {
+    width: 65px;
+  }
+  
+  .status__state p.ralated {
+    width: 83px;
+  }
+  
+  .status__state p.answer {
+    width: 63px;
+  }
+  
+  .status__state p.disconnected {
+    width: 85px;
+  }
+  
+  .status__state p.review{
+    width: 72px;
+  }
+  
+  .status__state p.approved{
+    margin-top: 10px;
+  }
+  .radioBtn{
+    .mat-radio-outer-circle{
+        border-color: #e3e3e3 !important;
+    }
+}
+  
+  

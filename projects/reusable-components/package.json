@@ -1,0 +1,16 @@
+{
+  "name": "realsoft-reusable-components",
+  "version": "0.0.36",
+  "peerDependencies": {
+    "@angular/common": "^13.3.0",
+    "@angular/core": "^13.3.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "scripts": {
+    "build:sass": "sass Themes/Ada'a/styles.scss Themes/Khwarizmi/style.scss Themes/LTRC/styles.scss Themes/LTRCVariables/variables.scss",
+    "build:schematics": "tsc -p tsconfig.schematics.json",
+    "postbuild:schematics": "copyfiles schematics/collection.json ../../../dist/reusable-components/"
+ }
+}

@@ -1,0 +1,80 @@
+<ng-container *ngTemplateOutlet="configurations?.style === 'primary' ? primary : (configurations?.style === 'secondary' ? secondary : (configurations?.style === 'primaryIcon' ? primaryIcon : (configurations?.style === 'text' ? text : (configurations?.style === 'secondaryIcon' ? secondaryIcon :(configurations?.style === 'link' ? link : (configurations?.style === 'primaryRoundedOutline' ? primaryRoundedOutline : (configurations?.style === 'secondaryRoundedOutline' ? secondaryRoundedOutline : (configurations?.style === 'primaryRoundedIconButton' ? primaryRoundedIconButton : (configurations?.style === 'secondaryRoundedIconButton' ? secondaryRoundedIconButton : (configurations?.style === 'primaryRoundedOutlinedIconButton' ? primaryRoundedOutlinedIconButton : (configurations?.style === 'secondaryRoundedOutlinedIconButton' ? secondaryRoundedOutlinedIconButton : stroked)))))) )) ))) ">
+</ng-container>
+
+<ng-template #primary>
+  <button class="realsoft-primary-btn" [type]="configurations?.type" [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'realsoft-primary-btn-small': configurations?.size === 'small','realsoft-primary-btn-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
+</ng-template>
+
+<ng-template #secondary>
+<button class="realsoft-secondary-btn" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'realsoft-secondary-btn-small': configurations?.size === 'small','realsoft-secondary-btn-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
+</ng-template>
+
+<ng-template #text>
+<button class="realsoft-text-btn" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel"  [disabled]="disabled" [ngClass]="{'realsoft-text-btn-small': configurations?.size === 'small','realsoft-text-btn-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
+</ng-template>
+
+<ng-template #stroked>
+<button  class="realsoft-stroked-btn" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'realsoft-stroked-btn-small': configurations?.size === 'small','realsoft-stroked-btn-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
+</ng-template>
+
+<ng-template #primaryIcon>
+<button  class="realsoft-primary-icon-btn" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'realsoft-primary-icon-btn-small': configurations?.size === 'small','realsoft-primary-icon-btn-large': configurations?.size === 'large'}">
+  <span class="material-icons">
+    {{configurations?.iconName}}
+  </span>
+ {{buttonTxt}}
+</button>
+</ng-template>
+
+<ng-template #secondaryIcon>
+<button class="realsoft-secondary-icon-btn" [type]="configurations?.type" [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel"  [disabled]="disabled" [ngClass]="{'realsoft-secondary-icon-btn-small': configurations?.size === 'small','realsoft-secondary-icon-btn-large': configurations?.size === 'large'}">
+<span class="material-icons">
+  {{configurations?.iconName}}
+ </span>
+  {{buttonTxt}}
+ </button>
+</ng-template>
+
+<ng-template #link>
+<button class="realsoft-link-btn" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'realsoft-link-btn-small': configurations?.size === 'small','realsoft-link-btn-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
+</ng-template>
+
+<ng-template #primaryRoundedOutline>
+  <button class="primary-rounded-outlined-button-medium" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'primary-rounded-outlined-button-small' : configurations?.size === 'small' , 'primary-rounded-outlined-button-large' : configurations?.size === 'large'}">{{ buttonTxt }}</button>
+</ng-template>
+
+<ng-template #secondaryRoundedOutline>
+<button class="secondary-rounded-outlined-button-medium" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'secondary-rounded-outlined-button-small' : configurations?.size === 'small', 'secondary-rounded-outlined-button-large' : configurations?.size === 'large' }">{{ buttonTxt }}</button>
+</ng-template>
+
+<ng-template #primaryRoundedIconButton>
+<button  class="primary-rounded-icon-button-medium" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled"  [ngClass]="{'primary-rounded-icon-button-small' : configurations?.size === 'small' , 'primary-rounded-icon-button-large' : configurations?.size === 'large'}">
+<span class="material-icons">
+  {{configurations?.iconName}}
+</span>
+</button>
+</ng-template>
+
+<ng-template #secondaryRoundedIconButton>
+<button  class="secondary-rounded-icon-button-medium" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled"  [ngClass]="{'secondary-rounded-icon-button-small' : configurations?.size === 'small' , 'secondary-rounded-icon-button-large' : configurations?.size === 'large' }">
+<span class="material-icons">
+  {{configurations?.iconName}}
+</span>
+</button>
+</ng-template>
+
+<ng-template #primaryRoundedOutlinedIconButton>
+<button  class="primary-rounded-outlined-icon-button-medium" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled"  [ngClass]="{'primary-rounded-outlined-icon-button-small' : configurations?.size === 'small' , 'primary-rounded-outlined-icon-button-large' : configurations?.size === 'large' }">
+<span class="material-icons">
+  {{configurations?.iconName}}
+</span>
+</button>
+</ng-template>
+
+<ng-template #secondaryRoundedOutlinedIconButton>
+<button  class="secondary-rounded-outlined-icon-button-medium" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled"   [ngClass]="{'secondary-rounded-outlined-icon-button-small' : configurations?.size === 'small' , 'secondary-rounded-outlined-icon-button-large' : configurations?.size === 'large'}">
+<span class="material-icons">
+  {{configurations?.iconName}}
+</span>
+</button>
+</ng-template>

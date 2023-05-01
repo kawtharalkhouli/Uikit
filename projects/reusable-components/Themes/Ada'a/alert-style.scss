@@ -1,0 +1,57 @@
+@import 'variables.scss';
+//Basic Alert Style
+.alert {
+	width: 100%;
+	border: 0px;
+	border-radius: 4px;
+    position: relative;
+    padding-bottom: 4px;
+    text-align: start;
+	& p {
+	margin: 0;
+	}
+	& .material-icons {
+		@extend %icons-style;
+        &.close {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        cursor: pointer;
+            &:lang(ar){
+            right: unset;
+            left: 10px;
+            }
+        }
+	}
+}
+//Info Alert Style
+.info-alert {
+background-color: $info-bg !important;
+color: $info-color !important;
+}
+//Danger Alert Style
+.danger-alert {
+background-color: $danger-bg !important;
+color: $danger-color !important;
+}
+//Success Alert Style
+.success-alert {
+background-color: $success-bg !important;
+color: $success-color !important;
+}
+//Warning Alert Style
+.warning-alert {
+background-color: $warning-bg !important;
+color: $warning-color !important;
+}
+//Dark Alert Style
+.dark-alert {
+background-color: $dark-bg !important;
+color: $dark-alert !important;
+}
+//Alert Icons Styles
+%icons-style {
+position: relative;
+top: 5px;
+margin: 0 5px;
+}

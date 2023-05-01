@@ -1,0 +1,14 @@
+<div class="dialog-component">
+    <div class="position-relative">
+      <h5>{{dialogTitle}}</h5>
+      <mat-icon class="close" (click)="closeDialog($event)">clear</mat-icon>
+    </div>
+      <div class="content">
+        <ng-container *ngTemplateOutlet="dialogContent"></ng-container>
+        </div>
+        <hr>
+        <div class="dialog-buttons">
+        <button  class="realsoft-text-btn" (click)="cancelClicked($event)" >{{firstBtnTxt}}</button>
+        <button class="realsoft-primary-btn"  (click)="actionClicked($event)" >{{secondBtnTxt}}</button>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+
+<mat-stepper #stepper [labelPosition]="labelPosition" [linear]="linear" [orientation]="orientation" [selectedIndex]="selectedIndex" (selectionChange)="change($event)">
+    <mat-step *ngFor="let stepHeader of stepsHeaders; let i = index" [completed]="stepHeader.completed" [editable]="stepHeader.editable" [stepControl]="stepHeader.stepControl" [optional]="stepHeader.optional" [hasError]="stepHeader.hasError" [errorMessage]="stepHeader.errorMessage ? stepHeader.errorMessage : ''">
+      <ng-template matStepLabel>{{stepHeader.label}}</ng-template>
+        <ng-container *ngFor="let step of stepsContents; let i = index">
+          <ng-container *ngIf="selectedIndex === i">
+          <ng-container *ngTemplateOutlet="step"></ng-container>
+          <ng-container *ngIf="stepHeader.back"><button  class="realsoft-stepper-button" matStepperPrevious>Back</button></ng-container>
+          <ng-container *ngIf="stepHeader.next"><button  class="realsoft-stepper-button" matStepperNext>Next</button></ng-container>
+          <ng-container *ngIf="stepHeader.reset"><button class="realsoft-stepper-button" (click)="stepper.reset()">Reset</button></ng-container>
+        </ng-container>
+        </ng-container>
+    </mat-step>
+</mat-stepper>

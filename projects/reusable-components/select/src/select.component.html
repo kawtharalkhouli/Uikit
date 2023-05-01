@@ -1,0 +1,260 @@
+<ng-container
+      *ngTemplateOutlet="configurations?.isMultiple ? multiple : single"
+    ></ng-container>
+    <ng-template #single
+      ><mat-form-field appearance="outline" class="single-select-form-field">
+        <mat-label
+          class="single-select-label"
+          *ngIf="!configurations?.floatNever"
+          >{{ placeholder }}</mat-label
+        >
+
+        <mat-select
+          class="single-select-box"
+          (selectionChange)="selected($event)"
+          [value]="selectedOptions"
+          [disabled]="isDisabled || data?.length === 0"
+          [placeholder]="placeholder"
+          [required]="required ? required : isRequired"
+          (blur)="markAsTouched()"
+          [(ngModel)]="selectedOptions" (ngModelChange)="onChange($event)" ngDefaultControl
+          [matTooltip]="matTooltip"
+          
+        >
+          <mat-select-trigger>
+            <mat-chip-list
+              class="single-select-chip-list"
+              *ngIf="selectedOptionsForChips.length > 0"
+            >
+              <mat-chip
+                class="single-select-chip"
+                *ngFor="let option of selectedOptionsForChips"
+                [removable]="false"
+              >
+                <img
+                  class="single-select-chip-image"
+                  matChipAvatar
+                  *ngIf="configurations?.imageDisplay"
+                  [src]="option[configurations?.imageDisplay || 'image']"
+                />
+                <ng-container *ngIf="chosenField">
+                  <span
+                    *ngIf="!configurations?.imageDisplay"
+                    class="single-select-span-element"
+                    >{{ option[chosenField] }}</span
+                  >
+                </ng-container>
+                <ng-container *ngIf="configurations?.groups">
+                  <span class="single-select-span-element">{{
+                    option.value[chosenField]
+                  }}</span>
+                </ng-container>
+                <ng-container *ngIf="!chosenField">
+                  <span
+                    *ngIf="!configurations?.imageDisplay"
+                    class="single-select-span-element"
+                    >{{ option }}</span
+                  >
+                </ng-container>
+              </mat-chip>
+            </mat-chip-list></mat-select-trigger
+          >
+          <span [hidden]="data?.length < 7" class="single-select-span-element"
+            ><mat-option class="single-select-option"
+              ><input
+                matInput
+                class="single-select-search-input"
+                (click)="$event.stopPropagation()"
+                (keydown.enter)="$event.stopPropagation()"
+                (keydown.space)="$event.stopPropagation()"
+                (keyup)="filterOptions($event)" /></mat-option
+          ></span>
+          <mat-option *ngIf="!configurations?.removeNoneOption" [value]="null" class="single-select-none-option"
+            >--</mat-option
+          >
+          <ng-container *ngIf="configurations?.groups">
+            <mat-optgroup
+              *ngFor="let group of filteredData.children"
+              [label]="group.value[chosenField]"
+            >
+              <mat-option
+                *ngFor="let child of group.children"
+                [value]="child.value[configurations?.chosenId || 'id']"
+              >
+                {{ child.value[chosenField || 'en'] }}
+              </mat-option>
+            </mat-optgroup>
+          </ng-container>
+          <ng-container *ngIf="chosenField && !configurations?.groups">
+            <mat-option
+              class="single-select-single-option"
+              *ngFor="let item of filteredData"
+              [value]="item[configurations?.chosenId || 'id']"
+            >
+              <img
+                class="single-select-option-image"
+                [src]="item[configurations?.imageDisplay || 'image']"
+                *ngIf="configurations?.imageDisplay"
+              />
+              {{ item[chosenField] }}
+            </mat-option>
+          </ng-container>
+          <ng-container *ngIf="!chosenField">
+            <mat-option
+              class="single-select-single-option"
+              *ngFor="let item of filteredData"
+              [value]="item"
+            >
+              <img
+                class="single-select-option-image"
+                [src]="item[configurations?.imageDisplay || 'image']"
+                *ngIf="configurations?.imageDisplay"
+              />
+              {{ item }}
+            </mat-option>
+          </ng-container>
+          <ng-container *ngIf="configurations?.addRole">
+            <mat-option
+              class="add-role-single-select"
+              (click)="addOption($event)"
+            >
+              <mat-icon class="add-role-icon-single-select">add</mat-icon>
+              {{ configurations?.addRoleText }}
+            </mat-option>
+          </ng-container>
+        </mat-select>
+        <ng-container *ngIf="errorMsg">
+          <mat-error>{{errorMsg}}</mat-error>
+        </ng-container>
+      </mat-form-field>
+    </ng-template>
+    <ng-template #multiple>
+      <mat-form-field
+        appearance="outline"
+        class="example-chip-list inputField multi-select-form-field"
+      >
+        <mat-label
+          class="multi-select-label"
+          *ngIf="!configurations?.floatNever"
+          >{{ placeholder }}</mat-label
+        >
+
+        <mat-select
+          class="multi-select-box"
+          #select
+          (selectionChange)="selected($event)"
+          multiple
+          [value]="selectedOptions"
+          [disabled]="isDisabled || data?.length === 0"
+          [placeholder]="placeholder"
+          [required]="required ? required : isRequired"
+          (blur)="markAsTouched()"
+          [(ngModel)]="selectedOptions" (ngModelChange)="onChange($event)" ngDefaultControl
+          [matTooltip]="matTooltip"
+        >
+          <mat-select-trigger>
+            <mat-chip-list
+              class="multi-select-chip-list"
+              *ngIf="selectedOptionsForChips.length > 0"
+            >
+              <mat-chip [removable]="false" class="multi-select-chip">
+                <img
+                  class="multi-select-chip-image"
+                  matChipAvatar
+                  [src]="
+                    selectedOptionsForChips[0][
+                      configurations?.imageDisplay || 'image'
+                    ]
+                  "
+                  *ngIf="configurations?.imageDisplay"
+                />
+                <ng-container *ngIf="!chosenField">
+                  <span
+                    class="multi-select-span-element"
+                    *ngIf="!configurations?.imageDisplay"
+                  >
+                    {{ selectedOptionsForChips[0] }}</span
+                  ></ng-container
+                >
+                <ng-container *ngIf="chosenField">
+                  <span
+                    class="multi-select-span-element"
+                    *ngIf="!configurations?.imageDisplay"
+                  >
+                    {{ selectedOptionsForChips[0][chosenField] }}</span
+                  >
+                </ng-container>
+              </mat-chip></mat-chip-list
+            >
+            <span
+              *ngIf="selectedOptionsForChips.length > 1"
+              class="example-additional-selection multi-select-span-element"
+            >
+              +{{ selectedOptionsForChips.length - 1 }}
+            </span>
+          </mat-select-trigger>
+          <span [hidden]="data?.length < 7" class="multi-select-span-element">
+            <div class="multi-select-search-option">
+                <input 
+                matInput
+                class="multi-select-search-input"
+                (click)="$event.stopPropagation()"
+                (keyup)="filterOptions($event)"
+                (keydown.enter)="$event.stopPropagation()"
+                (keydown.space)="$event.stopPropagation()"
+              />
+            </div>
+          </span>
+          <mat-checkbox
+            class="multi-select-checkbox"
+            color="primary"
+            [(ngModel)]="isMasterSel"
+            [ngModelOptions]="{ standalone: true }"
+            (change)="selectAllOptions()"
+            >{{
+              configurations?.currentLanguage === 'ar'
+                ? 'اختر الكل'
+                : 'Select All'
+            }}</mat-checkbox
+          >
+          <ng-container *ngIf="chosenField">
+            <mat-option
+              class="multi-select-single-option"
+              *ngFor="let item of filteredData"
+              [ngClass]="{'disable-option' : item?.disabled}"
+              [disabled]="item?.disabled"
+              [value]="item[configurations?.chosenId || 'id']"
+              (click)="returnItem(item)"
+            >
+              <img
+                class="multi-select-option-image"
+                [src]="item[configurations?.imageDisplay || 'image']"
+                *ngIf="configurations?.imageDisplay"
+              />{{ item[chosenField] }}
+            </mat-option>
+          </ng-container>
+          <ng-container *ngIf="!chosenField">
+            <mat-option
+              class="multi-select-single-option"
+              *ngFor="let item of filteredData"
+              [value]="item"
+            >
+              <img
+                class="multi-select-option-image"
+                [src]="item[configurations?.imageDisplay || 'image']"
+                *ngIf="configurations?.imageDisplay"
+              />{{ item }}
+            </mat-option>
+          </ng-container>
+          <ng-container *ngIf="configurations?.addRole">
+            <div class="add-role-multi-select" (click)="addOption($event)">
+              <mat-icon class="add-role-icon-multi-select">add</mat-icon>
+              {{ configurations?.addRoleText }}
+            </div>
+          </ng-container>
+        </mat-select>
+        <ng-container *ngIf="errorMsg">
+          <mat-error>{{errorMsg}}</mat-error>
+        </ng-container>
+      </mat-form-field>
+    </ng-template>

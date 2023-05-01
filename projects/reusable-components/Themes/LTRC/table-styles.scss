@@ -1,0 +1,386 @@
+@import 'variables.scss';
+//Mixins Definitions
+@mixin buttonStyle($lineheight, $textSize){
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 0px 0px rgb(0 0 0 / 12%);
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height:$lineheight;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+    color: rgba(0,0,0,.87);
+    background-color: #fff;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: $textSize;
+    font-weight: 500;
+}
+//Table Styling
+.mat-card-table {
+    position: absolute !important;
+    top: 48px !important;
+    left: 32px !important;
+    .mat-card-header{
+      display: flex !important;
+      flex-direction: column !important;
+    }
+  }
+  ::ng-deep .mat-sort-header-content {
+    flex-wrap: wrap !important;
+  }
+  .table-header {
+    margin-block: 1.5rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    .header-group {
+      display: flex !important;
+      gap: 15px !important;
+    }
+    .pagination-header {
+      .mat-paginator-outer-container {
+        display: flex !important;
+      }
+    }
+  }
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-wrapper {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  ::ng-deep {
+    .mat-header-row {
+      direction: ltr !important;
+    }
+  }
+  .icon-display {
+    transform: scale(1.5) !important;
+    padding-inline-end: 0.2rem !important;
+  }
+  .pointer {
+    cursor: pointer !important;
+  }
+  ::ng-deep .mat-form-field.isSearchable {
+    display: block !important;
+    width: auto !important;
+    .mat-sort-header-content {
+      padding-block: 15px !important;
+    }
+  }
+  .mat-header-cell {
+    text-transform: capitalize !important;
+  }
+  .no-records {
+    background: white !important;
+    border-bottom-color: rgba(0, 0, 0, 0.12) !important;
+    border-bottom-width: 1px !important;
+    border-bottom-style: solid !important;
+    text-align: center !important;
+    color: rgba(0, 0, 0, 0.54) !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  table{
+    box-shadow: none;
+    width: 100%;
+    & tr{
+       &:nth-of-type(odd){
+            background-color: $light-gray;
+        }
+        &:hover{
+            background-color: $hover-color;
+        }
+        &:focus{
+            background-color: $focus-color;
+        }
+        &.active{
+            background-color: $focus-color;
+        }
+    }
+    & tr.mat-header-row{
+        background-color: $white-color !important;
+        & .mat-sort-header-content {
+            font-size: $normal-text;
+            color: $font-color;
+            font-family: myfont-bold;
+        }
+    }
+    & th.mat-header-cell{
+        border-bottom-color: $gray-color;
+        font-family: myfont-bold;
+        color: $font-color;
+        padding: 0 5px;
+        text-align: start;
+        &:first-of-type:lang(ar){
+            padding-right: 24px;
+            padding-left: unset;
+        }
+    }
+    & td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type{
+        &:lang(ar){
+            padding-right: 24px;
+            padding-left: unset;
+        }
+    }
+    & td.mat-cell{
+        text-align: start;
+        padding: 0 5px;
+    }
+  }
+  .table-filter-icon{
+  padding-left: 10px !important;
+  color: $dark-gray;
+  }
+  .table-more-actions-icon{
+  color: $sec-color;
+  &:hover{
+    color: $sec-color-hover;
+  }
+  &:focus{
+    color: $sec-color-focus;
+  }
+  }
+  .table-delete-icon{
+  color: $danger-color;
+  }
+  .table-edit-icon,.table-copy-icon{
+  color: $primary-color;
+  &:hover{
+    color: $primary-color-hover;
+  }
+  &:focus{
+    color: $primary-color-focus;
+  }
+  }
+  .realsoft-table-primary-icon-btn{
+  @include buttonStyle($lineheight: 33px, $textSize: $normal-text);
+  background-color: $primary-color !important;
+  color: $white-color !important;
+  border: 1px solid $primary-color !important;
+  &:hover {
+      background-color: $primary-color-hover !important;
+  }
+  &:focus {
+      background-color: $primary-color-focus !important;
+  }
+  &:not(:disabled):not(.disabled):active,
+   :not(:disabled):not(.disabled).active {
+      background-color: $primary-color-focus !important;
+  }
+  &:disabled {
+      background-color: $disabled-color !important;
+      color: $gray-color !important;
+      border-color: $gray-color !important;
+      cursor: not-allowed;
+  }
+  & .material-icons {
+    font-size: 16px !important;
+    position: relative;
+    top: 4px;
+  }
+  }
+  .global-search{
+  .mat-form-field{
+  width: 100% !important;
+  &-appearance-outline{
+  & .mat-form-field-infix{
+      padding: .8rem 0 !important;
+      border-top: .4rem solid transparent !important;
+      top: 3px !important;
+  }
+  &.mat-form-field-can-float{
+      &.mat-form-field-should-float .mat-form-field-label, & .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label{
+          transform: translateY(-1.2rem) scale(0.75) !important;
+      }
+  }
+  &.mat-focused .mat-form-field-outline-thick{
+      color: $sec-color !important;
+      ~ & .mat-form-field-suffix .mat-icon{
+          opacity: 1 !important;
+      }
+  }
+  &:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline-thick{
+      opacity: .7 !important;
+  }
+  
+  & .mat-form-field-prefix, & .mat-form-field-suffix{
+      top: .5em !important;
+  }
+  & .mat-form-field-outline-thick{
+      & .mat-form-field-outline-start, & .mat-form-field-outline-end, & .mat-form-field-outline-gap{
+          border-width: 1px !important;
+      }
+  }
+  &.mat-focused.mat-warn .mat-form-field-outline-thick, &.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+      color: $danger-color !important;
+  }
+  &.mat-form-field-disabled .mat-form-field-outline{
+      color: $gray-color !important;
+      background-color: $disabled-color !important;
+      border-radius: 4px !important;
+  }
+  }
+  &-suffix .mat-icon{
+  font-size: $medium-icon !important;
+  opacity: 54% !important;
+  }
+  }
+  .mat-input-element {
+  caret-color: $primary-color !important;
+  }
+  .mat-form-field.mat-focused{
+  & .mat-icon, & .mat-form-field-label, &.mat-primary .mat-select-arrow{
+  color: $sec-color !important;
+  }
+  & .mat-form-field-ripple{
+  background-color: $primary-color !important;
+  }
+  }
+  .mat-form-field-flex:hover{
+     color: $sec-color !important;
+  }
+  .mat-form-field-wrapper{
+  margin-bottom: -1.25em !important;
+  }
+  }
+  .close-dialog-button {
+    float: right !important;
+    top: -20px !important;
+    right: -20px !important;
+  }
+  .close-icon {
+    transition: 1s ease-in-out !important;
+    color: $dark-gray !important;
+  }
+  .close-icon:hover {
+    transform: rotate(180deg) !important;
+  }
+  ::ng-deep .icon-outside .close-button {
+    float: right !important;
+    top: -52px !important;
+    right: -52px !important;
+  }
+  ::ng-deep .icon-outside .mat-dialog-container {
+    overflow: unset !important;
+  } 
+  .custom-column {
+    display: flex !important;
+    flex-flow: wrap !important;
+    margin-bottom: 2rem !important;
+    .mat-checkbox {
+      width: 25% !important;
+    }
+  } 
+  .footer-modal{ 
+    align-items: center !important;
+    padding-top: 1.5rem !important;
+    float: right;
+    flex-direction: row-reverse;
+    gap: 10px;
+  }
+  
+  .table-header {
+    display: none !important;
+   
+  }
+  
+  ::ng-deep .mat-dialog-container {
+    .mat-paginator {
+      display: none !important;
+    }
+  }
+  
+  .table-dialog-primary-btn{
+  @include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+  background-color: $primary-color ;
+  color: $white-color !important;
+  border: 1px solid $primary-color ;
+  &:hover {
+      background-color: $primary-color-hover;
+      box-shadow: none ;
+      outline: none;
+  }
+  &:focus {
+      background-color: $primary-color-focus ;
+      box-shadow: none ;
+      outline: none ;
+  }
+  &:disabled {
+      background-color: $disabled-color  !important;
+      color: $gray-color  !important;
+      border-color: $gray-color !important;
+      cursor: not-allowed;
+  }
+  }
+  .table-dialog-stroked-btn{
+  @include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+  border: 1px solid $sec-color;
+  color: $sec-color;
+  background-color: transparent;
+  &:hover {
+      background-color: $stroked-hover;
+      box-shadow: none;
+      outline: none;
+  }
+  &:focus {
+      background-color: $stroked-focus;
+      box-shadow: none;
+      outline: none;
+  }
+  &:not(:disabled):not(.disabled):active,
+   :not(:disabled):not(.disabled).active {
+      background-color: $stroked-focus;
+  }
+  &:disabled {
+      border: 1px solid $gray-color;
+      background-color: $disabled-color;
+      color: $gray-color;
+      cursor: not-allowed;
+  }
+  }
+  ::ng-deep .mat-checkbox-disabled{
+    .mat-checkbox-inner-container{
+        background-color: $disabled-color !important;
+    }
+    .mat-checkbox-label{
+        color: rgba(19,18,28,.70) !important;
+    }
+    & .mat-checkbox-frame {
+        border-color: $gray-color !important;
+      }
+  }
+  ::ng-deep .mat-checkbox:hover {
+    & .mat-checkbox-frame {
+      border-color: $primary-color !important;
+    }
+  }
+  ng-deep .mat-checkbox-frame{
+    border-color: $gray-color !important;
+    &:hover{
+        border-color: $primary-color !important;
+    }
+  }
+  ::ng-deep .mat-checkbox{
+    &-indeterminate.mat-accent .mat-checkbox-background, &-checked.mat-accent .mat-checkbox-background{
+    background-color: $primary-color !important;
+    }
+  }
+  ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: $primary-color!important;
+  }

@@ -1,0 +1,41 @@
+<ng-container *ngTemplateOutlet="type === 'secondaryIcon' ? secondaryIcon : (type === 'basicIcon' ? basicIcon : (type === 'primary' ? primary : (type === 'secondary' ? secondary : (type === 'primaryIcon' ? primaryIcon : basic)) ) ) ">
+</ng-container>
+
+<ng-template #basic>
+    <div class="basic_chip"  [ngClass]="{'medium_basic_chip' : size === 'medium' , 'large_basic_chip' : size === 'large'}">
+        <div>{{label}}</div>
+    </div>
+</ng-template>
+
+<ng-template #primary>
+    <div class="primary_chip"  [ngClass]="{'medium_primary_chip' : size === 'medium' , 'large_primary_chip' : size === 'large'}">
+        <div>{{label}}</div>
+    </div>
+</ng-template>
+
+<ng-template #secondary>
+    <div class="secondary_chip"  [ngClass]="{'medium_secondary_chip' : size === 'medium' , 'large_secondary_chip' : size === 'large'}">
+        <div>{{label}}</div>
+    </div>
+</ng-template>
+
+<ng-template #basicIcon>
+    <div class="basic_icon_chip"  [ngClass]="{'medium_basic_icon_chip' : size === 'medium' , 'large_basic_icon_chip' : size === 'large'}">
+        <span class="material-icons">{{iconName}}</span>
+        <span>{{label}}</span>
+   </div>
+</ng-template>
+
+<ng-template #secondaryIcon>
+    <div class="secondary_icon_chip"  [ngClass]="{'medium_secondary_icon_chip' : size === 'medium' , 'large_secondary_icon_chip' : size === 'large'}">
+        <span class="material-icons">{{iconName}}</span>
+        <span>{{label}}</span>
+   </div>
+</ng-template>
+
+<ng-template #primaryIcon>
+    <div class="primary_icon_chip"  [ngClass]="{'medium_primary_icon_chip' : size === 'medium' , 'large_primary_icon_chip' : size === 'large'}">
+        <span class="material-icons">{{iconName}}</span>
+        <span>{{label}}</span>
+   </div>
+</ng-template>

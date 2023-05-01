@@ -1,0 +1,13 @@
+<mat-slider
+[disabled]="disabled"
+[invert]="invert"
+[max]="max"
+[min]="min"
+[step]="step"
+[thumbLabel]="thumbLabel"
+[(ngModel)]="value"
+(ngModelChange)="onChange($event)"
+[vertical]="vertical"
+(change)="onSliderChange($event)"
+>
+</mat-slider>

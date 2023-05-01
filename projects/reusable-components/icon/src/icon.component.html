@@ -1,0 +1,25 @@
+<ng-container *ngTemplateOutlet="configurations?.size === 'primarySmall' ? primarySmall : (configurations?.size === 'primaryLarge' ? primaryLarge : (configurations?.size === 'secondarySmall' ? secondarySmall : (configurations?.size === 'secondaryMedium' ? secondaryMedium : (configurations?.size === 'secondaryLarge' ? secondaryLarge : primaryMedium))))"></ng-container>
+
+<ng-template #primarySmall>
+<mat-icon class="primary-icon-small" [matBadge]="configurations?.matBadge" [matBadgeColor]="configurations?.matBadgeColor" [matTooltip]="matTooltip">{{iconName}}</mat-icon>
+</ng-template>
+
+<ng-template #primaryMedium>
+<mat-icon class="primary-icon-medium" [matBadge]="configurations?.matBadge" [matBadgeColor]="configurations?.matBadgeColor"  [matTooltip]="matTooltip">{{iconName}}</mat-icon>
+</ng-template>
+
+<ng-template #primaryLarge>
+<mat-icon class="primary-icon-large" [matBadge]="configurations?.matBadge" [matBadgeColor]="configurations?.matBadgeColor" [matTooltip]="matTooltip">{{iconName}}</mat-icon>
+</ng-template>
+
+<ng-template #secondarySmall>
+<mat-icon class="secondary-icon-small" [matBadge]="configurations?.matBadge" [matBadgeColor]="configurations?.matBadgeColor" [matTooltip]="matTooltip">{{iconName}}</mat-icon>
+</ng-template>
+
+<ng-template #secondaryMedium>
+<mat-icon class="secondary-icon-medium" [matBadge]="configurations?.matBadge"  [matBadgeColor]="configurations?.matBadgeColor" [matTooltip]="matTooltip">{{iconName}}</mat-icon>
+</ng-template>
+
+<ng-template #secondaryLarge>
+<mat-icon class="secondary-icon-large" [matBadge]="configurations?.matBadge" [matBadgeColor]="configurations?.matBadgeColor" [matTooltip]="matTooltip">{{iconName}}</mat-icon>
+</ng-template>

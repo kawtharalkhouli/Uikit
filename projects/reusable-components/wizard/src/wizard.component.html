@@ -1,0 +1,22 @@
+<ng-container *ngTemplateOutlet="orientation === 'vertical' ? vertical : horizontal"></ng-container>
+<ng-template #horizontal>
+  <ul class="horizontal-wizard">
+    <li *ngFor="let item of data" [ngClass]="{'completed' : item.status === 'completed' , 'active' : item.status === 'active'}">
+      <span class="horizontal-wizard__step" *ngIf="item.status === 'completed'">
+        <mat-icon (click)="clickEvent($event)">done</mat-icon></span>
+        <span class="horizontal-wizard__step" *ngIf="item.status !== 'completed'">{{item.id}}</span>
+        {{item.name}}
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #vertical>
+  <ul class="vertical-wizard">
+    <li *ngFor="let item of data" [ngClass]="{'completed' : item.status === 'completed' , 'active' : item.status === 'active'}">
+      <span class="vertical-wizard__step" *ngIf="item.status === 'completed'">
+        <mat-icon (click)="clickEvent($event)" >done</mat-icon></span>
+        <span class="vertical-wizard__step" *ngIf="item.status !== 'completed'">{{item.id}}</span>
+        {{item.name}}
+    </li>
+    </ul>
+</ng-template> 

@@ -1,0 +1,8 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/reusable-components",
+  "assets": ["./assets/**/*.*", "./Themes/Ada'a/**/*.*" , "./Themes/Khwarizmi/**/*.*", "./Themes/LTRC/**/*.*"],
+  "lib": {
+    "entryFile": "public-api.ts"
+  }
+}

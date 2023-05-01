@@ -1,0 +1,11 @@
+<mat-form-field class="__realsoft-form-field" appearance="outline">
+    <mat-label class="realsoft-textarea-label">{{label}}</mat-label>
+
+    <textarea matInput [value]="writtenValue" [disabled]="isDisabled" [placeholder]="placeholder"
+    (input)="onChange($any($event.target).value)" (blur)="markAsTouched()" [required]="required ? required : isRequired"
+    [attr.maxlength]="configurations?.maxlength" [rows]="configurations?.rows" [cols]="configurations?.cols" 
+    [name]="configurations?.name"
+    [(ngModel)]="writtenValue" (ngModelChange)="onChange($event)" ngDefaultControl
+    ></textarea>
+
+</mat-form-field>

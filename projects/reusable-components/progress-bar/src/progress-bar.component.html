@@ -1,0 +1,16 @@
+<ng-container *ngTemplateOutlet="type === 'error' ?  error : basic">
+</ng-container>
+<ng-template #basic>
+    <div class="progress-bar-container" [hidden]="closed===true">
+        <mat-progress-bar [mode]="mode"  [value]="value" matTooltipClass="tooltip-color" [matTooltip]="value"></mat-progress-bar>
+        <mat-icon (click)="close($event)" class="close-progress-bar-icon">close</mat-icon>
+      </div>
+</ng-template>
+<ng-template #error>
+    <div class="progress-bar-container error-progress-bar" [hidden]="closed===true">
+        <mat-progress-bar [mode]="mode" [value]="value" matTooltipClass="tooltip-color" [matTooltip]="value" color="warn"></mat-progress-bar>
+        <mat-icon (click)="close($event)" class="close-error-progress-bar-icon">close</mat-icon>
+        <mat-icon matTooltipClass="tooltip-color" matTooltip="Retry" (click)="refresh($event)" class="refresh-progress-bar-icon">refresh</mat-icon>
+        <mat-error class="custom-progress-bar-mat-error">{{errorMsg}}</mat-error>
+      </div>
+</ng-template>

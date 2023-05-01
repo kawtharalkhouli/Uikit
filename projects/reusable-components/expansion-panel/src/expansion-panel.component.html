@@ -1,0 +1,12 @@
+<mat-accordion [multi]="isMultiple">
+    <mat-expansion-panel *ngFor="let panel of panels;let i = index" (opened)="panelOpened(i,$event)" (closed)="panelClosed(i,$event)" (afterCollapse)="afterPanelCollapse($event)" (afterExpand)="afterPanelExpand($event)">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{panel.title}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <ng-container *ngFor="let panel of panelsContents; let i = index">
+          <ng-container *ngIf="selectedPanelIndex === i">
+          <ng-container *ngTemplateOutlet="panel"></ng-container>
+          </ng-container>
+           </ng-container>
+      </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,17 @@
+@import 'variables.scss';
+.mat-pseudo-checkbox-checked.mat-accent .mat-pseudo-checkbox-ripple .mat-ripple-element {
+    opacity: 0.03 !important;
+    background-color: $primary-color!important;
+  }
+  
+.mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate, .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate{
+  background-color: $primary-color !important;
+  border-color: $primary-color !important;
+  }
+
+.mat-pseudo-checkbox{
+    border-color: $gray-color !important;
+    &:hover{
+        border-color: $primary-color !important;
+    }
+  }

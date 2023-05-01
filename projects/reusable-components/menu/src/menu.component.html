@@ -1,0 +1,53 @@
+<ng-container *ngTemplateOutlet="configurations?.type === 'basic' ?  basic : (configurations?.type === 'btnTrigger' ? btnTrigger : primary)">
+</ng-container>
+
+<ng-template #basic >
+    <button class="realsoft-button" [matMenuTriggerFor]="menu">
+        <mat-icon class="mat-icon-trigger">{{configurations?.triggerBtn}}</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item 
+          *ngFor="let item of data" 
+          (click)="clickMenuItem(item)" 
+          [disabled]="item.isDisabled"
+          (closed)="menuClosed($event)"
+          >
+      <span> {{ item.menuLinkText }}</span>
+      </button>  
+    </mat-menu>
+</ng-template>
+
+<ng-template #primary >
+    <button class="realsoft-button" [matMenuTriggerFor]="menu">
+        <mat-icon>{{configurations?.triggerBtn}}</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item 
+          *ngFor="let item of data" 
+          (click)="clickMenuItem(item)"  
+          [disabled]="item.isDisabled"
+          (closed)="menuClosed($event)">
+          <mat-icon>{{ item.menuIcon }}</mat-icon>
+      <span> {{ item.menuLinkText }}</span>
+      </button>  
+    </mat-menu>
+</ng-template>
+
+<ng-template #btnTrigger>
+
+    <button class="realsoft-button menu-btn" [matMenuTriggerFor]="menu">
+        <mat-icon class="menu-icon">{{icon}}</mat-icon>
+        {{btnTxt}}
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item 
+          *ngFor="let item of data" 
+          (click)="clickMenuItem(item)" 
+          [disabled]="item.isDisabled"
+          (closed)="menuClosed($event)">
+          <mat-icon>{{ item.menuIcon }}</mat-icon>
+      <span> {{ item.menuLinkText }}</span>
+      </button>  
+    </mat-menu>
+
+</ng-template>

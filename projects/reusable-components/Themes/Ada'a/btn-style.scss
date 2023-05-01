@@ -1,0 +1,1263 @@
+@import 'variables.scss';
+//Mixins Definitions
+@mixin mediumRoundedButtonStyle($backgroundColor){
+    width: 3.5em;
+    height: 3.5em;
+    background: $backgroundColor;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+@mixin largeRoundedButtonStyle($backgroundColor){
+    width: 4em;
+    height: 4em;
+    background: $backgroundColor;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+@mixin roundedButtonStyle($backgroundColor){
+    width: 3em;
+    height: 3em;
+    background: $backgroundColor;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+@mixin mediumRoundedOutlinedButton($color){
+      width: 2em;
+      height: 3em;
+      border: 1.5px solid $color;
+      border-color: $color !important;
+      padding: 0 15px;
+      line-height: 34px;
+      border-radius: 2em;
+      color: $color;
+      background: #fff;
+      &:hover{
+        color: #fff;
+        background-color: $color;
+      }
+}
+@mixin largeRoundedOutlinedButton($color){
+      width: 6em;
+      height: 3em;
+      border: 1.5px solid $color;
+      border-color: $color !important;
+      padding: 0 15px;
+      line-height: 34px;
+      border-radius: 2em;
+      color: $color;
+      background: #fff;
+      &:hover{
+        color: #fff;
+        background-color: $color;
+      }
+}
+@mixin roundedOutlinedButton($color){
+      border: 1.5px solid $color;
+      border-color: $color !important;
+      padding: 0 15px;
+      line-height: 34px;
+      border-radius: 2em;
+      color: $color;
+      background: #fff;
+      &:hover{
+        color: #fff;
+        background-color: $color;
+      }
+}
+@mixin roundedOutlinedIconButtonStyle($borderColor){
+      width: 3em;
+      height: 3em;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 1px solid $borderColor !important; 
+      border-color: $borderColor !important;
+      border: none;
+      text-decoration: none;
+      transition: background 0.2s;
+      color: $borderColor !important;
+}
+@mixin mediumRoundedOutlinedIconButtonStyle($borderColor){
+    width: 3.5em;
+    height: 3.5em;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid $borderColor !important; 
+    border-color: $borderColor !important;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s;
+    color: $borderColor !important;
+}
+@mixin largeRoundedOutlinedIconButtonStyle($borderColor){
+    width: 4em;
+    height: 4em;
+    background: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid $borderColor !important; 
+    border-color: $borderColor !important;
+    border: none;
+    text-decoration: none;
+    transition: background 0.2s;
+    color: $borderColor !important;
+} 
+@mixin style{
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height: 36px;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+}
+@mixin fontStyle{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+@mixin buttonStyle($lineheight, $textSize){
+    box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 0px 0px rgb(0 0 0 / 12%);
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    min-width: 64px;
+    line-height:$lineheight;
+    padding: 0 16px;
+    border-radius: 4px;
+    overflow: visible;
+    color: rgba(0,0,0,.87);
+    background-color: #fff;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: $textSize;
+    font-weight: 500;
+}
+//Medium Stroked Button Styles
+.realsoft-stroked-btn{
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+    border: 1px solid $sec-color;
+    color: $sec-color;
+    background-color: transparent;
+&:hover {
+    background-color: $stroked-hover;
+    box-shadow: none;
+    outline: none;
+    }
+&:focus {
+    background-color: $stroked-focus;
+    box-shadow: none;
+    outline: none;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $stroked-focus;
+    }
+&:disabled {
+    border: 1px solid $gray-color;
+    background-color: $disabled-color;
+    color: $gray-color;
+    cursor: not-allowed;
+    }
+}
+//Small Stroked Button Styles
+.realsoft-stroked-btn-small{
+@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+    height: 28px;
+    border: 1px solid $sec-color;
+    color: $sec-color;
+    background-color: transparent;
+&:hover {
+    background-color: $stroked-hover;
+    box-shadow: none;
+    outline: none;
+    }
+&:focus {
+    background-color: $stroked-focus;
+    box-shadow: none;
+    outline: none;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $stroked-focus;
+    }
+&:disabled {
+    border: 1px solid $gray-color;
+    background-color: $disabled-color;
+    color: $gray-color;
+    cursor: not-allowed;
+    }
+}
+//Large Stroked Button Styles
+.realsoft-stroked-btn-large{
+@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+    border: 1px solid $sec-color;
+    color: $sec-color ;
+    background-color: transparent ;
+&:hover {
+    background-color: $stroked-hover;
+    box-shadow: none ;
+    outline: none ;
+    }
+&:focus {
+    background-color: $stroked-focus ;
+    box-shadow: none ;
+    outline: none ;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $stroked-focus ;
+    }
+&:disabled {
+    border: 1px solid $gray-color ;
+    background-color: $disabled-color ;
+    color: $gray-color ;
+    cursor: not-allowed;
+    }
+}
+//Medium Primary Button Styles 
+.realsoft-primary-btn{
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+    background-color: $primary-color ;
+    color: $white-color !important;
+    border: 1px solid $primary-color ;
+&:hover {
+    background-color: $primary-color-hover;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    background-color: $primary-color-focus ;
+    box-shadow: none ;
+    outline: none ;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus ;
+    }
+&:disabled {
+    background-color: $disabled-color  !important;
+    color: $gray-color  !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    } 
+}
+//Small Primary Button Styles  
+.realsoft-primary-btn-small{
+@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+    height: 28px;
+    background-color: $primary-color ;
+    color: $white-color !important;
+    border: 1px solid $primary-color ;
+&:hover {
+    background-color: $primary-color-hover;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    background-color: $primary-color-focus ;
+    box-shadow: none ;
+    outline: none ;
+}
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus ;
+    }
+&:disabled {
+    background-color: $disabled-color !important ;
+    color: $gray-color !important ;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+}
+//Large Primary Button Styles    
+.realsoft-primary-btn-large{
+@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+    background-color: $primary-color ;
+    color: $white-color !important;
+    border: 1px solid $primary-color ;
+&:hover {
+    background-color: $primary-color-hover;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    background-color: $primary-color-focus ;
+    box-shadow: none ;
+    outline: none ;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus ;
+    }
+&:disabled {
+    background-color: $disabled-color !important ;
+    color: $gray-color !important ;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+}
+//Medium Secondary Button Styles
+.realsoft-secondary-btn{
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+    background-color: $sec-color ;
+    color: $white-color !important;
+    border: 1px solid $sec-color ;
+&:hover {
+    background-color: $sec-color-hover;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    background-color: $sec-color-focus ;
+    box-shadow: none ;
+    outline: none ;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus ;
+    }
+&:disabled {
+    background-color: $disabled-color  !important;
+    color: $gray-color  !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+}
+//Small Secondary Button Styles 
+.realsoft-secondary-btn-small{
+@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+    height: 28px;
+    background-color: $sec-color ;
+    color: $white-color !important;
+    border: 1px solid $sec-color ;
+&:hover {
+    background-color: $sec-color-hover;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    background-color: $sec-color-focus ;
+    box-shadow: none ;
+    outline: none ;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus ;
+    }
+&:disabled {
+    background-color: $disabled-color  !important;
+    color: $gray-color  !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    } 
+}
+//Large Secondary Button Styles 
+.realsoft-secondary-btn-large{
+@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+    background-color: $sec-color ;
+    color: $white-color !important;
+    border: 1px solid $sec-color ;
+&:hover {
+    background-color: $sec-color-hover;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    background-color: $sec-color-focus ;
+    box-shadow: none ;
+    outline: none ;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus ;
+    }
+&:disabled {
+    background-color: $disabled-color  !important;
+    color: $gray-color  !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+}
+//Medium Text Button Styles
+.realsoft-text-btn{
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+    background-color: transparent !important;
+    color: $sec-color !important;
+&:hover {
+    color: $font-color !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    color: $font-color !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    color: $font-color !important;
+    }
+&:disabled {
+    color: $gray-color !important;
+    background-color: transparent !important;
+    cursor: not-allowed;
+    }
+}
+//Small Text Button Styles  
+.realsoft-text-btn-small{
+@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+    height: 28px;
+    background-color: transparent !important;
+    color: $sec-color !important;
+&:hover {
+    color: $font-color !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    color: $font-color !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    color: $font-color !important;
+    }
+&:disabled {
+    color: $gray-color !important;
+    background-color: transparent !important;
+    cursor: not-allowed;
+    }
+}
+//Large Text Button Styles
+.realsoft-text-btn-large{
+@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+    background-color: transparent !important;
+    color: $sec-color !important;
+&:hover {
+    color: $font-color !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    color: $font-color !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    color: $font-color !important;
+    }
+&:disabled {
+    color: $gray-color !important;
+    background-color: transparent !important;
+    cursor: not-allowed;
+    }
+}
+//Small Link Button Styles 
+.realsoft-link-btn-small{
+@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+    height: 28px;
+    background-color: transparent !important;
+    color: $link-color !important;
+    text-decoration: underline !important;
+&:hover {
+    color: $link-color-hover !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    color: $link-color-focus !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    color: $link-color-focus !important ;
+    }
+&:disabled {
+    color: $gray-color !important;
+    background-color: transparent !important;
+    cursor: not-allowed;
+    }
+}
+//Medium Link Button Styles
+.realsoft-link-btn{
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+    background-color: transparent !important;
+    color: $link-color !important;
+    text-decoration: underline !important;
+    &:hover {
+    color: $link-color-hover !important;
+    box-shadow: none ;
+    outline: none;
+    }
+    &:focus {
+    color: $link-color-focus !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    color: $link-color-focus !important ;
+    }
+&:disabled {
+    color: $gray-color !important;
+    background-color: transparent !important;
+    cursor: not-allowed;
+    }
+}
+//Large Link Button Styles
+.realsoft-link-btn-large{
+    @include buttonStyle($lineheight: 38px, $textSize: $large-text);
+    background-color: transparent !important;
+    color: $link-color !important;
+    text-decoration: underline !important;
+&:hover {
+    color: $link-color-hover !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:focus {
+    color: $link-color-focus !important;
+    box-shadow: none ;
+    outline: none;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    color: $link-color-focus !important ;
+    }
+&:disabled {
+    color: $gray-color !important;
+    background-color: transparent !important;
+    cursor: not-allowed;
+    }
+}
+//Medium Primary Icon Button Styles
+.realsoft-primary-icon-btn{
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+    background-color: $primary-color !important;
+    color: $white-color !important;
+    border: 1px solid $primary-color !important;
+&:hover {
+    background-color: $primary-color-hover !important;
+    }
+&:focus {
+    background-color: $primary-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+}
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+      }
+    & .material-icons {
+        font-size: 22px !important;
+        position: relative;
+        top: 5px;
+    }
+}
+//Small Primary Icon Button Styles
+.realsoft-primary-icon-btn-small{
+@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+    height: 28px;
+    background-color: $primary-color !important;
+    color: $white-color !important;
+    border: 1px solid $primary-color !important;
+&:hover {
+    background-color: $primary-color-hover !important;
+    }
+&:focus {
+    background-color: $primary-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+    & .material-icons {
+        font-size: 18px !important;
+        position: relative;
+        top: 4px;
+    }
+}
+//Large Primary Icon Button Styles  
+.realsoft-primary-icon-btn-large{
+@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+background-color: $primary-color !important;
+color: $white-color !important;
+border: 1px solid $primary-color !important;
+&:hover {
+    background-color: $primary-color-hover !important;
+    }
+&:focus {
+    background-color: $primary-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+    & .material-icons {
+    font-size: 24px !important;
+    position: relative;
+    top: 5px;
+    }
+}
+//Medium Secondary Icon Button Styles
+.realsoft-secondary-icon-btn{
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+    background-color: $sec-color !important;
+    color: $white-color !important;
+    border: 1px solid $sec-color !important;
+&:hover {
+    background-color: $sec-color-hover !important;
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+    & .material-icons {
+    font-size: 22px !important;
+    position: relative;
+    top: 5px;
+    }
+}
+//Small Secondary Icon Button Styles
+.realsoft-secondary-icon-btn-small{
+@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+    height: 28px;
+    background-color: $sec-color !important;
+    color: $white-color !important;
+    border: 1px solid $sec-color !important;
+&:hover {
+    background-color: $sec-color-hover !important;
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+    & .material-icons {
+    font-size: 18px !important;
+    position: relative;
+    top: 4px;
+    }
+}
+//Large Secondary Icon Button Styles
+.realsoft-secondary-icon-btn-large{
+@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+    background-color: $sec-color !important;
+    color: $white-color !important;
+    border: 1px solid $sec-color!important;
+&:hover {
+    background-color: $sec-color-hover !important;
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+& .material-icons {
+    font-size: 24px !important;
+    position: relative;
+    top: 5px;
+    }
+}
+
+//Medium Primary Rounded Outlined Button Styles
+.primary-rounded-outlined-button-medium{
+@include fontStyle;
+@include style;
+@include mediumRoundedOutlinedButton($color: $buttonPrimaryBackground);
+&:hover {
+    background-color: $primary-color-hover !important;
+    }
+&:focus {
+    background-color: $primary-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+}
+//Small Primary Rounded Outlined Button Style
+.primary-rounded-outlined-button-small{
+    @include fontStyle;
+    @include style;
+    @include roundedOutlinedButton($color: $buttonPrimaryBackground);
+    &:hover {
+        background-color: $primary-color-hover !important;
+        }
+    &:focus {
+        background-color: $primary-color-focus !important;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $primary-color-focus !important;
+        }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+        }
+    }
+//Large Primary Rounded Outlined Button Styles
+.primary-rounded-outlined-button-large{
+@include fontStyle;
+@include style;
+@include largeRoundedOutlinedButton($color: $buttonPrimaryBackground);
+&:hover {
+    background-color: $primary-color-hover !important;
+    }
+&:focus {
+    background-color: $primary-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+}
+
+//Medium Secondary Rounded Outlined Button Styles
+.secondary-rounded-outlined-button-medium{
+@include fontStyle;
+@include style;
+@include mediumRoundedOutlinedButton($color: $buttonSecondaryBackground);
+&:hover {
+    background-color: $sec-color-hover !important;
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }  
+}
+//Small Secondary Rounded Outlined Button Styles
+.secondary-rounded-outlined-button-small{
+    @include fontStyle;
+    @include style;
+    @include roundedOutlinedButton($color: $buttonSecondaryBackground);
+    &:hover {
+        background-color: $sec-color-hover !important;
+        }
+    &:focus {
+        background-color: $sec-color-focus !important;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $sec-color-focus !important;
+        }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+        }
+    }
+//Large Secondary Rounded Outlined Button Styles
+.secondary-rounded-outlined-button-large{
+@include fontStyle;
+@include style;
+@include largeRoundedOutlinedButton($color: $buttonSecondaryBackground);
+&:hover {
+    background-color: $sec-color-hover !important;
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+}
+
+//Medium Primary Rounded Icon Button Styles
+.primary-rounded-icon-button-medium{
+@include mediumRoundedButtonStyle($backgroundColor : $buttonPrimaryBackground);
+&:hover {
+    background-color: $primary-color-hover !important;
+    }
+&:focus {
+    background-color: $primary-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+& .material-icons {
+    font-size: 24px !important;
+    position: relative;
+    top: 0px;
+    color: #ffffff;
+    }
+}
+//Small Primary Rounded Icon Button Styles   
+.primary-rounded-icon-button-small{
+    @include roundedButtonStyle($backgroundColor : $buttonPrimaryBackground);
+    &:hover {
+        background-color: $primary-color-hover !important;
+        }
+    &:focus {
+        background-color: $primary-color-focus !important;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $primary-color-focus !important;
+        }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+        }
+    & .material-icons {
+        font-size: 20px !important;
+        position: relative;
+        top: 0px;
+        color: #ffffff;
+        }
+    }
+
+//Large Primary Rounded Icon Button Styles
+.primary-rounded-icon-button-large{
+@include largeRoundedButtonStyle($backgroundColor : $buttonPrimaryBackground);
+&:hover {
+    background-color: $primary-color-hover !important;
+}
+&:focus {
+    background-color: $primary-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+& .material-icons {
+    font-size: 28px !important;
+    position: relative;
+    top: 0px;
+    color: #ffffff;
+    }
+}
+
+//Medium Secondary Rounded Icon Button Styles
+.secondary-rounded-icon-button-medium{
+@include mediumRoundedButtonStyle($backgroundColor : $buttonSecondaryBackground);
+&:hover {
+    background-color: $sec-color-hover !important;
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+& .material-icons {
+    font-size: 24px !important;
+    position: relative;
+    top: 0px;
+    color: #ffffff;
+    }
+}
+//Small Secondary Rounded Icon Button Styles   
+.secondary-rounded-icon-button-small{
+    @include roundedButtonStyle($backgroundColor : $buttonSecondaryBackground);
+    &:hover {
+        background-color: $sec-color-hover !important;
+        }
+    &:focus {
+        background-color: $sec-color-focus !important;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $sec-color-focus !important;
+        }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+        }
+    & .material-icons {
+        font-size: 20px !important;
+        position: relative;
+        top: 0px;
+        color: #ffffff;
+        }
+    }
+//Large Secondary Rounded Icon Button Styles
+.secondary-rounded-icon-button-large{
+@include largeRoundedButtonStyle($backgroundColor : $buttonSecondaryBackground);
+&:hover {
+    background-color: $sec-color-hover !important;
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    }
+    & .material-icons {
+        font-size: 28px !important;
+        position: relative;
+        top: 0px;
+        color: #ffffff;
+    }
+}
+
+//Medium Primary Rounded Outlined Icon Button Styles
+.primary-rounded-outlined-icon-button-medium{
+@include mediumRoundedOutlinedIconButtonStyle($borderColor: $buttonPrimaryBackground);
+&:hover {
+    background-color: $primary-color-hover !important;
+    & .material-icons{
+        color: #ffffff;
+    }
+    }
+&:focus {
+    background-color: $primary-color-focus !important;
+    & .material-icons{
+        color: #ffffff;
+    }
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    & .material-icons{
+        color: $gray-color !important;
+    }
+    }
+    & .material-icons {
+        font-size: 24px !important;
+        position: relative;
+        top: 0px;
+        color: $primary-color;
+    }
+}
+//Small Primary Rounded Outlined Icon Button Styles    
+.primary-rounded-outlined-icon-button-small{
+    @include roundedOutlinedIconButtonStyle($borderColor: $buttonPrimaryBackground);
+    &:hover {
+        background-color: $primary-color-hover !important;
+        & .material-icons{
+            color: #ffffff;
+        }
+        }
+    &:focus {
+        background-color: $primary-color-focus !important;
+        & .material-icons{
+            color: #ffffff;
+        }
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $primary-color-focus !important;
+        }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+        }
+    & .material-icons {
+        font-size: 20px !important;
+        position: relative;
+        top: 0px;
+        color: $primary-color;
+        }
+    }
+//Large Primary Rounded Outlined Icon Button Styles 
+.primary-rounded-outlined-icon-button-large{
+@include largeRoundedOutlinedIconButtonStyle($borderColor: $buttonPrimaryBackground);
+&:hover {
+    background-color: $primary-color-hover !important;
+    & .material-icons{
+        color: #ffffff;
+    }
+    }
+&:focus {
+    background-color: $primary-color-focus !important;
+    & .material-icons{
+        color: #ffffff;
+    }
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $primary-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    & .material-icons{
+        color: $gray-color !important;
+    }
+    }
+& .material-icons {
+    font-size: 28px !important;
+    position: relative;
+    top: 0px;
+    color: $primary-color;
+    }
+}
+//Medium Secondary Rounded Outlined Icon Button Styles
+.secondary-rounded-outlined-icon-button-medium{
+@include mediumRoundedOutlinedIconButtonStyle($borderColor: $buttonSecondaryBackground);
+&:hover {
+    background-color: $sec-color-hover !important;
+    & .material-icons{
+        color: #ffffff;
+    }
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    & .material-icons{
+        color: #ffffff;
+    }
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    & .material-icons{
+        color: $gray-color !important;
+    }
+    }
+    & .material-icons {
+    font-size: 24px !important;
+    position: relative;
+    top: 0px;
+    color: $sec-color;
+    }
+}
+//Small Secondary Rounded Outlined Icon Button Styles   
+.secondary-rounded-outlined-icon-button-small{
+    @include roundedOutlinedIconButtonStyle($borderColor: $buttonSecondaryBackground);
+    &:hover {
+        background-color: $sec-color-hover !important;
+        & .material-icons{
+            color: #ffffff;
+        }
+        }
+    &:focus {
+        background-color: $sec-color-focus !important;
+        & .material-icons{
+            color: #ffffff;
+        }
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $sec-color-focus !important;
+        }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+        }
+        & .material-icons {
+            font-size: 20px !important;
+            position: relative;
+            top: 0px;
+            color: $sec-color;
+        }
+    }
+//Large Secondary Rounded Outlined Icon Button Styles   
+.secondary-rounded-outlined-icon-button-large{
+@include largeRoundedOutlinedIconButtonStyle($borderColor: $buttonSecondaryBackground);
+&:hover {
+    background-color: $sec-color-hover !important;
+    & .material-icons{
+        color: #ffffff;
+    }
+    }
+&:focus {
+    background-color: $sec-color-focus !important;
+    & .material-icons{
+        color: #ffffff;
+    }
+    }
+&:not(:disabled):not(.disabled):active,
+:not(:disabled):not(.disabled).active {
+    background-color: $sec-color-focus !important;
+    }
+&:disabled {
+    background-color: $disabled-color !important;
+    color: $gray-color !important;
+    border-color: $gray-color !important;
+    cursor: not-allowed;
+    & .material-icons{
+        color: $gray-color !important;
+    }
+    }
+& .material-icons {
+    font-size: 28px !important;
+    position: relative;
+    top: 0px;
+    color: $sec-color;
+    }
+}
