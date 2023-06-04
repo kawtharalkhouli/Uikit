@@ -1,0 +1,62 @@
+@import 'variables.scss';
+
+.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
+    color: $primary-color !important;
+    &:hover{
+        color: $primary-color-hover !important;
+    }
+    &:focus{
+        color: $primary-color-focus !important;
+    }
+    &:disabled{
+        color: $gray-color!important;
+    }
+}
+
+.mat-form-field-appearance-outline .mat-form-field-flex {
+    top: 1px !important;
+}
+.mat-calendar-body-selected{
+    background-color: $sec-color;
+    color: #fff;
+}
+.mat-calendar-body-cell.selected > .mat-calendar-body-cell-content,
+.mat-calendar-body-cell.selected:hover > .mat-calendar-body-cell-content,
+.mat-calendar-body-cell.selected > .mat-calendar-body-cell-content:hover {
+  background-color: $sec-color !important;
+  color: #fff !important;
+}
+.mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+  
+.mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+
+.icon-text-field .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translate(1.3em, -1.5em) scale(0.75) !important;
+    width: 133.33333%;
+}
+.single-icon-text-field .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label
+{
+    transform: translate(-0.08em, -1.5em) scale(0.75) !important;
+    width: 133.33333%;
+}
+
+html:lang(ar) .mat-form-field-outline-start {
+    border-radius: 0px 28px 28px 0px !important;
+    min-width: 28px !important;
+}
+html:lang(ar)  .mat-form-field-outline-end {
+    border-radius: 28px 0 0 28px !important;
+}
+

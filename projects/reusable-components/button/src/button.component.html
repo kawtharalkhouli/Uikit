@@ -1,4 +1,4 @@
-<ng-container *ngTemplateOutlet="configurations?.style === 'primary' ? primary : (configurations?.style === 'secondary' ? secondary : (configurations?.style === 'primaryIcon' ? primaryIcon : (configurations?.style === 'text' ? text : (configurations?.style === 'secondaryIcon' ? secondaryIcon :(configurations?.style === 'link' ? link : (configurations?.style === 'primaryRoundedOutline' ? primaryRoundedOutline : (configurations?.style === 'secondaryRoundedOutline' ? secondaryRoundedOutline : (configurations?.style === 'primaryRoundedIconButton' ? primaryRoundedIconButton : (configurations?.style === 'secondaryRoundedIconButton' ? secondaryRoundedIconButton : (configurations?.style === 'primaryRoundedOutlinedIconButton' ? primaryRoundedOutlinedIconButton : (configurations?.style === 'secondaryRoundedOutlinedIconButton' ? secondaryRoundedOutlinedIconButton : stroked)))))) )) ))) ">
+<ng-container *ngTemplateOutlet="configurations?.style === 'primary' ? primary : (configurations?.style === 'secondary' ? secondary : (configurations?.style === 'primaryIcon' ? primaryIcon : (configurations?.style === 'text' ? text : (configurations?.style === 'secondaryIcon' ? secondaryIcon :(configurations?.style === 'link' ? link : (configurations?.style === 'primaryRoundedOutline' ? primaryRoundedOutline : (configurations?.style === 'secondaryRoundedOutline' ? secondaryRoundedOutline : (configurations?.style === 'primaryRoundedIconButton' ? primaryRoundedIconButton : (configurations?.style === 'secondaryRoundedIconButton' ? secondaryRoundedIconButton : (configurations?.style === 'primaryRoundedOutlinedIconButton' ? primaryRoundedOutlinedIconButton : (configurations?.style === 'secondaryRoundedOutlinedIconButton' ? secondaryRoundedOutlinedIconButton : (configurations?.style === 'strokedIcon' ? strokedIcon : stroked))))))) )) ))) ">
 </ng-container>
 
 <ng-template #primary>
@@ -15,6 +15,14 @@
 
 <ng-template #stroked>
 <button  class="realsoft-stroked-btn" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'realsoft-stroked-btn-small': configurations?.size === 'small','realsoft-stroked-btn-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
+</ng-template>
+
+<ng-template #strokedIcon>
+  <button  class="realsoft-stroked-icon-btn" [type]="configurations?.type"  [attr.routerLink]="configurations?.routerLink" [attr.aria-label]="configurations?.arialabel" [disabled]="disabled" [ngClass]="{'realsoft-stroked-icon-btn-small': configurations?.size === 'small','realsoft-stroked-icon-btn-large': configurations?.size === 'large'}">
+    <span class="material-icons">
+      {{configurations?.iconName}}
+    </span>
+  {{buttonTxt}}</button>
 </ng-template>
 
 <ng-template #primaryIcon>

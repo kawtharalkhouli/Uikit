@@ -1,10 +1,10 @@
 @import 'variables.scss';
- .alert {
+ .realsoft-alert {
 	width: 100%;
 	border: 0px;
 	border-radius: 4px;
     position: relative;
-    padding-bottom: 4px;
+    padding-bottom: 3px;
     text-align: start;
 	& p {
 		margin: 0;

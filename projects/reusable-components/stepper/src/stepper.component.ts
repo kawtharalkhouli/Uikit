@@ -35,11 +35,17 @@ export class StepperComponent {
 
   //Outputs
   @Output() selectionChange:EventEmitter<any>=new EventEmitter<any>();//An event emitted when the selected step has been changed
+  @Output() next: EventEmitter<any>= new EventEmitter<any>();
+  @Output() back: EventEmitter<any>= new EventEmitter<any>();
+  @Output() reset: EventEmitter<any>= new EventEmitter<any>();
 
   change(e:any){
   this.selectedIndex = e.selectedIndex
   this.selectionChange.emit(e)
   }
+  nextClicked(e:any){this.next.emit(e);}
+  backClicked(e:any){this.back.emit(e);}
+  resetClicked(e:any){this.reset.emit(e)}
 
   constructor(private cdr: ChangeDetectorRef) {}
 }

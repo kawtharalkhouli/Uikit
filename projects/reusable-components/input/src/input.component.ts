@@ -39,6 +39,7 @@ export class CustomInputComponent implements OnChanges,ControlValueAccessor,Vali
 @Input() configurations:inputConfig|undefined;//Additional attributes
 @Input() required:boolean=false;//If the field is required and not being used with reactive forms
 @Input() hidden!:boolean;//To hide the second icon if need be
+@Input() appearance!:string;
 
 
 //Output Emitters

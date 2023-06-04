@@ -1,7 +1,7 @@
 <ng-container *ngTemplateOutlet="configurations?.fieldType === 'iconIncluded' ? withIcon : (configurations?.fieldType === 'multiIconsIncluded' ?  multiIconsIncluded : (configurations?.fieldType === 'password' ? password : without))"></ng-container>
   <ng-template #without>
-    <mat-form-field class="__realsoft-form-field" appearance="outline">
-      <mat-label class="realsoft-text-label">{{label}}</mat-label>
+    <mat-form-field class="__realsoft-form-field icon-text-field" appearance="outline">
+      <mat-label class="realsoft-text-label" *ngIf="appearance === 'outline'">{{label}}</mat-label>
       <input  matInput class="realsoft-input-element" [type]="type" [disabled]="isDisabled" 
       [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()"
       [placeholder]="placeholder" [min]="configurations?.min" [required]="required ? required : isRequired"
@@ -11,18 +11,20 @@
   </ng-template>
 
   <ng-template #withIcon>
-  <mat-form-field class="__realsoft-form-field" appearance="outline">
+  <mat-form-field class="__realsoft-form-field single-icon-text-field" appearance="outline">
+    <mat-label class="realsoft-text-label" *ngIf="appearance === 'outline'">{{label}}</mat-label>
   <input  matInput class="realsoft-input-element" [type]="type" [disabled]="isDisabled"
   [placeholder]="placeholder" (keyup)="onKey($event)" [(ngModel)]="value"
   (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()" [required]="required ? required : isRequired"
   [min]="configurations?.min" [max]="configurations?.max" [attr.maxlength]="configurations?.maxlength"
 >
-  <mat-icon matSuffix [matTooltip]="iconTooltip" class="input-field-single-icon" (click)="onClick($event)" [hidden]="hidden">{{configurations?.icon}}</mat-icon>
+  <mat-icon matPrefix [matTooltip]="iconTooltip" class="input-field-single-icon" (click)="onClick($event)" [hidden]="hidden">{{configurations?.icon}}</mat-icon>
   </mat-form-field>
   </ng-template>
 
   <ng-template #multiIconsIncluded>
-  <mat-form-field class="__realsoft-form-field" appearance="outline">
+  <mat-form-field class="__realsoft-form-field single-icon-text-field" appearance="outline">
+    <mat-label class="realsoft-text-label" *ngIf="appearance === 'outline'">{{label}}</mat-label>
   <mat-icon matPrefix  [matTooltip]="firstIconTooltip" class="input-field-first-icon" (click)="firsttIconClick($event)">{{configurations?.firstIcon}}</mat-icon>
   <input  matInput class="realsoft-input-element" [type]="type" [disabled]="isDisabled" [placeholder]="placeholder" 
   (keyup)="onKey($event)" [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()"
@@ -34,6 +36,7 @@
 
   <ng-template #password>
   <mat-form-field class="__realsoft-form-field" appearance="outline">
+  <mat-label class="realsoft-text-label" *ngIf="appearance === 'outline'">{{label}}</mat-label>
   <input matInput class="realsoft-input-element" ngDefaultControl (blur)="markAsTouched()" [required]="required ? required : isRequired"
   [(ngModel)]="value" (ngModelChange)="onChange($event)" [disabled]="isDisabled" [placeholder]="placeholder"
   [type]="hidePassword ? 'password' : 'text'" 

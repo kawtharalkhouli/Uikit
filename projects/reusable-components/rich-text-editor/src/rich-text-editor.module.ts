@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
+
 @NgModule({
   declarations: [RichTextEditorComponent],
   imports: [
@@ -13,5 +14,5 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   exports: [RichTextEditorComponent],
 })
-export class RichTextAreaModule {}
+export class RichTextEditorModule {}
 

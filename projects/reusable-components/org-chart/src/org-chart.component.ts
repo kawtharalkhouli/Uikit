@@ -6,13 +6,16 @@ interface orgChart{
 }
 
 @Component({
-  selector: 'realsoft-og-chart',
+  selector: 'realsoft-org-chart',
   templateUrl: './org-chart.component.html',
 })
 
 export class OrgChartComponent{
 @Input() data!:orgChart;
-@Input() orientation!:string;
+@Input() orientation:string='ttb';
+@Input() collapseTooltip:string='Collapse';
+@Input() expandTooltip:string='Expand';
+
 hideAll: boolean = false;
-hideme= {};
+hide= {};
 }

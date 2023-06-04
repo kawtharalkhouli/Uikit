@@ -1,22 +1,20 @@
 @import 'variables.scss';
 
-.mat-button-toggle .mat-button-toggle-label-content {
-    padding: 0 18px;
-    border: 1px solid $primary-color !important;
+.mat-button-toggle-group{
+    box-shadow: none;
+    border: 1px solid $primary-color;
+    border-radius: 5px;
 }
-
-.mat-button-toggle:hover {
-    background-color: $primary-color-hover;
-    color: #fff !important;    
+.mat-button-toggle:not(:last-child){
+    border-right: 1px solid $primary-color;
 }
-
+.mat-button-toggle{
+    &:hover{
+        background-color: $primary-color-hover;
+        color: #fff;
+    }
+}
 .mat-button-toggle-checked {
     background-color: $primary-color;
     color: #fff !important;
-}
-
-.mat-button-toggle-group .mat-button-toggle+.mat-button-toggle {
-    border-left: solid 0px $primary-color !important;
-    border-radius: 2px !important;
-    box-shadow: none !important;
 }

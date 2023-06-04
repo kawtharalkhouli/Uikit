@@ -4,11 +4,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 interface data{
     id?:any;
     value?:any;
-    disabled?:boolean;
     checked?:boolean;
     name?:string;
-    text?:any;
-    icon?:string;
   }
   
 @Component({
@@ -25,13 +22,11 @@ interface data{
 export class SegmentComponent implements OnChanges, ControlValueAccessor{
 //Inputs
 @Input() appearance!:any;
-@Input() name!:string;
-@Input() arialabel!:any;
-@Input() disabled!:boolean;
 @Input() multiple!:boolean;
 @Input() vertical!:boolean;
 @Input() value!:any;
 @Input() data!:data[];
+@Input() chosenField!:string;
 
 //Outputs
 @Output() change: EventEmitter<any> = new EventEmitter<any>();

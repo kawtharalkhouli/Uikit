@@ -6,6 +6,7 @@
         <input class="realsoft-input-element" matInput [matDatepicker]="dp" [placeholder]="placeholder" [disabled]="isDisabled"
         [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()"
          [required]="required ? required : isRequired" [min]="min" [max]="max" [readonly]="readonly"
+         (dateChange)="dateChanged($event)" (click)="dp.open()"
         >
         <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
         <mat-datepicker #dp [startView]="startView" [startAt]="startAt"></mat-datepicker>   
@@ -35,6 +36,7 @@
             (dateChange)="dateChanged($event)"
             [matChipInputFor]="chipList"
             hidden
+            (click)="dp.open()"
             [min]="min" [max]="max" [readonly]="readonly"
           />
         </mat-chip-list>

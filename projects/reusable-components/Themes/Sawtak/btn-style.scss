@@ -151,7 +151,7 @@
     min-width: 64px;
     line-height: 36px;
     padding: 0 16px;
-    border-radius: 4px;
+    border-radius: $border-radius;
     overflow: visible;
 }
 @mixin fontStyle{
@@ -178,7 +178,7 @@
     min-width: 64px;
     line-height:$lineheight;
     padding: 0 16px;
-    border-radius: 4px;
+    border-radius: $border-radius;
     overflow: visible;
     color: rgba(0,0,0,.87);
     background-color: #fff;
@@ -192,6 +192,7 @@
     border: 1px solid $sec-color;
     color: $sec-color;
     background-color: transparent;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $stroked-hover;
     box-shadow: none;
@@ -220,6 +221,7 @@
     border: 1px solid $sec-color;
     color: $sec-color;
     background-color: transparent;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $stroked-hover;
     box-shadow: none;
@@ -247,6 +249,7 @@
     border: 1px solid $sec-color;
     color: $sec-color ;
     background-color: transparent ;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $stroked-hover;
     box-shadow: none ;
@@ -268,12 +271,113 @@
     cursor: not-allowed;
     }
 }
+//Stroked Button with Icon Default
+.realsoft-stroked-icon-btn{
+    @include buttonStyle($lineheight: 32px, $textSize: $normal-text);
+        border: 1px solid $stroked-color;
+        color: $black-color;
+        background-color: transparent;
+        transition: all 0.5s ease;
+    &:hover {
+        background-color: $stroked-hover;
+        box-shadow: none;
+        outline: none;
+        }
+    &:focus {
+        background-color: $stroked-focus;
+        box-shadow: none;
+        outline: none;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $stroked-focus;
+        }
+    &:disabled {
+        border: 1px solid $gray-color;
+        background-color: $disabled-color;
+        color: $gray-color;
+        cursor: not-allowed;
+        }
+        & .material-icons {
+            font-size: 20px !important;
+            position: relative;
+            top: 5px;
+        }
+    }
+//Small stroked button with icon
+.realsoft-stroked-icon-btn-small{
+    @include buttonStyle($lineheight: 28px, $textSize: $small-text);
+            height: 28px;
+            border: 1px solid $stroked-color;
+            color: $black-color;
+            background-color: transparent;
+            transition: all 0.5s ease;
+    &:hover{
+            background-color: $stroked-hover;
+            box-shadow: none;
+            outline: none;
+        }
+    &:focus{
+            background-color: $stroked-focus;
+            box-shadow: none;
+            outline: none;
+        }
+    &:not(:disabled):not(.disabled):active,
+        :not(:disabled):not(.disabled).active {
+            background-color: $stroked-focus;
+            }
+    &:disabled {
+            border: 1px solid $gray-color;
+            background-color: $disabled-color;
+            color: $gray-color;
+            cursor: not-allowed;
+        }
+    &.material-icons {
+        font-size: 16px !important;
+        position: relative;
+        top: 4px;
+    }
+}
+//Large Stroked Button with Icon
+.realsoft-stroked-icon-btn-large{
+    @include buttonStyle($lineheight: 34px, $textSize: $large-text);
+        border: 1px solid $stroked-color;
+        color: $black-color ;
+        background-color: transparent ;
+        transition: all 0.5s ease;
+    &:hover {
+        background-color: $stroked-hover;
+        box-shadow: none ;
+        outline: none ;
+        }
+    &:focus {
+        background-color: $stroked-focus ;
+        box-shadow: none ;
+        outline: none ;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $stroked-focus ;
+        }
+    &:disabled {
+        border: 1px solid $gray-color ;
+        background-color: $disabled-color ;
+        color: $gray-color ;
+        cursor: not-allowed;
+    }
+    & .material-icons {
+        font-size: 22px !important;
+        position: relative;
+        top: 7px;
+    }
+}
 //Medium Primary Button Styles 
 .realsoft-primary-btn{
 @include buttonStyle($lineheight: 36px, $textSize: $normal-text);
     background-color: $primary-color ;
     color: $white-color !important;
     border: 1px solid $primary-color ;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $primary-color-hover;
     box-shadow: none ;
@@ -302,6 +406,7 @@
     background-color: $primary-color ;
     color: $white-color !important;
     border: 1px solid $primary-color ;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $primary-color-hover;
     box-shadow: none ;
@@ -329,6 +434,7 @@
     background-color: $primary-color ;
     color: $white-color !important;
     border: 1px solid $primary-color ;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $primary-color-hover;
     box-shadow: none ;
@@ -356,6 +462,7 @@
     background-color: $sec-color ;
     color: $white-color !important;
     border: 1px solid $sec-color ;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $sec-color-hover;
     box-shadow: none ;
@@ -384,6 +491,7 @@
     background-color: $sec-color ;
     color: $white-color !important;
     border: 1px solid $sec-color ;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $sec-color-hover;
     box-shadow: none ;
@@ -411,6 +519,7 @@
     background-color: $sec-color ;
     color: $white-color !important;
     border: 1px solid $sec-color ;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $sec-color-hover;
     box-shadow: none ;
@@ -436,21 +545,8 @@
 .realsoft-text-btn{
 @include buttonStyle($lineheight: 36px, $textSize: $normal-text);
     background-color: transparent !important;
-    color: $sec-color !important;
-&:hover {
-    color: $font-color !important;
-    box-shadow: none ;
-    outline: none;
-    }
-&:focus {
-    color: $font-color !important;
-    box-shadow: none ;
-    outline: none;
-    }
-&:not(:disabled):not(.disabled):active,
-:not(:disabled):not(.disabled).active {
-    color: $font-color !important;
-    }
+    color: $black-color !important;
+    transition: all 0.5s ease;
 &:disabled {
     color: $gray-color !important;
     background-color: transparent !important;
@@ -462,21 +558,8 @@
 @include buttonStyle($lineheight: 28px, $textSize: $small-text);
     height: 28px;
     background-color: transparent !important;
-    color: $sec-color !important;
-&:hover {
-    color: $font-color !important;
-    box-shadow: none ;
-    outline: none;
-    }
-&:focus {
-    color: $font-color !important;
-    box-shadow: none ;
-    outline: none;
-    }
-&:not(:disabled):not(.disabled):active,
-:not(:disabled):not(.disabled).active {
-    color: $font-color !important;
-    }
+    color: $black-color !important;
+    transition: all 0.5s ease;
 &:disabled {
     color: $gray-color !important;
     background-color: transparent !important;
@@ -487,21 +570,8 @@
 .realsoft-text-btn-large{
 @include buttonStyle($lineheight: 38px, $textSize: $large-text);
     background-color: transparent !important;
-    color: $sec-color !important;
-&:hover {
-    color: $font-color !important;
-    box-shadow: none ;
-    outline: none;
-    }
-&:focus {
-    color: $font-color !important;
-    box-shadow: none ;
-    outline: none;
-    }
-&:not(:disabled):not(.disabled):active,
-:not(:disabled):not(.disabled).active {
-    color: $font-color !important;
-    }
+    color: $black-color !important;
+    transition: all 0.5s ease;
 &:disabled {
     color: $gray-color !important;
     background-color: transparent !important;
@@ -515,6 +585,7 @@
     background-color: transparent !important;
     color: $link-color !important;
     text-decoration: underline !important;
+    transition: all 0.5s ease;
 &:hover {
     color: $link-color-hover !important;
     box-shadow: none ;
@@ -541,6 +612,7 @@
     background-color: transparent !important;
     color: $link-color !important;
     text-decoration: underline !important;
+    transition: all 0.5s ease;
     &:hover {
     color: $link-color-hover !important;
     box-shadow: none ;
@@ -567,6 +639,7 @@
     background-color: transparent !important;
     color: $link-color !important;
     text-decoration: underline !important;
+    transition: all 0.5s ease;
 &:hover {
     color: $link-color-hover !important;
     box-shadow: none ;
@@ -589,10 +662,11 @@
 }
 //Medium Primary Icon Button Styles
 .realsoft-primary-icon-btn{
-@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 32px, $textSize: $normal-text);
     background-color: $primary-color !important;
     color: $white-color !important;
     border: 1px solid $primary-color !important;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $primary-color-hover !important;
     }
@@ -612,7 +686,7 @@
     & .material-icons {
         font-size: 20px !important;
         position: relative;
-        top: 6px;
+        top: 5px;
     }
 }
 //Small Primary Icon Button Styles
@@ -622,6 +696,7 @@
     background-color: $primary-color !important;
     color: $white-color !important;
     border: 1px solid $primary-color !important;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $primary-color-hover !important;
     }
@@ -646,10 +721,11 @@
 }
 //Large Primary Icon Button Styles  
 .realsoft-primary-icon-btn-large{
-@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+@include buttonStyle($lineheight: 34px, $textSize: $large-text);
 background-color: $primary-color !important;
 color: $white-color !important;
 border: 1px solid $primary-color !important;
+transition: all 0.5s ease;
 &:hover {
     background-color: $primary-color-hover !important;
     }
@@ -667,17 +743,18 @@ border: 1px solid $primary-color !important;
     cursor: not-allowed;
     }
     & .material-icons {
-    font-size: 24px !important;
-    position: relative;
-    top: 5px;
+        font-size: 22px !important;
+        position: relative;
+        top: 7px;
     }
 }
 //Medium Secondary Icon Button Styles
 .realsoft-secondary-icon-btn{
-@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 32px, $textSize: $normal-text);
     background-color: $sec-color !important;
     color: $white-color !important;
     border: 1px solid $sec-color !important;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $sec-color-hover !important;
     }
@@ -695,9 +772,9 @@ border: 1px solid $primary-color !important;
     cursor: not-allowed;
     }
     & .material-icons {
-    font-size: 22px !important;
-    position: relative;
-    top: 5px;
+        font-size: 20px !important;
+        position: relative;
+        top: 5px;
     }
 }
 //Small Secondary Icon Button Styles
@@ -707,6 +784,7 @@ border: 1px solid $primary-color !important;
     background-color: $sec-color !important;
     color: $white-color !important;
     border: 1px solid $sec-color !important;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $sec-color-hover !important;
     }
@@ -731,10 +809,11 @@ border: 1px solid $primary-color !important;
 }
 //Large Secondary Icon Button Styles
 .realsoft-secondary-icon-btn-large{
-@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+@include buttonStyle($lineheight: 34px, $textSize: $large-text);
     background-color: $sec-color !important;
     color: $white-color !important;
     border: 1px solid $sec-color!important;
+    transition: all 0.5s ease;
 &:hover {
     background-color: $sec-color-hover !important;
     }
@@ -752,9 +831,9 @@ border: 1px solid $primary-color !important;
     cursor: not-allowed;
     }
 & .material-icons {
-    font-size: 24px !important;
+    font-size: 22px !important;
     position: relative;
-    top: 5px;
+    top: 7px;
     }
 }
 
@@ -1052,7 +1131,7 @@ border: 1px solid $primary-color !important;
 
 //Medium Primary Rounded Outlined Icon Button Styles
 .primary-rounded-outlined-icon-button-medium{
-@include mediumRoundedOutlinedIconButtonStyle($borderColor: $primary-color);
+@include mediumRoundedOutlinedIconButtonStyle($borderColor: $buttonPrimaryBackground);
 &:hover {
     background-color: $primary-color-hover !important;
     & .material-icons{
@@ -1087,7 +1166,7 @@ border: 1px solid $primary-color !important;
 }
 //Small Primary Rounded Outlined Icon Button Styles    
 .primary-rounded-outlined-icon-button-small{
-    @include roundedOutlinedIconButtonStyle($borderColor: $primary-color);
+    @include roundedOutlinedIconButtonStyle($borderColor: $buttonPrimaryBackground);
     &:hover {
         background-color: $primary-color-hover !important;
         & .material-icons{
@@ -1122,7 +1201,7 @@ border: 1px solid $primary-color !important;
     }
 //Large Primary Rounded Outlined Icon Button Styles 
 .primary-rounded-outlined-icon-button-large{
-@include largeRoundedOutlinedIconButtonStyle($borderColor: $primary-color);
+@include largeRoundedOutlinedIconButtonStyle($borderColor: $buttonPrimaryBackground);
 &:hover {
     background-color: $primary-color-hover !important;
     & .material-icons{

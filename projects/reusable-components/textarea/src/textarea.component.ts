@@ -31,6 +31,7 @@ export class CustomTextAreaComponent implements OnChanges, ControlValueAccessor,
 @Input() value!:any | undefined;//Previously written value when not using reactive forms
 @Input() configurations:textAreaConfig|undefined;
 @Input() required!:boolean;//Whether the control is required
+@Input() appearance!:string
 
 //Variables
 writtenValue: any='';

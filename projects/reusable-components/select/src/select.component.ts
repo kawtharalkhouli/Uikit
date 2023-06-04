@@ -1,12 +1,10 @@
 import {
-    ChangeDetectionStrategy,
     ChangeDetectorRef,
     Component,
     EventEmitter,
     forwardRef,
     Input,
     OnChanges,
-    OnInit,
     Output,
     ViewChild,
   } from '@angular/core';
@@ -41,7 +39,7 @@ import {
     templateUrl: './select.component.html',
     providers: [VALUE_ACCESSOR,VALIDATOR]
   })
-  export class MultiSelectComponent implements OnChanges, ControlValueAccessor,Validator {
+  export class MultiSelectComponent implements OnChanges, ControlValueAccessor,Validator{
     @ViewChild('select') select!: MatSelect;
     @Input() data!: any;
     @Input() chosenField!: string;
@@ -49,7 +47,6 @@ import {
     @Input() configurations!: Configurations | undefined;
     @Input() selectedValues: any | undefined;
     @Input() required!:boolean;
-    @Input() errorMsg!:string;
     @Input() matTooltip!:string;
 
     @Output() addOptions: EventEmitter<any> = new EventEmitter();
@@ -89,6 +86,9 @@ import {
         this.selectedValues &&
         (this.data?.length > 0 || this.data?.children?.length > 0)
       ) {
+        this.filteredData.sort((a: any, b: any) =>
+        a[this.chosenField].localeCompare(b[this.chosenField])
+      );
         this.selectedOptions = this.selectedValues;
         this.setChipsValue(this.selectedValues);
       } else {
@@ -98,6 +98,7 @@ import {
       }
       this.cdr.markForCheck();
     }
+
   
     setChipsValue(selectedValues: any): void {
       this.selectedOptionsForChips = [];
@@ -151,13 +152,6 @@ import {
       
       if (this.configurations?.isMultiple) {
         this.selectedOptions = event.value;
-        if (this.selectedOptions?.length === 0) {
-          this.isMasterSel = false;
-        } else if (this.selectedOptions?.length === this.filteredData?.length) {
-          this.isMasterSel = true;
-        } else {
-          this.isMasterSel = false;
-        }
       }
       this.selectionChange.emit(event);
   
@@ -177,12 +171,71 @@ import {
       this.selectedItem.emit(item);
     }
   
-    filterOptions(event: any): void {
-      let searchValue: string = event.target.value;
-      this.filteredData = this.data.filter((item: any) => {
-        let compare = item[this.chosenField];
-        return compare.toLowerCase().includes(searchValue.toLowerCase());
-      });
+    filterOptions(event: any) {
+      //* Get the search value from the event object and convert it to lowercase
+  
+      const searchValue = event.target.value.toLowerCase();
+  
+      if (this.configurations?.isMultiple) {
+        //* Get the selected options
+  
+        const selectedValues = this.selectedOptions;
+  
+        //* Filter the data to get the selected options and other options
+        const selectedOptions = this.data.filter((option: any) =>
+          selectedValues?.includes(option[this.configurations?.chosenId || 'id'])
+        );
+        const otherOptions = this.data.filter(
+          (option: any) =>
+            !selectedValues?.includes(
+              option[this.configurations?.chosenId || 'id']
+            )
+        );
+  
+        let filteredOptions: any[];
+  
+        //* If the search value is empty, concatenate the selected options and other options and sort them alphabetically
+        if (searchValue === '') {
+          filteredOptions = [...selectedOptions, ...otherOptions].sort(
+            (a: any, b: any) =>
+              a[this.chosenField].localeCompare(b[this.chosenField])
+          );
+        } else {
+          //* If there is a search value, filter the options based on the search value and selected options, and sort them
+          filteredOptions = this.data
+            .filter(
+              (option: any) =>
+                option[this.chosenField].toLowerCase().includes(searchValue) ||
+                selectedValues?.includes(
+                  option[this.configurations?.chosenId || 'id']
+                )
+            )
+            .sort((a: any, b: any) => {
+              const aIsSelected = selectedValues?.includes(
+                a[this.configurations?.chosenId || 'id']
+              );
+              const bIsSelected = selectedValues?.includes(
+                b[this.configurations?.chosenId || 'id']
+              );
+  
+              //* Sort selected options first, then other options, then alphabetically
+              if (aIsSelected && !bIsSelected) {
+                return -1;
+              } else if (bIsSelected && !aIsSelected) {
+                return 1;
+              } else {
+                return a[this.chosenField].localeCompare(b[this.chosenField]);
+              }
+            });
+        }
+        //* Set the filtered data to the filtered options
+        this.filteredData = filteredOptions;
+      } else {
+        this.filteredData = this.data.filter((item: any) => {
+          let compare = item[this.chosenField];
+          return compare.toLowerCase().includes(searchValue.toLowerCase());
+        });
+      }
     }
   
     onChange = (value:any) => {};

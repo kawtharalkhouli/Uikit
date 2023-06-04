@@ -1,3 +1,3 @@
-<mat-button-toggle-group [appearance]="appearance" [name]="name" [disabled]="disabled" [multiple]="multiple" [value]="value" [vertical]="vertical" (change)="groupChange($event)" [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl>
-    <mat-button-toggle *ngFor="let button of data" [value]="button.value" [id]="button.id" [disabled]="button.disabled" [checked]="button.checked" (change)="buttonChange($event)">{{button.text}}</mat-button-toggle>
+<mat-button-toggle-group [appearance]="appearance"  [multiple]="multiple" [value]="value" [vertical]="vertical" (change)="groupChange($event)" [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl>
+    <mat-button-toggle *ngFor="let button of data" [value]="button.value" [id]="button.id" [checked]="button.checked" (change)="buttonChange($event)">{{button[chosenField || 'en']}}</mat-button-toggle>
 </mat-button-toggle-group>

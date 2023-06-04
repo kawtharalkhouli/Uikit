@@ -1,6 +1,6 @@
 <ng-container *ngTemplateOutlet="orientation === 'vertical' ? vertical : horizontal"></ng-container>
   <ng-template #horizontal>
-    <mat-tab-group (selectedTabChange)="tabChange($event)" [selectedIndex]="selectedTabIndex">
+    <mat-tab-group (selectedTabChange)="tabChange($event)" [selectedIndex]="selectedTabIndex" animationDuration="900ms">
       <mat-tab *ngFor="let tablabel of tabs; let i = index" [label]="tablabel.label">
         <ng-container *ngFor="let tab of tabsContents; let i = index">
           <ng-container *ngIf="selectedTabIndex === i">
@@ -12,7 +12,7 @@
   </ng-template>
   <ng-template #vertical>
     <div class="vertical-tabs">
-      <mat-tab-group (selectedTabChange)="tabChange($event)" [selectedIndex]="selectedTabIndex">
+      <mat-tab-group (selectedTabChange)="tabChange($event)" [selectedIndex]="selectedTabIndex" animationDuration="900ms">
         <mat-tab *ngFor="let tablabel of tabs; let i = index" [label]="tablabel.label">
           <ng-container *ngFor="let tab of tabsContents; let i = index">
             <ng-container *ngIf="selectedTabIndex === i">

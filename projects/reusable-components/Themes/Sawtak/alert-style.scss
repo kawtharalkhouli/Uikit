@@ -1,8 +1,8 @@
 @import 'variables.scss';
-.realsoft-alert {
+ .realsoft-alert {
 	width: 100%;
 	border: 0px;
-	border-radius: 4px;
+	border-radius: $border-radius;
     position: relative;
     padding-bottom: 3px;
     text-align: start;
@@ -53,7 +53,10 @@
 }
 //Alerts Icons Styles
 %icons-style {
-    position: relative;
-    top: 5px;
-    margin: 0 5px;
+	position: relative;
+    top: 4px;
+    margin: 0 8px;
+    font-size: 20px;
 }
+
+  

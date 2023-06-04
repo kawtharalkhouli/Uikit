@@ -9,7 +9,7 @@
     "tslib": "^2.3.0"
   },
   "scripts": {
-    "build:sass": "sass Themes/Ada'a/styles.scss Themes/Khwarizmi/style.scss Themes/LTRC/styles.scss Themes/LTRCVariables/variables.scss",
+    "build:sass": "sass Themes/Ada'a/styles.scss Themes/Khwarizmi/style.scss Themes/LTRC/styles.scss Themes/Sawtak/styles.scss Themes/LTRCVariables/variables.scss",
     "build:schematics": "tsc -p tsconfig.schematics.json",
     "postbuild:schematics": "copyfiles schematics/collection.json ../../../dist/reusable-components/"
  }

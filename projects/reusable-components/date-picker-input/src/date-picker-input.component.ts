@@ -129,22 +129,24 @@ public dateClass = (date: Date) => {
 }
 
 public dateChanged(event: MatDatepickerInputEvent<Date>): void {
-    if (event.value) {
-      const date = event.value;
-      const index = this._findDate(date);
-      if (index === -1) {
-        this.model.push(date);
-      } else {
-        this.model.splice(index, 1)
-      }
-      this.resetModel = new Date(0);
-      if (!this.CLOSE_ON_SELECTED) {
-        const closeFn = this._picker.close;
-        this._picker.close = () => { };
-        this._picker['_componentRef'].instance._calendar.monthView._createWeekCells()
-        setTimeout(() => {
-          this._picker.close = closeFn;
-        });
+    if(this.multi){
+      if (event.value) {
+        const date = event.value;
+        const index = this._findDate(date);
+        if (index === -1) {
+          this.model.push(date);
+        } else {
+          this.model.splice(index, 1)
+        }
+        this.resetModel = new Date(0);
+        if (!this.CLOSE_ON_SELECTED) {
+          const closeFn = this._picker.close;
+          this._picker.close = () => { };
+          this._picker['_componentRef'].instance._calendar.monthView._createWeekCells()
+          setTimeout(() => {
+            this._picker.close = closeFn;
+          });
+        }
       }
     }
     this.change.emit(event);
