@@ -1,5 +1,5 @@
-<mat-form-field class="__realsoft-form-field" appearance="outline">
-    <mat-label class="realsoft-textarea-label" *ngIf="appearance === 'outline'">{{label}}</mat-label>
+<mat-form-field class="custom-text-area" appearance="outline">
+    <mat-label *ngIf="appearance === 'outline'">{{label}}</mat-label>
 
     <textarea matInput [value]="writtenValue" [disabled]="isDisabled" [placeholder]="placeholder"
     (input)="onChange($any($event.target).value)" (blur)="markAsTouched()" [required]="required ? required : isRequired"

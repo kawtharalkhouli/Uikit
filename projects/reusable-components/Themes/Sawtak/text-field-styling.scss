@@ -1,0 +1,652 @@
+@import 'variables.scss';
+
+//Text Field with no icons Styling
+.text-field-no-icon .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 61px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-no-icon .mat-form-field-outline-start {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 61px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-no-icon .mat-form-field-outline-end {
+    border-radius: 28px 0px 0px 28px !important;
+    min-width: calc(100% - 122px) !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+  
+.text-field-no-icon .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: calc(100% - 122px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.text-field-no-icon.mat-form-field.mat-focused .mat-form-field-label {
+    color: #369EFB !important;
+}
+.text-field-no-icon.mat-form-field.mat-focused .mat-form-field-outline {
+    color: #369EFB !important;
+}
+.text-field-no-icon .mat-input-element{
+    padding-left: 50px !important;
+    position: relative !important;
+    bottom: 5px !important;
+    font-size: 14px;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.9em,-1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+  /* Font color */
+.text-field-no-icon.input.mat-input-element {
+    color: #00000099 !important;
+}
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.text-field-no-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-left: 50px !important;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+
+//Text Field with multiple icons Styling
+.text-field-multi-icons .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-multi-icons .mat-form-field-outline-start {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+  
+.text-field-multi-icons .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-multi-icons .mat-form-field-outline-end {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.text-field-multi-icons.mat-form-field.mat-focused .mat-form-field-label {
+    color: #369EFB !important;
+}
+.text-field-multi-icons.mat-form-field.mat-focused .mat-form-field-outline {
+    color: #369EFB !important;
+}
+.text-field-multi-icons .mat-input-element{
+    position: relative !important;
+    bottom: 5px !important;
+    font-size: 14px;
+}
+html:lang(ar) .text-field-multi-icons .mat-input-element{
+    position: relative !important;
+    bottom: 3px !important;
+    font-size: 14px;
+}
+.text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.1em, -1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+html:lang(ar) .text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translateY(-1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+  /* Font color */
+.text-field-multi-icons.input.mat-input-element {
+    color: #00000099 !important;
+}
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    font-size: 24px;
+    padding-left: 16px !important;
+    padding-right: 32px !important;
+    position: relative !important;
+    bottom: 2px !important;
+    color: #40399A !important;
+}
+html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    padding-left: 14px !important;
+    padding-right: 38px !important;
+    bottom: 1px !important;
+}
+.text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 34px !important;
+    position: relative !important;
+    color: rgba(68, 68, 68, 0.8666666667) !important;
+    cursor: pointer !important;
+    font-size: 24px;
+}
+.text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+ }
+ html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 26px !important;
+    padding-left: 20px;
+    position: relative !important;
+    color: rgba(68, 68, 68, 0.8666666667) !important;
+    cursor: pointer;
+    bottom: 1px;
+    font-size: 24px;
+}
+.single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+//Text Field with prefix icon Styling
+.text-field-multi-icons .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+html:lang(ar) .text-field-prefix-icon .mat-form-field-outline-start {
+    border-radius: 0px 28px 28px 0px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+ .text-field-prefix-icon .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+
+.text-field-prefix-icon .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+html:lang(ar) .text-field-prefix-icon .mat-form-field-outline-end {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+.text-field-prefix-icon.mat-form-field:not(.mat-form-field-should-float) .mat-input-placeholder {
+    padding-left: 10px !important;
+    box-sizing: border-box;
+  }
+
+.text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-input-element{
+    position: relative;
+    bottom: 4px ;
+    font-size: 14px ;
+}
+.text-field-prefix-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translateY(-1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+  /* Font color */
+  .text-field-prefix-icon.input.mat-input-element {
+    color: #00000099 !important;
+}
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+
+.text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    padding-left: 21px !important;
+    padding-right: 32px !important;
+    position: relative !important;
+    bottom: 2px !important;
+    color: #40399A !important;
+}
+
+html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    padding-left: 14px !important;
+    padding-right: 38px !important;
+    position: relative !important;
+    bottom: 1px !important;
+    color: #40399A !important;
+}
+
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+ }
+ .text-field-prefix-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+
+//Text Field with suffix icon Styling4
+.text-field-suffix-icon .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 61px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+html:lang(ar) .text-field-suffix-icon .mat-form-field-outline-start {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 61px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-suffix-icon .mat-form-field-outline-end {
+    border-radius: 28px 0px 0px 28px !important;
+    min-width: calc(100% - 122px) !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+  
+.text-field-suffix-icon .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: calc(100% - 122px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color!important;
+    }
+}
+.text-field-suffix-icon.mat-form-field.mat-focused .mat-form-field-label {
+    color: #369EFB !important;
+}
+.text-field-suffix-icon.mat-form-field.mat-focused .mat-form-field-outline {
+    color: #369EFB !important;
+}
+.text-field-suffix-icon .mat-input-element{
+    padding-left: 50px !important;
+    position: relative !important;
+    bottom: 5px !important;
+    font-size: 14px;
+}
+html:lang(ar) .text-field-suffix-icon .mat-input-element{
+    padding-right: 50px !important;
+}
+.text-field-suffix-icon.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.9em,-1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+html:lang(ar) .text-field-suffix-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform:translate(-0.9em, -1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.text-field-suffix-icon.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+  /* Font color */
+.text-field-suffix-icon.input.mat-input-element {
+    color: #00000099 !important;
+}
+.text-field-suffix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.text-field-suffix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.text-field-suffix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.text-field-suffix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 34px !important;
+    position: relative !important;
+    bottom: 2px !important;
+    color: #0000008A !important;
+}
+.text-field-suffix-icon .mat-input-element{
+    padding-left: 50px !important;
+    position: relative !important;
+    bottom: 5px !important;
+    font-size: 14px;
+}
+.text-field-suffix-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+ }
+
+ html:lang(ar) .text-field-suffix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 26px !important;
+    padding-left: 20px !important;
+    position: relative !important;
+    bottom: 2px !important;
+    color: #0000008A !important;
+}
+.text-field-suffix-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-left: 50px !important;
+}
+.text-field-suffix-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+
+
+//Suffix Icon Password Styling
+.single-password-text-field .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 61px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color!important;
+    }
+}
+html:lang(ar) .single-password-text-field .mat-form-field-outline-start {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 61px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color!important;
+    }
+}
+html:lang(ar) .single-password-text-field .mat-form-field-outline-end {
+    border-radius: 28px 0px 0px 28px !important;
+    min-width: calc(100% - 122px) !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+  
+.single-password-text-field .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: calc(100% - 122px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.single-password-text-field.mat-form-field.mat-focused .mat-form-field-label {
+    color: #369EFB !important;
+}
+.single-password-text-field.mat-form-field.mat-focused .mat-form-field-outline {
+    color: #369EFB !important;
+}
+.single-password-text-field .mat-input-element{
+    padding-left: 50px !important;
+    position: relative !important;
+    bottom: 4px !important;
+    font-size: 14px;
+}
+html:lang(ar) .single-password-text-field .mat-input-element{
+    padding-right: 50px !important;
+    padding-left: unset !important;
+}
+.single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.9em,-1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+html:lang(ar) .single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(-0.9em, -1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+  /* Font color */
+  .single-password-text-field.input.mat-input-element {
+    color: #00000099 !important;
+}
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.single-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 34px !important;
+    position: relative !important;
+    bottom: 2px !important;
+    color: #444444DD !important;
+    cursor: pointer;
+    font-size: 24px;
+}
+html:lang(ar) .single-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 26px !important;
+    padding-left: 20px !important;
+    position: relative !important;
+    bottom: 1px !important;
+    color: #444444DD !important;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+ }
+ .single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+ 
+.single-password-text-field .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-left: 50px !important;
+}
+
+
+//Multiple Icons Password Styling
+.multiple-password-text-field .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+html:lang(ar) .multiple-password-text-field .mat-form-field-outline-start {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+  
+.multiple-password-text-field .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+html:lang(ar) .multiple-password-text-field .mat-form-field-outline-end {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.multiple-password-text-field.mat-form-field.mat-focused .mat-form-field-label {
+    color: #369EFB !important;
+}
+.multiple-password-text-field.mat-form-field.mat-focused .mat-form-field-outline {
+    color: #369EFB !important;
+}
+.multiple-password-text-field .mat-input-element{
+    position: relative !important;
+    bottom: 3px !important;
+    font-size: 14px;
+}
+.multiple-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(-0.09em, -1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+  /* Font color */
+.multiple-password-text-field.input.mat-input-element {
+    color: #00000099 !important;
+}
+.multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    font-size: 24px;
+    padding-left: 16px !important;
+    padding-right: 32px !important;
+    position: relative !important;
+    bottom: 2px !important;
+    color: #40399A !important;
+}
+html:lang(ar) .multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    padding-left: 14px !important;
+    padding-right: 38px !important;
+    bottom: 1px !important;
+}
+.multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 34px !important;
+    position: relative !important;
+    color: #444444DD !important;
+    cursor: pointer !important;
+    font-size: 24px;
+}
+html:lang(ar) .multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 26px !important;
+    padding-left: 20px !important;
+    position: relative !important;
+    color: #444444DD !important;
+    cursor: pointer !important;
+    font-size: 24px;
+    bottom: -1px;
+}
+.multiple-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+}
+.multiple-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+.mat-focused.mat-warn .mat-form-field-outline-thick, .mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+    color: $danger-color !important;
+}
+.mat-form-field{
+    width: 100% !important;
+}
+.mat-form-field-disabled .mat-form-field-outline{
+    color: $gray-color !important;
+    background-color: $disabled-color !important;
+    border-radius: 28px !important;
+}
+
+html:lang(ar) .text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(-0.9em,-1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+html:lang(ar) .text-field-no-icon .mat-input-element {
+    padding-right: 50px !important;
+    position: relative;
+    bottom: 3px;
+}
+
+ [dir=rtl] .mat-form-field-appearance-outline .mat-form-field-outline-end {
+    border-left-style: solid !important;
+    border-right-style: none !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    width: 75% !important;
+}
+
+.mat-form-field-wrapper .mat-form-field-label mat-label{
+    font-size: 14px !important;
+}
+
+html:lang(ar) .text-field-no-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-right: 50px !important;
+    padding-left: unset !important;
+    position: relative;
+    bottom: 1px;
+}
+
+html:lang(ar) .text-field-suffix-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-right: 50px !important;
+    padding-left: unset !important;
+}
+
+html:lang(ar) .text-field-prefix-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    font-size: 14px !important;
+    position: relative !important;
+    bottom: 1px !important;
+}
+html:lang(ar) .single-password-text-field .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-right: 50px !important;
+    position: relative;
+    bottom: 2px;
+}
+
+html:lang(ar) body, html:lang(en) body {
+    .mat-form-field:not(.mat-form-field-appearance-legacy).mat-form-field-invalid {
+      .mat-form-field-prefix {
+        .mat-icon {
+          color: $danger-color !important;
+        }
+      }
+    }
+  }
+.mat-form-field-prefix .mat-icon, .mat-form-field-suffix .mat-icon { 
+    font-size: 24px;
+}
+
+.mat-form-field-disabled .mat-form-field-label{
+    transform: translate(0.8em,-1.3em) scale(0.75) !important;
+}
+.mat-form-field-disabled  .mat-form-field-outline-gap {
+    border-top-color: currentColor !important;
+}

@@ -1,5 +1,5 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges,ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges,Output,ViewEncapsulation } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 interface data {
@@ -18,11 +18,20 @@ interface data {
 export class RealsoftTreeMenuComponent implements OnChanges {
 @Input() data!:data[]
 @Input() type!:string;
- 
-treeControl = new NestedTreeControl<data>(node => node.children);
-dataSource = new MatTreeNestedDataSource<data>();
-hasChild = (_: number, node: data) => !!node.children && node.children.length > 0;
-    
+@Input() actionIcons!:boolean;
+
+treeControl = new NestedTreeControl<any>(node => node.children);
+dataSource =new MatTreeNestedDataSource<data>();
+hasChild = (_: number, node: any) =>
+!!node.children && node.children.length > 0;
+
+@Output() zoom: EventEmitter<any> =new EventEmitter<any>();
+@Output() add: EventEmitter<any> =new EventEmitter<any>();
+@Output() edit: EventEmitter<any> =new EventEmitter<any>();
+
+zoomIn(e:any){this.zoom.emit(e)}
+addEvent(e:any){this.add.emit(e)}
+editEvent(e:any){this.edit.emit(e)}
 
 constructor(private cdr: ChangeDetectorRef) {}
 ngOnChanges(){

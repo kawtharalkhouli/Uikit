@@ -1,4 +1,4 @@
-<ng-container *ngTemplateOutlet="configurations?.type === 'basic' ?  basic : (configurations?.type === 'btnTrigger' ? btnTrigger : primary)">
+<ng-container *ngTemplateOutlet="configurations?.type === 'basic' ?  basic : (configurations?.type === 'btnTrigger' ? btnTrigger : (configurations?.type === 'textTrigger' ? textTrigger : primary))">
 </ng-container>
 
 <ng-template #basic >
@@ -50,4 +50,13 @@
       </button>  
     </mat-menu>
 
+</ng-template>
+
+
+<ng-template #textTrigger>
+
+<button mat-button [matMenuTriggerFor]="menu">{{btnTxt}}</button>
+   <mat-menu  #menu="matMenu">
+   <button mat-menu-item  *ngFor="let item of data" (click)="clickMenuItem(item)" [disabled]="item.isDisabled" (closed)="menuClosed($event)">{{ item.menuLinkText }}</button>
+   </mat-menu>
 </ng-template>

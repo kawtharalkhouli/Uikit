@@ -1,4 +1,4 @@
-import { Component, Input,  forwardRef, ChangeDetectionStrategy, OnChanges, ChangeDetectorRef, ViewEncapsulation, Output, EventEmitter} from '@angular/core';
+import { Component, Input,  forwardRef, OnChanges, ChangeDetectorRef, ViewEncapsulation, Output, EventEmitter} from '@angular/core';
 import { AbstractControl, ControlValueAccessor,  NG_VALIDATORS,  NG_VALUE_ACCESSOR, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 
 interface inputConfig{
@@ -9,6 +9,7 @@ max?:number;
 maxlength?:number;
 secondIcon?:string;
 firstIcon?:string;
+suffixIcon?:string
 }
 //Define providers here to prevent circular dependency
 export const VALUE_ACCESSOR: any = {

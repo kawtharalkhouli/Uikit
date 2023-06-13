@@ -19,7 +19,7 @@
           (blur)="markAsTouched()"
           [(ngModel)]="selectedOptions" (ngModelChange)="onChange($event)" ngDefaultControl
           [matTooltip]="matTooltip"
-          
+          disableOptionCentering panelClass="myPanelClass"
         >
           <mat-select-trigger>
             <mat-chip-list
@@ -148,6 +148,7 @@
           (blur)="markAsTouched()"
           [(ngModel)]="selectedOptions" (ngModelChange)="onChange($event)" ngDefaultControl
           [matTooltip]="matTooltip"
+          disableOptionCentering panelClass="myPanelClass"
         >
           <mat-select-trigger>
             <mat-chip-list

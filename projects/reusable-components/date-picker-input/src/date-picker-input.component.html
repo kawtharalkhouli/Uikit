@@ -1,9 +1,9 @@
 <ng-container *ngTemplateOutlet="multi === true ? multiple : single"></ng-container>
 
 <ng-template #single>
-    <mat-form-field class="__realsoft-form-field" appearance="outline">
+    <mat-form-field class="custom-date-picker" appearance="outline">
         <mat-label *ngIf="appearance === 'outline'">{{label}}</mat-label>
-        <input class="realsoft-input-element" matInput [matDatepicker]="dp" [placeholder]="placeholder" [disabled]="isDisabled"
+        <input  matInput [matDatepicker]="dp" [placeholder]="placeholder" [disabled]="isDisabled"
         [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()"
          [required]="required ? required : isRequired" [min]="min" [max]="max" [readonly]="readonly"
          (dateChange)="dateChanged($event)" (click)="dp.open()"

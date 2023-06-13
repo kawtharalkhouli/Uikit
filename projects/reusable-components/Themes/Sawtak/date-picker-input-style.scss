@@ -1,32 +1,6 @@
 @import 'variables.scss';
 
-.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button, .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
-    color: $primary-color !important;
-    &:hover{
-        color: $primary-color-hover !important;
-    }
-    &:focus{
-        color: $primary-color-focus !important;
-    }
-    &:disabled{
-        color: $gray-color!important;
-    }
-}
-
-.mat-form-field-appearance-outline .mat-form-field-flex {
-    top: 1px !important;
-}
-.mat-calendar-body-selected{
-    background-color: $sec-color;
-    color: #fff;
-}
-.mat-calendar-body-cell.selected > .mat-calendar-body-cell-content,
-.mat-calendar-body-cell.selected:hover > .mat-calendar-body-cell-content,
-.mat-calendar-body-cell.selected > .mat-calendar-body-cell-content:hover {
-  background-color: $sec-color !important;
-  color: #fff !important;
-}
-.mat-form-field-outline-start {
+.custom-date-picker .mat-form-field-outline-start {
     border-radius: 28px 0 0 28px !important;
     min-width: 28px !important;
 
@@ -35,28 +9,122 @@
     }
 }
   
-.mat-form-field-outline-end {
+.custom-date-picker .mat-form-field-outline-end {
     border-radius: 0 28px 28px 0 !important;
+    min-width: 28px !important;
     &.mat-form-field-disabled{
         background-color: #fff !important;
     }
 }
-
-.icon-text-field .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
-    transform: translate(1.3em, -1.5em) scale(0.75) !important;
-    width: 133.33333%;
+.custom-date-picker .mat-input-element{
+    padding-left: 26px !important;
+    position: relative;
+    bottom: 3px;
+    font-size: 14px;
 }
-.single-icon-text-field .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label
-{
-    transform: translate(-0.08em, -1.5em) scale(0.75) !important;
-    width: 133.33333%;
+.custom-date-picker.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.5em,-1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
 }
 
-html:lang(ar) .mat-form-field-outline-start {
+.custom-date-picker.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+  /* Font color */
+.custom-date-picker.input.mat-input-element {
+    color: #00000099 !important;
+}
+.custom-date-picker.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.custom-date-picker.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.custom-date-picker.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+// .custom-date-picker.mat-form-field.mat-focused {
+//     .mat-form-field-appearance-outline .mat-form-field-outline {
+//         color: #BABABA !important;
+//     }
+//     .mat-form-field-label {
+//         color: #00000099 !important;
+//     }
+//     .mat-input-element {
+//         color: #00000099 !important;
+//     }
+// }
+
+// .custom-date-picker.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+//     color: #BABABA !important;
+// }
+.custom-date-picker .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-left: 26px !important;
+}
+ .custom-date-picker.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+}
+.custom-date-picker.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+
+
+
+.custom-date-picker.mat-calendar-body-selected{
+    background-color: $primary-color;
+    color: #fff;
+}
+.custom-date-picker.mat-form-field.mat-focused .mat-form-field-label {
+    color: #369EFB !important;
+}
+.custom-date-picker.mat-form-field.mat-focused .mat-form-field-outline {
+    color: #369EFB !important;
+}
+
+.custom-date-picker.mat-calendar-body-cell.selected > .mat-calendar-body-cell-content,
+.custom-date-picker.mat-calendar-body-cell.selected:hover > .mat-calendar-body-cell-content,
+.custom-date-picker.mat-calendar-body-cell.selected > .mat-calendar-body-cell-content:hover {
+  background-color: $primary-color !important;
+  color: #fff !important;
+}
+.mat-focused.mat-warn .mat-form-field-outline-thick, .mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+    color: $danger-color !important;
+}
+.mat-form-field{
+    width: 100% !important;
+}
+.mat-form-field-disabled .mat-form-field-outline{
+    color: $gray-color !important;
+    background-color: $disabled-color !important;
+    border-radius: 28px !important;
+}
+html:lang(ar) .custom-date-picker .mat-form-field-outline-start {
     border-radius: 0px 28px 28px 0px !important;
     min-width: 28px !important;
+
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
 }
-html:lang(ar)  .mat-form-field-outline-end {
-    border-radius: 28px 0 0 28px !important;
+  
+html:lang(ar)  .custom-date-picker .mat-form-field-outline-end {
+    border-radius: 28px 0px 0px 28px !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+html:lang(ar) .custom-date-picker .mat-input-element {
+    padding-right: 26px !important;
+    padding-left: unset !important;
+    position: relative;
+    bottom: 3px;
 }
 
+html:lang(ar) .custom-date-picker.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    transform: translate(-0.4em, -1.59375em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+html:lang(ar) .custom-date-picker .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-right: 26px;
+    position: relative;
+    bottom: 1px;
+}

@@ -159,7 +159,7 @@
     font-size: 14px;
     font-weight: 500;
 }
-@mixin buttonStyle($lineheight, $textSize){
+@mixin buttonStyle($lineheight, $textSize, $border-radius){
     box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 20%), 0px 0px 0px 0px rgb(0 0 0 / 14%), 0px 0px 0px 0px rgb(0 0 0 / 12%);
     box-sizing: border-box;
     position: relative;
@@ -188,7 +188,7 @@
 }
 //Medium Stroked Button Styles
 .realsoft-stroked-btn{
-@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text,$border-radius:28px);
     border: 1px solid $sec-color;
     color: $sec-color;
     background-color: transparent;
@@ -216,7 +216,7 @@
 }
 //Small Stroked Button Styles
 .realsoft-stroked-btn-small{
-@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+@include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
     height: 28px;
     border: 1px solid $sec-color;
     color: $sec-color;
@@ -245,11 +245,12 @@
 }
 //Large Stroked Button Styles
 .realsoft-stroked-btn-large{
-@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+@include buttonStyle($lineheight: 38px, $textSize: $large-text,$border-radius:28px);
     border: 1px solid $sec-color;
     color: $sec-color ;
     background-color: transparent ;
     transition: all 0.5s ease;
+    height: 51px !important;
 &:hover {
     background-color: $stroked-hover;
     box-shadow: none ;
@@ -273,7 +274,7 @@
 }
 //Stroked Button with Icon Default
 .realsoft-stroked-icon-btn{
-    @include buttonStyle($lineheight: 32px, $textSize: $normal-text);
+    @include buttonStyle($lineheight: 32px, $textSize: $normal-text,$border-radius:28px);
         border: 1px solid $stroked-color;
         color: $black-color;
         background-color: transparent;
@@ -306,7 +307,7 @@
     }
 //Small stroked button with icon
 .realsoft-stroked-icon-btn-small{
-    @include buttonStyle($lineheight: 28px, $textSize: $small-text);
+    @include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
             height: 28px;
             border: 1px solid $stroked-color;
             color: $black-color;
@@ -332,19 +333,20 @@
             color: $gray-color;
             cursor: not-allowed;
         }
-    &.material-icons {
-        font-size: 16px !important;
-        position: relative;
-        top: 4px;
-    }
+        & .material-icons {
+            font-size: 18px !important;
+            position: relative;
+            top: 5px;
+        }
 }
 //Large Stroked Button with Icon
 .realsoft-stroked-icon-btn-large{
-    @include buttonStyle($lineheight: 34px, $textSize: $large-text);
+    @include buttonStyle($lineheight: 34px, $textSize: $large-text,$border-radius:28px);
         border: 1px solid $stroked-color;
         color: $black-color ;
         background-color: transparent ;
         transition: all 0.5s ease;
+        height: 51px !important;
     &:hover {
         background-color: $stroked-hover;
         box-shadow: none ;
@@ -368,12 +370,12 @@
     & .material-icons {
         font-size: 22px !important;
         position: relative;
-        top: 7px;
+        top: 5px;
     }
 }
 //Medium Primary Button Styles 
 .realsoft-primary-btn{
-@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text,$border-radius:28px);
     background-color: $primary-color ;
     color: $white-color !important;
     border: 1px solid $primary-color ;
@@ -401,7 +403,7 @@
 }
 //Small Primary Button Styles  
 .realsoft-primary-btn-small{
-@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+@include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
     height: 28px;
     background-color: $primary-color ;
     color: $white-color !important;
@@ -430,11 +432,12 @@
 }
 //Large Primary Button Styles    
 .realsoft-primary-btn-large{
-@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+@include buttonStyle($lineheight: 38px, $textSize: $large-text,$border-radius:28px);
     background-color: $primary-color ;
     color: $white-color !important;
     border: 1px solid $primary-color ;
     transition: all 0.5s ease;
+    height: 51px !important;
 &:hover {
     background-color: $primary-color-hover;
     box-shadow: none ;
@@ -458,7 +461,7 @@
 }
 //Medium Secondary Button Styles
 .realsoft-secondary-btn{
-@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text,$border-radius:28px);
     background-color: $sec-color ;
     color: $white-color !important;
     border: 1px solid $sec-color ;
@@ -486,7 +489,7 @@
 }
 //Small Secondary Button Styles 
 .realsoft-secondary-btn-small{
-@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+@include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
     height: 28px;
     background-color: $sec-color ;
     color: $white-color !important;
@@ -515,11 +518,12 @@
 }
 //Large Secondary Button Styles 
 .realsoft-secondary-btn-large{
-@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+@include buttonStyle($lineheight: 38px, $textSize: $large-text,$border-radius:28px);
     background-color: $sec-color ;
     color: $white-color !important;
     border: 1px solid $sec-color ;
     transition: all 0.5s ease;
+    height: 51px !important;
 &:hover {
     background-color: $sec-color-hover;
     box-shadow: none ;
@@ -543,7 +547,7 @@
 }
 //Medium Text Button Styles
 .realsoft-text-btn{
-@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text,$border-radius:28x);
     background-color: transparent !important;
     color: $black-color !important;
     transition: all 0.5s ease;
@@ -555,7 +559,7 @@
 }
 //Small Text Button Styles  
 .realsoft-text-btn-small{
-@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+@include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
     height: 28px;
     background-color: transparent !important;
     color: $black-color !important;
@@ -568,10 +572,11 @@
 }
 //Large Text Button Styles
 .realsoft-text-btn-large{
-@include buttonStyle($lineheight: 38px, $textSize: $large-text);
+@include buttonStyle($lineheight: 38px, $textSize: $large-text,$border-radius:28px);
     background-color: transparent !important;
     color: $black-color !important;
     transition: all 0.5s ease;
+    height: 51px !important;
 &:disabled {
     color: $gray-color !important;
     background-color: transparent !important;
@@ -580,7 +585,7 @@
 }
 //Small Link Button Styles 
 .realsoft-link-btn-small{
-@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+@include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
     height: 28px;
     background-color: transparent !important;
     color: $link-color !important;
@@ -608,7 +613,7 @@
 }
 //Medium Link Button Styles
 .realsoft-link-btn{
-@include buttonStyle($lineheight: 36px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 36px, $textSize: $normal-text,$border-radius:28px);
     background-color: transparent !important;
     color: $link-color !important;
     text-decoration: underline !important;
@@ -635,11 +640,12 @@
 }
 //Large Link Button Styles
 .realsoft-link-btn-large{
-    @include buttonStyle($lineheight: 38px, $textSize: $large-text);
+    @include buttonStyle($lineheight: 38px, $textSize: $large-text,$border-radius:28px);
     background-color: transparent !important;
     color: $link-color !important;
     text-decoration: underline !important;
     transition: all 0.5s ease;
+    height: 51px !important;
 &:hover {
     color: $link-color-hover !important;
     box-shadow: none ;
@@ -662,7 +668,7 @@
 }
 //Medium Primary Icon Button Styles
 .realsoft-primary-icon-btn{
-@include buttonStyle($lineheight: 32px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 32px, $textSize: $normal-text,$border-radius:28px);
     background-color: $primary-color !important;
     color: $white-color !important;
     border: 1px solid $primary-color !important;
@@ -691,7 +697,7 @@
 }
 //Small Primary Icon Button Styles
 .realsoft-primary-icon-btn-small{
-@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+@include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
     height: 28px;
     background-color: $primary-color !important;
     color: $white-color !important;
@@ -721,11 +727,12 @@
 }
 //Large Primary Icon Button Styles  
 .realsoft-primary-icon-btn-large{
-@include buttonStyle($lineheight: 34px, $textSize: $large-text);
+@include buttonStyle($lineheight: 34px, $textSize: $large-text,$border-radius:28px);
 background-color: $primary-color !important;
 color: $white-color !important;
 border: 1px solid $primary-color !important;
 transition: all 0.5s ease;
+height: 51px !important;
 &:hover {
     background-color: $primary-color-hover !important;
     }
@@ -745,12 +752,12 @@ transition: all 0.5s ease;
     & .material-icons {
         font-size: 22px !important;
         position: relative;
-        top: 7px;
+        top: 5px;
     }
 }
 //Medium Secondary Icon Button Styles
 .realsoft-secondary-icon-btn{
-@include buttonStyle($lineheight: 32px, $textSize: $normal-text);
+@include buttonStyle($lineheight: 32px, $textSize: $normal-text,$border-radius:28px);
     background-color: $sec-color !important;
     color: $white-color !important;
     border: 1px solid $sec-color !important;
@@ -779,7 +786,7 @@ transition: all 0.5s ease;
 }
 //Small Secondary Icon Button Styles
 .realsoft-secondary-icon-btn-small{
-@include buttonStyle($lineheight: 28px, $textSize: $small-text);
+@include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
     height: 28px;
     background-color: $sec-color !important;
     color: $white-color !important;
@@ -809,11 +816,12 @@ transition: all 0.5s ease;
 }
 //Large Secondary Icon Button Styles
 .realsoft-secondary-icon-btn-large{
-@include buttonStyle($lineheight: 34px, $textSize: $large-text);
+@include buttonStyle($lineheight: 34px, $textSize: $large-text,$border-radius:28px);
     background-color: $sec-color !important;
     color: $white-color !important;
     border: 1px solid $sec-color!important;
     transition: all 0.5s ease;
+    height: 51px !important;
 &:hover {
     background-color: $sec-color-hover !important;
     }
@@ -833,7 +841,7 @@ transition: all 0.5s ease;
 & .material-icons {
     font-size: 22px !important;
     position: relative;
-    top: 7px;
+    top: 5px;
     }
 }
 
@@ -1340,3 +1348,175 @@ transition: all 0.5s ease;
     color: $sec-color;
     }
 }
+
+//Medium Stroked Primary Button Styles
+.realsoft-stroked-primary-btn{
+    @include buttonStyle($lineheight: 32px, $textSize: $normal-text,$border-radius:28px);
+        border: 1px solid $primary-color;
+        color: $black-color;
+        background-color: transparent;
+        transition: all 0.5s ease;
+    &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+        box-shadow: none;
+        outline: none;
+        }
+    &:focus {
+        background-color: $primary-color-focus;
+        color: $white-color;
+        box-shadow: none;
+        outline: none;
+        }
+    &:disabled {
+        border: 1px solid $gray-color;
+        background-color: $disabled-color;
+        color: $gray-color;
+        cursor: not-allowed;
+        }
+}
+//Small Stroked Primary Button Styles
+.realsoft-stroked-primary-btn-small{
+    @include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
+        height: 28px;
+        border: 1px solid $primary-color;
+        color: $black-color;
+        background-color: transparent;
+        transition: all 0.5s ease;
+    &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+        color: $white-color;
+        box-shadow: none;
+        outline: none;
+        }
+    &:focus {
+        background-color: $primary-color-focus;
+        box-shadow: none;
+        outline: none;
+        }
+    &:disabled {
+        border: 1px solid $gray-color;
+        background-color: $disabled-color;
+        color: $gray-color;
+        cursor: not-allowed;
+        }
+}
+//Large Stroked Primary Button Styles
+.realsoft-stroked-primary-btn-large{
+    @include buttonStyle($lineheight: 36px, $textSize: $large-text,$border-radius:28px);
+        border: 1px solid $primary-color;
+        color: $black-color ;
+        background-color: transparent ;
+        transition: all 0.5s ease;
+        height: 51px !important;
+    &:hover {
+        background-color: $primary-color;
+        color: $white-color;
+        box-shadow: none ;
+        outline: none ;
+        }
+    &:focus {
+        background-color: $primary-color-focus ;
+        color: $white-color;
+        box-shadow: none ;
+        outline: none ;
+        }
+    &:disabled {
+        border: 1px solid $gray-color ;
+        background-color: $disabled-color ;
+        color: $gray-color ;
+        cursor: not-allowed;
+        }
+}
+//Stroked Danger Button
+.realsoft-stroked-danger-btn{
+    @include buttonStyle($lineheight: 32px, $textSize: $normal-text, $border-radius: 28px);
+        border: 1px solid #E72A46;
+        color: #E72A46;
+        background-color: transparent;
+        transition: all 0.5s ease;
+    &:hover {
+        background-color: #ffe4e7;
+        box-shadow: none;
+        outline: none;
+    }
+    &:focus {
+        background-color: #ffe4e7;
+        box-shadow: none;
+        outline: none;
+    }
+    &:disabled {
+        border: 1px solid $gray-color;
+        background-color: $disabled-color;
+        color: $gray-color;
+        cursor: not-allowed;
+        }
+    & .material-icons {
+        font-size: 20px !important;
+        position: relative;
+        top: 5px;
+        color: #E72A46;
+        }
+}
+//Small stroked Danger Button
+.realsoft-stroked-danger-btn-small{
+    @include buttonStyle($lineheight: 28px, $textSize: $small-text, $border-radius: 28px);
+        border: 1px solid #E72A46;
+        color: #E72A46;
+        background-color: transparent;
+        transition: all 0.5s ease;
+    &:hover{
+        background-color: #ffe4e7;
+        box-shadow: none;
+        outline: none;
+        }
+    &:focus{
+        background-color: #ffe4e7;
+        box-shadow: none;
+        outline: none;
+        }
+    &:disabled {
+        border: 1px solid $gray-color;
+        background-color: $disabled-color;
+        color: $gray-color;
+        cursor: not-allowed;
+        }
+    &.material-icons {
+        font-size: 16px !important;
+        position: relative;
+        top: 4px;
+        color: #E72A46;
+        }
+}
+//Large Stroked Danger Button
+.realsoft-stroked-danger-btn-large{
+    @include buttonStyle($lineheight: 34px, $textSize: $large-text, $border-radius: 28px);
+        border: 1px solid #E72A46;
+        color: #E72A46 ;
+        background-color: transparent ;
+        transition: all 0.5s ease;
+        height: 51px !important;
+    &:hover {
+        background-color: #ffe4e7;
+        box-shadow: none ;
+        outline: none ;
+        }
+    &:focus {
+        background-color: #ffe4e7;
+        box-shadow: none ;
+        outline: none ;
+        }
+    &:disabled {
+        border: 1px solid $gray-color ;
+        background-color: $disabled-color ;
+        color: $gray-color ;
+        cursor: not-allowed;
+        }
+        & .material-icons {
+            font-size: 22px !important;
+            position: relative;
+            top: 5px;
+            color: #E72A46;
+        }
+    }

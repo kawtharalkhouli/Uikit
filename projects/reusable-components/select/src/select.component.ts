@@ -128,6 +128,7 @@ import {
           });
         }
       } else {
+        if(selectedValues?.length > 0){
         selectedValues.forEach((val: any) => {
           this.selectedOptionsForChips.push(
             ...this.filteredData.filter((item: any) => {
@@ -139,6 +140,7 @@ import {
           );
         });
       }
+    }
     }
     selectAllOptions(): void {
       if (this.isMasterSel) {

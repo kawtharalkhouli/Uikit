@@ -1,111 +1,20 @@
 @import 'variables.scss';
 //Form Elements Paddings and Margins
-.realsoft-form-elements{
-    &__realsoft-form-field{
-        padding: 0 10px;
-        margin: 3px 0;
-    }
-  
-    &__textarea{
-        padding: 0 10px;
-        margin: 3px 0;
-    }
-  
-    &__select{
-        padding: 0 10px;
-        margin: 3px 0;
-    }
-  
-    &__radio-btn{
-        & mat-radio-button{
-            margin: 5px 10px 10px;
-        }
-    }
-  
-    &__checkbox{
-        & mat-checkbox{
-            margin: 5px 10px 10px;
-        }
-        
-    &__chips{
-        padding: 0 10px;
-        margin: 3px 0;
-    }
-    }
-  & .mat-form-field{
-    width: 100% !important;
-  
-  &-appearance-outline{
-    & .mat-form-field-infix{
-        padding: .8rem 0 !important;
-        border-top: .4rem solid transparent !important;
-        top: 1px !important;
-    }
-    &.mat-focused .mat-form-field-outline-thick{
-        color: $sec-color !important;
-        ~ & .mat-form-field-suffix .mat-icon{
-            opacity: 1 !important;
-        }
-    }
-    &:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline-thick{
-        opacity: .7 !important;
-    }
-    & .mat-form-field-prefix, & .mat-form-field-suffix{
-        top: 7.5px !important;
-    }
-    & .mat-form-field-outline-thick{
-        & .mat-form-field-outline-start, & .mat-form-field-outline-end, & .mat-form-field-outline-gap{
-            border-width: 1px !important;
-        }
-    }
-    &.mat-focused.mat-warn .mat-form-field-outline-thick, &.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
-        color: $danger-color !important;
-    }
-    &.mat-form-field-disabled .mat-form-field-outline{
-        color: $gray-color !important;
-        background-color: $disabled-color !important;
-        border-radius: 28px !important;
-    }
-  }
-  &-suffix .mat-icon{
-    font-size: $medium-icon !important;
-    opacity: 54% !important;
-  }
-  }
-  }
-  .mat-input-element {
-    font-size: 14px !important;
-    color: #00000099 !important;
-    font-weight: 500 !important;
-  }
-  .mat-form-field.mat-focused{
-  & .mat-icon, & .mat-form-field-label, &.mat-primary .mat-select-arrow{
-    color: $primary-color !important;
-  }
-  
-  & .mat-form-field-ripple{
-    background-color: $primary-color !important;
-  }
-  }
-  
-  .mat-select-arrow{
-    top: 4px !important;
-    position: relative !important;
-  }   
   .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
     border-color: $primary-color !important;
   }
   .mat-radio-button.mat-accent .mat-radio-inner-circle {
     background-color: $primary-color !important;
   }
+  .mat-checkbox-frame, .mat-radio-outer-circle {
+    border-color: #e3e3e3;
+}
+
   .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
     opacity: 0.03 !important;
     background-color: $primary-color!important;
   }
-  .mat-form-field-appearance-outline .mat-form-field-flex {
-    top: 1px !important;
-  }
-  
+
 .mat-checkbox{
   &-indeterminate.mat-accent .mat-checkbox-background, &-checked.mat-accent .mat-checkbox-background{
   background-color: $primary-color !important;
@@ -123,17 +32,20 @@
       background-color: $white-color !important;
   }
 }
-.mat-radio-outer-circle, .mat-checkbox-frame{
+.mat-radio-outer-circle{
   border-color: $gray-color !important;
   &:hover{
       border-color: $primary-color !important;
   }
 }
-.mat-checkbox:hover {
-  & .mat-checkbox-frame {
-    border-color: $primary-color !important;
-  }
-}
+// .mat-checkbox:hover {
+//   & .mat-checkbox-frame {
+//     border-color: $primary-color !important;
+//   }
+//   & .mat-checkbox:disabled{
+//     border-color: $gray-color !important;
+//   }
+// }
 .mat-radio-disabled
 {
   .mat-radio-outer-circle{
@@ -151,29 +63,9 @@
   .mat-checkbox-label{
       color: rgba(19,18,28,.70) !important;
   }
-  & .mat-checkbox-frame {
-      border-color: $gray-color !important;
-    }
+  .mat-checkbox-frame {
+    border-color: $gray-color !important;
 }
-.input-field-first-icon, .input-field-single-icon{
-  color: $primary-color !important;
-  margin-right: 4px;
-  &:hover{
-      color: $primary-color-hover !important;
-  }
-  &:focus{
-      color: $primary-color-focus !important;
-  }
-}
-
-.input-field-second-icon{
-  color: #0000008A !important;
-  &:hover{
-      color: #0000008a  !important;
-  }
-  &:focus{
-      color: #0000008A !important;
-  }
 }
 
 html:lang(ar) .mat-radio-container{
@@ -182,220 +74,20 @@ html:lang(ar) .mat-radio-container{
 html:lang(en) .mat-radio-container{
     margin-left: 6px !important;
 }
-//Input Field Styling
-.mat-form-field{
-  width: 100% !important;
-  line-height: normal;
-  
-  &-appearance-outline{
-  
-    & .mat-form-field-infix{
-        padding: .8rem 0 !important;
-        border-top: .4rem solid transparent !important;
-        top: 1px !important;
-    }
-  
-    
-    &.mat-focused .mat-form-field-outline-thick{
-        color: $gray-color !important;
-        ~ & .mat-form-field-suffix .mat-icon{
-            opacity: 1 !important;
-        }
-    }
-  
-    &:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline-thick{
-        opacity: .7 !important;
-    }
-  
-    & .mat-form-field-prefix, & .mat-form-field-suffix{
-        top: 7.5px !important;
-    }
-    & .mat-form-field-outline-thick{
-        & .mat-form-field-outline-start, & .mat-form-field-outline-end, & .mat-form-field-outline-gap{
-            border-width: 1px !important;
-        }
-    }
-    &.mat-focused.mat-warn .mat-form-field-outline-thick, &.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
-        color: $danger-color !important;
-    }
-    &.mat-form-field-disabled .mat-form-field-outline{
-        color: $gray-color !important;
-        background-color: $disabled-color !important;
-        border-radius: 28px !important;
-    }
-  }
-  &-suffix .mat-icon{
-    font-size: $medium-icon !important;
-    opacity: 54% !important;
-  }
-  } 
-  .mat-input-element {
-    font-size: 14px !important;
-    color: #00000099 !important;
-    font-weight: 500 !important;
-  }
-  .mat-form-field.mat-focused{
-  & .mat-icon, & .mat-form-field-label, &.mat-primary .mat-select-arrow{
-    color: #0000008A !important;
-  } 
-  & .mat-form-field-ripple{
-    background-color: $primary-color !important;
-  }
-  } 
-  .mat-form-field-flex:hover{
-       color: #00000099 !important;
-   }
+
 //Toggle Button Styling
 .mat-slide-toggle.mat-checked{
     & .mat-slide-toggle-thumb {
         background-color: $primary-color !important;
-  
     }
-  
     & .mat-slide-toggle-bar {
         background-color: $toggle-background !important;
-  
     }
-  
     & .mat-ripple-element {
         background-color: $primary-color !important;
-    
     }
 }
 
- 
-  //multi-select-styling
-  .mat-select-panel-wrap {
-    .mat-checkbox {
-    padding: 0 16px;
-    margin-top: 10px;
-    margin-bottom: 6px;
-    }
-    label {
-    margin-bottom: 0 !important;
-    }
-    .mat-checkbox-frame {
-    border-width: 2px !important;
-    border-radius: 2px !important;
-    }
-    .mat-checkbox-checked:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element, .mat-checkbox:active:not(.mat-checkbox-disabled).mat-primary .mat-ripple-element {
-    background: $sec-color !important;
-    }
-    .mat-checkbox-indeterminate.mat-primary .mat-checkbox-background, .mat-checkbox-checked.mat-primary .mat-checkbox-background {
-    background-color: $sec-color !important;
-    }
-    input {
-    border: 1px solid $gray-color !important;
-    border-radius: 5px !important;
-    width: 88% !important;
-    padding: 4px 16px;
-    margin: 14px 16px 0px 16px;&::before {
-     content: "\e8b6";
-    font-family: 'Material Icons';
-    color: $primary-color !important;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    }
-    }
-    }
-    .mat-select-multiple {
-    .mat-select-arrow {
-    top: 3px;
-    }
-    }
-
-    .example-additional-selection {
-    position: relative;
-    display: inline-block;
-     color: $black-color;
-    font-size: 12px;
-    margin-inline-start: 3px;
-    bottom: 6px;
-     }
-    .mat-standard-chip {
-    padding: 0px 7px;
-    cursor: default;
-    min-height: 24px;
-    bottom: 1px;
-     }
-    .mat-select-panel .mat-option img {
-    margin-inline-end: 4px;
-    width: 25px;
-    height: 25px;
-     }
-    body:lang(ar) {
-    .example-additional-selection {
-    right: unset !important;
-    left: 19px;
-    bottom: -3px !important;
-    top: unset;
-    }
-    .mat-select-multiple .mat-select-arrow {
-    top: 2px !important;
-    }
-    }
-    .mat-standard-chip .mat-chip-avatar {
-    display: inline-block;
-    position: relative;
-    top: 4px;
-     } body .single-select-search-input {
-    width: 85%;
-     padding: 0px 16px;
-     margin: 18px 0px 0px 0px;
-    height: 30px;
-    top: unset !important;
-        max-width: 84.4% !important;
-    }.single-select-option {
-    overflow: visible !important;
-    }
-    .multi-select-img{
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        position: relative;
-        right: 30px;
-        bottom: 7px;
-    }
-    .single-select-img{
-        border-radius: 50%;
-        width: 25px;
-        height: 25px;
-        position: relative;
-        right: 30px;
-        bottom: 7px;
-    }
-
-    .mat-chip-list {
-        display: inline-block;
-    }
-
-    .mat-standard-chip.mat-chip-with-avatar {
-         background-color: #fff !important;
-         }
-         .mat-chip.mat-standard-chip::after {
-            background: #fff !important;
-         }
-
-         body .mat-select-panel input {
-            top: unset !important;
-            bottom: 3px;
-         }
-
-        .multi-select-search-input {
-            bottom: -6px !important;
-        }
-
-.add-role-icon-multi-select{
-    position: relative !important;
-    bottom: -6px !important;
-    left: 14px !important;
-    margin-right: 14px !important;
-}
-.add-role-multi-select{
-    position: relative !important;
-    bottom: 9px !important;
-}
 [hidden] {
     display: none !important;
 }
