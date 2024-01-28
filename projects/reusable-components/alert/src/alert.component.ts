@@ -13,7 +13,8 @@ interface alertConfig{
 })
 export class CustomAlertComponent implements OnChanges {
   @Input() alertMsg!:string;
-  @Input() configurations!:alertConfig | undefined
+  @Input() configurations!:alertConfig | undefined;
+  @Input() alertHeader!:string
   hide:boolean=false;
   alertIcon!:string;
   

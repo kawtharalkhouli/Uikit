@@ -1,22 +1,26 @@
-<ng-container *ngTemplateOutlet="orientation === 'vertical' ? vertical : horizontal"></ng-container>
-<ng-template #horizontal>
-  <ul class="horizontal-wizard">
-    <li *ngFor="let item of data" [ngClass]="{'completed' : item.status === 'completed' , 'active' : item.status === 'active'}">
-      <span class="horizontal-wizard__step" *ngIf="item.status === 'completed'">
-        <mat-icon (click)="clickEvent($event)">done</mat-icon></span>
-        <span class="horizontal-wizard__step" *ngIf="item.status !== 'completed'">{{item.id}}</span>
-        {{item.name}}
-    </li>
-  </ul>
-</ng-template>
 
-<ng-template #vertical>
-  <ul class="vertical-wizard">
-    <li *ngFor="let item of data" [ngClass]="{'completed' : item.status === 'completed' , 'active' : item.status === 'active'}">
-      <span class="vertical-wizard__step" *ngIf="item.status === 'completed'">
-        <mat-icon (click)="clickEvent($event)" >done</mat-icon></span>
-        <span class="vertical-wizard__step" *ngIf="item.status !== 'completed'">{{item.id}}</span>
-        {{item.name}}
-    </li>
-    </ul>
-</ng-template> 
+<mat-stepper class="realsoft-wizard" #stepper [labelPosition]="labelPosition" [linear]="linear" [orientation]="orientation" [selectedIndex]="selectedIndex" (selectionChange)="change($event)">
+  <mat-step *ngFor="let stepHeader of stepsHeaders; let i = index" [editable]="stepHeader.editable" [stepControl]="stepHeader.stepControl">
+    <ng-template matStepLabel>{{lang === 'ar' ? stepHeader.labelAr : stepHeader.label}}</ng-template>
+      <ng-container *ngFor="let step of stepsContents; let i = index">
+        <ng-container *ngIf="selectedIndex === i">
+        <ng-container *ngTemplateOutlet="step"></ng-container>
+        <div class="gap">
+          <ng-container *ngIf="stepHeader.back">
+            <button mat-button matStepperPrevious class="realsoft-wizard-back-button" (click)="backClicked($event)">{{stepHeader.backButton}}</button>
+          </ng-container>
+
+          <ng-container *ngIf="stepHeader.next">
+            <button mat-button matStepperNext class="realsoft-wizard-next-button" (click)="nextClicked($event)">{{stepHeader.nextButton}}</button>
+          </ng-container>
+
+          <ng-container *ngIf="stepHeader.submit">
+            <button mat-flat-button class="realsoft-wizard-submit-button" (click)="submitClicked($event)">
+              {{stepHeader.submitButton}}
+             </button>
+          </ng-container>
+        </div>
+      </ng-container>
+      </ng-container>
+  </mat-step>
+</mat-stepper>

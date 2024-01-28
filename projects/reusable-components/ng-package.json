@@ -1,8 +1,9 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/reusable-components",
-  "assets": ["./assets/**/*.*", "./Themes/Ada'a/**/*.*" , "./Themes/Khwarizmi/**/*.*", "./Themes/LTRC/**/*.*", "./Themes/Sawtak/**/*.*"],
+  "assets": ["./assets/**/*.*", "./Themes/Ada'a/**/*.*" , "./Themes/Khwarizmi/**/*.*", "./Themes/LTRC/**/*.*", "./Themes/Sawtak/**/*.*", "./Themes/Data_Portal/**/*.*"],
   "lib": {
     "entryFile": "public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": ["moment"]
 }
