@@ -1,4 +1,4 @@
-<ng-container *ngTemplateOutlet="configurations?.style === 'primary' ? primary : (configurations?.style === 'secondary' ? secondary : (configurations?.style === 'primaryIcon' ? primaryIcon : (configurations?.style === 'text' ? text : (configurations?.style === 'secondaryIcon' ? secondaryIcon :(configurations?.style === 'link' ? link : (configurations?.style === 'primaryRoundedOutline' ? primaryRoundedOutline : (configurations?.style === 'secondaryRoundedOutline' ? secondaryRoundedOutline : (configurations?.style === 'primaryRoundedIconButton' ? primaryRoundedIconButton : (configurations?.style === 'secondaryRoundedIconButton' ? secondaryRoundedIconButton : (configurations?.style === 'primaryRoundedOutlinedIconButton' ? primaryRoundedOutlinedIconButton : (configurations?.style === 'secondaryRoundedOutlinedIconButton' ? secondaryRoundedOutlinedIconButton : (configurations?.style === 'strokedIcon' ? strokedIcon : (configurations?.style === 'primaryStroked' ? primaryStroked : (configurations?.style === 'danger' ? danger : stroked))))))))) )) ))) ">
+<ng-container *ngTemplateOutlet="configurations?.style === 'primary' ? primary : (configurations?.style === 'secondary' ? secondary : (configurations?.style === 'primaryIcon' ? primaryIcon : (configurations?.style === 'text' ? text : (configurations?.style === 'secondaryIcon' ? secondaryIcon :(configurations?.style === 'link' ? link : (configurations?.style === 'primaryRoundedOutline' ? primaryRoundedOutline : (configurations?.style === 'secondaryRoundedOutline' ? secondaryRoundedOutline : (configurations?.style === 'primaryRoundedIconButton' ? primaryRoundedIconButton : (configurations?.style === 'secondaryRoundedIconButton' ? secondaryRoundedIconButton : (configurations?.style === 'primaryRoundedOutlinedIconButton' ? primaryRoundedOutlinedIconButton : (configurations?.style === 'secondaryRoundedOutlinedIconButton' ? secondaryRoundedOutlinedIconButton : (configurations?.style === 'strokedIcon' ? strokedIcon : (configurations?.style === 'primaryStroked' ? primaryStroked : (configurations?.style === 'danger' ? danger : (configurations?.style === 'strokedPrimary' ? strokedPrimary : (configurations?.style === 'strokedSuffixIcon'? strokedSuffixIcon : (configurations?.style === 'primarySuffixIcon' ? primarySuffixIcon : (configurations?.style === 'secondarySuffixIcon' ? secondarySuffixIcon : (configurations?.style === 'primaryStrokedIcon' ? primaryStrokedIcon : primaryStrokedIcon)))))))))))))) )) ))) ">
 </ng-container>
 
 <ng-template #primary>
@@ -17,12 +17,24 @@
 <button  class="realsoft-stroked-btn" [type]="configurations?.type" [disabled]="disabled" [ngClass]="{'realsoft-stroked-btn-small': configurations?.size === 'small','realsoft-stroked-btn-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
 </ng-template>
 
+<ng-template #strokedPrimary>
+  <button  class="realsoft-stroked-btn-primary" [type]="configurations?.type" [disabled]="disabled" [ngClass]="{'realsoft-stroked-btn-primary-small': configurations?.size === 'small','realsoft-stroked-btn-primary-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
+  </ng-template>
+
 <ng-template #primaryStroked>
   <button  class="realsoft-stroked-primary-btn" [type]="configurations?.type" [disabled]="disabled" [ngClass]="{'realsoft-stroked-primary-btn-small': configurations?.size === 'small','realsoft-stroked-primary-btn-large': configurations?.size === 'large'}">{{buttonTxt}}</button>
 </ng-template>
 
 <ng-template #strokedIcon>
   <button  class="realsoft-stroked-icon-btn" [type]="configurations?.type"  [disabled]="disabled" [ngClass]="{'realsoft-stroked-icon-btn-small': configurations?.size === 'small','realsoft-stroked-icon-btn-large': configurations?.size === 'large'}">
+    <span class="material-icons">
+      {{configurations?.iconName}}
+    </span>
+  {{buttonTxt}}</button>
+</ng-template>
+
+<ng-template #primaryStrokedIcon>
+  <button  class="realsoft-primary-stroked-icon-btn" [type]="configurations?.type"  [disabled]="disabled" [ngClass]="{'realsoft-primary-stroked-icon-btn-small': configurations?.size === 'small','realsoft-primary-stroked-icon-btn-large': configurations?.size === 'large'}">
     <span class="material-icons">
       {{configurations?.iconName}}
     </span>
@@ -44,6 +56,32 @@
   {{configurations?.iconName}}
  </span>
   {{buttonTxt}}
+ </button>
+</ng-template>
+<ng-template #strokedSuffixIcon>
+  <button  class="realsoft-stroked-icon-btn" [type]="configurations?.type"  [disabled]="disabled" [ngClass]="{'realsoft-stroked-icon-btn-small': configurations?.size === 'small','realsoft-stroked-icon-btn-large': configurations?.size === 'large'}">
+  {{buttonTxt}}
+  <span class="material-icons">
+    {{configurations?.iconName}}
+  </span>
+</button>
+</ng-template>
+
+<ng-template #primarySuffixIcon>
+<button  class="realsoft-primary-icon-btn" [type]="configurations?.type" [disabled]="disabled" [ngClass]="{'realsoft-primary-icon-btn-small': configurations?.size === 'small','realsoft-primary-icon-btn-large': configurations?.size === 'large'}">
+ {{buttonTxt}}
+ <span class="material-icons">
+  {{configurations?.iconName}}
+</span>
+</button>
+</ng-template>
+
+<ng-template #secondarySuffixIcon>
+<button class="realsoft-secondary-icon-btn" [type]="configurations?.type"  [disabled]="disabled" [ngClass]="{'realsoft-secondary-icon-btn-small': configurations?.size === 'small','realsoft-secondary-icon-btn-large': configurations?.size === 'large'}">
+  {{buttonTxt}}
+  <span class="material-icons">
+    {{configurations?.iconName}}
+   </span>
  </button>
 </ng-template>
 
@@ -96,5 +134,8 @@
     <span class="material-icons">
             {{configurations?.iconName}}
     </span>
-  {{buttonTxt}}</button>
+    <span class="delete-button-text">
+      {{buttonTxt}}
+    </span>
+  </button>
 </ng-template>

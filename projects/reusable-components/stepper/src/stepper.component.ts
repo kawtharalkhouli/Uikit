@@ -1,5 +1,5 @@
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, TemplateRef,ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, Output, TemplateRef,ViewEncapsulation } from '@angular/core';
 
 
 interface stepsDetails{
@@ -13,6 +13,14 @@ interface stepsDetails{
   back?:boolean;//Whether there shoud be a back button for this step
   next?:boolean;//Whether there should be a next button for this step 
   reset?:boolean;//Whether there should be a reset button
+  backButton?:string;
+  nextButton?:string;
+  submitButton?:string;
+  submit?:boolean;
+  edit?:boolean;
+  submitIcon?:string;
+  nextIcon?:string;
+  backIcon?:string;
 }
 
 @Component({
@@ -24,7 +32,7 @@ interface stepsDetails{
     provide: STEPPER_GLOBAL_OPTIONS, useValue: { displayDefaultIndicatorType: false }
   }]
 })
-export class StepperComponent {
+export class StepperComponent implements OnChanges {
   //Inputs
   @Input() linear!:boolean;//Whether the validity of previous steps should be checked or not
   @Input() orientation:any='horizontal';//The orientation of the stepper could be Horizontal or Vertical
@@ -32,12 +40,13 @@ export class StepperComponent {
   @Input() stepsHeaders!:stepsDetails[];//Details of each step
   @Input() stepsContents!: TemplateRef<any>[] ;//Contents of each step
   @Input() labelPosition:any='end';//Whether the label should display in bottom or end position. Only applies in the horizontal orientation.
-
+  @Input() editMode!:boolean;
   //Outputs
   @Output() selectionChange:EventEmitter<any>=new EventEmitter<any>();//An event emitted when the selected step has been changed
   @Output() next: EventEmitter<any>= new EventEmitter<any>();
   @Output() back: EventEmitter<any>= new EventEmitter<any>();
   @Output() reset: EventEmitter<any>= new EventEmitter<any>();
+  @Output() submit: EventEmitter<any>=new EventEmitter<any>();
 
   change(e:any){
   this.selectedIndex = e.selectedIndex
@@ -45,7 +54,11 @@ export class StepperComponent {
   }
   nextClicked(e:any){this.next.emit(e);}
   backClicked(e:any){this.back.emit(e);}
+  submitClicked(e:any){this.submit.emit(e)}
   resetClicked(e:any){this.reset.emit(e)}
 
   constructor(private cdr: ChangeDetectorRef) {}
+  ngOnChanges(){
+   this.cdr.markForCheck();
+  }
 }

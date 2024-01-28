@@ -1,19 +1,20 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, forwardRef, Input, OnChanges, Output, ViewChild, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
-import { MAT_DATE_FORMATS } from '@angular/material/core';
+import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE,NativeDateModule } from '@angular/material/core';
 import { MatDatepicker, MatDatepickerInputEvent } from '@angular/material/datepicker';
 
 export const MY_FORMATS = {
-    parse: {
-      dateInput: 'LL',
-    },
-    display: {
-      dateInput: 'LL',
-      monthYearLabel: 'MMM YYYY',
-      dateA11yLabel: 'LL',
-      monthYearA11yLabel: 'MMMM YYYY',
-    },
-  };
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
   
   export const VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
@@ -29,7 +30,13 @@ export const MY_FORMATS = {
 @Component({
   selector: 'realsoft-date-picker-input',
   templateUrl:'./date-picker-input.component.html' ,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
+    {
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
+    },
     {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
     VALUE_ACCESSOR,VALIDATOR
   ],
@@ -49,6 +56,7 @@ export class DatePickerInputComponent implements OnChanges, ControlValueAccessor
 @Input() min!:any;
 @Input() max!:any;
 @Input() readonly!:boolean;
+@Input() largeFloatingLabel!:boolean;
 
 @Output() change: EventEmitter<any> =new EventEmitter<any>();
 
@@ -57,6 +65,7 @@ export class DatePickerInputComponent implements OnChanges, ControlValueAccessor
 //Variables
 isDisabled: boolean=false;
 isRequired:boolean=false;
+invalid:boolean=false;
 value: any;
 CLOSE_ON_SELECTED = false;
 resetModel = new Date(0);
@@ -66,8 +75,16 @@ constructor(private cdr: ChangeDetectorRef) {}
 //Perform synchronized validation against the provided control
 validate(c: AbstractControl): ValidationErrors {
   const validators: ValidatorFn[] = [];
-  if(c.errors)
-  this.isRequired=true
+  if(c.errors){
+    if(c.errors['required'])
+    {
+      this.isRequired=true
+    }
+    if(!c.errors['required'])
+    {
+      this.invalid=true
+    }
+  }
   return validators;
 }
 //Callback called whenever the Validator input changes
@@ -77,10 +94,15 @@ registerOnValidatorChange(fn: () => void): void {
 }
 
 ngOnChanges() {
-this.cdr.markForCheck();}
+  this.cdr.detectChanges()
+  this.cdr.markForCheck()}
 
 getBooleanProperty(value: any): boolean {
   return value != null && value !== false;
+}
+onDateSelected(e:any){
+  this.onTouched();
+  this.cdr.detectChanges();
 }
 
 
@@ -92,7 +114,10 @@ set disabled(value) {
 
 
 onChange = (value:any) => {};
-onTouched = () => {};
+onTouched = () => {
+
+};
+
 //A new value is written to the form control on each update
 writeValue(value: any): void {
   this.value = value;
@@ -100,16 +125,21 @@ writeValue(value: any): void {
 }
 //Whenever the control value changes in the UI
 registerOnChange(fn: (value: any) => void): void {
-this.onChange = (value: any, options?: { triggerChangeDetection: boolean }) => {
-fn(value);
-  if (options && options.triggerChangeDetection) {
-  this.cdr.detectChanges();
-    }
-  };
-}
+  this.onChange = (value: any, options?: { triggerChangeDetection: boolean }) => {
+    this.registerOnValidatorChange=fn;
+  fn(value);
+    if (options && options.triggerChangeDetection) {
+    this.registerOnValidatorChange=fn;
+    this.cdr.detectChanges();
+      }
+    };
+
+    this.registerOnValidatorChange=fn;
+  }
 //For validation purposes and to mark the control as touched
 registerOnTouched(fn: any): void {
   this.onTouched = fn;
+  this.registerOnValidatorChange=fn;
 }
 //For enabling or disabling the control
 setDisabledState(isDisabled: boolean) {

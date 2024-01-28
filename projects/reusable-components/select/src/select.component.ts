@@ -1,4 +1,6 @@
 import {
+  AfterContentChecked,
+  AfterViewInit,
     ChangeDetectorRef,
     Component,
     EventEmitter,
@@ -7,6 +9,7 @@ import {
     OnChanges,
     Output,
     ViewChild,
+    ViewEncapsulation,
   } from '@angular/core';
   import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
   import { MatSelect } from '@angular/material/select';
@@ -22,6 +25,7 @@ import {
     addRoleText?: string;
     floatNever?: boolean;
     removeNoneOption?:boolean;
+    includeIcons?:boolean;
   }
   export const VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
@@ -34,12 +38,13 @@ import {
     multi: true
   };
   
-  @Component({
+  @Component({ 
     selector: 'multi-select',
     templateUrl: './select.component.html',
-    providers: [VALUE_ACCESSOR,VALIDATOR]
+    providers: [VALUE_ACCESSOR,VALIDATOR],
+    encapsulation: ViewEncapsulation.None
   })
-  export class MultiSelectComponent implements OnChanges, ControlValueAccessor,Validator{
+  export class MultiSelectComponent implements OnChanges, ControlValueAccessor,Validator,AfterContentChecked {
     @ViewChild('select') select!: MatSelect;
     @Input() data!: any;
     @Input() chosenField!: string;
@@ -48,6 +53,8 @@ import {
     @Input() selectedValues: any | undefined;
     @Input() required!:boolean;
     @Input() matTooltip!:string;
+    @Input() size!:string;
+    @Input() removableChips:boolean=false;
 
     @Output() addOptions: EventEmitter<any> = new EventEmitter();
     @Output() selectionChange: EventEmitter<any> = new EventEmitter();
@@ -144,7 +151,7 @@ import {
     }
     selectAllOptions(): void {
       if (this.isMasterSel) {
-        this.select.options.forEach((item: MatOption) => item.select());
+      this.select.options.forEach((item: MatOption) => item.select());
       this.selectedItem.emit(this.filteredData);
       } else {
         this.select.options.forEach((item: MatOption) => item.deselect());
@@ -243,19 +250,19 @@ import {
     onChange = (value:any) => {};
     onTouched = () => {};
   
-    registerOnChange(fn: any) {
-      this.onChange = fn;
+    registerOnChange(fn:any): void {
+      this.onChange =fn;
+      this.cdr.detectChanges()
     }
   
     writeValue(value: any) {
-      if (value) {
         this.selectedOptions = value;
         this.valueSelectedForms = value;
         if (this.data?.length > 0 || this.data?.children?.length > 0) {
           this.setChipsValue(value);
-        }
-      }
+      this.cdr.markForCheck();
     }
+  }
   
     registerOnTouched(fn: any) {
       this.onTouched = fn;
@@ -279,6 +286,29 @@ import {
     }
      markAsTouched(): void {
       this.onTouched();
+    }
+    //For Removable Chips
+    removeItem(item: any): void {
+      const index = this.selectedOptionsForChips.indexOf(item);
+      const index2=this.selectedOptions.indexOf(item.id)
+      if (index >= 0) {
+        this.selectedOptionsForChips.splice(index, 1);
+        this.selectedOptions.splice(index2,1);
+        this.select.writeValue(this.selectedOptions)
+      }
+    }
+
+    getSelectedOptionIcon(selectedLabel: string): string {
+      const selectedOption = this.data.find((option : any) => option.id === selectedLabel);
+      return selectedOption ? selectedOption.icon : '';
+    }
+  
+    getSelectedOptionLabel(selectedLabel: string) : string{
+      const selectedOption = this.data.find((option : any) => option.id === selectedLabel);
+      return selectedOption ? selectedOption[this.chosenField] : '';
+    }
+    ngAfterContentChecked(): void {
+      this.cdr.detectChanges();
     }
 
   }

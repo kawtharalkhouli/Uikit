@@ -2,13 +2,13 @@
 </ng-container>
 <ng-template #basic>
     <div class="progress-bar-container" [hidden]="closed===true">
-        <mat-progress-bar [mode]="mode"  [value]="value" matTooltipClass="tooltip-color"></mat-progress-bar>
+        <mat-progress-bar class="realsoft-progress-bar" [mode]="mode"  [value]="value" matTooltipClass="tooltip-color"></mat-progress-bar>
         <mat-icon (click)="close($event)" class="close-progress-bar-icon">close</mat-icon>
       </div>
 </ng-template>
 <ng-template #error>
     <div class="progress-bar-container error-progress-bar" [hidden]="closed===true">
-        <mat-progress-bar [mode]="mode" [value]="value" matTooltipClass="tooltip-color" color="warn"></mat-progress-bar>
+        <mat-progress-bar class="realsoft-error-progress-bar" [mode]="mode" [value]="value" matTooltipClass="tooltip-color" color="warn"></mat-progress-bar>
         <mat-icon (click)="close($event)" class="close-error-progress-bar-icon">close</mat-icon>
         <mat-icon matTooltipClass="tooltip-color" matTooltip="Retry" (click)="refresh($event)" class="refresh-progress-bar-icon">refresh</mat-icon>
         <mat-error class="custom-progress-bar-mat-error">{{errorMsg}}</mat-error>

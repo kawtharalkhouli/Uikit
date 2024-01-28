@@ -1,11 +1,14 @@
-<mat-form-field class="custom-text-area" appearance="outline">
+<mat-form-field class="custom-text-area form-fields" appearance="outline"
+    [ngClass]="{'text-field-invalid' : (invalid === true || isRequired === true )}">
     <mat-label *ngIf="appearance === 'outline'">{{label}}</mat-label>
 
     <textarea matInput [value]="writtenValue" [disabled]="isDisabled" [placeholder]="placeholder"
     (input)="onChange($any($event.target).value)" (blur)="markAsTouched()" [required]="required ? required : isRequired"
     [attr.maxlength]="configurations?.maxlength" [rows]="configurations?.rows" [cols]="configurations?.cols" 
-    [name]="configurations?.name"
+    [name]="configurations?.name" [ngClass]="{'non-resizable': resize === false}"
     [(ngModel)]="writtenValue" (ngModelChange)="onChange($event)" ngDefaultControl
     ></textarea>
 
 </mat-form-field>
+<div style="display: flex;"></div>
+<ng-content></ng-content>

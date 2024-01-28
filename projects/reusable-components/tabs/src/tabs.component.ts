@@ -7,10 +7,11 @@ import {  ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, I
   encapsulation: ViewEncapsulation.None
 })
 export class RealsoftTabsComponent implements OnChanges{
-  @Input() tabs!: {label: string}[];
+  @Input() tabs!: {label: string,labelAr?:string}[];
   @Input() tabsContents!: TemplateRef<any>[] ;
   @Input() orientation!:string;
   @Input() selectedTabIndex: number=0;
+  @Input() lang:string='en';
 
   @Output() selectedTabChange= new EventEmitter<any>();
 

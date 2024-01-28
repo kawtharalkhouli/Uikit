@@ -15,6 +15,7 @@ export class CustomIconComponent implements OnChanges {
     @Input() iconName!:string;
     @Input() matTooltip!:string | undefined;
     @Input() configurations:iconConfig|undefined;
+    @Input() iconColor!: any | string;
 
     constructor(private cdr: ChangeDetectorRef) { }
     ngOnChanges(){

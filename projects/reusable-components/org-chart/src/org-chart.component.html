@@ -4,7 +4,7 @@
     <div class="wrapper" #zoom>
       <div class="top">
         <div class="level top" (click)="hideAll=!hideAll">
-                <div class="department">{{data?.title}}</div>
+                <div class="department">{{lang === 'ar' ? data?.titleAr : data?.title}}</div>
                 <span class="material-icons arrow" *ngIf="!hideAll" [title]="collapseTooltip">keyboard_arrow_up</span>
                 <span class="material-icons arrow" *ngIf="hideAll" [title]="expandTooltip">keyboard_arrow_down</span>
               </div>
@@ -14,7 +14,7 @@
         <li [hidden]="hideAll" *ngFor="let dept of data?.children; let i = index"> 
   
             <div class="level first" (click)="hide[dept?.id] = !hide[dept?.id]">
-              <div class="department">{{dept?.title}}</div>
+              <div class="department">{{lang === 'ar' ? dept?.titleAr : dept?.title}}</div>
               <span class="material-icons second-arrow" *ngIf="dept?.children?.length > 0 && hide[dept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
               <span class="material-icons second-arrow" *ngIf="dept?.children?.length > 0 && !hide[dept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
             </div>
@@ -23,7 +23,7 @@
             <li *ngFor="let subDept of dept?.children" [hidden]="hide[dept.id]">
   
               <div class="level second" (click)="hide[subDept?.id] = !hide[subDept?.id]">
-                <div class="department">{{subDept?.title}}</div>
+                <div class="department">{{lang === 'ar' ? subDept?.titleAr : subDept?.title}}</div>
                 <span class="material-icons second-arrow" *ngIf="subDept?.children?.length > 0 && hide[subDept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
                 <span class="material-icons second-arrow" *ngIf="subDept?.children?.length > 0 && !hide[subDept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
               </div>
@@ -32,7 +32,7 @@
                 <li *ngFor="let Dept of subDept?.children" [hidden]="hide[subDept?.id]">
   
                   <div class="level third" (click)="hide[Dept?.id] = !hide[Dept?.id]">
-                    <div class="department">{{Dept?.title}}</div>
+                    <div class="department">{{lang === 'ar' ? Dept?.titleAr : Dept?.title}}</div>
                     <span class="material-icons second-arrow" *ngIf="Dept?.children?.length > 0 && hide[Dept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
                     <span class="material-icons second-arrow" *ngIf="Dept?.children?.length > 0 && !hide[Dept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
                   </div>
@@ -41,14 +41,14 @@
                     <li *ngFor="let nestedSubDept of Dept?.children" [hidden]="hide[Dept?.id]">
   
                       <div class="level fourth" (click)="hide[nestedSubDept?.id] = !hide[nestedSubDept?.id]">
-                        <div class="department">{{nestedSubDept?.title}}</div>
+                        <div class="department">{{lang === 'ar' ? nestedSubDept?.titleAr : nestedSubDept?.title}}</div>
                         <span class="material-icons second-arrow" *ngIf="nestedSubDept?.children?.length > 0 && hide[nestedSubDept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
                         <span class="material-icons second-arrow" *ngIf="nestedSubDept?.children?.length > 0 && !hide[nestedSubDept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
                       </div>
                       <ul *ngIf="nestedSubDept?.children?.length > 0">
                         <li *ngFor="let fifthDept of nestedSubDept?.children" [hidden]="hide[nestedSubDept?.id]">
                           <div class="level fifth" (click)="hide[fifthDept?.id] = !hide[fifthDept?.id]">
-                            <div class="department">{{fifthDept?.title}}</div>
+                            <div class="department">{{lang === 'ar' ? fifthDept?.titleAr : fifthDept?.title}}</div>
                             <span class="material-icons second-arrow" *ngIf="fifthDept?.children?.length > 0 && hide[fifthDept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
                             <span class="material-icons second-arrow" *ngIf="fifthDept?.children?.length > 0 && !hide[fifthDept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
                           </div>
@@ -73,7 +73,7 @@
       <ul>
         <li>
           <div class="treeview__level_top parent" (click)="hideAll=!hideAll">
-            <span class="level-title">{{data?.title}}</span>
+            <span class="level-title">{{lang === 'ar' ? data?.titleAr : data?.title}}</span>
             <span class="material-icons arrow__first" *ngIf="!hideAll" [title]="collapseTooltip">keyboard_arrow_left</span>
             <span class="material-icons arrow__first" *ngIf="hideAll" [title]="expandTooltip">keyboard_arrow_right</span>
           </div>
@@ -82,7 +82,7 @@
             <li *ngFor="let dept of data?.children; let i = index" [hidden]="hideAll">
   
               <div class="treeview__level first" (click)="hide[dept?.id] = !hide[dept?.id]">
-                <span class="level-title">{{dept?.title}}</span>
+                <span class="level-title">{{lang === 'ar' ? dept?.titleAr : dept?.title}}</span>
                 <span class="material-icons ltr-arrow" *ngIf="dept?.children?.length > 0 && !hide[dept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
                 <span class="material-icons ltr-arrow" *ngIf="dept?.children?.length > 0 && hide[dept?.id]" [title]="expandTooltip" >keyboard_arrow_down</span>
               </div>
@@ -91,7 +91,7 @@
                 <li *ngFor="let subDept of dept?.children" [hidden]="hide[dept.id]">
   
                   <div class="treeview__level second" (click)="hide[subDept?.id] = !hide[subDept?.id]">
-                    <span class="level-title">{{subDept?.title}}</span>
+                    <span class="level-title">{{lang === 'ar' ? subDept?.titleAr : subDept?.title}}</span>
                     <span class="material-icons ltr-arrow" *ngIf="subDept?.children?.length > 0 && !hide[subDept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
                     <span class="material-icons ltr-arrow" *ngIf="subDept?.children?.length > 0 && hide[subDept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
                   </div>
@@ -100,7 +100,7 @@
                     <li *ngFor="let Dept of subDept?.children" [hidden]="hide[subDept?.id]">
   
                       <div class="treeview__level third" (click)="hide[Dept?.id] = !hide[Dept?.id]">
-                        <span class="level-title">{{Dept?.title}}</span>
+                        <span class="level-title">{{lang === 'ar' ? Dept?.titleAr : Dept?.title}}</span>
                         <span class="material-icons ltr-arrow" *ngIf="Dept?.children?.length > 0 && !hide[Dept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
                         <span class="material-icons ltr-arrow" *ngIf="Dept?.children?.length > 0 && hide[Dept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
                       </div>
@@ -109,7 +109,7 @@
                         <li *ngFor="let nestedDept of Dept?.children" [hidden]="hide[Dept?.id]">
   
                           <div class="treeview__level fourth" (click)="hide[nestedDept?.id] = !hide[nestedDept?.id]">
-                            <span class="level-title">{{nestedDept?.title}}</span>
+                            <span class="level-title">{{lang === 'ar' ? nestedDept?.titleAr : nestedDept?.title}}</span>
                             <span class="material-icons ltr-arrow" *ngIf="nestedDept?.children?.length > 0 && !hide[nestedDept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
                             <span class="material-icons ltr-arrow" *ngIf="nestedDept?.children?.length > 0 && hide[nestedDept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
                           </div>
@@ -118,7 +118,7 @@
                             <li *ngFor="let fifthDept of nestedDept?.children" [hidden]="hide[nestedDept?.id]">
   
                               <div class="treeview__level fifth" (click)="hide[fifthDept?.id] = !hide[fifthDept?.id]">
-                                <span class="level-title">{{fifthDept?.title}}</span>
+                                <span class="level-title">{{lang === 'ar' ? fifthDept?.titleAr : fifthDept?.title}}</span>
                                 <span class="material-icons ltr-arrow" *ngIf="fifthDept?.children?.length > 0 && !hide[fifthDept?.id]" [title]="collapseTooltip">keyboard_arrow_up</span>
                                 <span class="material-icons ltr-arrow" *ngIf="fifthDept?.children?.length > 0 && hide[fifthDept?.id]" [title]="expandTooltip">keyboard_arrow_down</span>
                               </div>

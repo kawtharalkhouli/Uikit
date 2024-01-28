@@ -1,3 +1,3 @@
-<mat-slide-toggle [checked]="checked" [required]="required" [disabled]="isDisabled" 
-(change)="changeEvent($event)" [ngModel]="checked"
-(ngModelChange)="onModelChange($event)" ngDefaultControl>{{label}}</mat-slide-toggle>
+<mat-slide-toggle class="realsoft-slide-toggle" [checked]="checked" [required]="required" [disabled]="isDisabled" 
+(change)="changeEvent($event)" [ngModel]="checked" (ngModelChange)="onModelChange($event)" ngDefaultControl>{{label}}
+</mat-slide-toggle>

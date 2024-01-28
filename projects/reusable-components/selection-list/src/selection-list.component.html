@@ -1,5 +1,5 @@
-<mat-selection-list class="selection-list" #list (selectionChange)="onSelectionChange($event)" [disabled]="disabled" [multiple]="multiple">
+<mat-selection-list class="selection-list realsoft-selection-list" #list (selectionChange)="onSelectionChange($event)" [disabled]="disabled" [multiple]="multiple">
     <mat-list-option *ngFor="let option of data" [value]="option?.id" [selected]="option?.selected" [disabled]="option?.disabled">
-     {{option[chosenField || 'en']}} 
+     {{lang === 'ar' ? option.labelAr : option.label}} 
     </mat-list-option>
 </mat-selection-list>

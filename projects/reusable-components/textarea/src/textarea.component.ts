@@ -31,12 +31,14 @@ export class CustomTextAreaComponent implements OnChanges, ControlValueAccessor,
 @Input() value!:any | undefined;//Previously written value when not using reactive forms
 @Input() configurations:textAreaConfig|undefined;
 @Input() required!:boolean;//Whether the control is required
-@Input() appearance!:string
+@Input() appearance!:string;
+@Input() resize!:boolean;
 
 //Variables
 writtenValue: any='';
 isDisabled: boolean=false;
 isRequired:boolean=false;
+invalid:boolean=false;
 
 
 constructor(private cdr: ChangeDetectorRef) {}
@@ -46,8 +48,16 @@ onTouched = () => {};
 
 validate(c: AbstractControl): ValidationErrors {
   const validators: ValidatorFn[] = [];
-  if(c.errors)
-  this.isRequired=true
+  if(c.errors){
+    if(c.errors['required'])
+    {
+      this.isRequired=true
+    }
+    if(!c.errors['required'])
+    {
+      this.invalid=true
+    }
+  }
   return validators;
 }
 

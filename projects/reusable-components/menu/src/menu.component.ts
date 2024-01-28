@@ -17,6 +17,7 @@ export class RealsoftMenuComponent implements OnChanges{
   @Input() configurations:menuConfig | undefined;
   @Input() btnTxt!:string;
   @Input() icon!:string;
+  @Input() lang: string = 'en';
   //Output Emitters 
   @Output() click= new EventEmitter<any>();
   @Output() closed=new EventEmitter<any>();

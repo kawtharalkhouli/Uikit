@@ -1,0 +1,57 @@
+@import '../variables.scss';
+
+//Primary Toggle Button Group Style
+.realsoft-toggle-button-group.mat-button-toggle-group{
+    border-radius: 5px !important;
+    border: 1px solid $primary-color !important;
+    box-shadow: none !important;
+}
+
+//Primary Toggle Button Label Style
+.realsoft-toggle-button-group .mat-button-toggle-label-content{
+    font-size: $small-text !important;
+    color: $stroked-color !important;
+}
+
+//Primary Toggle Button Checked Style
+.realsoft-toggle-button-group .mat-button-toggle-checked{
+    background-color: $primary-color !important;  
+}
+
+//Primary Toggle Button Checked Label Style
+.realsoft-toggle-button-group .mat-button-toggle-checked .mat-button-toggle-label-content{
+    color: $white-color !important;
+}
+
+//Primary Toggle Button Style
+.realsoft-toggle-button-group .mat-button-toggle-button{
+    border-right: 1px solid $primary-color !important;
+}
+
+//Secondary Toggle Button Group Style
+.realsoft-toggle-button-group-secondary.mat-button-toggle-group{
+    border-radius: 5px !important;
+    border: 1px solid $sec-color !important;
+    box-shadow: none !important;
+}
+
+//Secondary Toggle Button Label Style
+.realsoft-toggle-button-group-secondary .mat-button-toggle-label-content{
+    font-size: $small-text !important;
+    color: $stroked-color !important;
+}
+
+//Secondary Toggle Button Checked Style
+.realsoft-toggle-button-group-secondary .mat-button-toggle-checked{
+    background-color: $sec-color !important;
+}
+
+//Secondary Toggle Button Checked Label Style
+.realsoft-toggle-button-group-secondary .mat-button-toggle-checked .mat-button-toggle-label-content{
+    color: $white-color !important;
+}
+
+//Secondary Toggle Button Style
+.realsoft-toggle-button-group-secondary .mat-button-toggle-button{
+    border-right: 1px solid $sec-color !important;
+}

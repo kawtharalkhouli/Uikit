@@ -4,6 +4,7 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
 
 interface data {
     name: string;
+    nameAr?:string;
     icon?: string;
     color?:string;
     children?: data[];
@@ -19,6 +20,7 @@ export class RealsoftTreeMenuComponent implements OnChanges {
 @Input() data!:data[]
 @Input() type!:string;
 @Input() actionIcons!:boolean;
+@Input() lang:string='en';
 
 treeControl = new NestedTreeControl<any>(node => node.children);
 dataSource =new MatTreeNestedDataSource<data>();

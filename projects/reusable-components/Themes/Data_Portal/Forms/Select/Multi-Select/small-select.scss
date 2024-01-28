@@ -1,0 +1,130 @@
+
+//Input Field Height
+.small-multi-select-form-field.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: 40px !important;
+}
+
+.small-multi-select-form-field .example-additional-selection{
+    margin-inline-start: 24px;
+    margin-inline-start: 3px;
+    position: relative;
+    top: 4px;
+   }
+   html:lang(ar) .small-multi-select-form-field .example-additional-selection{
+       margin-inline-start: 16px !important;
+      }
+
+//Input Field Align Items
+.small-multi-select-form-field .mat-form-field-flex{
+    align-items: center !important;
+}
+.small-multi-select-form-field .mat-select-value-text{
+    font-size: 12px;
+    position: relative;
+    bottom: 5px;
+    line-height: 24px;
+}
+
+.small-multi-select-form-field .mat-form-field-wrapper .mat-form-field-label mat-label{
+    font-size: 12px;
+    position: relative;
+    bottom: 3px;
+    line-height: 24px;
+}
+
+.small-multi-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translateY(-1.2em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.myPanelClass{
+    margin-top: 23px !important; 
+}
+
+.small-multi-select-form-field .mat-select-placeholder{
+    font-size: 12px;
+    position: relative;
+}
+
+//Input Field Focus State Style
+.small-multi-select-form-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label {
+    color: #4137A8 !important;
+}
+.small-multi-select-form-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label mat-label {
+    color: #4137A8 !important;
+}
+.small-multi-select-form-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
+    color: #4137A8 !important;
+}
+.small-multi-select-form-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-select-arrow{
+    color: #4137A8 !important;
+}
+
+//Input Field Hover State Style
+.small-multi-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #344FB3 !important;
+}
+.small-multi-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #344FB3 !important;
+}
+.small-multi-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label mat-label {
+    color:  #344FB3 !important;
+}
+.small-multi-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-select-arrow {
+    color:  #344FB3 !important;
+}
+
+//Input Element Default State Outline Style
+.small-multi-select-form-field.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+
+.small-multi-select-form-field .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+    color: #4137A8 !important;
+}
+.small-multi-select-form-field{
+    font-size: 12px !important;
+}
+
+
+.multi-select-checkbox{
+    position: relative;
+    left: 15px;
+    bottom: -10px;
+    margin-bottom: 13px;
+}
+html:lang(ar) .multi-select-checkbox{
+    position: relative;
+    right: 17px;
+    bottom: -10px;
+    margin-bottom: 13px;
+}
+.small-multi-select-form-field .mat-chip-list-wrapper{
+    position: relative !important;
+    top: 4px;
+}
+html:lang(ar) .small-multi-select-form-field .mat-chip-list-wrapper{
+    position: relative !important;
+    right: -5px !important;
+}
+
+.small-multi-select-form-field .mat-standard-chip{
+    font-size: 12px;
+    padding: 2px 6px;
+    min-height: 24px;
+}
+
+.small-multi-select-form-field .mat-select-panel::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.small-multi-select-form-field .mat-select-panel::-webkit-scrollbar:vertical {
+    width: 6px;
+    height: 2px;
+}
+
+.small-multi-select-form-field.mat-select-panel::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 1px solid #f5f5f5; /* should match background, can't be transparent */
+    background-color: #344FB3;
+}

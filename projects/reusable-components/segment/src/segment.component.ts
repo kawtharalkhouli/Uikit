@@ -3,6 +3,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 interface data{
     id?:any;
+    label:string;
+    labelAr?:string;
     value?:any;
     checked?:boolean;
     name?:string;
@@ -10,7 +12,6 @@ interface data{
   
 @Component({
   selector: 'realsoft-segment',
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './segment.component.html',
   encapsulation:ViewEncapsulation.None,
   providers: [{
@@ -26,7 +27,21 @@ export class SegmentComponent implements OnChanges, ControlValueAccessor{
 @Input() vertical!:boolean;
 @Input() value!:any;
 @Input() data!:data[];
-@Input() chosenField!:string;
+@Input() style !:string;
+@Input() lang: string = 'en';
+
+isDisabled!: boolean;
+selectedOption!: string;
+
+getBooleanProperty(value: any): boolean {
+  return value != null && value !== false;
+}
+
+@Input()
+get disabled(): boolean { return this.isDisabled; }
+set disabled(value) {
+  this.isDisabled = this.getBooleanProperty(value);
+}
 
 //Outputs
 @Output() change: EventEmitter<any> = new EventEmitter<any>();
@@ -49,7 +64,10 @@ onChange = (value:any) => {};
 onTouched = () => {};
 
 writeValue(value: any): void {
-this.value = value;} 
+this.value = value;
+this.selectedOption=value;
+this.cdr.markForCheck();
+} 
 
 registerOnChange(fn:any): void {
 this.onChange =fn;
@@ -61,6 +79,17 @@ this.onTouched = fn;
 
 markAsTouched(): void {
 this.onTouched();
+}
+setDisabledState(isDisabled: boolean): void {
+  this.isDisabled = isDisabled;
+}
+
+  
+selectOption(option : any): void {
+  this.selectedOption = option;
+  this.onChange(option);
+  this.selectionChange.emit(option);
+  this.onTouched();
 }
 
 }

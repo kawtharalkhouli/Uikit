@@ -615,6 +615,7 @@
         top: 6px;
     }
 }
+
 //Small Primary Icon Button Styles
 .realsoft-primary-icon-btn-small{
 @include buttonStyle($lineheight: 28px, $textSize: $small-text);
@@ -1260,4 +1261,8 @@ border: 1px solid $primary-color !important;
     top: 0px;
     color: $sec-color;
     }
+}
+
+.hide{
+    display: none !important;
 }

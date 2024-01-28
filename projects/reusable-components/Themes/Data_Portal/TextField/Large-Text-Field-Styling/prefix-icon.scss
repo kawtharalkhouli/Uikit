@@ -1,0 +1,60 @@
+@import '../../variables.scss';
+
+//Input Field Height
+.text-field-prefix-icon-large.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: $large-input-field-height !important;
+}
+
+//Input Field Input Element Styling
+.text-field-prefix-icon-large.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-input-element{
+    position: relative !important;
+    bottom: 3px !important;
+    line-height: 22px;
+    font-size: $large-text !important;
+    padding-left: unset !important;
+    color: $font-color !important;
+}
+
+//Input Field Default State Outline Styling
+.text-field-prefix-icon-large.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $input-field-outline-color !important;
+}
+
+//Input Field Prefix Icon Styling
+.text-field-prefix-icon-large.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    position: relative !important;
+    bottom: 6px !important;
+    color: $input-field-prefix-icon-color !important;
+}
+
+//Input Field Hover State Styling
+.text-field-prefix-icon-large.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  $input-field-hover-color !important;
+}
+.text-field-prefix-icon-large.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  $input-field-hover-color !important;
+}
+.text-field-prefix-icon-large.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-label mat-label {
+    color:  $input-field-hover-color !important;
+}
+
+//Input Field Focus State Styling
+ .text-field-prefix-icon-large.mat-form-field:not(.mat-form-field-disabled).mat-focused  .mat-form-field-label {
+    color: $input-field-focus-color-outline !important;
+}
+.text-field-prefix-icon-large.mat-form-field:not(.mat-form-field-disabled).mat-focused .mat-form-field-outline {
+    color: $input-field-focus-color-outline !important;
+}
+.text-field-prefix-icon-large.mat-form-field:not(.mat-form-field-disabled).mat-focused .mat-form-field-label mat-label {
+    color: $input-field-focus-color-outline !important;
+}
+
+//Input Field Label Style
+.text-field-prefix-icon-large .mat-form-field-wrapper .mat-form-field-label mat-label{
+line-height: 23px !important;
+position: relative !important;
+bottom: 1px !important;
+padding-left: unset !important;
+font-size: $large-text !important;
+color: $input-field-label-color !important;
+}

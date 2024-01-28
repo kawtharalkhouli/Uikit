@@ -1,0 +1,93 @@
+
+//Input Field Height
+.small-single-select-form-field.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: 40px !important;
+}
+
+//Input Field Align Items
+.small-single-select-form-field .mat-form-field-flex{
+    align-items: center !important;
+}
+.small-single-select-form-field .mat-select-value-text{
+    font-size: 12px !important;
+    position: relative !important; 
+    bottom: 5px !important;
+    line-height: 24px !important;
+}
+
+.small-single-select-form-field .mat-form-field-wrapper .mat-form-field-label mat-label{
+    font-size: 12px !important;
+    position: relative !important;
+    bottom: 3px !important;
+    line-height: 24px !important;
+}
+
+.small-single-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translateY(-1.0em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.myPanelClass{
+    margin-top: 23px !important; 
+}
+
+.small-single-select-form-field .mat-select-placeholder{
+    font-size: 12px !important;
+    position: relative !important;
+    bottom: 5px !important;
+}
+
+//Input Field Focus State Style
+.small-single-select-form-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label {
+    color: #4137A8 !important;
+}
+.small-single-select-form-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label mat-label {
+    color: #4137A8 !important;
+}
+.small-single-select-form-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
+    color: #4137A8 !important;
+}
+.small-single-select-form-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-select-arrow{
+    color: #4137A8 !important;
+}
+
+//Input Field Hover State Style
+.small-single-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #344FB3 !important;
+}
+.small-single-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #344FB3 !important;
+}
+.small-single-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label mat-label {
+    color:  #344FB3 !important;
+}
+.small-single-select-form-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-select-arrow {
+    color:  #344FB3 !important;
+}
+
+//Input Element Default State Outline Style
+.small-single-select-form-field.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+
+.small-single-select-form-field .mat-primary .mat-option.mat-selected:not(.mat-option-disabled){
+    color: #4137A8 !important;
+}
+.small-single-select-single-option{
+    font-size: 12px !important;
+}
+
+.small-single-select-form-field .mat-select-panel::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.small-single-select-form-field .mat-select-panel::-webkit-scrollbar:vertical {
+    width: 6px;
+    height: 2px;
+}
+
+.small-single-select-form-field.mat-select-panel::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 1px solid #f5f5f5; /* should match background, can't be transparent */
+    background-color: #344FB3;
+}

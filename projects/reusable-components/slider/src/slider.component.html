@@ -1,13 +1,19 @@
 <mat-slider
+class="realsoft-slider"
 [disabled]="disabled"
 [invert]="invert"
 [max]="max"
 [min]="min"
 [step]="step"
 [thumbLabel]="thumbLabel"
+ngDefaultControl
 [(ngModel)]="value"
+[required]="required ? required : isRequired"
+[value]="value"
 (ngModelChange)="onChange($event)"
 [vertical]="vertical"
 (change)="onSliderChange($event)"
+(blur)="markAsTouched()"
+(touch)="onTouched()"
 >
 </mat-slider>

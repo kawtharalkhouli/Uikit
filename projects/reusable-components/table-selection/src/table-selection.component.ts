@@ -1,12 +1,12 @@
 import { SelectionModel } from '@angular/cdk/collections';
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, Output, TemplateRef,ViewEncapsulation } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, Output} from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'realsoft-table-selection',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './table-selection.component.html',
 })
-export class TableSelectionComponent {
+export class TableSelectionComponent implements OnChanges{
 @Input() displayedColumns!: string[] ;
 @Input() dataSource = new MatTableDataSource<any>();
 selection = new SelectionModel<any>(true, []);
@@ -14,6 +14,9 @@ selection = new SelectionModel<any>(true, []);
 
 
 constructor(private cdr: ChangeDetectorRef) {}
+ngOnChanges(){
+  this.cdr.markForCheck();
+ }
     
 // Whether the number of selected items matches the total number of rows in the table
 isAllSelected() {

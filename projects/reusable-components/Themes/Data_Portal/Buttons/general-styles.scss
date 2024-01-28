@@ -1,0 +1,10 @@
+@import '../variables.scss';
+
+.realsoft-button-spinner{
+  position: relative;
+  top: 1px;
+}
+
+.realsoft-spinner-color.mat-progress-spinner circle, .realsoft-spinner-color.mat-spinner circle {
+  stroke: #0d99d2 !important;
+}

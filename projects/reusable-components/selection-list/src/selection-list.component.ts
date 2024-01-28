@@ -13,6 +13,7 @@ export class SelectionListComponent {
     @Input() disabled!:boolean;
     @Input() multiple:boolean=true;
     @Input() data!:any;
+    @Input() lang : string ='en';
   
     @ViewChild('list') optionsSelectionList!: MatSelectionList;
 

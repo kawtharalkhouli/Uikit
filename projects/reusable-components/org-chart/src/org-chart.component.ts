@@ -2,6 +2,7 @@ import { Component, Input} from '@angular/core';
 interface orgChart{
     id:number;
     title:string;
+    titleAr?:string;
     children?: orgChart[];
 }
 
@@ -15,6 +16,7 @@ export class OrgChartComponent{
 @Input() orientation:string='ttb';
 @Input() collapseTooltip:string='Collapse';
 @Input() expandTooltip:string='Expand';
+@Input() lang : string = 'en'; 
 
 hideAll: boolean = false;
 hide= {};

@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
 
 @NgModule({
   declarations: [DatePickerInputComponent],
@@ -20,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
   MatFormFieldModule,
   MatInputModule,
   MatChipsModule,
-  MatIconModule
+  MatIconModule,
+  MatMomentDateModule,
   ],
   exports: [DatePickerInputComponent],
 })
