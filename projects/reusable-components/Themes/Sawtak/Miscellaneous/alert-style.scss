@@ -1,0 +1,65 @@
+@import '../variables.scss';
+
+ .realsoft-alert {
+	width: 100%;
+	border: 0px;
+	border-radius: $border-radius;
+    position: relative;
+    padding-bottom: 3px;
+    text-align: start;
+	& p {
+		margin: 0;
+	}
+    
+	& .material-icons {
+		@extend %icons-style;
+
+        &.close {
+            position: absolute;
+            right: 10px;
+            top: 5px;
+            cursor: pointer;
+    
+            &:lang(ar){
+                right: unset;
+                left: 10px;
+            }
+        }
+	}
+}
+//Info Alert Colors
+.info-alert {
+	background-color: $info-bg !important;
+	color: $info-color !important;
+}
+//Danger Alert Colors
+.danger-alert {
+	background-color: $danger-bg !important;
+	color: $danger-color !important;
+}
+//Success Alert Colors
+.success-alert {
+	background-color: $success-bg !important;
+	color: $success-color !important;
+}
+//Warning Alert Colors
+.warning-alert {
+	background-color: $warning-bg !important;
+	color: $warning-color !important;
+}
+//Dark Alert Colors
+.dark-alert {
+	background-color: $dark-bg !important;
+	color: $dark-alert !important;
+}
+//Alerts Icons Styles
+%icons-style {
+	position: relative;
+    top: 4px;
+    margin: 0 8px;
+    font-size: 20px;
+}
+.alert-header{
+    font-weight: bold;
+}
+  

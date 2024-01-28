@@ -1,0 +1,171 @@
+//Text Sizes
+$normal-text: 14px;
+$small-text: 12px;
+$large-text: 16px;
+
+//Primary and Secondary Colors
+$primary-color: #00B1DD;
+$primary-color-hover: #0D99D2;
+$primary-color-focus: #1A80C8;
+$sec-color: #38A8AB;
+$sec-color-hover: #26A6A9;
+$sec-color-focus:#199699;
+$disabled-color:#EEEEEE;
+$gray-color:#BABABA;
+$dark-gray-color:#A6A6A6;
+$primary-stroked-hover-focus: #34A4DF1A;
+$secondary-stroked-hover-focus: #38A8AB17;
+
+//Primary Stroked Colors
+$primary-stroked-border-color: #00B1DD;
+$primary-stroked-font-color: #00B1DD;
+$primary-stroked-border-hover-color:#0D99D2;
+$primary-stroked-font-hover-color: #0D99D2;
+$primary-storked-background-hover-color: #34A4DF1A;
+$primary-stroked-border-focus-color: #1A80C8;
+$primary-stroked-font-focus-color:#1A80C8;
+$primary-stroked-background-focus-color:#34A4DF1A;
+
+
+//Secondary Stroked Colors
+$secondary-stroked-border-color: #38A8AB;
+$secondary-stroked-font-color: #38A8AB;
+$secondary-stroked-border-hover-color: #26A6A9;
+$secondary-stroked-font-hover-color: #26A6A9;
+$secondary-storked-background-hover-color: #38A8AB17;
+$secondary-stroked-border-focus-color: #199699;
+$secondary-stroked-font-focus-color:#199699;
+$secondary-stroked-background-focus-color:#34A4DF1A;
+
+//Disabled Colors
+$primary-disabled-background-color: #EEEEEE;
+$primary-disabled-border-color: #EEEEEE;
+$primary-disabled-font-color: #BABABA;
+$stroked-disabled-background-color:#EEEEEE;
+$stroked-disabled-border-color: #BABABA;
+$stroked-disabled-font-color: #BABABA;
+$secondary-disabled-background-color: #EEEEEE;
+$secondary-disabled-border-color: #EEEEEE;
+$secondary-disabled-font-color: #BABABA;
+
+//Primary Link and Primary Text Colors
+$primary-link-color: #00B1DD;
+$primary-link-hover-color: #0D99D2;
+$primary-link-focus-color: #1A80C8;
+$primary-link-disabled-color: #BABABA;
+$primary-text-color: #00B1DD;
+$primary-text-hover-color: #0D99D2;
+$primary-text-focus-color: #1A80C8;
+$primary-text-disabled-color: #BABABA;
+
+//Secondary Link and Secondary Text Colors
+$secondary-link-color: #38A8AB;
+$secondary-link-hover-color: #26A6A9;
+$secondary-link-focus-color: #199699;
+$secondary-link-disabled-color: #BABABA;
+$secondary-text-color: #38A8AB;
+$secondary-text-hover-color: #26A6A9;
+$secondary-text-focus-color: #199699;
+$secondary-text-disabled-color: #BABABA;
+
+//Common Sizes
+$small-button-height: 30px;
+$medium-button-height: 35px;
+$large-button-height: 40px;
+$small-icon: 20px;
+$medium-icon: 24px;
+$large-icon: 28px;
+$small-input-field-height:40px;
+$medium-input-field-height:46px;
+$large-input-field-height:55px;
+
+
+//Menu and Navigation Colors
+$background-hover: #F3F3F3;
+$background-focus: #EAF6FC;
+$font-color: #13121C;
+
+//Common Colors
+$font-color: #13121C;
+$stroked-color:#34314C;
+$light-gray: #fcfcfc;
+$dark-gray: #a7a7a7;
+$white-color: #ffffff;
+$black-color: #000000;
+
+
+//Input Field Colors
+$input-field-label-color: #8B8B8B;
+$input-field-focus-color-outline: #4137A8;
+$input-field-hover-color:#344FB3;
+$input-field-outline-color: #9EACC1;
+$input-field-disabled-border-color:#BABABA;
+$input-field-disabled-background-color:#EEEEEE;
+$input-field-disabled-font-color:#00000099;
+$input-field-prefix-icon-color: #40399A;
+$input-field-suffix-icon-color: #40399A;
+$input-field-password-icon-color: rgba(68, 68, 68, 0.8666666667);
+$input-field-icon-gray-color: rgba(68, 68, 68, 0.8666666667);
+
+//Alert Colors
+$danger-color: #EF4B4B;
+$danger-bg: #FAC8C8;
+$info-color: #3E80EB;
+$info-bg: #CCD6F8;
+$warning-color: #FFAB00;
+$warning-bg: #FEE8BB;
+$success-color:#38CB89;
+$success-bg: #CBF6E2;
+$dark-alert:#1B1E21;
+$dark-bg: #D6D8D9;
+
+
+/*Buttons*/
+$stroked-hover:#E9E9F4;
+$stroked-focus:#CFCDDF;
+$link-color: #369EFB ;
+$link-color-hover:#318CDD;
+$link-color-focus: #25659F;
+$transparent-color:rgba(255, 255, 255, 0);
+$toggle-background: rgba(52, 164, 223,0.2);
+$toggle-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+$shadow-style: 0 0 6px #0000003B;
+
+$black-transparent: #0000009e;
+$arrow-shadow-color: #0000001f;
+
+
+
+/*Progress Bar*/
+$track-color: #9FC3D6;
+$tooltip-color: #8F8F8F;
+
+//Tabs
+$tabs-title: #13121CDE;
+
+//border-radius
+$border-radius: 28px;
+
+$buttonPrimaryBackground:#40399A;
+$buttonSecondaryBackground:#369EFB;
+
+//LTRC Colors
+$basic-chip-color:#878787;
+$basic-chip-hover-color:#636363;
+$linkButton:#369EFB;
+$buttonColor:#fff;
+$font-color: #13121C;
+$normal-text: 14px;
+$small-text: 12px;
+$large-text: 16px;
+
+//rounded radius variables
+$button-border-radius:20px;
+
+
+//Font Weights
+$medium-font-weight: 500;
+$semi-bold-font-weight: 600;
+$regular-font-weight: 400;
+$slider-track-background-color: #34A4DF52;
+

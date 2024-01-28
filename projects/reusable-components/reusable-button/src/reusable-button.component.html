@@ -1,0 +1,218 @@
+<ng-container *ngTemplateOutlet="style === 'secondary' ? secondary : (style === 'primaryStroked' ? primarystroked : (style === 'primaryLink' ? primarylink : (style === 'primaryIconPrefix' ? primaryprefixicon : (style === 'primaryText' ? primarytext : (style === 'primaryIconSuffix' ? primarysuffixicon : (style === 'secondaryStroked' ? secondarystroked : (style === 'secondaryLink' ? secondarylink : (style === 'secondaryIconPrefix' ? secondaryprefixicon : (style === 'secondaryText' ? secondarytext : (style === 'secondaryIconSuffix' ? secondarysuffixicon : (style === 'secondaryStrokedIconPrefix' ? secondarystrokedprefixicon : (style === 'secondaryStrokedIconSuffix' ? secondarystrokedsuffixicon : (style === 'primaryStrokedIconPrefix' ? primarystrokedprefixicon : (style === 'primaryStrokedIconSuffix' ? primarystrokedsuffixicon : primary) ) )) ) ) ) )) ) ) ))) "></ng-container>
+<!--Primary Button-->
+<ng-template #primary>
+  <button mat-flat-button class="realsoft-primary-btn" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-primary-btn-small': size === 'small','realsoft-primary-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="realsoft-primary-btn__span">{{buttonTxt}}
+      </span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Secondary Button-->
+<ng-template #secondary>
+  <button mat-flat-button class="realsoft-secondary-btn" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-secondary-btn-small': size === 'small','realsoft-secondary-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="realsoft-primary-btn__span">{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Primary Stroked Button-->
+<ng-template #primarystroked>
+  <button mat-flat-button class="realsoft-primary-stroked-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-primary-stroked-btn-small': size === 'small','realsoft-primary-stroked-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="realsoft-primary-btn__span">{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Primary Link Button-->
+<ng-template #primarylink>
+  <button mat-flat-button class="realsoft-primary-link-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-primary-link-btn-small': size === 'small','realsoft-primary-link-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span>{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Primary Button with Prefix Icon-->
+<ng-template #primaryprefixicon>
+  <button mat-flat-button class="realsoft-primary-icon-prefix-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-primary-icon-prefix-btn-small': size === 'small','realsoft-primary-icon-prefix-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="material-icons">{{configurations?.iconName}}</span>
+      <span class="realsoft-primary-btn__span">{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Primary Text Button-->
+<ng-template #primarytext>
+  <button mat-flat-button class="realsoft-primary-text-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-primary-text-btn-small': size === 'small','realsoft-primary-text-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span>{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Primary Button with Suffix Icon-->
+<ng-template #primarysuffixicon>
+  <button mat-flat-button class="realsoft-primary-icon-suffix-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-primary-icon-suffix-btn-small': size === 'small','realsoft-primary-icon-suffix-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="realsoft-primary-btn__span">{{buttonTxt}}</span>
+      <span class="material-icons">{{configurations?.iconName}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Secondary Stroked Button-->
+<ng-template #secondarystroked>
+  <button mat-flat-button class="realsoft-secondary-stroked-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-secondary-stroked-btn-small': size === 'small','realsoft-secondary-stroked-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="realsoft-secondary-btn__span">{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Secondary Link Button-->
+<ng-template #secondarylink>
+  <button mat-flat-button class="realsoft-secondary-link-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-secondary-link-btn-small': size === 'small','realsoft-secondary-link-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span>{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Secondary Button with Prefix Icon-->
+<ng-template #secondaryprefixicon>
+  <button mat-flat-button class="realsoft-secondary-icon-prefix-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-secondary-icon-prefix-btn-small': size === 'small','realsoft-secondary-icon-prefix-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="material-icons">{{configurations?.iconName}}</span>
+      <span class="realsoft-secondary-btn__span">{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Secondary Text Button-->
+<ng-template #secondarytext>
+  <button mat-flat-button class="realsoft-secondary-text-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-secondary-text-btn-small': size === 'small','realsoft-secondary-text-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span>{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Secondary Button with Suffix Icon-->
+<ng-template #secondarysuffixicon>
+  <button mat-flat-button class="realsoft-secondary-icon-suffix-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-secondary-icon-suffix-btn-small': size === 'small','realsoft-secondary-icon-suffix-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="realsoft-secondary-btn__span">{{buttonTxt}}</span>
+      <span class="material-icons">{{configurations?.iconName}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Secondary Stroked Button with Prefix Icon-->
+<ng-template #secondarystrokedprefixicon>
+  <button mat-flat-button class="realsoft-secondary-stroked-icon-prefix-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-secondary-stroked-icon-prefix-btn-small': size === 'small','realsoft-secondary-stroked-icon-prefix-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="material-icons">{{configurations?.iconName}}</span>
+      <span class="realsoft-secondary-btn__span">{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Secondary Stroked Button with Suffix Icon-->
+<ng-template #secondarystrokedsuffixicon>
+  <button mat-flat-button class="realsoft-secondary-stroked-icon-suffix-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-secondary-stroked-icon-suffix-btn-small': size === 'small','realsoft-secondary-stroked-icon-suffix-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="realsoft-secondary-btn__span">{{buttonTxt}}</span>
+      <span class="material-icons">{{configurations?.iconName}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Primary Stroked Button with Prefix Icon-->
+<ng-template #primarystrokedprefixicon>
+  <button mat-flat-button class="realsoft-primary-stroked-icon-prefix-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled || loading" [ngClass]="{'realsoft-primary-stroked-icon-prefix-btn-small': size === 'small','realsoft-primary-stroked-icon-prefix-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="material-icons">{{configurations?.iconName}}</span>
+      <span class="realsoft-secondary-btn__span">{{buttonTxt}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>
+<!--Primary Stroked Button with Suffix Icon-->
+<ng-template #primarystrokedsuffixicon>
+  <button mat-flat-button class="realsoft-primary-stroked-icon-suffix-btn" [class.realsoftSpinner]="loading" [type]="configurations?.type" [disabled]="disabled ||loading" [ngClass]="{'realsoft-primary-stroked-icon-suffix-btn-small': size === 'small','realsoft-primary-stroked-icon-suffix-btn-large': size === 'large'}">
+    <ng-container *ngIf="!loading">
+      <span class="realsoft-secondary-btn__span">{{buttonTxt}}</span>
+      <span class="material-icons">{{configurations?.iconName}}</span>
+    </ng-container>
+    <ng-container *ngIf="loading">
+      <mat-icon class="realsoft-button-spinner">
+        <mat-spinner class="realsoft-spinner-color" diameter="20"></mat-spinner>
+      </mat-icon>
+    </ng-container>
+  </button>
+</ng-template>

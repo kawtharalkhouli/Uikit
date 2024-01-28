@@ -1,0 +1,142 @@
+@import '../variables.scss';
+
+.text-field-multi-icons .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+html:lang(ar) .text-field-multi-icons .mat-form-field-outline-start {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+.text-field-multi-icons .mat-form-field-outline-end {
+    border-radius: 0 28px 28px 0 !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+html:lang(ar) .text-field-multi-icons .mat-form-field-outline-end {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 28px !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+.text-field-multi-icons.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label {
+    color: #369EFB !important;
+}
+
+.text-field-multi-icons.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
+    color: #369EFB !important;
+}
+
+.text-field-multi-icons .mat-input-element{
+    position: relative !important;
+    bottom: 3px !important;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+html:lang(ar) .text-field-multi-icons .mat-input-element{
+    position: relative !important;
+    bottom: 3px !important;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.1em, -1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+html:lang(ar) .text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translateY(-1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #BABABA !important;
+}
+  /* Font color */
+.text-field-multi-icons.input.mat-input-element {
+    color: #00000099 !important;
+}
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    font-size: 24px;
+    padding-left: 16px !important;
+    padding-right: 32px !important;
+    position: relative !important;
+    bottom: 4px !important;
+    color: #40399A !important;
+}
+
+html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    padding-left: 14px !important;
+    padding-right: 38px !important;
+    bottom: 6px !important;
+}
+
+.text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 30px !important;
+    position: relative !important;
+    color: rgba(68, 68, 68, 0.8666666667) !important;
+    cursor: pointer !important;
+    font-size: 24px;
+    bottom: 3px;
+}
+
+.text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+}
+
+.text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+}
+
+html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 26px !important;
+    padding-left: 7px;
+    position: relative !important;
+    color: rgba(68, 68, 68, 0.8666666667) !important;
+    cursor: pointer;
+    bottom: 4px;
+    font-size: 24px;
+}
+
+.text-field-multi-icons .mat-form-field-outline-start {
+    border-radius: 28px 0 0 28px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+
+.text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: 56px !important;
+}
+
+.text-field-multi-icons .mat-form-field-wrapper .mat-form-field-label mat-label{
+    line-height: 20px !important;
+    position: relative;
+    bottom: 3px;
+}
+

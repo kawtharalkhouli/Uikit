@@ -1,0 +1,46 @@
+@import '../variables.scss';
+
+.mat-accordion{
+    width: 100% !important;
+}
+.mat-expansion-panel{
+    box-shadow: none !important;
+    &-header{
+        white-space: nowrap !important;
+        font-size: $small-text !important;
+        background: #F5F5F5;
+        height: 40px;
+        margin-bottom: 6px;
+        &-title{
+            color: $font-color !important;
+            font-size: 14px !important;
+            font-weight: 500 !important;
+            line-height: 24px !important;
+            color: #000000 !important;
+        }
+    }
+}
+.mat-expanded{
+    & .mat-expansion-panel-header-title{
+        opacity: 1 !important;
+    }
+}
+.mat-expansion-panel-header-title, .mat-expansion-panel-header-description{
+    font-size: 14px !important;
+    font-weight: bold;
+    line-height: 24px !important;
+    white-space: nowrap !important;
+}
+
+.mat-expansion-panel-header.mat-expanded,
+.mat-expansion-panel-header.mat-expanded:hover{
+    background: #F5F5F5 !important;
+    & .mat-expansion-panel-header-title{
+        color: #13121C !important;
+        font-weight: 700 !important;
+    }
+
+    & .mat-expansion-indicator::after{
+        color: #13121C;
+    }
+}

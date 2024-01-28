@@ -1,0 +1,58 @@
+<div>
+    <div class="filter-icon-container" [ngClass]="{'filter-value': controlHasValue}">
+        <mat-icon [matMenuTriggerFor]=" filterMenu" [matMenuTriggerData]="{content}"
+            class="cursor-pointer align-self-center filter-icon">filter_alt</mat-icon>
+
+    </div>
+    <mat-menu class="heder-controls" #filterMenu="matMenu">
+
+        <ng-template matMenuContent let-content="content">
+            <div class="p-2">
+                <ng-container [ngSwitch]="content.type">
+
+                    <ng-container *ngSwitchCase="tableFilterType.text">
+
+                        <mat-form-field (click)="$event.stopPropagation()">
+                            <mat-label>{{ lang === 'ar' ? content.labelAr : content.labelEn }}</mat-label>
+                            <input matInput [formControl]="content.control">
+                        </mat-form-field>
+
+                    </ng-container>
+
+
+                    <ng-container *ngSwitchCase="tableFilterType.dropDown">
+
+                        <mat-form-field (click)="$event.stopPropagation()">
+                            <mat-label>{{ lang === 'ar' ? content.labelAr : content.labelEn }}</mat-label>
+                            <mat-select [formControl]="content.control">
+                                <mat-option>{{ lang === 'ar' ? 'الكل' : 'All' }}</mat-option>
+                                <mat-option *ngFor="let row of content.data" [value]="row.id">
+                                    {{ lang === 'ar' ? row.nameAr : row.nameEn }}
+                                </mat-option>
+                            </mat-select>
+
+                        </mat-form-field>
+
+                    </ng-container>
+
+                    <ng-container *ngSwitchCase="tableFilterType.date">
+
+                        <mat-form-field (click)="$event.stopPropagation()">
+                            <mat-label>{{ lang === 'ar' ? content.labelAr : content.labelEn }}</mat-label>
+                            <input [formControl]="content.control" matInput [matDatepicker]="picker">
+                            <mat-datepicker #picker></mat-datepicker>
+                            <mat-icon class="cursor-pointer" matSuffix (click)="picker.open()">event</mat-icon>
+                        </mat-form-field>
+
+                    </ng-container>
+
+                    <ng-container *ngSwitchDefault>
+
+
+                    </ng-container>
+                </ng-container>
+            </div>
+        </ng-template>
+
+    </mat-menu>
+</div>
