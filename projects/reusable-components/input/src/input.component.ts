@@ -49,6 +49,7 @@ export class CustomInputComponent implements OnChanges,ControlValueAccessor,Vali
 @Input() autocomplete!:string;
 @Input() minlength!:number;
 @Input() maxlength!:number;
+@Input() readonly!:boolean;
 
 
 

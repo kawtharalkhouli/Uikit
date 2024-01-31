@@ -5,39 +5,41 @@
         <ng-container *ngFor="let step of stepsContents; let i = index">
           <ng-container *ngIf="selectedIndex === i">
           <ng-container *ngTemplateOutlet="step"></ng-container>
-          <ng-container *ngIf="stepHeader.back">
-            <button  class="realsoft-stroked-stepper-icon-btn" (click)="backClicked($event)" matStepperPrevious>
-              <span class="material-icons" *ngIf="stepHeader.backIcon">
-                {{stepHeader.backIcon}}
-              </span>
-              <span class="material-icons" *ngIf="!stepHeader.backIcon">
-                east
-              </span>
-             {{stepHeader.backButton}}
-            </button>
-          </ng-container>
-            <ng-container *ngIf="stepHeader.next">
-              <button  class="realsoft-primary-icon-btn" (click)="nextClicked($event)" matStepperNext>
-               {{stepHeader.nextButton}}
-               <span class="material-icons" *ngIf="stepHeader.nextIcon">
-                {{stepHeader.nextIcon}}
-              </span>
-              <span class="material-icons" *ngIf="!stepHeader.nextIcon">
-                west
-              </span>
+          <div class="realsoft-stepper-actions">
+            <ng-container *ngIf="stepHeader.back">
+              <button  class="realsoft-stroked-stepper-icon-btn" (click)="backClicked($event)" matStepperPrevious>
+                <span class="material-icons" *ngIf="stepHeader.backIcon">
+                  {{stepHeader.backIcon}}
+                </span>
+                <span class="material-icons" *ngIf="!stepHeader.backIcon">
+                  east
+                </span>
+               {{stepHeader.backButton}}
               </button>
             </ng-container>
-            <ng-container *ngIf="stepHeader.submit">
-              <button  class="realsoft-primary-icon-btn" (click)="submitClicked($event)">
-                {{stepHeader.submitButton}}
-                <span class="material-icons" *ngIf="stepHeader.submitIcon">
-                  {{stepHeader.submitIcon}}
+              <ng-container *ngIf="stepHeader.next">
+                <button  class="realsoft-primary-icon-btn" (click)="nextClicked($event)" matStepperNext>
+                 {{stepHeader.nextButton}}
+                 <span class="material-icons" *ngIf="stepHeader.nextIcon">
+                  {{stepHeader.nextIcon}}
+                </span>
+                <span class="material-icons" *ngIf="!stepHeader.nextIcon">
+                  west
+                </span>
+                </button>
+              </ng-container>
+              <ng-container *ngIf="stepHeader.submit">
+                <button  class="realsoft-primary-icon-btn" (click)="submitClicked($event)">
+                  {{stepHeader.submitButton}}
+                  <span class="material-icons" *ngIf="stepHeader.submitIcon">
+                    {{stepHeader.submitIcon}}
+                 </span>
+                 <span class="material-icons" *ngIf="!stepHeader.submitIcon">
+                  save
                </span>
-               <span class="material-icons" *ngIf="!stepHeader.submitIcon">
-                save
-             </span>
-               </button>
-            </ng-container>
+                 </button>
+              </ng-container>
+          </div>
           <ng-container *ngIf="stepHeader.reset"><button class="realsoft-stepper-button" (click)="resetClicked($event)">Reset</button></ng-container>
         </ng-container>
         </ng-container>

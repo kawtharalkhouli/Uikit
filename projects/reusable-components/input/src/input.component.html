@@ -22,6 +22,7 @@
     [max]="configurations?.max" 
     [maxlength]="maxlength" 
     [minlength]="minlength" 
+    [readOnly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [autocomplete]="autocomplete">
     </mat-form-field>
@@ -53,6 +54,7 @@
     [max]="configurations?.max" 
     [maxlength]="maxlength" 
     [minlength]="minlength"
+    [readOnly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [required]="required ? required : isRequired" 
     [autocomplete]="autocomplete">
@@ -81,6 +83,7 @@
     [max]="configurations?.max" 
     [maxlength]="maxlength" 
     [minlength]="minlength"
+    [readOnly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [required]="required ? required : isRequired" 
     [autocomplete]="autocomplete">
@@ -110,6 +113,7 @@
     [max]="configurations?.max" 
     [maxlength]="maxlength" 
     [minlength]="minlength"
+    [readOnly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [required]="required ? required : isRequired" 
     [autocomplete]="autocomplete">
@@ -134,6 +138,7 @@
     [maxlength]="maxlength" 
     [minlength]="minlength"
     [placeholder]="placeholder"
+    [readOnly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [type]="hidePassword ? 'password' : 'text'"  
     [autocomplete]="autocomplete">
@@ -160,6 +165,7 @@
     [placeholder]="placeholder"
     [maxlength]="maxlength" 
     [minlength]="minlength"
+    [readOnly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [type]="hidePassword ? 'password' : 'text'" 
     [autocomplete]="autocomplete">
@@ -180,6 +186,7 @@
   [placeholder]="placeholder"
   [autocomplete]="autocomplete"
   (keyup.enter)="enterEvent($event)"
+  [readOnly]="readonly"
   (blur)="markAsTouched($event)"
   (focus)="focusEvent($event)">
   <mat-icon matSuffix (click)="searchEvent($event)">search</mat-icon>
