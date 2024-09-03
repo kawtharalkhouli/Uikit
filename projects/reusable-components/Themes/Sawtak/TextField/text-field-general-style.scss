@@ -65,7 +65,7 @@ html:lang(ar) body, html:lang(en) body {
 }
 
 .mat-chip-text{
-    color: #000 !important;
+    color: $black-color !important;
 }
 
 .mat-standard-chip.mat-chip-disabled .mat-chip-remove, .mat-standard-chip.mat-chip-disabled .mat-chip-trailing-icon{

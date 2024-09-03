@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy,ViewEncapsulation, ChangeDetectorRef, Component, Input, OnChanges} from '@angular/core';
 
-interface iconConfig{
+interface IconConfig{
   matBadge?:any;
   matBadgeColor?:any;
   size?:string;
@@ -14,7 +14,7 @@ interface iconConfig{
 export class CustomIconComponent implements OnChanges {
     @Input() iconName!:string;
     @Input() matTooltip!:string | undefined;
-    @Input() configurations:iconConfig|undefined;
+    @Input() configurations:IconConfig|undefined;
     @Input() iconColor!: any | string;
 
     constructor(private cdr: ChangeDetectorRef) { }

@@ -1,0 +1,44 @@
+@import '../variables.scss';
+
+//Progress Bar Colors
+.realsoft-progress-bar .mat-progress-bar-buffer {
+    background-color: $track-color !important;
+} 
+.realsoft-progress-bar .mat-progress-bar-fill::after {
+    background-color: $primary-color !important;
+}
+.realsoft-progress-bar .mat-progress-bar.mat-warn .mat-progress-bar-fill::after {
+    background-color: $danger-color !important;
+}
+.realsoft-progress-bar .mat-progress-bar.mat-warn .mat-progress-bar-buffer {
+    background-color: $danger-bg !important;
+}
+
+//Progress Bar Container Styling
+.progress-bar-container {
+    margin: 0.5rem !important;
+   .mat-progress-bar {
+      display: inline-block !important;
+      width: 92% !important;
+      }
+   .mat-icon {
+    position: relative !important;
+    top: 9px !important;
+    cursor: pointer !important;
+    color: $stroked-focus !important;
+    &:hover{
+      transform: scale(0.98) !important;
+      color: $gray-color !important;
+    }
+    }
+   .mat-error {
+    display: block !important;
+    font-size: $small-text !important;
+    color: $danger-color !important;
+  }
+}
+.progress-bar-container.error-progress-bar {
+  .mat-icon {
+    color: $danger-color !important;
+  }
+}

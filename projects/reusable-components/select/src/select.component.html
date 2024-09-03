@@ -89,6 +89,7 @@
       <mat-option
         *ngFor="let child of group.children"
         [value]="child.value[configurations?.chosenId || 'id']"
+        (click)="returnItem(item)"
       >
         {{ child.value[chosenField || 'en'] }}
       </mat-option>
@@ -100,6 +101,7 @@
   class="single-select-single-option"
   [ngClass]="{'small-single-select-single-option'  : size === 'small' , 'large-single-select-single-option' :size === 'large'}"
   *ngFor="let item of filteredData"
+  (click)="returnItem(item)"
   [value]="item[configurations?.chosenId || 'id']"
 >
   <img
@@ -118,6 +120,7 @@
   class="single-select-single-option"
   [ngClass]="{'small-single-select-single-option'  : size === 'small' , 'large-single-select-single-option' :size === 'large'}"
   *ngFor="let item of filteredData"
+  (click)="returnItem(item)"
   [value]="item"
 >
   <img
@@ -169,19 +172,27 @@
   [required]="required ? required : isRequired"
   (blur)="markAsTouched()"
   [(ngModel)]="selectedOptions" (ngModelChange)="onChange($event)" ngDefaultControl
-  [matTooltip]="matTooltip"
   disableOptionCentering panelClass="myPanelClass"
 >
 
 <mat-select-trigger *ngIf="removableChips">
-  <mat-chip-list #chipList>
-    <mat-chip *ngFor="let item of selectedOptionsForChips" [removable]="true" (removed)="removeItem(item)" [disabled]="isDisabled">
-      <span class="mat-chip-text">{{ item.en }}</span>
-      <mat-icon matChipRemove>cancel</mat-icon>
+  <mat-chip-list #chipList *ngIf="selectedOptionsForChips.length > 0">
+    <mat-chip [removable]="true" (removed)="removeItem(selectedOptionsForChips[0])" [disabled]="isDisabled">
+        <ng-container>
+            <span class="mat-chip-text">{{ selectedOptionsForChips[0][chosenField] }}</span>
+            <mat-icon matChipRemove>cancel</mat-icon>
+        </ng-container>
     </mat-chip>
+    <span
+    *ngIf="selectedOptionsForChips.length > 1"
+    class="example-additional-selection multi-select-span-element"
+    [matTooltip]="selectedChips"
+  >
+    +{{ selectedOptionsForChips.length - 1 }}
+  </span>
   </mat-chip-list>
-</mat-select-trigger>
 
+</mat-select-trigger>
   <mat-select-trigger *ngIf="!removableChips">
     <mat-chip-list
       class="multi-select-chip-list"
@@ -238,10 +249,10 @@
   </span>
   <mat-checkbox
     class="multi-select-checkbox"
-    color="primary"
+    [ngStyle]="{'color': '#004eb3'}"
     [(ngModel)]="isMasterSel"
     [ngModelOptions]="{ standalone: true }"
-    (change)="selectAllOptions()"
+    (change)="selectAllOptions($event)"
     >{{
       configurations?.currentLanguage === 'ar'
         ? 'اختر الكل'
@@ -257,6 +268,7 @@
       [disabled]="item?.disabled"
       [value]="item[configurations?.chosenId || 'id']"
       (click)="returnItem(item)"
+      
     >
       <img
         class="multi-select-option-image"
@@ -274,6 +286,7 @@
       class="multi-select-single-option"
       *ngFor="let item of filteredData"
       [value]="item"
+      (click)="returnItem(item)"
     >
       <img
         class="multi-select-option-image"

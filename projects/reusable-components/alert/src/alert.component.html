@@ -2,9 +2,9 @@
 </ng-container>
 
 <ng-template #info>
-    <div class="realsoft-alert info-alert" [hidden]="hide">
+    <div class="realsoft-alert info-alert" [hidden]="hide" [ngStyle]="{'border-color': styleConfigurations?.border, 'background': styleConfigurations?.background, 'color' : styleConfigurations?.color }">
         <p>
-          <span class="material-icons">
+          <span class="material-icons" [ngStyle]="{'color' : styleConfigurations?.iconColor }">
             {{alertIcon}}
           </span>
           <span class="alert-header">{{alertHeader}}</span>
@@ -15,9 +15,9 @@
 </ng-template>
 
 <ng-template #danger>
-    <div class="realsoft-alert danger-alert" [hidden]="hide">
+    <div class="realsoft-alert danger-alert" [hidden]="hide" [ngStyle]="{'border-color': styleConfigurations?.border, 'background': styleConfigurations?.background, 'color' : styleConfigurations?.color }">
         <p>
-          <span class="material-icons">
+          <span class="material-icons" [ngStyle]="{'color' : styleConfigurations?.iconColor }">
             {{alertIcon}}
           </span>
           <span class="alert-header">{{alertHeader}}</span>
@@ -28,9 +28,9 @@
 </ng-template>
 
 <ng-template #warning>
-    <div class="realsoft-alert warning-alert" [hidden]="hide">
+    <div class="realsoft-alert warning-alert" [hidden]="hide" [ngStyle]="{'border-color': styleConfigurations?.border, 'background': styleConfigurations?.background, 'color' : styleConfigurations?.color }">
         <p>
-          <span class="material-icons">
+          <span class="material-icons" [ngStyle]="{'color' : styleConfigurations?.iconColor }">
             {{alertIcon}}
           </span>
           <span class="alert-header">{{alertHeader}}</span>
@@ -41,9 +41,9 @@
 </ng-template>
 
 <ng-template #dark>
-    <div class="realsoft-alert dark-alert" [hidden]="hide">
+    <div class="realsoft-alert dark-alert" [hidden]="hide" [ngStyle]="{'border-color': styleConfigurations?.border, 'background': styleConfigurations?.background, 'color' : styleConfigurations?.color }" >
         <p>
-          <span class="material-icons">
+          <span class="material-icons" [ngStyle]="{'color' : styleConfigurations?.iconColor }">
             {{alertIcon}}
           </span>
           <span class="alert-header">{{alertHeader}}</span>
@@ -54,9 +54,9 @@
 </ng-template>
 
 <ng-template #success>
-    <div class="realsoft-alert success-alert" [hidden]="hide">
+    <div class="realsoft-alert success-alert" [hidden]="hide" [ngStyle]="{'border-color': styleConfigurations?.border, 'background': styleConfigurations?.background, 'color' : styleConfigurations?.color }">
         <p>
-          <span class="material-icons">
+          <span class="material-icons" [ngStyle]="{'color' : styleConfigurations?.iconColor }">
             {{alertIcon}}
           </span>
           <span class="alert-header">{{alertHeader}}</span>

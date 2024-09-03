@@ -1,0 +1,59 @@
+@import '../variables.scss';
+
+//Basic Menu Item Styling
+.menu-item.mat-menu-item {
+    color: $font-color !important;
+    font-size: $normal-text !important;
+    height: 30px !important;
+    align-items: center !important;
+    display: flex !important;
+}
+
+//Basic Menu Item Hover State Styling
+.menu-item.mat-menu-item:hover {
+    background-color: $background-hover !important;
+}
+
+//Basic Menu Item Focus State Styling
+.menu-item.mat-menu-item:focus {
+    background-color: $background-focus !important;
+}
+
+//Menu Items Icons Style
+.menu-item-icon{
+    color: $font-color !important;
+    font-size: $small-icon !important;
+    margin-right: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+//Menu Button Trigger Style
+.menu-btn{
+    background: $white-color !important;
+    border: 1px solid $font-color !important;
+    color: $font-color !important;
+    font-size: $normal-text !important;
+    line-height: $medium-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: -1px !important;
+    }
+
+    &:hover{
+        background: $primary-stroked-hover-focus !important;
+    }
+
+    &:focus{
+        background: $primary-stroked-hover-focus !important;
+    }
+
+    & .material-icons{
+        color: $font-color !important;
+        font-size: 19px !important;
+        position: relative !important;
+        bottom: -2px !important;
+    }
+}

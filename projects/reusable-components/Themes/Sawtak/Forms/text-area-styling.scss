@@ -5,7 +5,7 @@
     min-width: 28px !important;
 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
   
@@ -13,7 +13,7 @@
     border-radius: 0 28px 28px 0 !important;
     min-width: calc(100% - 88px) !important; 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 .custom-text-area .mat-input-element{
@@ -35,11 +35,11 @@ html:lang(ar) .custom-text-area.mat-form-field-appearance-outline.mat-form-field
     width: 133.3333333333% !important;
 }
 .custom-text-area.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
   /* Font color */
 .custom-text-area.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .custom-text-area.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .custom-text-area.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -49,18 +49,18 @@ html:lang(ar) .custom-text-area.mat-form-field-appearance-outline.mat-form-field
 
 // .custom-text-area.mat-form-field.mat-focused {
 //     .mat-form-field-appearance-outline .mat-form-field-outline {
-//         color: #BABABA !important;
+//         color: $gray-color !important;
 //     }
 //     .mat-form-field-label {
-//         color: #00000099 !important;
+//         color: $dark-font-color !important;
 //     }
 //     .mat-input-element {
-//         color: #00000099 !important;
+//         color: $dark-font-color !important;
 //     }
 // }
 
 .custom-text-area.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
 .custom-text-area .mat-form-field-wrapper .mat-form-field-label mat-label{
     padding-left: 19px !important;
@@ -104,7 +104,7 @@ html:lang(ar) .custom-text-area  .mat-form-field-outline-start {
     min-width: 28px !important;
 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
   
@@ -112,7 +112,7 @@ html:lang(ar) .custom-text-area .mat-form-field-outline-end {
     border-radius: 28px 0px 0px 28px !important;
     min-width: calc(100% - 88px) !important; 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 html:lang(ar) .custom-text-area .mat-input-element {

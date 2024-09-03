@@ -9,7 +9,7 @@ import { MatSelectionList } from '@angular/material/list';
 })
 export class SelectionListComponent {
     //Inputs
-    @Input() chosenField!:string;
+    @Input() chosenField:string='en';
     @Input() disabled!:boolean;
     @Input() multiple:boolean=true;
     @Input() data!:any;

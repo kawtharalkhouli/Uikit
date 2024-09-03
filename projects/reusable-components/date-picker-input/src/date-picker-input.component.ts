@@ -3,6 +3,7 @@ import { AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR
 import { MAT_MOMENT_DATE_ADAPTER_OPTIONS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE,NativeDateModule } from '@angular/material/core';
 import { MatDatepicker, MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { FedDateAdapter } from './date-adapter.component';
 
 export const MY_FORMATS = {
   parse: {
@@ -33,7 +34,7 @@ export const MY_FORMATS = {
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [
     {
-      provide: DateAdapter,
+      provide: FedDateAdapter,
       useClass: MomentDateAdapter,
       deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
     },
@@ -57,6 +58,7 @@ export class DatePickerInputComponent implements OnChanges, ControlValueAccessor
 @Input() max!:any;
 @Input() readonly!:boolean;
 @Input() largeFloatingLabel!:boolean;
+@Input() size!: string
 
 @Output() change: EventEmitter<any> =new EventEmitter<any>();
 
@@ -103,6 +105,7 @@ getBooleanProperty(value: any): boolean {
 onDateSelected(e:any){
   this.onTouched();
   this.cdr.detectChanges();
+  this.change.emit(e);
 }
 
 

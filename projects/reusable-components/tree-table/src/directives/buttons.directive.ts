@@ -1,7 +1,7 @@
 import { Directive, TemplateRef } from '@angular/core';
 
 @Directive({
-  selector: '[appButtons]'
+  selector: '[button-directive]'
 })
 export class ButtonsDirective {
 

@@ -1,88 +1,126 @@
-//LTRC Colors
-$basic-chip-color:#878787;
-$basic-chip-hover-color:#636363;
-$linkButton:#1897d4;
-$buttonColor:#fff;
-$buttonPrimaryBackground:#00B6DA;
-$buttonSecondaryBackground:#092242;
-$linkButton:#00B6DA;
-$font-color: #13121C;
+//Text Sizes
 $normal-text: 14px;
 $small-text: 12px;
 $large-text: 16px;
-/*main colors*/
-$font-color: #092242;
+
+//Primary and Secondary Colors
 $primary-color: #00B6DA;
 $primary-color-hover: #0999B5;
 $primary-color-focus: #077B92;
 $sec-color: #092242;
 $sec-color-hover: #061B36;
 $sec-color-focus:#041123;
-$primaryHoverColor:#0999B5;
-$secondaryHoverColor:#061B36;
-$hover-color:#f3f3f3;
-$focus-color:#E8FCF7;
-$gray-color: #bababa;
-$disabled-color: #eeeeee;
+$disabled-color:#EEEEEE;
+$gray-color:#BABABA;
+$dark-gray-color:#A6A6A6;
+$primary-stroked-hover-focus: #34A4DF1A;
+$secondary-stroked-hover-focus: #38A8AB17;
+$tab-label-color: #444444DE;
+
+
+
+//Common Sizes
+$small-button-height: 30px;
+$medium-button-height: 35px;
+$large-button-height: 40px;
+$small-icon: 20px;
+$medium-icon: 24px;
+$large-icon: 28px;
+$small-input-field-height:40px;
+$medium-input-field-height:46px;
+$large-input-field-height:55px;
+
+
+//Menu and Navigation Colors
+$background-hover: #F3F3F3;
+$background-focus: #EAF6FC;
+
+//Common Colors
+$font-color: #092242;
+$stroked-color:#34314C;
 $light-gray: #fcfcfc;
 $dark-gray: #a7a7a7;
 $white-color: #ffffff;
 $black-color: #000000;
-/*alerts colors*/
-$danger-color: #E72A46;
-$danger-bg: #E72A4614;
-$info-color: #00B6DA;
-$info-bg: #00B6DA14;
-$warning-color: #FFC131;
-$warning-bg: #FFC13114;
-$success-color:#38AE8B;
-$success-bg: #38AE8B14;
-$dark-alert:#092242;
-$dark-bg: #09224214;
-/*UI components*/
-/*icons*/
-$small-icon: 20px;
-$medium-icon: 24px;
-$large-icon: 28px;
-/*dialogs*/
-$small-dialog:40vw;
-$medium-dialog:60vw;
-$large-dialog:80vw;
-$xsmall-dialog:25vw;
+$gray-icon: #B7B7B7;
+$gray-border: #e0e0e0;
+$skeleton-grid: #eff1f6;
+$dark-gray-font: #333333;
+
+
+//Input Field Colors
+$input-field-label-color: #8B8B8B;
+$input-field-focus-color-outline: #00B6DA;
+$input-field-hover-color:#0999B5;
+$input-field-outline-color: #9EACC1;
+$input-field-disabled-border-color:#BABABA;
+$input-field-disabled-background-color:#EEEEEE;
+$input-field-disabled-font-color:#00000099;
+$input-field-prefix-icon-color: #00B6DA;
+$input-field-suffix-icon-color: #00B6DA;
+$input-field-password-icon-color: rgba(68, 68, 68, 0.8666666667);
+$input-field-icon-gray-color: rgba(68, 68, 68, 0.8666666667);
+
+//Alert Colors
+$danger-color: #EF4B4B;
+$danger-bg: #FAC8C8;
+$info-color: #3E80EB;
+$info-bg: #CCD6F8;
+$warning-color: #FFAB00;
+$warning-bg: #FEE8BB;
+$success-color:#38CB89;
+$success-bg: #CBF6E2;
+$dark-alert:#1B1E21;
+$dark-bg: #D6D8D9;
+
+$hover-color:#f3f3f3;
+$focus-color:#E8FCF7;
+
+
 /*Buttons*/
 $stroked-hover:#0999B5;
 $stroked-focus:#077B92;
-$link-color: #00B6DA;
-$link-color-hover:#0999B5;
-$link-color-focus: #077B92;
+$link-color: #369EFB ;
+$link-color-hover:#318CDD;
+$link-color-focus: #25659F;
 $transparent-color:rgba(255, 255, 255, 0);
-$toggle-background: #00B6DA40;
+$toggle-background: rgba(52, 164, 223,0.2);
 $toggle-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
-$shadow-style: 0 0 6px #0000001a;
+$shadow-style: 0 0 6px #0000003B;
 
 $black-transparent: #0000009e;
 $arrow-shadow-color: #0000001f;
 
 
-/*Headings Font*/
-$h1-size: 40px;
-$h2-size: 32px;
-$h3-size: 28px;
-$h4-size: 24px;
-$h5-size: 18px;
-$h6-size: 16px;
 
 /*Progress Bar*/
-$track-color: #00B6DA40;
+$track-color: #9FC3D6;
 $tooltip-color: #8F8F8F;
 
-/*UI KIT COLORS*/
-$tabs-title: #A7A7A7;
+//Tabs
+$tabs-title: #13121CDE;
 
-/*secondary colors*/
-$blue-color: #00B6DA;
-$blue-color-hover:#00B6DA40;
-$orange-color: #FF682C;
+//border-radius
+$border-radius: 28px;
 
 
+//LTRC Colors
+$basic-chip-color:#878787;
+$basic-chip-hover-color:#636363;
+$linkButton:#369EFB;
+$buttonColor:#fff;
+$font-color: #13121C;
+$normal-text: 14px;
+$small-text: 12px;
+$large-text: 16px;
+
+//rounded radius variables
+$button-border-radius:20px;
+
+
+//Font Weights
+$medium-font-weight: 500;
+$semi-bold-font-weight: 600;
+$regular-font-weight: 400;
+$slider-track-background-color: #34A4DF52;
 

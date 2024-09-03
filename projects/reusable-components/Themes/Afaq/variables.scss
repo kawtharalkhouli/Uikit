@@ -1,0 +1,114 @@
+//Text Sizes
+$normal-text: 14px;
+$small-text: 12px;
+$large-text: 16px;
+
+//Primary and Secondary Colors
+$primary-color: #004EB3;
+$primary-color-hover: #034497;
+$primary-color-focus: #02306B;
+$sec-color: #006989;
+$sec-color-hover: #03617E;
+$sec-color-focus:#02536B;
+$font-color: #13121C;
+$stroked-color:#34314C;
+
+$hover-color:#F2F2F2;
+$focus-color:#DFDEDE;
+$gray-color: #bababa;
+$disabled-color: #eeeeee;
+$light-gray: #fcfcfc;
+$dark-gray: #a7a7a7;
+$white-color: #ffffff;
+$black-color: #000000;
+$dark-font-color: #00000099;
+$table-body-border: #E5E5E5;
+$table-header-border: #B4B4B4;
+$tab-label-color: #444444DE;
+
+//Alert Colors
+$danger-color: #E72A46;
+$danger-bg: #E72A4614;
+$info-color: #00B6DA;
+$info-bg: #00B6DA14;
+$warning-color: #FFC131;
+$warning-bg: #FFC13114;
+$success-color:#38AE8B;
+$success-bg: #38AE8B14;
+$dark-alert:#092242;
+$dark-bg: #09224214;
+
+//Icons Sizes
+$small-icon: 20px;
+$medium-icon: 24px;
+$large-icon: 28px;
+
+
+
+/*Buttons*/
+$stroked-hover:#F2F2F2;
+$stroked-focus:#DFDEDE;
+$link-color: #004EB3 ;
+$link-color-hover:#034497;
+$link-color-focus: #02306B;
+$transparent-color:rgba(255, 255, 255, 0);
+$toggle-background: #829BBB;
+$toggle-shadow: 0 2px 1px -1px #0003, 0 1px 1px #00000024, 0 1px 3px #0000001f;
+$shadow-style: 0 0 6px #0000003B;
+
+$black-transparent: #0000009e;
+$arrow-shadow-color: #0000001f;
+
+/*Headings Font*/
+$h1-size: 40px;
+$h2-size: 32px;
+$h3-size: 28px;
+$h4-size: 24px;
+$h5-size: 18px;
+$h6-size: 16px;
+
+/*Progress Bar*/
+$track-color: #a8a6cf;
+$tooltip-color: #8F8F8F;
+
+//Tabs
+$tabs-title: #13121CDE;
+
+//border-radius
+$border-radius: 6px;
+
+$buttonPrimaryBackground:#004EB3;
+$buttonSecondaryBackground:#006989;
+
+//LTRC Colors
+$basic-chip-color:#878787;
+$basic-chip-hover-color:#636363;
+$linkButton:#369EFB;
+$buttonColor:#fff;
+$font-color: #13121C;
+$normal-text: 14px;
+$small-text: 12px;
+$large-text: 16px;
+
+//rounded radius variables
+$button-border-radius: 6px;
+
+$red-color: #EF4B4B;
+$red-color-hover: #D84B4B;
+$red-color-focus: #B33A3A;
+
+$green-color: #38AE8B;
+$green-color-hover: #3A9278;
+$green-color-focus: #327561;
+
+//Toastr Styles
+$toastr-success: #118135;
+$toastr-warning: #EB8700;
+$toastr-error: #DA2C20;
+$toastr-text: #333333;
+$toastr-icon: #A8A9A9;
+$toastr-success-background: #EBFBF5;
+$toastr-error-background: #FDEDEF;
+$toastr-warning-background: #FFF9EA;
+$toastr-boxshadow: #999999;
+

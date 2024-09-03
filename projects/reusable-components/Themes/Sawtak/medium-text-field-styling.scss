@@ -54,11 +54,11 @@ html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appeara
 }
 
 .text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
   /* Font color */
   .text-field-prefix-icon.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -72,7 +72,7 @@ html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appeara
     padding-right: 32px !important;
     position: relative !important;
     bottom: 15px !important;
-    color: #40399A !important;
+    color: $primary-color !important;
 }
 
 html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
@@ -80,7 +80,7 @@ html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appeara
     padding-right: 38px !important;
     position: relative !important;
     bottom: 8px !important;
-    color: #40399A !important;
+    color: $primary-color !important;
 }
 
 .text-field-prefix-icon.mat-form-field-appearance-outline:not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
@@ -167,10 +167,10 @@ html:lang(ar) .multiple-password-text-field.mat-form-field-appearance-outline:no
 }
 
 .multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
 .multiple-password-text-field.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -184,7 +184,7 @@ html:lang(ar) .multiple-password-text-field.mat-form-field-appearance-outline:no
     padding-right: 32px !important;
     position: relative !important;
     bottom: 24px !important;
-    color: #40399A !important;
+    color: $primary-color !important;
 }
 html:lang(ar) .multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
     padding-left: 14px !important;
@@ -292,11 +292,11 @@ html:lang(ar) .text-field-no-icon-large-floating-label .mat-form-field-outline-e
 }
 
 .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
   /* Font color */
 .text-field-no-icon.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -417,11 +417,11 @@ html:lang(ar) .single-password-text-field.mat-form-field-appearance-outline:not(
 }
 
 .single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
   /* Font color */
   .single-password-text-field.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,

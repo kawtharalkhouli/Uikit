@@ -40,13 +40,13 @@
     }
   }
   
-  .text-field-multi-icons.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label {
-    color: #369EFB !important;
-  }
+  // .text-field-multi-icons.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label {
+  //   color: #369EFB !important;
+  // }
   
-  .text-field-multi-icons.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
-    color: #369EFB !important;
-  }
+  // .text-field-multi-icons.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
+  //   color: #369EFB !important;
+  // }
   
   .text-field-multi-icons .mat-input-element{
     position: relative !important;
@@ -74,11 +74,11 @@
   }
   
   .text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
   }
   /* Font color */
   .text-field-multi-icons.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
   }
   .text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
   .text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -92,7 +92,7 @@
     padding-right: 7px !important;
     position: relative !important;
     bottom: 0px !important;
-    color: #40399A !important;
+    color: $primary-color !important;
   }
   
   html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
@@ -133,7 +133,7 @@
     min-width: 59px !important;
   
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
   }
   

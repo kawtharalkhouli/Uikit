@@ -21,6 +21,7 @@ export class RealsoftCheckboxComponent implements OnChanges, ControlValueAccesso
 @Input() checked!:boolean | undefined;
 @Input() value!:any;
 @Input() required:boolean=false;
+@Input() indeterminate!: boolean;
 
 //Outputs
 @Output() change:EventEmitter<any> = new EventEmitter();

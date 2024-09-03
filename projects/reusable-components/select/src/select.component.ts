@@ -44,7 +44,7 @@ import {
     providers: [VALUE_ACCESSOR,VALIDATOR],
     encapsulation: ViewEncapsulation.None
   })
-  export class MultiSelectComponent implements OnChanges, ControlValueAccessor,Validator,AfterContentChecked {
+  export class MultiSelectComponent implements OnChanges, ControlValueAccessor,Validator,AfterContentChecked{
     @ViewChild('select') select!: MatSelect;
     @Input() data!: any;
     @Input() chosenField!: string;
@@ -55,6 +55,8 @@ import {
     @Input() matTooltip!:string;
     @Input() size!:string;
     @Input() removableChips:boolean=false;
+    chips:any[]=[];
+    selectedChips: any =[];
 
     @Output() addOptions: EventEmitter<any> = new EventEmitter();
     @Output() selectionChange: EventEmitter<any> = new EventEmitter();
@@ -93,9 +95,9 @@ import {
         this.selectedValues &&
         (this.data?.length > 0 || this.data?.children?.length > 0)
       ) {
-        this.filteredData.sort((a: any, b: any) =>
-        a[this.chosenField].localeCompare(b[this.chosenField])
-      );
+      //   this.filteredData.sort((a: any, b: any) =>
+      //   a[this.chosenField].localeCompare(b[this.chosenField])
+      // );
         this.selectedOptions = this.selectedValues;
         this.setChipsValue(this.selectedValues);
       } else {
@@ -146,37 +148,66 @@ import {
             })
           );
         });
+        this.selectedOptionsForChips.map(item => {
+          this.chips.push(item[this.chosenField])
+        })
+        this.selectedChips = [...new Set(this.chips)];
+        
       }
     }
     }
-    selectAllOptions(): void {
-      if (this.isMasterSel) {
-      this.select.options.forEach((item: MatOption) => item.select());
-      this.selectedItem.emit(this.filteredData);
+    selectAllOptions(e:any): void {
+      let selectedValues = []
+      if (e.checked === true) {
+        this.filteredData.forEach(item => {
+          selectedValues.push(item.id)
+        })
+        this.select.writeValue(selectedValues)
+        this.selectedOptions = selectedValues; 
+        this.selectedOptionsForChips = selectedValues;
+        this.selectionChange.emit({value:this.selectedOptions})
+        this.select.optionSelectionChanges
+        this.cdr.detectChanges();
       } else {
-        this.select.options.forEach((item: MatOption) => item.deselect());
+        this.selectedOptions = []; 
+        this.selectedOptionsForChips = [];
+        this.select.writeValue([]);
+        this.selectionChange.emit({value:this.selectedOptions})
+        this.cdr.detectChanges()
       }
     }
     selected(event: any): void {
-      
       if (this.configurations?.isMultiple) {
         this.selectedOptions = event.value;
+        this.selectionChange.emit(event);
       }
-      this.selectionChange.emit(event);
   
-      if (!this.configurations?.isMultiple) this.onChange(event.value);
+      if (!this.configurations?.isMultiple) {
+        this.onChange(event.value);
+        this.selectionChange.emit(event)
+      }
       else {
         this.valueSelected = [];
         for (let option of this.selectedOptions) {
           this.valueSelected?.push(option);
         }
         this.onChange(this.valueSelected);
+        this.selectionChange.emit(event);
       }
       this.selectedOptionsForChips = [];
       this.setChipsValue(event.value);
     }
   
     returnItem(item:any){
+      if(this.configurations.isMultiple){
+        let newStatus = true;
+        this.select.options.forEach((item: MatOption) => {
+          if (!item.selected) {
+            newStatus = false;
+          }
+        });
+        this.isMasterSel = newStatus;
+      }
       this.selectedItem.emit(item);
     }
   
@@ -205,37 +236,64 @@ import {
   
         //* If the search value is empty, concatenate the selected options and other options and sort them alphabetically
         if (searchValue === '') {
-          filteredOptions = [...selectedOptions, ...otherOptions].sort(
-            (a: any, b: any) =>
-              a[this.chosenField].localeCompare(b[this.chosenField])
-          );
+          // filteredOptions = [...selectedOptions, ...otherOptions].sort(
+          //   (a: any, b: any) =>
+          //     a[this.chosenField].localeCompare(b[this.chosenField])
+          // );
+          filteredOptions = [...selectedOptions, ...otherOptions];
         } else {
           //* If there is a search value, filter the options based on the search value and selected options, and sort them
-          filteredOptions = this.data
-            .filter(
-              (option: any) =>
-                option[this.chosenField].toLowerCase().includes(searchValue) ||
-                selectedValues?.includes(
-                  option[this.configurations?.chosenId || 'id']
-                )
-            )
-            .sort((a: any, b: any) => {
-              const aIsSelected = selectedValues?.includes(
-                a[this.configurations?.chosenId || 'id']
-              );
-              const bIsSelected = selectedValues?.includes(
-                b[this.configurations?.chosenId || 'id']
-              );
+          // filteredOptions = this.data
+          //   .filter(
+          //     (option: any) =>
+          //       option[this.chosenField].toLowerCase().includes(searchValue) ||
+          //       selectedValues?.includes(
+          //         option[this.configurations?.chosenId || 'id']
+          //       )
+          //   )
+          //   .sort((a: any, b: any) => {
+          //     const aIsSelected = selectedValues?.includes(
+          //       a[this.configurations?.chosenId || 'id']
+          //     );
+          //     const bIsSelected = selectedValues?.includes(
+          //       b[this.configurations?.chosenId || 'id']
+          //     );
   
-              //* Sort selected options first, then other options, then alphabetically
-              if (aIsSelected && !bIsSelected) {
-                return -1;
-              } else if (bIsSelected && !aIsSelected) {
-                return 1;
-              } else {
-                return a[this.chosenField].localeCompare(b[this.chosenField]);
-              }
-            });
+          //     //* Sort selected options first, then other options, then alphabetically
+          //     if (aIsSelected && !bIsSelected) {
+          //       return -1;
+          //     } else if (bIsSelected && !aIsSelected) {
+          //       return 1;
+          //     } else {
+          //       return a[this.chosenField].localeCompare(b[this.chosenField]);
+          //     }
+          //   });
+
+          filteredOptions = this.data
+          .filter(
+            (option: any) =>
+              option[this.chosenField].toLowerCase().includes(searchValue) ||
+              selectedValues?.includes(
+                option[this.configurations?.chosenId || 'id']
+              )
+          )
+          // .sort((a: any, b: any) => {
+          //   const aIsSelected = selectedValues?.includes(
+          //     a[this.configurations?.chosenId || 'id']
+          //   );
+          //   const bIsSelected = selectedValues?.includes(
+          //     b[this.configurations?.chosenId || 'id']
+          //   );
+
+          //   //* Sort selected options first, then other options, then alphabetically
+          //   if (aIsSelected && !bIsSelected) {
+          //     return -1;
+          //   } else if (bIsSelected && !aIsSelected) {
+          //     return 1;
+          //   } else {
+          //     return a[this.chosenField].localeCompare(b[this.chosenField]);
+          //   }
+          // });
         }
         //* Set the filtered data to the filtered options
         this.filteredData = filteredOptions;

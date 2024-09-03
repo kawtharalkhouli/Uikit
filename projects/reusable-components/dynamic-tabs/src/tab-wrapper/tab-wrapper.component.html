@@ -1,0 +1,17 @@
+<div [@.disabled]="true">
+    <mat-tab-group
+     class="realsoft-dynamic-horizontal-tabs"
+     [animationDuration]="animationDuration" 
+     [selectedIndex]="selectedTabIndex" 
+     [disableRipple]="disableRipple" 
+     [dynamicHeight]="dynamicHeight"
+     (selectedIndexChange)="indexChange($event)"
+     (selectedTabChange)="tabChange($event)">
+        <mat-tab *ngFor="let tab of tabItems" [disabled]="tab.disabled" [bodyClass]="tab.bodyClass" [labelClass]="tab.labelClass">
+          <ng-template mat-tab-label>
+          <ng-container *ngTemplateOutlet="tab.labelTemplate.labelTemplate"></ng-container>
+          </ng-template>
+          <ng-container *ngTemplateOutlet="tab.tabTemplate"></ng-container>
+        </mat-tab>
+    </mat-tab-group>  
+</div>

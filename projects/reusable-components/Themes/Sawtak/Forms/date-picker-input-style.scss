@@ -13,7 +13,7 @@
     min-width: 28px !important;
 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 
@@ -21,7 +21,7 @@
     border-radius: 0 28px 28px 0 !important;
     min-width: calc(100% - 110px ) !important;
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 
@@ -29,7 +29,7 @@ html:lang(ar) .custom-date-picker-large-floating-label  .mat-form-field-outline-
     border-radius: 0 28px 28px 0 !important;
     min-width: calc(100% - 128px ) !important;
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 .custom-date-picker .mat-input-element{
@@ -42,7 +42,7 @@ html:lang(ar) .custom-date-picker-large-floating-label  .mat-form-field-outline-
 .custom-date-picker.mat-form-field-disabled .mat-input-element{
     bottom: 2px !important;
     font-size: 16px !important;
-    color: #13121C !important;
+    color: $font-color !important;
 }
 .custom-date-picker.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
     transform: translate(0.4em,-0.9em) scale(0.75);
@@ -54,11 +54,11 @@ html:lang(ar) .custom-date-picker-large-floating-label  .mat-form-field-outline-
 }
 
 .custom-date-picker.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
   /* Font color */
 .custom-date-picker.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .custom-date-picker.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .custom-date-picker.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -68,18 +68,18 @@ html:lang(ar) .custom-date-picker-large-floating-label  .mat-form-field-outline-
 
 // .custom-date-picker.mat-form-field.mat-focused {
 //     .mat-form-field-appearance-outline .mat-form-field-outline {
-//         color: #BABABA !important;
+//         color: $gray-color !important;
 //     }
 //     .mat-form-field-label {
-//         color: #00000099 !important;
+//         color: $dark-font-color !important;
 //     }
 //     .mat-input-element {
-//         color: #00000099 !important;
+//         color: $dark-font-color !important;
 //     }
 // }
 
 // .custom-date-picker.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-//     color: #BABABA !important;
+//     color: $gray-color !important;
 // }
 .custom-date-picker .mat-form-field-wrapper .mat-form-field-label mat-label{
     padding-left: 18px !important;
@@ -93,7 +93,7 @@ html:lang(ar) .custom-date-picker-large-floating-label  .mat-form-field-outline-
     line-height: 15px !important;
     position: relative !important;
     bottom: -2px !important;
-    color: #00000099 !important;
+    color: $dark-font-color !important;
     font-weight: 600 !important;
     font-size: 12px !important;
 }
@@ -119,7 +119,7 @@ html:lang(ar) .custom-date-picker-large-floating-label  .mat-form-field-outline-
 .custom-date-picker.mat-calendar-body-cell.selected:hover > .mat-calendar-body-cell-content,
 .custom-date-picker.mat-calendar-body-cell.selected > .mat-calendar-body-cell-content:hover {
   background-color: $primary-color !important;
-  color: #fff !important;
+  color: $white-color !important;
 }
 .mat-focused.mat-warn .mat-form-field-outline-thick, .mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
     color: $danger-color !important;
@@ -137,7 +137,7 @@ html:lang(ar) .custom-date-picker .mat-form-field-outline-start {
     min-width: 28px !important;
 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
   
@@ -145,7 +145,7 @@ html:lang(ar)  .custom-date-picker .mat-form-field-outline-end {
     border-radius: 28px 0px 0px 28px !important;
     min-width: calc(100% - 110px ) !important;
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 html:lang(ar) .custom-date-picker .mat-input-element {
@@ -159,7 +159,7 @@ html:lang(ar) .custom-date-picker.mat-form-field-disabled .mat-input-element {
     padding-left: unset !important;
     position: relative !important;
     bottom: 4px !important;
-    color: #13121C !important;
+    color: $font-color !important;
     font-size: 16px !important;
 }
 
@@ -180,7 +180,7 @@ html:lang(ar) .custom-date-picker.mat-form-field-disabled .mat-form-field-wrappe
     position: relative !important;
     bottom: 3px !important;
     line-height: 47px !important;
-    color: #00000099 !important;
+    color: $dark-font-color !important;
     font-size: 12px !important;
     font-weight: 600 !important;
 }
@@ -197,12 +197,12 @@ html:lang(ar) .custom-date-picker.mat-form-field-disabled .mat-form-field-wrappe
     &:disabled{
         position: relative !important;
         bottom: -3px !important;
-        color: #00000099 !important;
+        color: $dark-font-color !important;
     }
 }
 .mat-calendar-body-selected{
     background-color: $primary-color !important;
-    color: #fff !important;
+    color: $white-color !important;
 }
 
 html:lang(ar) .custom-date-picker.mat-form-field-disabled.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {

@@ -1,0 +1,266 @@
+@import '../../../variables.scss';
+
+//Default Size Primary Button Style
+.realsoft-primary-btn{
+    background: $primary-color !important;
+    color: $white-color !important;
+    font-size: $normal-text !important;
+    line-height: $medium-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: -1px !important;
+    }
+
+    &:hover{
+        background: $primary-color-hover !important;
+    }
+
+    &:focus{
+        background: $primary-color-focus !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+    }
+}
+
+
+//Default Size Primary Stroked Button Style
+.realsoft-primary-stroked-btn{
+    background: $white-color !important;
+    border: 1px solid $primary-color !important;
+    color: $primary-color !important;
+    font-size: $normal-text !important;
+    line-height: $medium-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: -1px !important;
+    }
+
+    &:hover{
+        background: $primary-stroked-hover-focus !important;
+        color: $primary-color-hover !important;
+    }
+
+    &:focus{
+        background: $primary-stroked-hover-focus !important;
+        color: $primary-color-focus !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        border: 1px solid $gray-color !important;
+    }
+}
+
+//Default Primary Link Button Style
+.realsoft-primary-link-btn{
+    color: $primary-color !important;
+    text-decoration: underline !important;
+    font-size: $normal-text !important;
+    &:hover{
+        color: $primary-color-hover !important;
+    }
+    &:focus{
+        color: $primary-color-focus !important;
+    }
+    &:disabled{
+        color: $gray-color !important;
+        background: $white-color !important;
+    }
+}
+
+//Default Primary Button With Prefix Icon Style
+.realsoft-primary-icon-prefix-btn{
+    background: $primary-color !important;
+    color: $white-color !important;
+    font-size: $normal-text !important;
+    line-height: $medium-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: -1px !important;
+    }
+
+    &:hover{
+        background: $primary-color-hover !important;
+    }
+
+    &:focus{
+        background: $primary-color-focus !important;
+    }
+
+    & .material-icons{
+        color: $white-color !important;
+        font-size: 19px !important;
+        position: relative !important;
+        left: -3px !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+    }
+}
+
+//Default Primary Text Button Style
+.realsoft-primary-text-btn{
+    color: $primary-color !important;
+    font-size: $normal-text !important;
+    &:hover{
+        color: $primary-color-hover !important;
+    }
+    &:focus{
+        color: $primary-color-focus !important;
+    }
+    &:disabled{
+        color: $gray-color !important;
+        background: $white-color !important;
+    }
+}
+
+//Default Primary Button with Suffix Icon Style
+.realsoft-primary-icon-suffix-btn{
+    background: $primary-color !important;
+    color: $white-color !important;
+    font-size: $normal-text !important;
+    line-height: $medium-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: -1px !important;
+    }
+
+    &:hover{
+        background: $primary-color-hover !important;
+    }
+
+    &:focus{
+        background: $primary-color-focus !important;
+    }
+
+    & .material-icons{
+        color: $white-color !important;
+        font-size: 19px !important;
+        position: relative !important;
+        right: -3px !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+    }
+}
+
+//Default Primary Stroked Button with Prefix Icon Style
+.realsoft-primary-stroked-icon-prefix-btn{
+    background: $white-color !important;
+    border: 1px solid $primary-color !important;
+    color: $primary-color !important;
+    font-size: $normal-text !important;
+    line-height: $medium-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: -1px !important;
+    }
+
+    &:hover{
+        background: $primary-stroked-hover-focus !important;
+        color: $primary-color-hover !important;
+
+        & .material-icons{
+            color: $primary-color-hover !important;
+        }
+    }
+
+    &:focus{
+        background: $primary-stroked-hover-focus !important;
+        color: $primary-color-focus !important;
+
+        & .material-icons{
+            color: $primary-color-focus !important;
+        }
+    }
+
+    & .material-icons{
+        color: $primary-color !important;
+        font-size: 19px !important;
+        position: relative !important;
+        left: -3px !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        border: 1px solid $gray-color !important;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+    }
+}
+
+//Default Primary Stroked Button with Suffix Icon
+.realsoft-primary-stroked-icon-suffix-btn{
+    background: $white-color !important;
+    border: 1px solid $primary-color !important;
+    color: $primary-color !important;
+    font-size: $normal-text !important;
+    line-height: $medium-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: -1px !important;
+    }
+
+    &:hover{
+        background: $primary-stroked-hover-focus !important;
+        color: $primary-color-hover !important;
+
+        & .material-icons{
+            color: $primary-color-hover !important;
+        }
+    }
+
+    &:focus{
+        background: $primary-stroked-hover-focus !important;
+        color: $primary-color-focus !important;
+
+        & .material-icons{
+            color: $primary-color-focus !important;
+        }
+    }
+
+    & .material-icons{
+        color: $primary-color !important;
+        font-size: 19px !important;
+        position: relative !important;
+        right: -3px !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        border: 1px solid $gray-color !important;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+    }
+}
+

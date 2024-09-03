@@ -1,8 +1,8 @@
 import {ChangeDetectionStrategy,ChangeDetectorRef,Component,EventEmitter,Input,OnChanges,Output} from '@angular/core';
  
-interface menuConfig{
+interface MenuConfig{
   type?: string;
-  triggerBtn?:string;
+  triggerIcon?:string;
 }
 
 @Component({
@@ -14,7 +14,7 @@ interface menuConfig{
 export class RealsoftMenuComponent implements OnChanges{
   //Inputs
   @Input() data!:any;
-  @Input() configurations:menuConfig | undefined;
+  @Input() configurations:MenuConfig | undefined;
   @Input() btnTxt!:string;
   @Input() icon!:string;
   @Input() lang: string = 'en';

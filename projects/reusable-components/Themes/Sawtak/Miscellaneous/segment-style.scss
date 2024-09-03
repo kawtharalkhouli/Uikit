@@ -81,29 +81,29 @@ html:lang(ar) .realsoft-toggle-button-group-secondary .mat-button-toggle-button{
 // }
 
 .realsoft-toggle-button-group .mat-button-toggle-button {
-    border-right: 0px solid #bababa !important;
+    border-right: 0px solid $gray-color !important;
 }
 
 html:lang(ar) .realsoft-toggle-button-group .mat-button-toggle-button {
-    border-left: 0px solid #bababa !important;
+    border-left: 0px solid $gray-color !important;
 }
 
 .mat-button-toggle-disabled.mat-button-toggle-checked {
     background-color: #eee !important;
-    color: #bababa !important;
-    border-right: 1px solid #bababa !important ;
+    color: $gray-color !important;
+    border-right: 1px solid $gray-color !important ;
     & .mat-button-toggle-label-content{
-        color: #bababa !important;
+        color: $gray-color !important;
     }
 }
 
 
 html:lang(ar) .mat-button-toggle-disabled.mat-button-toggle-checked {
     background-color: #eee !important;
-    color: #bababa !important;
-    border-left: 1px solid #bababa !important ;
+    color: $gray-color !important;
+    border-left: 1px solid $gray-color !important ;
     & .mat-button-toggle-label-content{
-        color: #bababa !important;
+        color: $gray-color !important;
     }
 }
 

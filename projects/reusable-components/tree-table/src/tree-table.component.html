@@ -33,7 +33,7 @@
           <div>
               <td mat-cell *matCellDef="let element" [id]="row.iconColumnName" (click)="emitRowAction(element, row.iconName, row.iconColumnName)" class="text-center" [ngClass]="row.className">
                 <ng-container *ngIf="element.showIcon">
-                  <button mat-icon-button class="text-center table-button" [disabled]="element?.disabledIcon[i]" >
+                  <button mat-icon-button class="text-center table-button">
                     <mat-icon [ngStyle]="{'color': row.iconColor}">{{row.iconName}}</mat-icon>
                   </button>
                 </ng-container>
@@ -73,13 +73,13 @@
         <ng-container *ngIf="!tableColumn?.nested">
           <ng-container *ngIf="!tableColumn.clickable">
             <td mat-cell *matCellDef="let data" [ngClass]="tableColumn.className">
-              <span>{{ lang === 'ar' ? data.dataKeyAr: data.dataKey }}</span> 
+              <span (click)="nodeClicked(data)">{{ lang === 'ar' ? data.dataKeyAr: data.dataKey }}</span> 
           </td>
           </ng-container>
 
           <ng-container *ngIf="tableColumn.clickable">
             <td mat-cell *matCellDef="let data" [ngClass]="tableColumn.className" (click)="cellClicked($event)">
-              <span>{{ lang === 'ar' ? data.dataKeyAr: data.dataKey }}</span> 
+              <span (click)="nodeClicked(data)">{{ lang === 'ar' ? data.dataKeyAr: data.dataKey }}</span> 
           </td>
           </ng-container>
 

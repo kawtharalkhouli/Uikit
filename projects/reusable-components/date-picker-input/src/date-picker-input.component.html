@@ -4,12 +4,11 @@
     <mat-form-field
     class="custom-date-picker form-fields" 
     appearance="outline"
-    [ngClass]="{'custom-date-picker-large-floating-label' : largeFloatingLabel === true,'text-field-invalid' : (invalid === true || isRequired === true )}">
+    [ngClass]="{'custom-date-picker-large-floating-label' : largeFloatingLabel === true,'text-field-invalid' : (invalid === true || isRequired === true ), 'large-custom-date-picker': size === 'large', 'small-custom-date-picker': size === 'small'}">
         <mat-label *ngIf="appearance === 'outline'">{{label}}</mat-label>
-        <input  matInput [matDatepicker]="dp" [placeholder]="placeholder" [disabled]="isDisabled" (dateChange)="onDateSelected($event)"
-        [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()"
+        <input matInput [matDatepicker]="dp" [placeholder]="placeholder" [disabled]="isDisabled" (dateChange)="onDateSelected($event)"
+        [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()" 
          [required]="required ? required : isRequired" [min]="min" [max]="max" [readonly]="readonly"
-         [value]="value"
         >
         <mat-datepicker-toggle matSuffix [for]="dp" [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl (blur)="markAsTouched()" (touch)="onTouched()"></mat-datepicker-toggle>
         <mat-datepicker #dp [startView]="startView" [startAt]="startAt"></mat-datepicker>   

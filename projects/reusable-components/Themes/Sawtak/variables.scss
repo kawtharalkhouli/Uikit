@@ -21,6 +21,10 @@ $light-gray: #fcfcfc;
 $dark-gray: #a7a7a7;
 $white-color: #ffffff;
 $black-color: #000000;
+$dark-font-color: #00000099;
+$table-body-border: #E5E5E5;
+$table-header-border: #B4B4B4;
+$tab-label-color: #444444DE;
 
 //Alert Colors
 $danger-color: #EF4B4B;
@@ -91,6 +95,8 @@ $normal-text: 14px;
 $small-text: 12px;
 $large-text: 16px;
 
+
+
 //rounded radius variables
 $button-border-radius:20px;
 
@@ -102,4 +108,14 @@ $green-color: #38AE8B;
 $green-color-hover: #3A9278;
 $green-color-focus: #327561;
 
+//Toastr Styles
+$toastr-success: #118135;
+$toastr-warning: #EB8700;
+$toastr-error: #DA2C20;
+$toastr-text: #333333;
+$toastr-icon: #A8A9A9;
+$toastr-success-background: #EBFBF5;
+$toastr-error-background: #FDEDEF;
+$toastr-warning-background: #FFF9EA;
+$toastr-boxshadow: #999999;
 

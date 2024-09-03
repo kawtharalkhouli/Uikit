@@ -1,0 +1,470 @@
+@import 'variables.scss';
+
+// Medium Prefix Icon Input Field Styling
+html:lang(ar) .text-field-prefix-icon .mat-form-field-outline-start {
+    border-radius: 0px 6px 6px 0px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+ .text-field-prefix-icon .mat-form-field-outline-start {
+    border-radius: 6px 0 0 6px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+
+.text-field-prefix-icon .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: 6px !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+html:lang(ar) .text-field-prefix-icon .mat-form-field-outline-end {
+    border-radius: 6px 0 0 6px !important;
+    min-width: 6px !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+.text-field-prefix-icon.mat-form-field:not(.mat-form-field-should-float) .mat-input-placeholder {
+    padding-left: 10px !important;
+    box-sizing: border-box;
+  }
+
+.text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-input-element{
+    position: relative;
+    bottom: 15px;
+    font-size: 14px;
+    line-height: 20px !important;
+}
+
+html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-input-element{
+    position: relative;
+    bottom: 8px;
+    font-size: 14px;
+    line-height: 24px;
+}
+.text-field-prefix-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translateY(-1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $gray-color !important;
+}
+  /* Font color */
+  .text-field-prefix-icon.input.mat-input-element {
+    color: $dark-font-color !important;
+}
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+
+.text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    padding-left: 21px !important;
+    padding-right: 32px !important;
+    position: relative !important;
+    bottom: 15px !important;
+    color: $primary-color !important;
+}
+
+html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    padding-left: 14px !important;
+    padding-right: 38px !important;
+    position: relative !important;
+    bottom: 8px !important;
+    color: $primary-color !important;
+}
+
+.text-field-prefix-icon.mat-form-field-appearance-outline:not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+ }
+ .text-field-prefix-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+ .text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: 44px !important;
+}
+html:lang(ar) .text-field-prefix-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    font-size: 14px !important;
+    position: relative !important;
+    bottom: 1px !important;
+}
+.text-field-prefix-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    position: relative !important;
+    bottom: 2px !important;
+}
+
+//Medium Multiple Password Icons Text Field Styling
+.multiple-password-text-field .mat-form-field-outline-start {
+    border-radius: 6px 0 0 6px !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+html:lang(ar) .multiple-password-text-field .mat-form-field-outline-start {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: 59px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+  
+.multiple-password-text-field .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: 6px !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+html:lang(ar) .multiple-password-text-field .mat-form-field-outline-end {
+    border-radius: 6px 0 0 6px !important;
+    min-width: 6px !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.multiple-password-text-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label {
+    color: #02536B !important;
+}
+.multiple-password-text-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
+    color: #02536B !important;
+}
+.multiple-password-text-field .mat-input-element{
+    position: relative !important;
+    bottom: 17px !important;
+    font-size: 14px;
+    padding-left: 4px;
+    line-height: 28px;
+}
+
+html:lang(ar) .multiple-password-text-field .mat-input-element{
+    position: relative !important;
+    bottom: 7px !important;
+    font-size: 14px;
+    padding-left: 4px;
+    line-height: 24px;
+}
+.multiple-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.35em, -1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+html:lang(ar) .multiple-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translateY(-1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $gray-color !important;
+}
+.multiple-password-text-field.input.mat-input-element {
+    color: $dark-font-color !important;
+}
+.multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    font-size: 24px;
+    padding-left: 16px !important;
+    padding-right: 32px !important;
+    position: relative !important;
+    bottom: 24px !important;
+    color: $primary-color !important;
+}
+html:lang(ar) .multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
+    padding-left: 14px !important;
+    padding-right: 38px !important;
+    bottom: 7px !important;
+}
+.multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 35px !important;
+    padding-left: 20px !important;
+    position: relative !important;
+    color: rgba(68, 68, 68, 0.8666666667) !important;
+    cursor: pointer !important;
+    font-size: 24px;
+    bottom: 24px !important;
+}
+html:lang(ar) .multiple-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 26px !important;
+    padding-left: 20px !important;
+    position: relative !important;
+    color: #444444DD !important;
+    cursor: pointer !important;
+    font-size: 24px;
+    bottom: -1px;
+}
+.multiple-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+}
+.multiple-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+ .multiple-password-text-field.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: 44px !important;
+}
+.multiple-password-text-field .mat-form-field-wrapper .mat-form-field-label mat-label{
+    position: relative !important;
+    bottom: 2px !important;
+}
+
+//Text Field No Icon Styling
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: 44px !important;
+}
+.text-field-no-icon .mat-form-field-outline-start {
+    border-radius: 6px 0 0 6px !important;
+    min-width: 6px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-no-icon .mat-form-field-outline-start {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: 6px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-no-icon .mat-form-field-outline-end {
+    border-radius: 6px 0px 0px 6px !important;
+    min-width: calc(100% - 95px) !important; 
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+  
+.text-field-no-icon .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 95px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-no-icon-large-floating-label .mat-form-field-outline-end {
+    border-radius: 6px 0px 0px 6px !important;
+    min-width: calc(100% - 180px) !important; 
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+  
+.text-field-no-icon-large-floating-label .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 154px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.text-field-no-icon.mat-form-field:not(.mat-form-field-invalid).mat-focused  .mat-form-field-label {
+    color: #02536B !important;
+}
+.text-field-no-icon.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
+    color: #02536B !important;
+}
+.text-field-no-icon .mat-input-element{
+    padding-left: 15px !important;
+    position: relative !important;
+    bottom: 18px !important;
+    font-size: 14px;
+    line-height: 26px;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.6em,-1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $gray-color !important;
+}
+  /* Font color */
+.text-field-no-icon.input.mat-input-element {
+    color: $dark-font-color !important;
+}
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.text-field-no-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-left: 15px !important;
+    position: relative !important;
+    bottom: 2px !important;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+ html:lang(ar) .text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(-0.3em,-1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+html:lang(ar) .text-field-no-icon .mat-input-element {
+    padding-right: 10px !important;
+    position: relative;
+    bottom: 8px;
+}
+html:lang(ar) .text-field-no-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-right: 5px !important;
+    padding-left: unset !important;
+    position: relative;
+    bottom: 3px;
+}
+
+//Single Password Text Field Styling
+.single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+}
+
+.single-password-text-field .mat-form-field-outline-start {
+    border-radius: 6px 0 0 6px !important;
+    min-width: 6px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color!important;
+    }
+}
+html:lang(ar) .single-password-text-field .mat-form-field-outline-start {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: 6px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color!important;
+    }
+}
+html:lang(ar) .single-password-text-field .mat-form-field-outline-end {
+    border-radius: 6px 0px 0px 6px !important;
+    min-width: calc(100% - 93px) !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+  
+.single-password-text-field .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 93px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+html:lang(ar) .single-password-text-field-large-floating-label .mat-form-field-outline-end {
+    border-radius: 6px 0px 0px 6px !important;
+    min-width: calc(100% - 131px) !important;
+    &.mat-form-field-disabled{
+        background-color: #fff !important;
+    }
+}
+  
+.single-password-text-field-large-floating-label .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 131px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+
+.single-password-text-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-label {
+    color: #02536B !important;
+}
+.single-password-text-field.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
+    color: #02536B !important;
+}
+.single-password-text-field .mat-input-element{
+    padding-left: 15px !important;
+    position: relative !important;
+    bottom: 11px !important;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: 44px !important;
+}
+
+html:lang(ar) .single-password-text-field .mat-input-element{
+    padding-right: 15px !important;
+    padding-left: unset !important;
+}
+.single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.6em,-1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+html:lang(ar) .single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(-0.6em, -1.6em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $gray-color !important;
+}
+  /* Font color */
+  .single-password-text-field.input.mat-input-element {
+    color: $dark-font-color !important;
+}
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.single-password-text-field.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.single-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 49px !important;
+    position: relative !important;
+    bottom: 5px !important;
+    color: rgba(68, 68, 68, 0.8666666667) !important;
+    cursor: pointer;
+    font-size: 24px;
+}
+html:lang(ar) .single-password-text-field.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
+    padding-right: 26px !important;
+    padding-left: 20px !important;
+    position: relative !important;
+    bottom: -1px !important;
+    color: #444444DD !important;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+ }
+ .single-password-text-field.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+ 
+.single-password-text-field .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-left: 15px !important;
+    position: relative !important;
+    bottom: 2px !important;
+}
+
+html:lang(ar) .single-password-text-field .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-right: 15px !important;
+    padding-left: unset !important;
+    position: relative !important;
+    bottom: 2px !important;
+}

@@ -7,5 +7,5 @@ import { Component, Input} from '@angular/core';
 
 export class NavTabComponent{
 @Input() navLinks!:any[];
-@Input() lang: string = 'en';
+@Input() chosenField: string = 'en';
 }

@@ -2,12 +2,10 @@ import { Component, Input,  forwardRef, OnChanges, ChangeDetectorRef, ViewEncaps
 import { AbstractControl, ControlValueAccessor,  NG_VALIDATORS,  NG_VALUE_ACCESSOR, ValidationErrors, Validator, ValidatorFn } from '@angular/forms';
 import { MatError, MatFormField } from '@angular/material/form-field';
 
-interface inputConfig{
+interface InputConfig{
 fieldType?:string;
-icon?: string;
 min?:any;
 max?:any;
-maxlength?:number;
 secondIcon?:string;
 firstIcon?:string;
 suffixIcon?:string;
@@ -41,7 +39,7 @@ export class CustomInputComponent implements OnChanges,ControlValueAccessor,Vali
 @Input() firstIconTooltip!:string;//The tooltip of the first icon if needed
 @Input() secondIconTooltip!:string;//The tooltip of the second icon if needed
 @Input() iconTooltip!:string;//The tooltip of the input field with a single icon if needed
-@Input() configurations:inputConfig|undefined;//Additional attributes
+@Input() configurations:InputConfig|undefined;//Additional attributes
 @Input() required:boolean=false;//If the field is required and not being used with reactive forms
 @Input() hidden!:boolean;//To hide the second icon if need be
 @Input() appearance!:string;
@@ -50,6 +48,7 @@ export class CustomInputComponent implements OnChanges,ControlValueAccessor,Vali
 @Input() minlength!:number;
 @Input() maxlength!:number;
 @Input() readonly!:boolean;
+@Input() inputValue!: any;
 
 
 

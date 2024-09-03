@@ -4,7 +4,7 @@
     width: 3.5em;
     height: 3.5em;
     background: $backgroundColor;
-    color: #ffffff;
+    color: $white-color;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -18,7 +18,7 @@
     width: 4em;
     height: 4em;
     background: $backgroundColor;
-    color: #ffffff;
+    color: $white-color;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -32,7 +32,7 @@
     width: 3em;
     height: 3em;
     background: $backgroundColor;
-    color: #ffffff;
+    color: $white-color;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -51,9 +51,9 @@
       line-height: 34px;
       border-radius: 2em;
       color: $color;
-      background: #fff;
+      background: $white-color;
       &:hover{
-        color: #fff;
+        color: $white-color;
         background-color: $color;
       }
 }
@@ -66,9 +66,9 @@
       line-height: 34px;
       border-radius: 2em;
       color: $color;
-      background: #fff;
+      background: $white-color;
       &:hover{
-        color: #fff;
+        color: $white-color;
         background-color: $color;
       }
 }
@@ -79,16 +79,16 @@
       line-height: 34px;
       border-radius: 2em;
       color: $color;
-      background: #fff;
+      background: $white-color;
       &:hover{
-        color: #fff;
+        color: $white-color;
         background-color: $color;
       }
 }
 @mixin roundedOutlinedIconButtonStyle($borderColor){
       width: 3em;
       height: 3em;
-      background: #fff;
+      background: $white-color;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -104,7 +104,7 @@
 @mixin mediumRoundedOutlinedIconButtonStyle($borderColor){
     width: 3.5em;
     height: 3.5em;
-    background: #fff;
+    background: $white-color;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -120,7 +120,7 @@
 @mixin largeRoundedOutlinedIconButtonStyle($borderColor){
     width: 4em;
     height: 4em;
-    background: #fff;
+    background: $white-color;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -181,7 +181,7 @@
     border-radius: $border-radius;
     overflow: visible;
     color: rgba(0,0,0,.87);
-    background-color: #fff;
+    background-color: $white-color;
     font-family: Roboto, "Helvetica Neue", sans-serif;
     font-size: $textSize;
     font-weight: 500;
@@ -277,7 +277,7 @@
 .realsoft-stroked-btn-primary{
     @include buttonStyle($lineheight: 36px, $textSize: $normal-text,$border-radius:28px);
         border: 1px solid $primary-color;
-        color: #000000;
+        color: $black-color;
         background-color: transparent;
         transition: all 0.5s ease;
         height: 40px !important;
@@ -311,7 +311,7 @@
     @include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
         height: 30px !important;
         border: 1px solid $primary-color;
-        color: #000000;
+        color: $black-color;
         background-color: transparent;
         transition: all 0.5s ease;
     &:hover {
@@ -343,7 +343,7 @@
     .realsoft-stroked-btn-primary-large{
     @include buttonStyle($lineheight: 38px, $textSize: $large-text,$border-radius:28px);
         border: 1px solid $primary-color;
-        color: #000000;
+        color: $black-color;
         background-color: transparent ;
         transition: all 0.5s ease;
         height: 56px !important;
@@ -1109,7 +1109,7 @@ height: 56px !important;
     font-size: 24px !important;
     position: relative;
     top: 0px;
-    color: #ffffff;
+    color: $white-color;
     }
 }
 //Small Primary Rounded Icon Button Styles   
@@ -1135,7 +1135,7 @@ height: 56px !important;
         font-size: 20px !important;
         position: relative;
         top: 0px;
-        color: #ffffff;
+        color: $white-color;
         }
     }
 //Large Primary Rounded Icon Button Styles
@@ -1161,7 +1161,7 @@ height: 56px !important;
     font-size: 28px !important;
     position: relative;
     top: 0px;
-    color: #ffffff;
+    color: $white-color;
     }
 }
 
@@ -1188,7 +1188,7 @@ height: 56px !important;
     font-size: 24px !important;
     position: relative;
     top: 0px;
-    color: #ffffff;
+    color: $white-color;
     }
 }
 //Small Secondary Rounded Icon Button Styles   
@@ -1214,7 +1214,7 @@ height: 56px !important;
         font-size: 20px !important;
         position: relative;
         top: 0px;
-        color: #ffffff;
+        color: $white-color;
         }
     }
 //Large Secondary Rounded Icon Button Styles
@@ -1240,7 +1240,7 @@ height: 56px !important;
         font-size: 28px !important;
         position: relative;
         top: 0px;
-        color: #ffffff;
+        color: $white-color;
     }
 }
 
@@ -1250,13 +1250,13 @@ height: 56px !important;
 &:hover {
     background-color: $primary-color-hover !important;
     & .material-icons{
-        color: #ffffff;
+        color: $white-color;
     }
     }
 &:focus {
     background-color: $primary-color-focus !important;
     & .material-icons{
-        color: #ffffff;
+        color: $white-color;
     }
     }
 &:not(:disabled):not(.disabled):active,
@@ -1285,13 +1285,13 @@ height: 56px !important;
     &:hover {
         background-color: $primary-color-hover !important;
         & .material-icons{
-            color: #ffffff;
+            color: $white-color;
         }
         }
     &:focus {
         background-color: $primary-color-focus !important;
         & .material-icons{
-            color: #ffffff;
+            color: $white-color;
         }
         }
     &:not(:disabled):not(.disabled):active,
@@ -1320,13 +1320,13 @@ height: 56px !important;
 &:hover {
     background-color: $primary-color-hover !important;
     & .material-icons{
-        color: #ffffff;
+        color: $white-color;
     }
     }
 &:focus {
     background-color: $primary-color-focus !important;
     & .material-icons{
-        color: #ffffff;
+        color: $white-color;
     }
     }
 &:not(:disabled):not(.disabled):active,
@@ -1356,13 +1356,13 @@ height: 56px !important;
 &:hover {
     background-color: $sec-color-hover !important;
     & .material-icons{
-        color: #ffffff;
+        color: $white-color;
     }
     }
 &:focus {
     background-color: $sec-color-focus !important;
     & .material-icons{
-        color: #ffffff;
+        color: $white-color;
     }
     }
 &:not(:disabled):not(.disabled):active,
@@ -1391,13 +1391,13 @@ height: 56px !important;
     &:hover {
         background-color: $sec-color-hover !important;
         & .material-icons{
-            color: #ffffff;
+            color: $white-color;
         }
         }
     &:focus {
         background-color: $sec-color-focus !important;
         & .material-icons{
-            color: #ffffff;
+            color: $white-color;
         }
         }
     &:not(:disabled):not(.disabled):active,
@@ -1426,13 +1426,13 @@ height: 56px !important;
 &:hover {
     background-color: $sec-color-hover !important;
     & .material-icons{
-        color: #ffffff;
+        color: $white-color;
     }
     }
 &:focus {
     background-color: $sec-color-focus !important;
     & .material-icons{
-        color: #ffffff;
+        color: $white-color;
     }
     }
 &:not(:disabled):not(.disabled):active,
@@ -1636,8 +1636,8 @@ height: 56px !important;
 
 .realsoft-stroked-stepper-icon-btn{
     @include buttonStyle($lineheight: 36px, $textSize: $normal-text,$border-radius: 28px);
-        background-color: #fff !important;
-        color: #000 !important;
+        background-color: $white-color !important;
+        color: $black-color !important;
         border: 1px solid $primary-color !important;
     &:hover {
         background-color: $stroked-hover !important;
@@ -1656,7 +1656,7 @@ height: 56px !important;
         cursor: not-allowed;
           }
         & .material-icons {
-            color: #000;
+            color: $black-color;
             font-size: 20px !important;
             position: relative;
             top: 6px;
@@ -1666,24 +1666,24 @@ height: 56px !important;
     //Stroked Button with Icon Default
 .realsoft-primary-stroked-icon-btn{
     @include buttonStyle($lineheight: 32px, $textSize: $normal-text,$border-radius:28px);
-        border: 1px solid #40399A;
-        color: #40399A;
-        background-color: #fff;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+        background-color: $white-color;
         transition: all 0.5s ease;
         height: 40px !important;
     &:hover {
-        background-color: #E9E9F4;
+        background-color: $stroked-hover;
         box-shadow: none;
         outline: none;
         }
     &:focus {
-        background-color: #CFCDDF;
+        background-color: $stroked-focus;
         box-shadow: none;
         outline: none;
         }
     &:not(:disabled):not(.disabled):active,
     :not(:disabled):not(.disabled).active {
-        background-color: #CFCDDF;
+        background-color: $stroked-focus;
         }
     &:disabled {
         border: 1px solid $gray-color;
@@ -1701,23 +1701,23 @@ height: 56px !important;
 .realsoft-primary-stroked-icon-btn-small{
     @include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
             height: 30px !important;
-            border: 1px solid #40399A;
-            color: #40399A;
-            background-color: #fff;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+            background-color: $white-color;
             transition: all 0.5s ease;
     &:hover{
-            background-color: #E9E9F4;
+            background-color: $stroked-hover;
             box-shadow: none;
             outline: none;
         }
     &:focus{
-            background-color: #CFCDDF;
+            background-color: $stroked-focus;
             box-shadow: none;
             outline: none;
         }
     &:not(:disabled):not(.disabled):active,
         :not(:disabled):not(.disabled).active {
-            background-color: #CFCDDF;
+            background-color: $stroked-focus;
             }
     &:disabled {
             border: 1px solid $gray-color;
@@ -1734,24 +1734,24 @@ height: 56px !important;
 //Large Stroked Button with Icon
 .realsoft-primary-stroked-icon-btn-large{
     @include buttonStyle($lineheight: 34px, $textSize: $large-text,$border-radius:28px);
-        border: 1px solid #40399A;
-        color: #40399A;
-        background-color: #fff ;
+        border: 1px solid $primary-color;
+        color: $primary-color;
+        background-color: $white-color ;
         transition: all 0.5s ease;
         height: 56px !important;
     &:hover {
-        background-color: #E9E9F4;
+        background-color: $stroked-hover;
         box-shadow: none ;
         outline: none ;
         }
     &:focus {
-        background-color: #CFCDDF ;
+        background-color: $stroked-focus;
         box-shadow: none ;
         outline: none ;
         }
     &:not(:disabled):not(.disabled):active,
     :not(:disabled):not(.disabled).active {
-        background-color: #CFCDDF ;
+        background-color: $stroked-focus ;
         }
     &:disabled {
         border: 1px solid $gray-color ;
@@ -1765,3 +1765,94 @@ height: 56px !important;
         top: 5px;
     }
 }
+
+
+.realsoft-secondary-filled-icon-btn{
+    @include buttonStyle($lineheight: 32px, $textSize: $normal-text,$border-radius:28px);
+        background-color: $sec-color !important;
+        color: $white-color !important;
+        border: 1px solid $sec-color !important;
+        transition: all 0.5s ease;
+        height: 40px !important;
+    &:hover {
+        background-color: $sec-color-hover !important;
+        }
+    &:focus {
+        background-color: $sec-color-focus !important;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $sec-color-focus !important;
+    }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+          }
+        & .material-icons {
+            font-size: 20px !important;
+            position: relative;
+            top: 5px;
+        }
+    }
+    //Small Primary Icon Button Styles
+    .realsoft-secondary-filled-icon-btn-small{
+    @include buttonStyle($lineheight: 28px, $textSize: $small-text,$border-radius:28px);
+        height: 30px !important;
+        background-color: $sec-color !important;
+        color: $white-color !important;
+        border: 1px solid $sec-color !important;
+        transition: all 0.5s ease;
+    &:hover {
+        background-color: $sec-color-hover !important;
+        }
+    &:focus {
+        background-color: $sec-color-focus !important;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $sec-color-focus !important;
+        }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+        }
+        & .material-icons {
+            font-size: 18px !important;
+            position: relative;
+            top: 4px;
+        }
+    }
+    //Large Primary Icon Button Styles  
+    .realsoft-secondary-filled-icon-btn-large{
+    @include buttonStyle($lineheight: 34px, $textSize: $large-text,$border-radius:28px);
+    background-color: $sec-color !important;
+    color: $white-color !important;
+    border: 1px solid $sec-color !important;
+    transition: all 0.5s ease;
+    height: 56px !important;
+    &:hover {
+        background-color: $sec-color-hover !important;
+        }
+    &:focus {
+        background-color: $sec-color-focus !important;
+        }
+    &:not(:disabled):not(.disabled):active,
+    :not(:disabled):not(.disabled).active {
+        background-color: $sec-color-focus !important;
+        }
+    &:disabled {
+        background-color: $disabled-color !important;
+        color: $gray-color !important;
+        border-color: $gray-color !important;
+        cursor: not-allowed;
+        }
+        & .material-icons {
+            font-size: 24px !important;
+            position: relative;
+            top: 5px;
+        }
+    }

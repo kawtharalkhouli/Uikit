@@ -23,7 +23,7 @@
     border-radius: 28px 0px 0px 28px !important;
     min-width: calc(100% - 82px) !important;
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
   }
   
@@ -63,11 +63,11 @@
   }
   
   .text-field-suffix-icon.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
   }
   /* Font color */
   .text-field-suffix-icon.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
   }
   .text-field-suffix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
   .text-field-suffix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,

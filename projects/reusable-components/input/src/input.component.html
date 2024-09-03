@@ -8,12 +8,14 @@
     'text-field-no-icon-small-floating-label' : configurations?.smallFloatingLabel, 
     'text-field-no-icon-medium-floating-label' : configurations?.mediumFloatingLabel,
     'text-field-no-icon-small' : size === 'small' , 'text-field-no-icon-large' :size === 'large',
+    'text-field-no-icon-extra-small' :size === 'extra-small',
     'text-field-invalid' : (invalid === true || isRequired === true )}">
     <mat-label *ngIf="appearance === 'outline'">{{label}}</mat-label>
     <input matInput
     [type]="type" 
     [disabled]="isDisabled" 
     [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl
+    [value]="inputValue"
     (blur)="markAsTouched($event)"
     (focus)="focusEvent($event)"
     [placeholder]="placeholder"
@@ -22,7 +24,7 @@
     [max]="configurations?.max" 
     [maxlength]="maxlength" 
     [minlength]="minlength" 
-    [readOnly]="readonly"
+    [readonly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [autocomplete]="autocomplete">
     </mat-form-field>
@@ -53,8 +55,9 @@
     [min]="configurations?.min" 
     [max]="configurations?.max" 
     [maxlength]="maxlength" 
+    [value]="inputValue"
     [minlength]="minlength"
-    [readOnly]="readonly"
+    [readonly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [required]="required ? required : isRequired" 
     [autocomplete]="autocomplete">
@@ -79,11 +82,12 @@
     [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl 
     (blur)="markAsTouched($event)"
     (focus)="focusEvent($event)"
-    [min]="configurations?.min" 
+    [min]="configurations?.min"
+    [value]="inputValue" 
     [max]="configurations?.max" 
     [maxlength]="maxlength" 
     [minlength]="minlength"
-    [readOnly]="readonly"
+    [readonly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [required]="required ? required : isRequired" 
     [autocomplete]="autocomplete">
@@ -97,7 +101,7 @@
     <mat-form-field 
     class="text-field-suffix-icon form-fields" 
     appearance="outline" 
-    [ngClass]="{'text-field-suffix-icon-small' : size === 'small' , 'text-field-suffix-icon-large' : size === 'large','text-field-invalid' : (invalid === true || isRequired === true )}">
+    [ngClass]="{'text-field-suffix-icon-small' : size === 'small' , 'text-field-suffix-icon-large' : size === 'large','text-field-suffix-icon-extra-small' : size === 'extra-small','text-field-invalid' : (invalid === true || isRequired === true ), 'readonly-field' : readonly===true}">
     <mat-label *ngIf="appearance === 'outline'">{{label}}</mat-label>
     <mat-icon class="suffix-icon" matSuffix  [matTooltip]="firstIconTooltip" (click)="firsttIconClick($event)">{{configurations?.firstIcon}}</mat-icon>
     <input  
@@ -110,10 +114,11 @@
     (blur)="markAsTouched($event)"
     (focus)="focusEvent($event)"
     [min]="configurations?.min" 
+    [value]="inputValue"
     [max]="configurations?.max" 
     [maxlength]="maxlength" 
     [minlength]="minlength"
-    [readOnly]="readonly"
+    [readonly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [required]="required ? required : isRequired" 
     [autocomplete]="autocomplete">
@@ -136,9 +141,10 @@
     [required]="required ? required : isRequired"
     [disabled]="isDisabled" 
     [maxlength]="maxlength" 
+    [value]="inputValue"
     [minlength]="minlength"
     [placeholder]="placeholder"
-    [readOnly]="readonly"
+    [readonly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [type]="hidePassword ? 'password' : 'text'"  
     [autocomplete]="autocomplete">
@@ -164,8 +170,9 @@
     [disabled]="isDisabled"
     [placeholder]="placeholder"
     [maxlength]="maxlength" 
+    [value]="inputValue"
     [minlength]="minlength"
-    [readOnly]="readonly"
+    [readonly]="readonly"
     oninput="if (value.length > maxLength && type === 'number') value = value.slice(0, maxLength);"
     [type]="hidePassword ? 'password' : 'text'" 
     [autocomplete]="autocomplete">
@@ -185,8 +192,9 @@
   [(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl
   [placeholder]="placeholder"
   [autocomplete]="autocomplete"
+  [value]="inputValue"
   (keyup.enter)="enterEvent($event)"
-  [readOnly]="readonly"
+  [readonly]="readonly"
   (blur)="markAsTouched($event)"
   (focus)="focusEvent($event)">
   <mat-icon matSuffix (click)="searchEvent($event)">search</mat-icon>

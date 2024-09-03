@@ -1,0 +1,63 @@
+@import '../variables.scss';
+
+//Progress Spinner Style
+  .custom-spinner-chart{
+    width: 50%;
+    position: relative;
+    height: 200px;
+    display: inline-block;
+    & mat-progress-spinner{
+        position: absolute;
+        z-index: 1;
+        height: 120px !important;
+        width: 120px !important;
+        &::ng-deep svg{
+            width: 120px !important;
+            height: 120px !important;
+        }
+    }    
+    & svg{
+        position: absolute;
+        width: 120px !important;
+        height: 120px !important;
+        & circle{
+            stroke: $disabled-color;
+            fill: none;
+            width: 120px;
+            height: 120px;
+            stroke-dashoffset:0;
+            stroke-dasharray: 0;
+            stroke-width: 10%;
+            z-index: 1;
+        }
+    }  
+    &__customPercentage{
+        position: absolute;
+        font-size: 24px;
+        width: 120px;
+        height: 120px;
+        text-align: center;
+        line-height: 120px;
+    }
+//High Progress Spinner Colors
+.high-progress .mat-progress-spinner  circle, .mat-spinner circle{
+    stroke: $info-color !important;
+}
+//Normal Progress Spinner Colors
+.normal-progress .mat-progress-spinner  circle, .mat-spinner  circle {
+    stroke: $warning-color !important;
+}
+//Low Progress Spinner Colors
+.low-progress .mat-progress-spinner  circle, .mat-spinner circle{
+    stroke: $danger-color !important;
+}
+//Full Progress Spinner Colors
+.full-progress .mat-progress-spinner  circle, .mat-spinner  circle {
+    stroke: $success-color !important;
+}  
+}
+.mat-progress-spinner circle, .mat-spinner circle {
+    stroke: $primary-color;
+}
+  
+  

@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component,EventEmitter, forwardRef,Input, Output, ViewEncapsulation,} from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl, ValidationErrors, ValidatorFn, Validator } from '@angular/forms';
 
-  interface radioButton{
+  interface RadioButton{
     value?:any;
     label?:any;
     labelAr?:any;
@@ -26,7 +26,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor, NG_VALIDATORS, AbstractControl
     providers: [VALUE_ACCESSOR,VALIDATOR],
   })
   export class RadioGroupComponent implements ControlValueAccessor, Validator {
-    @Input() options: radioButton[] = [];
+    @Input() options: RadioButton[] = [];
     @Input() lang: string = 'en';
 
     @Output() optionSelected = new EventEmitter<string>();

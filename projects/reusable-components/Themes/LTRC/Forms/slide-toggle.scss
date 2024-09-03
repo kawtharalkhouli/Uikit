@@ -1,0 +1,16 @@
+@import '../variables.scss';
+
+//Toggle Bar Style
+.realsoft-slide-toggle.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+    background-color: $toggle-background !important;
+}
+
+//Slide Toggle Thumb Style
+.realsoft-slide-toggle.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+    background-color: $primary-color !important;
+}
+
+//Slide Toggle Ripple Element Style
+.realsoft-slide-toggle.mat-slide-toggle.mat-checked .mat-ripple-element {
+    background-color: $primary-color !important;
+}

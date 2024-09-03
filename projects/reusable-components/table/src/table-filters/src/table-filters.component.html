@@ -1,54 +1,63 @@
-<div>
-    <div class="filter-icon-container" [ngClass]="{'filter-value': controlHasValue}">
-        <mat-icon [matMenuTriggerFor]=" filterMenu" [matMenuTriggerData]="{content}"
-            class="cursor-pointer align-self-center filter-icon">filter_alt</mat-icon>
+<div>    
+<ng-container *ngIf="!content.filterBefore">
+    <span class="filter-icon-container" [ngClass]="{'filter-value': controlHasValue}">
+        <mat-icon [matMenuTriggerFor]=" filterMenu" [matMenuTriggerData]="{content}" [ngStyle]="{ color: content.iconColor, top: content.topValue}"
+            class="cursor-pointer align-self-center filter-icon material-icons pointer filter-icon-custom position-absolute">{{content.iconName ? content.iconName : 'filter_alt'}}</mat-icon>
+    </span>
+</ng-container>
 
-    </div>
+<ng-container *ngIf="content.filterBefore">
+    <span class="filter-icon-container-before" [ngClass]="{'filter-value': controlHasValue}">
+        <mat-icon [matMenuTriggerFor]=" filterMenu" [matMenuTriggerData]="{content}" [ngStyle]="{ color: content.iconColor, top: content.topValue}"
+            class="cursor-pointer align-self-center filter-icon material-icons pointer filter-icon-custom position-absolute">{{content.iconName ? content.iconName : 'filter_alt'}}</mat-icon>
+    </span>
+</ng-container>
     <mat-menu class="heder-controls" #filterMenu="matMenu">
 
         <ng-template matMenuContent let-content="content">
             <div class="p-2">
                 <ng-container [ngSwitch]="content.type">
-
                     <ng-container *ngSwitchCase="tableFilterType.text">
-
                         <mat-form-field (click)="$event.stopPropagation()">
                             <mat-label>{{ lang === 'ar' ? content.labelAr : content.labelEn }}</mat-label>
                             <input matInput [formControl]="content.control">
                         </mat-form-field>
-
                     </ng-container>
 
 
                     <ng-container *ngSwitchCase="tableFilterType.dropDown">
-
-                        <mat-form-field (click)="$event.stopPropagation()">
-                            <mat-label>{{ lang === 'ar' ? content.labelAr : content.labelEn }}</mat-label>
-                            <mat-select [formControl]="content.control">
-                                <mat-option>{{ lang === 'ar' ? 'الكل' : 'All' }}</mat-option>
-                                <mat-option *ngFor="let row of content.data" [value]="row.id">
+                        <mat-form-field (click)="$event.stopPropagation()" class="text-field-no-icon-extra-small filter-select"
+                        appearance="outline">
+                            <mat-select [formControl]="content.control" disableOptionCentering panelClass="filterPanel" placeholder="{{ lang === 'ar' ? content.labelAr : content.labelEn }}">
+                                <span [hidden]="content.data?.length < 11" class="single-select-span-element">
+                                    <mat-option class="single-select-option">
+                                        <input matInput placeholder="{{ lang === 'ar' ? 'بحث' : 'Search' }}"
+                                        class="single-select-search-input"
+                                        [(ngModel)]="searchValue"
+                                        (click)="$event.stopPropagation()"
+                                        (keydown.enter)="$event.stopPropagation()"
+                                        (keydown.space)="$event.stopPropagation()"
+                                        (keyup)="filterOptions($event, content.data)"/>
+                                    </mat-option>
+                                </span>
+                                <mat-option (click)="selectOption('')">{{ lang === 'ar' ? 'الكل' : 'All' }}</mat-option>
+                                <mat-option *ngFor="let row of filteredData" [value]="row.id" (click)="selectOption(row)">
                                     {{ lang === 'ar' ? row.nameAr : row.nameEn }}
                                 </mat-option>
                             </mat-select>
-
                         </mat-form-field>
-
                     </ng-container>
 
                     <ng-container *ngSwitchCase="tableFilterType.date">
-
                         <mat-form-field (click)="$event.stopPropagation()">
                             <mat-label>{{ lang === 'ar' ? content.labelAr : content.labelEn }}</mat-label>
                             <input [formControl]="content.control" matInput [matDatepicker]="picker">
                             <mat-datepicker #picker></mat-datepicker>
                             <mat-icon class="cursor-pointer" matSuffix (click)="picker.open()">event</mat-icon>
                         </mat-form-field>
-
                     </ng-container>
 
                     <ng-container *ngSwitchDefault>
-
-
                     </ng-container>
                 </ng-container>
             </div>

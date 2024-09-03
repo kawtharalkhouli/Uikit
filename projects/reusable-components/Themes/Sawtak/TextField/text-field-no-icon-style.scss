@@ -27,7 +27,7 @@ html:lang(ar) .text-field-no-icon .mat-form-field-outline-end {
     border-radius: 28px 0px 0px 28px !important;
     min-width: calc(100% - 95px) !important; 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
   
@@ -63,7 +63,7 @@ html:lang(ar) .text-field-no-icon-large-floating-label .mat-form-field-outline-e
     border-radius: 28px 0px 0px 28px !important;
     min-width: calc(100% - 180px) !important; 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
   
@@ -93,11 +93,11 @@ html:lang(ar) .text-field-no-icon-large-floating-label .mat-form-field-outline-e
 }
 
 .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
   /* Font color */
 .text-field-no-icon.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -131,7 +131,7 @@ html:lang(ar) .text-field-no-icon.mat-form-field-disabled .mat-input-element {
     padding-right: 20px;
     position: relative !important;
     bottom: 3px !important;
-    color: #13121C !important;
+    color: $font-color !important;
     font-size: 16px !important;
     line-height: 27px !important; 
 }
@@ -142,7 +142,7 @@ html:lang(ar) .text-field-no-icon.mat-form-field-disabled .mat-input-element {
     font-size: 14px;
     line-height: 24px;
     font-size: 16px;
-    color: #13121C;
+    color: $font-color;
     line-height: 27px !important;
 }
 html:lang(ar) .text-field-no-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
@@ -156,7 +156,7 @@ html:lang(ar) .text-field-no-icon.mat-form-field-disabled .mat-form-field-wrappe
     padding-right: 41px;
     position: relative !important;
     bottom: 4px !important;
-    color: #00000099 !important;
+    color: $dark-font-color !important;
     font-size: 12px !important;
     font-weight: 600 !important;
 }
@@ -164,7 +164,7 @@ html:lang(ar) .text-field-no-icon.mat-form-field-disabled .mat-form-field-wrappe
     padding-left: 15px;
     position: relative;
     bottom: 1px;
-    color: #00000099;
+    color: $dark-font-color;
     line-height: 23px;
     font-weight: 600;
 }
@@ -172,4 +172,18 @@ html:lang(ar) .text-field-no-icon.mat-form-field-disabled .mat-form-field-wrappe
 
 input[type="time"]::-webkit-calendar-picker-indicator{
     font-size:18px !important;
-  }
+}
+
+input[type="time"]:disabled::-webkit-calendar-picker-indicator {
+    color: $font-color !important;
+}
+
+.mat-input-element[type=time]:disabled:after{
+    content: "\e8b5";
+    font-family: "Material Icons";
+    font-size: 18px;
+    color: black;
+    top: -26px;
+    position: relative;
+    right: 7px;
+}

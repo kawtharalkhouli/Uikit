@@ -67,11 +67,11 @@ html:lang(ar) .text-field-multi-icons.mat-form-field-appearance-outline:not(.mat
 }
 
 .text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
   /* Font color */
 .text-field-multi-icons.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .text-field-multi-icons.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -85,7 +85,7 @@ html:lang(ar) .text-field-multi-icons.mat-form-field-appearance-outline:not(.mat
     padding-right: 32px !important;
     position: relative !important;
     bottom: 4px !important;
-    color: #40399A !important;
+    color: $primary-color !important;
 }
 
 html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
@@ -103,13 +103,13 @@ html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appeara
     bottom: 3px;
 }
 
-.text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
-    color:  #34314C !important;
-}
+// .text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+//     color:  #34314C !important;
+// }
 
-.text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
-    color:  #34314C !important;
-}
+// .text-field-multi-icons.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+//     color:  #34314C !important;
+// }
 
 html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon{
     padding-right: 26px !important;
@@ -126,7 +126,7 @@ html:lang(ar) .text-field-multi-icons.mat-form-field:not(.mat-form-field-appeara
     min-width: 59px !important;
 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 

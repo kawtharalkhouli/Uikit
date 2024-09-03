@@ -30,7 +30,7 @@
     border-radius: 28px 0px 0px 28px !important;
     min-width: calc(100% - 95px) !important; 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
   }
   
@@ -66,7 +66,7 @@
     border-radius: 28px 0px 0px 28px !important;
     min-width: calc(100% - 180px) !important; 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
   }
   
@@ -96,11 +96,11 @@
   }
   
   .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
   }
   /* Font color */
   .text-field-no-icon.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
   }
   .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
   .text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -135,7 +135,7 @@
     padding-right: 20px !important;
     position: relative !important;
     bottom: 3px !important;
-    color: #13121C !important;
+    color: $font-color !important;
     font-size: 14px !important;
   }
   .text-field-no-icon.mat-form-field-disabled .mat-input-element {
@@ -144,7 +144,7 @@
     bottom: 1px !important;
     line-height: 24px;
     font-size: 14px;
-    color: #13121C;
+    color: $font-color;
   }
   html:lang(ar) .text-field-no-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
     padding-right: 15px !important;
@@ -157,7 +157,7 @@
     padding-right: 41px !important;
     position: relative !important;
     bottom: 4px !important;
-    color: #00000099 !important;
+    color: $dark-font-color !important;
     font-size: 14px !important;
     font-weight: 600 !important;
   }
@@ -165,7 +165,7 @@
     padding-left: 15px !important;
     position: relative;
     bottom: 1px;
-    color: #00000099;
+    color: $dark-font-color;
     line-height: 23px;
     font-weight: 600;
   }

@@ -15,58 +15,9 @@ $gray-color:#BABABA;
 $dark-gray-color:#A6A6A6;
 $primary-stroked-hover-focus: #34A4DF1A;
 $secondary-stroked-hover-focus: #38A8AB17;
-
-//Primary Stroked Colors
-$primary-stroked-border-color: #00B1DD;
-$primary-stroked-font-color: #00B1DD;
-$primary-stroked-border-hover-color:#0D99D2;
-$primary-stroked-font-hover-color: #0D99D2;
-$primary-storked-background-hover-color: #34A4DF1A;
-$primary-stroked-border-focus-color: #1A80C8;
-$primary-stroked-font-focus-color:#1A80C8;
-$primary-stroked-background-focus-color:#34A4DF1A;
+$tab-label-color: #444444DE;
 
 
-//Secondary Stroked Colors
-$secondary-stroked-border-color: #38A8AB;
-$secondary-stroked-font-color: #38A8AB;
-$secondary-stroked-border-hover-color: #26A6A9;
-$secondary-stroked-font-hover-color: #26A6A9;
-$secondary-storked-background-hover-color: #38A8AB17;
-$secondary-stroked-border-focus-color: #199699;
-$secondary-stroked-font-focus-color:#199699;
-$secondary-stroked-background-focus-color:#34A4DF1A;
-
-//Disabled Colors
-$primary-disabled-background-color: #EEEEEE;
-$primary-disabled-border-color: #EEEEEE;
-$primary-disabled-font-color: #BABABA;
-$stroked-disabled-background-color:#EEEEEE;
-$stroked-disabled-border-color: #BABABA;
-$stroked-disabled-font-color: #BABABA;
-$secondary-disabled-background-color: #EEEEEE;
-$secondary-disabled-border-color: #EEEEEE;
-$secondary-disabled-font-color: #BABABA;
-
-//Primary Link and Primary Text Colors
-$primary-link-color: #00B1DD;
-$primary-link-hover-color: #0D99D2;
-$primary-link-focus-color: #1A80C8;
-$primary-link-disabled-color: #BABABA;
-$primary-text-color: #00B1DD;
-$primary-text-hover-color: #0D99D2;
-$primary-text-focus-color: #1A80C8;
-$primary-text-disabled-color: #BABABA;
-
-//Secondary Link and Secondary Text Colors
-$secondary-link-color: #38A8AB;
-$secondary-link-hover-color: #26A6A9;
-$secondary-link-focus-color: #199699;
-$secondary-link-disabled-color: #BABABA;
-$secondary-text-color: #38A8AB;
-$secondary-text-hover-color: #26A6A9;
-$secondary-text-focus-color: #199699;
-$secondary-text-disabled-color: #BABABA;
 
 //Common Sizes
 $small-button-height: 30px;
@@ -92,6 +43,10 @@ $light-gray: #fcfcfc;
 $dark-gray: #a7a7a7;
 $white-color: #ffffff;
 $black-color: #000000;
+$gray-icon: #B7B7B7;
+$gray-border: #e0e0e0;
+$skeleton-grid: #eff1f6;
+$dark-gray-font: #333333;
 
 
 //Input Field Colors
@@ -146,8 +101,6 @@ $tabs-title: #13121CDE;
 //border-radius
 $border-radius: 28px;
 
-$buttonPrimaryBackground:#40399A;
-$buttonSecondaryBackground:#369EFB;
 
 //LTRC Colors
 $basic-chip-color:#878787;

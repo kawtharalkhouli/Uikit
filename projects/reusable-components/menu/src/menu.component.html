@@ -3,10 +3,11 @@
 
 <ng-template #basic >
     <button mat-icon-button class="realsoft-button" [matMenuTriggerFor]="menu">
-        <mat-icon class="mat-icon-trigger">{{configurations?.triggerBtn}}</mat-icon>
+        <mat-icon class="mat-icon-trigger">{{configurations?.triggerIcon}}</mat-icon>
     </button>
-    <mat-menu #menu="matMenu" class="menu">
+    <mat-menu #menu="matMenu" class="menu" role="menu">
         <button mat-menu-item 
+        role="menuitem"
         class="menu-item"
         *ngFor="let item of data" 
         (click)="clickMenuItem(item)" 
@@ -20,7 +21,7 @@
 
 <ng-template #primary >
     <button mat-icon-button class="realsoft-button" [matMenuTriggerFor]="menu">
-        <mat-icon>{{configurations?.triggerBtn}}</mat-icon>
+        <mat-icon>{{configurations?.triggerIcon}}</mat-icon>
     </button>
     <mat-menu #menu="matMenu" class="menu">
         <button mat-menu-item 

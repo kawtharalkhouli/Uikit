@@ -1,0 +1,262 @@
+@import '../../../variables.scss';
+
+//Small Secondary Button Style
+.realsoft-secondary-btn-small{
+    background: $sec-color !important;
+    color: $white-color !important;
+    font-size: $small-text !important;
+    line-height: $small-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: 1px !important;
+    }
+
+    &:hover{
+        background: $sec-color-hover !important;
+    }
+
+    &:focus{
+        background: $sec-color-focus !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important; 
+        color: $gray-color !important;
+    }
+}
+
+//Small Secondary Stroked Small Button Style
+.realsoft-secondary-stroked-btn-small{
+    background: $white-color !important;
+    border: 1px solid $sec-color !important;
+    color: $sec-color !important;
+    font-size: $small-text !important;
+    line-height: $small-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: 1px !important;
+    }
+
+    &:hover{
+        background: $secondary-stroked-hover-focus !important;
+        color: $sec-color-hover !important;
+    }
+
+    &:focus{
+        background: $secondary-stroked-hover-focus !important;
+        color: $sec-color-focus !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        border: 1px solid $gray-color !important;
+    }
+}
+
+//Small Secondary Link Button Style
+.realsoft-secondary-link-btn-small{
+    color: $sec-color !important;
+    text-decoration: underline !important;
+    font-size: $small-text !important;
+    height: 38px !important;
+    &:hover{
+        color: $sec-color-hover !important;
+    }
+    &:focus{
+        color: $sec-color-focus !important;
+    }
+    &:disabled{
+        color: $gray-color !important;
+        background: $white-color !important;
+    }
+}
+
+//Small Secondary Button with Prefix Icon
+.realsoft-secondary-icon-prefix-btn-small{
+    background: $sec-color !important;
+    color: $white-color !important;
+    font-size: $small-text !important;
+    line-height: $small-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: 1px !important ;
+    }
+
+    &:hover{
+        background: $sec-color-hover !important;
+    }
+
+    &:focus{
+        background: $sec-color-focus !important;
+    }
+    
+    & .material-icons{
+        font-size: 16px !important;
+        position: relative !important;
+        left: -3px !important;
+        color: $white-color!important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+    }
+}
+
+//Small Secondary Text Button Style
+.realsoft-secondary-text-btn-small{
+    color: $sec-color !important;
+    font-size: $small-text !important;
+    height: 38px !important;
+    &:hover{
+        color: $sec-color-hover !important;
+    }
+    &:focus{
+        color: $sec-color-focus !important;
+    }
+    &:disabled{
+        color: $gray-color !important;
+        background: $white-color !important;
+    }
+}
+
+//Small Secondary Button with Suffix Icon Style
+.realsoft-secondary-icon-suffix-btn-small{
+    background: $sec-color !important;
+    color: $white-color !important;
+    font-size: $small-text !important;
+    line-height: $small-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: 1px !important ;
+    }
+
+    &:hover{
+        background: $sec-color-hover !important;
+    }
+
+    &:focus{
+        background: $sec-color-focus !important;
+    }
+    
+    & .material-icons{
+        font-size: 16px !important;
+        position: relative !important;
+        right: -3px !important;
+        color: $white-color !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+    }
+}
+
+//Small Secondary Stroked Button with Prefix Icon Style
+.realsoft-secondary-stroked-icon-prefix-btn-small{
+    background: $white-color !important;
+    border: 1px solid $sec-color !important;
+    color: $sec-color !important;
+    font-size: $small-text !important;
+    line-height: $small-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: 1px !important ;
+    }
+
+    &:hover{
+        color: $sec-color-hover !important;
+        background: $secondary-stroked-hover-focus !important;
+        & .material-icons{
+            color: $sec-color-hover !important;
+        }
+    }
+
+    &:focus{
+        color: $sec-color-focus !important;
+        background: $secondary-stroked-hover-focus !important;
+        & .material-icons{
+            color: $sec-color-focus !important;
+        }
+    }
+    
+    & .material-icons{
+        font-size: 16px !important;
+        position: relative !important;
+        left: -3px !important;
+        color: $sec-color !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        border: 1px solid $gray-color !important;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+    }
+}
+
+//Small Secondary Stroked Button with Suffix Icon Style
+.realsoft-secondary-stroked-icon-suffix-btn-small{
+    background: $white-color !important;
+    border: 1px solid $sec-color !important;
+    color: $sec-color !important;
+    font-size: $small-text !important;
+    line-height: $small-button-height !important;
+    border-radius: 6px !important;
+
+    &__span{
+        position: relative !important;
+        top: 1px !important ;
+    }
+
+    &:hover{
+        color: $sec-color-hover !important;
+        background: $secondary-stroked-hover-focus !important;
+        & .material-icons{
+            color: $sec-color-hover !important;
+        }
+    }
+
+    &:focus{
+        color: $sec-color-focus !important;
+        background: $secondary-stroked-hover-focus !important;
+        & .material-icons{
+            color: $sec-color-focus !important;
+        }
+    }
+    
+    & .material-icons{
+        font-size: 16px !important;
+        position: relative !important;
+        right: -3px !important;
+        color: $sec-color !important;
+    }
+
+    &:disabled{
+        background: $disabled-color !important;
+        color: $gray-color !important;
+        border: 1px solid $gray-color !important;
+        & .material-icons{
+            color: $gray-color !important;
+        }
+    }
+}

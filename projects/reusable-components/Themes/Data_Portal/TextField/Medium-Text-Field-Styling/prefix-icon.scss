@@ -12,7 +12,7 @@
 
 //Input Field Floating Label
 .text-field-prefix-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
-    transform: translateY(-1.1em) scale(0.75) !important;
+    transform: translateY(-1.1em) scale(0.75);
     width: 133.3333333333% !important;
 }
 
@@ -22,7 +22,7 @@
     bottom: 4px;
     font-size: $normal-text;
     color: $font-color;
-    right: 9px;
+
 }
 
 //Input Field Default State Outline Style

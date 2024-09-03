@@ -1,0 +1,43 @@
+<ng-container [ngSwitch]="appearance">
+    <ng-container *ngSwitchCase="skeletonappearance.line">
+        <div class="realsoft-skeleton-loader"
+        *ngFor="let item of repeat(count);"
+        [theme]="theme"
+        [ngClass]="
+        {
+         'realsoft-skeleton-loader-progress-dark-animation': skeletonAnimation.progress,
+         'realsoft-skeleton-loader-pulse-animation': skeletonAnimation.pulse,
+         'realsoft-skeleton-loader-progress-animation': skeletonAnimation.normal
+        }"
+        ></div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="skeletonappearance.circle">
+        <div class="realsoft-skeleton-loader circle"
+        *ngFor="let item of repeat(count);"
+        [theme]="theme"
+        [ngClass]="
+        {
+         'realsoft-skeleton-loader-progress-dark-animation': skeletonAnimation.progress,
+         'realsoft-skeleton-loader-pulse-animation': skeletonAnimation.pulse,
+         'realsoft-skeleton-loader-progress-animation': skeletonAnimation.normal
+        }"
+        ></div>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="skeletonappearance.square">
+        <div class="realsoft-skeleton-loader square"
+        *ngFor="let item of repeat(count);"
+        [theme]="theme"
+        [ngClass]="
+        {
+         'realsoft-skeleton-loader-progress-dark-animation': skeletonAnimation.progress,
+         'realsoft-skeleton-loader-pulse-animation': skeletonAnimation.pulse,
+         'realsoft-skeleton-loader-progress-animation': skeletonAnimation.normal
+        }"
+        ></div>
+    </ng-container>
+</ng-container>
+
+
+

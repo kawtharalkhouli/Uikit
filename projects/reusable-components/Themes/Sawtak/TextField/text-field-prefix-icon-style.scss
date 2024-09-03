@@ -12,7 +12,7 @@ html:lang(ar) .text-field-prefix-icon .mat-form-field-outline-start {
     min-width: 59px !important;
 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
  .text-field-prefix-icon .mat-form-field-outline-start {
@@ -20,7 +20,7 @@ html:lang(ar) .text-field-prefix-icon .mat-form-field-outline-start {
     min-width: 59px !important;
 
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 
@@ -28,14 +28,14 @@ html:lang(ar) .text-field-prefix-icon .mat-form-field-outline-start {
     border-radius: 0 28px 28px 0 !important;
     min-width: 28px !important;
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 html:lang(ar) .text-field-prefix-icon .mat-form-field-outline-end {
     border-radius: 28px 0 0 28px !important;
     min-width: 28px !important;
     &.mat-form-field-disabled{
-        background-color: #fff !important;
+        background-color: $white-color !important;
     }
 }
 .text-field-prefix-icon.mat-form-field:not(.mat-form-field-should-float) .mat-input-placeholder {
@@ -62,11 +62,11 @@ html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appeara
 }
 
 .text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline {
-    color: #BABABA !important;
+    color: $gray-color !important;
 }
   /* Font color */
   .text-field-prefix-icon.input.mat-input-element {
-    color: #00000099 !important;
+    color: $dark-font-color !important;
 }
 .text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
 .text-field-prefix-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
@@ -80,7 +80,7 @@ html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appeara
     padding-right: 32px !important;
     position: relative !important;
     bottom: 5px !important;
-    color: #40399A !important;
+    color: $primary-color !important;
 }
 
 html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon{
@@ -88,7 +88,7 @@ html:lang(ar) .text-field-prefix-icon.mat-form-field:not(.mat-form-field-appeara
     padding-right: 38px !important;
     position: relative !important;
     bottom: 8px !important;
-    color: #40399A !important;
+    color: $primary-color !important;
 }
 
 .text-field-prefix-icon.mat-form-field-appearance-outline:not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {

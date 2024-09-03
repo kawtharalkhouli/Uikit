@@ -1,4 +1,4 @@
-<ng-container *ngTemplateOutlet="configurations?.style === 'primary' ? primary : (configurations?.style === 'secondary' ? secondary : (configurations?.style === 'primaryIcon' ? primaryIcon : (configurations?.style === 'text' ? text : (configurations?.style === 'secondaryIcon' ? secondaryIcon :(configurations?.style === 'link' ? link : (configurations?.style === 'primaryRoundedOutline' ? primaryRoundedOutline : (configurations?.style === 'secondaryRoundedOutline' ? secondaryRoundedOutline : (configurations?.style === 'primaryRoundedIconButton' ? primaryRoundedIconButton : (configurations?.style === 'secondaryRoundedIconButton' ? secondaryRoundedIconButton : (configurations?.style === 'primaryRoundedOutlinedIconButton' ? primaryRoundedOutlinedIconButton : (configurations?.style === 'secondaryRoundedOutlinedIconButton' ? secondaryRoundedOutlinedIconButton : (configurations?.style === 'strokedIcon' ? strokedIcon : (configurations?.style === 'primaryStroked' ? primaryStroked : (configurations?.style === 'danger' ? danger : (configurations?.style === 'strokedPrimary' ? strokedPrimary : (configurations?.style === 'strokedSuffixIcon'? strokedSuffixIcon : (configurations?.style === 'primarySuffixIcon' ? primarySuffixIcon : (configurations?.style === 'secondarySuffixIcon' ? secondarySuffixIcon : (configurations?.style === 'primaryStrokedIcon' ? primaryStrokedIcon : (configurations?.style === 'greenFilled' ? greenFilled : (configurations?.style === 'redFilled' ? redFilled : primaryStrokedIcon)))))))))))))))) )) ))) ">
+<ng-container *ngTemplateOutlet="configurations?.style === 'primary' ? primary : (configurations?.style === 'secondary' ? secondary : (configurations?.style === 'primaryIcon' ? primaryIcon : (configurations?.style === 'text' ? text : (configurations?.style === 'secondaryIcon' ? secondaryIcon :(configurations?.style === 'link' ? link : (configurations?.style === 'primaryRoundedOutline' ? primaryRoundedOutline : (configurations?.style === 'secondaryRoundedOutline' ? secondaryRoundedOutline : (configurations?.style === 'primaryRoundedIconButton' ? primaryRoundedIconButton : (configurations?.style === 'secondaryRoundedIconButton' ? secondaryRoundedIconButton : (configurations?.style === 'primaryRoundedOutlinedIconButton' ? primaryRoundedOutlinedIconButton : (configurations?.style === 'secondaryRoundedOutlinedIconButton' ? secondaryRoundedOutlinedIconButton : (configurations?.style === 'strokedIcon' ? strokedIcon : (configurations?.style === 'primaryStroked' ? primaryStroked : (configurations?.style === 'danger' ? danger : (configurations?.style === 'strokedPrimary' ? strokedPrimary : (configurations?.style === 'strokedSuffixIcon'? strokedSuffixIcon : (configurations?.style === 'primarySuffixIcon' ? primarySuffixIcon : (configurations?.style === 'secondarySuffixIcon' ? secondarySuffixIcon : (configurations?.style === 'primaryStrokedIcon' ? primaryStrokedIcon : (configurations?.style === 'greenFilled' ? greenFilled : (configurations?.style === 'redFilled' ? redFilled : (configurations?.style === 'secondaryFilledIcon' ? secondaryFilledIcon : primaryStrokedIcon))))))))))))))))) )) ))) ">
 </ng-container>
 
 <ng-template #primary>
@@ -57,6 +57,16 @@
  {{buttonTxt}}
 </button>
 </ng-template>
+
+
+<ng-template #secondaryFilledIcon>
+  <button  class="realsoft-secondary-filled-icon-btn" [type]="configurations?.type" [disabled]="disabled" [ngClass]="{'realsoft-secondary-filled-icon-btn-small': configurations?.size === 'small','realsoft-secondary-filled-icon-btn-large': configurations?.size === 'large'}">
+    <span class="material-icons">
+      {{configurations?.iconName}}
+    </span>
+   {{buttonTxt}}
+  </button>
+  </ng-template>
 
 <ng-template #secondaryIcon>
 <button class="realsoft-secondary-icon-btn" [type]="configurations?.type"  [disabled]="disabled" [ngClass]="{'realsoft-secondary-icon-btn-small': configurations?.size === 'small','realsoft-secondary-icon-btn-large': configurations?.size === 'large'}">

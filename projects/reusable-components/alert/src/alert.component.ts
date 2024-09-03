@@ -1,9 +1,16 @@
 
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges} from '@angular/core';
 
-interface alertConfig{
+interface AlertConfig{
   closable?:boolean;
   alertType?:string;
+}
+
+interface StyleConfiguration{
+  border?: string;
+  background?: string;
+  color?: string;
+  iconColor? : string;
 }
 
 @Component({
@@ -13,8 +20,9 @@ interface alertConfig{
 })
 export class CustomAlertComponent implements OnChanges {
   @Input() alertMsg!:string;
-  @Input() configurations!:alertConfig | undefined;
-  @Input() alertHeader!:string
+  @Input() configurations!:AlertConfig | undefined;
+  @Input() alertHeader!:string;
+  @Input() styleConfigurations!: StyleConfiguration | {};
   hide:boolean=false;
   alertIcon!:string;
   

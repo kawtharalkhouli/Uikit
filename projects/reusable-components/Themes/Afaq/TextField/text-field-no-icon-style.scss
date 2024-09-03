@@ -1,0 +1,188 @@
+@import '../variables.scss';
+
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-flex{
+    height: 56px !important;
+}
+.text-field-no-icon .mat-form-field-outline-start {
+    border-radius: 6px 0 0 6px !important;
+    min-width: 6px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.text-field-no-icon .mat-form-field-outline-gap {
+    border-top: 1px solid !important;
+    width: auto !important;
+}
+html:lang(ar) .text-field-no-icon .mat-form-field-outline-start {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: 6px !important;
+
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-no-icon .mat-form-field-outline-end {
+    border-radius: 6px 0px 0px 6px !important;
+    min-width: calc(100% - 95px) !important; 
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+  
+.text-field-no-icon .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 95px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.text-field-no-icon-small-floating-label .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 59px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.text-field-no-icon-medium-floating-label .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 107px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-no-icon-medium-floating-label .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 86px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+html:lang(ar) .text-field-no-icon-large-floating-label .mat-form-field-outline-end {
+    border-radius: 6px 0px 0px 6px !important;
+    min-width: calc(100% - 180px) !important; 
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+  
+.text-field-no-icon-large-floating-label .mat-form-field-outline-end {
+    border-radius: 0 6px 6px 0 !important;
+    min-width: calc(100% - 154px) !important;
+    &.mat-form-field-disabled{
+        background-color: $white-color !important;
+    }
+}
+.text-field-no-icon.mat-form-field:not(.mat-form-field-invalid).mat-focused  .mat-form-field-label {
+    color: #02536B !important;
+}
+.text-field-no-icon.mat-form-field:not(.mat-form-field-invalid).mat-focused .mat-form-field-outline {
+    color: #02536B !important;
+}
+.text-field-no-icon .mat-input-element{
+    padding-left: 25px;
+    position: relative !important;
+    bottom: 4px !important;
+    font-size: 14px;
+    line-height: 26px;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(0.6em,-1em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: $gray-color !important;
+}
+  /* Font color */
+.text-field-no-icon.input.mat-input-element {
+    color: $dark-font-color !important;
+}
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-start,
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-end,
+.text-field-no-icon.mat-form-field-appearance-outline .mat-form-field-outline-thick .mat-form-field-outline-gap {
+    border-width: 1px !important;
+}
+
+.text-field-no-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-left: 21px;
+    position: relative;
+    bottom: 3px;
+    line-height: 23px;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-outline {
+    color:  #34314C !important;
+}
+.text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled):not(.mat-form-field-invalid) .mat-form-field-flex:hover .mat-form-field-label {
+    color:  #34314C !important;
+ }
+ html:lang(ar) .text-field-no-icon.mat-form-field-appearance-outline:not(.mat-form-field-disabled).mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label{
+    transform: translate(-0.3em,-1em) scale(0.75) !important;
+    width: 133.3333333333% !important;
+}
+html:lang(ar) .text-field-no-icon .mat-input-element {
+    padding-right: 10px;
+    position: relative !important;
+    bottom: 4px !important;
+    font-size: 16px !important;
+}
+html:lang(ar) .text-field-no-icon.mat-form-field-disabled .mat-input-element {
+    position: relative !important;
+    bottom: 3px !important;
+    color: $font-color !important;
+    font-size: 16px !important;
+    line-height: 27px !important; 
+}
+.text-field-no-icon.mat-form-field-disabled .mat-input-element {
+    padding-left: 21px;
+    position: relative !important;
+    bottom: 1px !important;
+    font-size: 14px;
+    line-height: 24px;
+    font-size: 16px;
+    color: $font-color;
+    line-height: 27px !important;
+}
+html:lang(ar) .text-field-no-icon .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-right: 5px;
+    padding-left: unset !important;
+    position: relative;
+    bottom: 3px;
+}
+
+html:lang(ar) .text-field-no-icon.mat-form-field-disabled .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-right: 26px;
+    position: relative !important;
+    bottom: 4px !important;
+    color: $dark-font-color !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+}
+.text-field-no-icon.mat-form-field-disabled .mat-form-field-wrapper .mat-form-field-label mat-label{
+    padding-left: 15px;
+    position: relative;
+    bottom: 1px;
+    color: $dark-font-color;
+    line-height: 23px;
+    font-weight: 600;
+}
+
+
+input[type="time"]::-webkit-calendar-picker-indicator{
+    font-size:18px !important;
+}
+
+input[type="time"]:disabled::-webkit-calendar-picker-indicator {
+    color: $font-color !important;
+}
+
+.mat-input-element[type=time]:disabled:after{
+    content: "\e8b5";
+    font-family: "Material Icons";
+    font-size: 18px;
+    color: black;
+    top: -26px;
+    position: relative;
+    right: 7px;
+}

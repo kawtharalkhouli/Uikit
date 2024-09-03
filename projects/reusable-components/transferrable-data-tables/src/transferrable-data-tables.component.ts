@@ -48,7 +48,7 @@ export class TransferrableDataTables implements OnChanges, OnDestroy {
   @Input() isLoading: boolean = false;
   @Input() isPageableBottom: boolean = false; // enable pagination bottom
   @Input() paginationSizes: number[] = [5, 10, 15]; // pagination size
-  @Input() defaultPageSize = this.paginationSizes[1]; // default page size
+  @Input() defaultPageSize = this.paginationSizes[0]; // default page size
 
   @Input() set firstTableData(data: any[]) {
     this.setTableDataSource(data);

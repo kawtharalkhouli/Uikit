@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, forwardRef, Input, OnChanges, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { AbstractControl, ControlValueAccessor,FormBuilder,NG_VALIDATORS,NG_VALUE_ACCESSOR, ValidationErrors, Validator, ValidatorFn} from '@angular/forms';
 
-interface textAreaConfig{
+interface TextAreaConfig{
   rows?:number;
   cols?:number;
   maxlength?:number;
@@ -29,7 +29,7 @@ export class CustomTextAreaComponent implements OnChanges, ControlValueAccessor,
 @Input() label:string ='';//The floating label of the text area
 @Input() placeholder: string = '';//The placeholder of the text area
 @Input() value!:any | undefined;//Previously written value when not using reactive forms
-@Input() configurations:textAreaConfig|undefined;
+@Input() configurations:TextAreaConfig|undefined;
 @Input() required!:boolean;//Whether the control is required
 @Input() appearance!:string;
 @Input() resize!:boolean;

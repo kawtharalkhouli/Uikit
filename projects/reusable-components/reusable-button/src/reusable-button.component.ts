@@ -1,9 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnChanges,ViewEncapsulation } from '@angular/core';
 
-interface buttonConfig{
-  style?:string;
+interface ButtonConfig{
   iconName?:string;
-  size?:string;
   type?:string;
   arialabel?:string;
   routerLink?:any;
@@ -16,8 +14,8 @@ interface buttonConfig{
 })
 export class ReusableButtonComponent implements OnChanges {
   @Input() disabled!:boolean;
-  @Input() buttonTxt!:string;
-  @Input() configurations: buttonConfig | undefined;
+  @Input() value!:string;
+  @Input() configurations: ButtonConfig | undefined;
   @Input() size : string = 'medium';
   @Input() style: string = 'primary';
   @Input() loading:boolean=false;
