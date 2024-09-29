@@ -1,8 +1,0 @@
-<mat-stepper class="realsoft-dynamic-stepper" #stepper [selectedIndex]="selectedIndex" [selected]="selected" [linear]="linear" [orientation]="orientation" [disableRipple]="disableRipple" [labelPosition]="labelPosition" (selectionChange)="changeStepper($event)">
-    <mat-step *ngFor="let step of dynamicSteps" [stepControl]="step.stepControl" [completed]="step.completed" [editable]="step.editable" [optional]="step.optional" [hasError]="step.hasError" [errorMessage]="step.errorMessage" [state]="step.state">
-      <ng-template matStepLabel>
-      <ng-container *ngTemplateOutlet="step.labelTemplate.labelTemplate"></ng-container>
-      </ng-template>
-      <ng-container *ngTemplateOutlet="step.stepTemplate"></ng-container>
-    </mat-step>
-</mat-stepper>
