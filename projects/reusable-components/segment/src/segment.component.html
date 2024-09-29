@@ -1,7 +1,0 @@
-<mat-button-toggle-group class="realsoft-toggle-button-group" [disabled]="disabled"
-[ngClass]="{'realsoft-toggle-button-group-secondary' : style=== 'secondary'}"
-[appearance]="appearance"  [multiple]="multiple" [vertical]="vertical"
-(change)="groupChange($event)" [value]="value"
-[(ngModel)]="value" (ngModelChange)="onChange($event)" ngDefaultControl>
-<mat-button-toggle *ngFor="let button of data" [value]="button.value" [id]="button.id" [checked]="button.checked" (change)="selectOption(button)">{{lang === 'ar' ? button.labelAr : button.label}}</mat-button-toggle>
-</mat-button-toggle-group>
