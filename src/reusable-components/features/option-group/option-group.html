@@ -1,0 +1,8 @@
+<span class="realsoft-option-group-label"
+      role="presentation"
+      [class.realsoft-item-disabled]="disabled"
+      [id]="_id">
+      <span class="realsoft-list-item__primary-text">{{label}}<ng-content></ng-content></span>
+</span>
+
+<ng-content select="realsoft-option, ng-container"></ng-content>

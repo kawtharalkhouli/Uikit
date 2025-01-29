@@ -1,0 +1,48 @@
+@import './option-group-tokens.css';
+
+
+.realsoft-option-group {
+    color: var(--realsoft-option-group-label-text-color);
+    line-height: var(--realsoft-option-group-label-text-line-height);
+    font-size: var(--realsoft-option-group-label-text-size);
+    letter-spacing: var(--realsoft-option-group-label-text-tracking);
+    font-weight: var(--realsoft-option-group-label-text-weight);
+
+    & .realsoft-option-group-label {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+        min-height: 48px;
+        padding: 0 16px;
+        outline: none;
+
+        &.realsoft-item-disabled {
+            opacity: 0.38;
+        }
+
+        & .realsoft-list-item__primary-text {
+            font-size: inherit;
+            font-weight: inherit;
+            white-space: normal;
+            letter-spacing: inherit;
+            line-height: inherit;
+            font-family: inherit;
+            text-decoration: inherit;
+            text-transform: inherit;
+        }
+    }
+}
+
+.realsoft-option-group .realsoft-option:not(.realsoft-option-mutliple) {
+    padding-left: 32px;
+}
+
+[dir = rtl] .realsoft-option-group .realsoft-option:not(.realsoft-option-mutliple) {
+    padding-left: 16px;
+    padding-right: 32px;
+}
+
+
+
