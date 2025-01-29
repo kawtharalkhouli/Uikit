@@ -1,0 +1,680 @@
+
+@import "./form-field-tokens.css";
+
+
+.realsoft-form-field {
+    --realsoft-form-field-floating-label-scale: 0.75;
+    display: inline-flex;
+    flex-direction: column;
+    min-width: 0;
+    text-align: left;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--realsoft-form-field-container-text-font);
+    line-height: var(--realsoft-form-field-container-text-line-height);
+    font-size: var(--realsoft-form-field-container-text-size);
+    letter-spacing: var(--realsoft-form-field-container-text-tracking);
+    font-weight: var(--realsoft-form-field-container-text-weight);
+}
+
+.realsoft-text-field {
+    display: inline-flex;
+    align-items: baseline;
+    padding: 0 16px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    will-change: opacity, transform, color;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.realsoft-text-field__input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    padding: 0;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    appearance: none;
+    height: 28px;
+}
+    
+.realsoft-text-field__input::-webkit-calendar-picker-indicator, .realsoft-text-field__input::-ms-clear {
+    display: none;
+}
+
+.realsoft-text-field__input:focus { 
+    outline: none;
+}
+
+.realsoft-text-field__input:invalid {
+    box-shadow: none;
+}
+
+.realsoft-text-field__input::placeholder, .realsoft-text-field__input::-moz-placeholder, .realsoft-text-field__input::-webkit-input-placeholder, .realsoft-text-field__input:-ms-input-placeholder {
+    opacity: 0;
+}
+
+.realsoft-text-field-no-label .realsoft-text-field__input::placeholder, .realsoft-text-field-focused .realsoft-text-field__input::placeholder {
+    opacity: 1;
+}
+
+.realsoft-text-field-no-label .realsoft-text-field__input::-moz-placeholder, .realsoft-text-field-focused .realsoft-text-field__input::-moz-placeholder {
+    opacity: 1;
+}
+
+.realsoft-text-field-no-label .realsoft-text-field__input::-webkit-input-placeholder, .realsoft-text-field-focused .realsoft-text-field__input::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+.realsoft-text-field-no-label .realsoft-text-field__input:-ms-input-placeholder, .realsoft-text-field-focused .realsoft-text-field__input:-ms-input-placeholder {
+    opacity: 1;
+}
+
+.realsoft-text-field-outlined .realsoft-text-field__input, .realsoft-text-field-filled.realsoft-text-field-no-label .realsoft-text-field__input {
+    height: 100%;
+}
+
+.realsoft-text-field-outlined .realsoft-text-field__input {
+    display: flex;
+    border: none !important;
+    background-color: rgba(0,0,0,0);
+}
+
+.realsoft-text-field-disabled .realsoft-text-field__input {
+    pointer-events: auto;
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-text-field__input {
+    color: var(--realsoft-filled-text-field-input-text-color);
+    caret-color: var(--realsoft-filled-text-field-caret-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-text-field__input::placeholder {
+    color: var(--realsoft-filled-text-field-input-text-placeholder-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-text-field__input::-moz-placeholder {
+    color: var(--realsoft-filled-text-field-input-text-placeholder-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-text-field__input::-webkit-input-placeholder {
+    color: var(--realsoft-filled-text-field-input-text-placeholder-color);;
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-text-field__input:-ms-input-placeholder {
+    color: var(--realsoft-filled-text-field-input-text-placeholder-color);
+}
+ 
+.realsoft-text-field-filled.realsoft-text-field-invalid:not(.realsoft-text-field-disabled) .realsoft-text-field__input {
+    caret-color: var(--realsoft-filled-text-field-error-caret-color);
+}
+
+.realsoft-text-field-filled.realsoft-text-field-disabled .realsoft-text-field__input {
+    color: var(--realsoft-filled-text-field-disabled-input-text-color)
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled) .realsoft-text-field__input {
+    color: var(--realsoft-outlined-text-field-input-text-color);
+    caret-color: var(--realsoft-outlined-text-field-caret-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled) .realsoft-text-field__input::placeholder {
+    color: var(--realsoft-outlined-text-field-input-text-placeholder-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled) .realsoft-text-field__input::-moz-placeholder {
+    color: var(--realsoft-outlined-text-field-input-text-placeholder-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled) .realsoft-text-field__input::-webkit-input-placeholder {
+    color: var(--realsoft-outlined-text-field-input-text-placeholder-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled) .realsoft-text-field__input:-ms-input-placeholder {
+    color: var(--realsoft-outlined-text-field-input-text-placeholder-color);
+}
+
+.realsoft-text-field-outlined.realsoft-text-field-invalid:not(.realsoft-text-field-disabled) .realsoft-text-field__input {
+    caret-color: var(--realsoft-outlined-text-field-error-caret-color);
+}
+
+.realsoft-text-field-outlined.realsoft-text-field-disabled .realsoft-text-field__input {
+    color: var(--realsoft-outlined-text-field-disabled-input-text-color);
+}
+
+.realsoft-text-field-disabled .cdk-high-contrast-active .realsoft-text-field__input {
+    background-color: Window;
+}
+
+.realsoft-text-field-filled {
+    height: 56px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: var(--realsoft-filled-text-field-container-shape);
+    border-top-right-radius: var(--realsoft-filled-text-field-container-shape);
+
+}
+
+.realsoft-text-field-wrapper {
+    height: auto;
+    flex: auto;
+    will-change: auto;
+    width: 100%;
+    z-index: 0;
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) {
+    background-color: var(--realsoft-filled-text-field-container-color);
+}
+
+.realsoft-text-field-filled.realsoft-text-field-disabled {
+    background-color: var(--realsoft-filled-text-field-disabled-container-color);
+}
+
+.realsoft-text-field-outlined {
+    height: 56px;
+    overflow: visible;
+    padding-right: max(16px, var(--realsoft-outlined-text-field-container-shape));
+    padding-left: max(16px, var(--realsoft-outlined-text-field-container-shape), var(--realsoft-outlined-text-field-container-shape) + 4px);
+}
+
+[dir=rtl] .realsoft-text-field-outlined {
+    padding-right: max(16px, var(--realsoft-outlined-text-field-container-shape), var(--realsoft-outlined-text-field-container-shape) + 4px);
+    padding-left: max(16px, var(--realsoft-outlined-text-field-container-shape));
+}
+
+.realsoft-floating-label {
+    position: absolute;
+    left: 0;
+    transform-origin:left top;
+    line-height: 1.15rem;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: text;
+    overflow: hidden;
+    will-change: transform;
+
+}
+
+[dir=rtl] .realsoft-floating-label {
+    right: 0;
+    left: auto;
+    transform-origin:right top;
+    text-align: right;
+}
+
+.realsoft-text-field .realsoft-floating-label {
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.realsoft-notched-outline .realsoft-floating-label {
+    display: inline-block;
+    position: relative;
+    max-width: 100%;
+}
+
+.realsoft-text-field-outlined .realsoft-floating-label {
+    left: 4px;
+    right: auto;
+}
+
+[dir=rtl] .realsoft-text-field-outlined .realsoft-floating-label {
+    left: auto;
+    right: 4px;
+}
+
+.realsoft-text-field-filled .realsoft-floating-label {
+    left: auto;
+    right: auto;
+}
+
+// [dir=rtl] .realsoft-text-field-filled .realsoft-floating-label {
+//     left: auto;
+//     right: 16px;
+// }
+
+.realsoft-text-field-disabled .realsoft-floating-label {
+    cursor: default;
+}
+
+.cdk-high-contrast-active .realsoft-text-field-disabled .realsoft-floating-label {
+    z-index: 1;
+}
+
+.realsoft-text-field-filled.realsoft-text-field-no-label .realsoft-floating-label {
+    display: none;
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-floating-label {
+    color: var(--realsoft-filled-text-field-label-text-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled).realsoft-text-field-focused .realsoft-floating-label {
+    color: var(--realsoft-filled-text-field-focus-label-text-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled):not(.realsoft-text-field-focused):hover .realsoft-floating-label {
+    color: var(--realsoft-filled-text-field-hover-label-text-color);
+}
+
+.realsoft-text-field-filled.realsoft-text-field-disabled .realsoft-floating-label {
+    color: var(--realsoft-filled-text-field-disabled-label-text-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled).realsoft-text-field-invalid .realsoft-floating-label {
+    color: var(--realsoft-filled-text-field-error-label-text-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled).realsoft-text-field-invalid.realsoft-text-field-focused .realsoft-floating-label {
+    color: var(--realsoft-filled-text-field-error-focus-label-text-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled).realsoft-text-field-invalid:not(.realsoft-text-field-disabled):hover .realsoft-floating-label {
+    color: var(--realsoft-filled-text-field-error-hover-label-text-color);
+}
+
+.realsoft-text-field-filled .realsoft-floating-label {
+    font-family: var(--realsoft-filled-text-field-label-text-font);
+    font-size: var(--realsoft-filled-text-field-label-text-size);
+    font-weight: var(--realsoft-filled-text-field-label-text-weight);
+    letter-spacing: var(--realsoft-filled-text-field-label-text-tracking);
+
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled) .realsoft-notched-outline {
+    color: var(--realsoft-outlined-text-field-label-text-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled).realsoft-text-field-focused .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-focus-label-text-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled):not(.realsoft-text-field-focused):hover .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-hover-label-text-color);
+}
+
+.realsoft-text-field-outlined.realsoft-text-field-disabled .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-disabled-label-text-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled).realsoft-text-field-invalid .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-error-label-text-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled).realsoft-text-field-invalid.realsoft-text-field-focused .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-error-focus-label-text-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled).realsoft-text-field-invalid:not(.realsoft-text-field-disabled):hover .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-error-hover-label-text-color);
+}
+
+.realsoft-form-field-hint-wrapper, .realsoft-form-field-error-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 16px;
+}
+
+.realsoft-form-field-hint-wrapper {
+    display: flex;
+}
+
+.realsoft-form-field-subscript-wrapper, .realsoft-form-field-bottom-align::before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--realsoft-form-field-subscript-text-font);
+    line-height: var(--realsoft-form-field-subscript-text-line-height);
+    font-size: var(--realsoft-form-field-subscript-text-size);
+    letter-spacing: var(--realsoft-form-field-subscript-text-tracking);
+    font-weight: var(--realsoft-form-field-subscript-text-weight);
+}
+
+.realsoft-form-field-bottom-align::before {
+    content: "";
+    display: inline-block;
+    height: 16px;
+}
+
+.realsoft-form-field-hint-spacer {
+    flex: 1 0 1em;
+}
+
+.realsoft-form-field-flex {
+    display: inline-flex;
+    align-items: baseline;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.realsoft-notched-outline {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    text-align: left;
+    pointer-events: none;
+}
+
+.realsoft-text-field-outlined .realsoft-notched-outline {
+    z-index: 1;
+}
+
+.realsoft-notch-piece {
+    box-sizing: border-box;
+    height: 100%;
+    pointer-events: none;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+.realsoft-notched-outline__leading {
+    border-left: 1px solid;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: var(--realsoft-outlined-text-field-container-shape);
+    border-bottom-left-radius: var(--realsoft-outlined-text-field-container-shape);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled) .realsoft-notch-piece {
+    border-color: var(--realsoft-outlined-text-field-outline-color);
+    border-width: var(--realsoft-outlined-text-field-outline-width);
+}
+
+.realsoft-text-field-outlined .realsoft-notched-outline .realsoft-notched-outline__leading {
+    width: max(12px,var(--realsoft-outlined-text-field-container-shape));
+}
+
+.realsoft-notched-outline__notch {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.realsoft-form-field .realsoft-notched-outline__notch {
+    margin-left: -1px;
+    -webkit-clip-path: inset(-9em -999em -9em 1px);
+    clip-path: inset(-9em -999em -9em 1px);
+}
+
+
+.realsoft-text-field-outlined .realsoft-notched-outline .realsoft-notched-outline__notch {
+    max-width: min(var(--realsoft-form-field-notch-max-width, 100%),100% - max(12px,var(--realsoft-outlined-text-field-container-shape))*2);
+}
+
+.realsoft-form-field .realsoft-text-field-wrapper.realsoft-text-field .realsoft-notched-outline__notch {
+    padding-top: 0;
+}
+
+.realsoft-form-field.realsoft-form-field.realsoft-form-field.realsoft-form-field.realsoft-form-field.realsoft-form-field .realsoft-notched-outline__notch {
+    border-left: 1px solid rgba(0,0,0,0);
+}
+
+.realsoft-text-field-outlined .realsoft-floating-label {
+    font-family: var(--realsoft-outlined-text-field-label-text-font);
+    font-size: var(--realsoft-outlined-text-field-label-text-size);
+    font-weight: var(--realsoft-outlined-text-field-label-text-weight);
+    letter-spacing: var(--realsoft-outlined-text-field-label-text-tracking);
+}
+
+.realsoft-notched-outline .realsoft-floating-label {
+    max-width: calc(100% + 1px);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled) .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-label-text-color);
+}
+
+.realsoft-form-field .realsoft-floating-label.realsoft-floating-label {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: normal;
+    pointer-events: all;
+    will-change: auto;
+}
+
+.realsoft-text-field-wrapper .realsoft-form-field-flex .realsoft-floating-label {
+    top: calc(var(--realsoft-form-field-container-height)/2);
+}
+
+.realsoft-form-field:not(.realsoft-form-field-no-animations) .realsoft-floating-label {
+    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.realsoft-form-field:not(.realsoft-form-field-disabled) .realsoft-floating-label.realsoft-floating-label {
+    cursor: inherit;
+}
+
+.realsoft-notched-outline__trailing {
+    flex-grow: 1;
+    border-left: none;
+    border-right: 1px solid;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: var(--realsoft-outlined-text-field-container-shape);
+    border-bottom-right-radius: var(--realsoft-outlined-text-field-container-shape);
+}
+
+.realsoft-text-field-outlined .realsoft-form-field-infix, .realsoft-text-field-no-label .realsoft-form-field-infix {
+    padding-top: var(--realsoft-form-field-container-vertical-padding);
+    padding-bottom: var(--realsoft-form-field-container-vertical-padding);
+}
+
+.realsoft-form-field-infix {
+    flex: auto;
+    min-width: 0;
+    width: 180px;
+    position: relative;
+    box-sizing: border-box;
+    min-height: var(--realsoft-form-field-container-height);
+    padding-top: var(--realsoft-form-field-filled-with-label-container-padding-top);
+    padding-bottom: var(--realsoft-form-field-filled-with-label-container-padding-bottom);
+}
+
+
+.realsoft-form-field-subscript-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    position: relative;
+}
+
+
+.realsoft-text-field-focused.realsoft-text-field-outlined .realsoft-notched-outline-notched .realsoft-notched-outline__notch {
+    padding-top: 2px;
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled).realsoft-text-field-focused .realsoft-notched-outline .realsoft-notch-piece{
+    border-width: var(--realsoft-outlined-text-field-focus-outline-width);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled).realsoft-text-field-focused .realsoft-notch-piece {
+    border-color: var(--realsoft-outlined-text-field-focus-outline-color);
+}
+
+.realsoft-form-field-type-realsoft-select.realsoft-form-field-appearance-outline .realsoft-notched-outline__notch {
+    max-width: calc(100% - 60px);
+}
+
+.realsoft-text-field-outlined .realsoft-notched-outline-notched .realsoft-notched-outline__notch {
+    padding-top: 1px;
+} 
+
+.realsoft-form-field .realsoft-text-field-outlined .realsoft-notched-outline-upgraded .realsoft-floating-label-float-above {
+    font-size: var(--realsoft-form-field-outlined-label-text-populated-size);
+}
+
+.realsoft-text-field-wrapper.realsoft-text-field-outlined .realsoft-notched-outline-upgraded .realsoft-floating-label-float-above {
+    --realsoft-form-field-label-transform: translateY(calc(calc(6.75px + var(--realsoft-form-field-container-height) / 2)* -1)) scale(var(--realsoft-form-field-floating-label-scale, 0.75));
+    transform: var(--realsoft-form-field-label-transform);
+}
+
+.realsoft-text-field--outlined:not(.realsoft-text-field-disabled).realsoft-text-field-focused .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-focus-label-text-color);
+}
+
+.realsoft-text-field-outlined.realsoft-notched-outline-upgraded .realsoft-floating-label-float-above, .realsoft-text-field-outlined .realsoft-notched-outline-upgraded .realsoft-floating-label-float-above {
+    transform: translateY(-34.75px) scale(0.75);
+}
+
+.realsoft-notched-outline-upgraded .realsoft-floating-label-float-above {
+    max-width: calc(133.3333333333% + 1px);
+}
+
+.realsoft-notched-outline-upgraded .realsoft-floating-label-float-above {
+    max-width: 133.3333333333%;
+}
+
+.realsoft-notched-outline .realsoft-floating-label-float-above {
+    text-overflow: clip;
+}
+
+.realsoft-text-field-outlined .realsoft-floating-label-float-above {
+    transform: translateY(-37.25px) scale(1);
+    font-size: .75rem;
+}
+
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled):not(.realsoft-text-field-focused):hover .realsoft-floating-label {
+    color: var(--realsoft-outlined-text-field-hover-label-text-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled):not(.realsoft-text-field-focused):hover .realsoft-notch-piece {
+    border-color: var(--realsoft-outlined-text-field-hover-outline-color);
+}
+
+.realsoft-text-field-outlined.realsoft-text-field-disabled .realsoft-notch-piece {
+    border-color: var(--realsoft-outlined-text-field-disabled-outline-color);
+}
+
+.realsoft-form-field-type-realsoft-select.realsoft-form-field-appearance-fill .realsoft-floating-label-float-above {
+    max-width: calc(100%/0.75 - 24px);
+}
+
+.realsoft-form-field-type-realsoft-select.realsoft-form-field-appearance-fill .realsoft-mdc-floating-label {
+    max-width: calc(100% - 18px);
+}
+
+.realsoft-text-field-filled .realsoft-floating-label-float-above {
+    transform: translateY(-106%) scale(0.75);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-floating-label {
+    color: var(--realsoft-filled-text-field-label-text-color);
+}
+
+.realsoft-text-field-filled .realsoft-floating-label {
+    display: var(--realsoft-form-field-filled-label-display, block);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-line-ripple::before {
+    border-bottom-color: var(--realsoft-filled-text-field-active-indicator-color);
+}
+
+.realsoft-line-ripple::before {
+    z-index: 1;
+    border-bottom-width: var(--realsoft-filled-text-field-active-indicator-height);
+}
+
+.realsoft-line-ripple::before, .realsoft-line-ripple::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-bottom-style: solid;
+    content: "";
+}
+
+.realsoft-form-field:not(.realsoft-form-field-no-animations) .realsoft-line-ripple::after {
+    transition: transform 180ms cubic-bezier(0.4, 0, 0.2, 1),opacity 180ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled) .realsoft-line-ripple::after {
+    border-bottom-color: var(--realsoft-filled-text-field-focus-active-indicator-color);
+}
+
+.realsoft-text-field-filled .realsoft-line-ripple::after {
+    border-bottom-width: var(--realsoft-filled-text-field-focus-active-indicator-height);
+}
+
+.realsoft-line-ripple::after {
+    transform: scaleX(0);
+    opacity: 0;
+    z-index: 2;
+}
+
+.realsoft-text-field-filled.realsoft-text-field-disabled .realsoft-line-ripple::before {
+    border-bottom-color: var(--realsoft-filled-text-field-disabled-active-indicator-color);
+}
+
+.realsoft-line-ripple-deactivating::after {
+    opacity: 0;
+}
+
+.realsoft-line-ripple-active::after {
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.realsoft-floating-label-required:not(.realsoft-floating-label-hide-required-marker)::after {
+    margin-left: 1px;
+    margin-right: 0;
+    content: "*";
+}
+
+.realsoft-form-field-error {
+    display: block;
+    color: var(--realsoft-form-field-error-text-color);
+}
+
+.realsoft-text-field-outlined:not(.realsoft-text-field-disabled).realsoft-text-field-invalid .realsoft-notch-piece {
+    border-color: var(--realsoft-outlined-text-field-error-outline-color);
+}
+
+.realsoft-text-field-filled:not(.realsoft-text-field-disabled).realsoft-text-field-invalid .realsoft-line-ripple::before {
+    border-bottom-color: var(--realsoft-filled-text-field-error-active-indicator-color);
+}
+
+.realsoft-text-field-filled.realsoft-text-field-invalid:not(.realsoft-text-field-disabled) .realsoft-line-ripple::after {
+    border-bottom-color: var(--realsoft-filled-text-field-error-focus-active-indicator-color);
+}
+
+
+.realsoft-text-field-icon-prefix, .realsoft-text-field-icon-suffix {
+    align-self: center;
+    line-height: 0;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.realsoft-text-field-icon-suffix {
+    color: var(--realsoft-form-field-trailing-icon-color);
+}
+
+.realsoft-text-field-icon-suffix, [dir=rtl] .realsoft-text-field-icon-prefix {
+    padding: 0 0 0 4px;
+}
+
+.realsoft-text-field-icon-prefix, [dir=rtl] .realsoft-text-field-icon-suffix {
+    padding: 0 4px 0 0;
+}
+
+.realsoft-text-field-icon-prefix {
+    color: var(--realsoft-form-field-leading-icon-color);
+}
+

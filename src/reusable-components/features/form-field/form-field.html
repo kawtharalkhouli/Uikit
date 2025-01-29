@@ -1,0 +1,100 @@
+<ng-template #labelTemplate>
+    @if(_hasFloatingLabel()) {
+        <label 
+            realsoftFormFieldFloatingLabel
+            [floating]="_shouldLabelFloat()"
+            [monitorResize]="_isOutline()"
+            [id]="_labelId"
+            [attr.for]="_control.disableAutomaticLabeling ? null : _control.id"
+        >
+        <ng-content select="realsoft-label"></ng-content>
+        @if(!hideRequiredMarker && _control.required) {
+            <span aria-hidden="true" class="realsoft-form-field-required-marker realsoft-floating-label-required"></span>
+        }
+        </label>
+    }
+</ng-template>
+
+<div 
+    class="realsoft-text-field-wrapper realsoft-text-field"
+    #textField
+    [class.realsoft-text-field-filled]="!_isOutline()"
+    [class.realsoft-text-field-outlined]="_isOutline()"
+    [class.realsoft-text-field-no-label]="!_hasFloatingLabel()"
+    [class.realsoft-text-field-disabled]="_control.disabled"
+    [class.realsoft-text-field-focused]="_control.focused"
+    [class.realsoft-text-field-invalid]="_control.errorState"
+    (click)="_control.onContainerClick($event)">
+    @if(!_isOutline() && !_control.disabled) {
+        <div class="realsoft-form-field-focus-overlay"></div>
+    }
+    <div class="realsoft-form-field-flex">
+        @if(_isOutline()) {
+            <div
+            realsoftFormFieldNotchedOutline
+            [realsoftFormFieldOpenNotchedOutline]="_shouldLabelFloat()">
+            <ng-template [ngTemplateOutlet]="labelTemplate"></ng-template>
+            </div>
+        }
+
+        @if(hasIconPrefix) {
+            <div class="realsoft-text-field-icon-prefix" #prefixIcon>
+                <ng-content select="[realsoftPrefix], [realsoftIconPrefix]"></ng-content>
+            </div>
+        }
+
+        @if(hasTextPrefix) {
+            <div class="realsoft-text-field-text-prefix" #prefixText>
+                <ng-content select="[realsoftTextPrefix]"></ng-content>
+            </div>
+        }
+
+        <div class="realsoft-form-field-infix">
+            @if (!_isOutline()) {
+                <ng-template [ngTemplateOutlet]="labelTemplate"></ng-template>
+              }
+            <ng-content></ng-content>
+        </div>
+
+        @if(hasTextSuffix) {
+            <div class="realsoft-text-field-text-suffix" #suffixText>
+                <ng-content select="[realsoftTextSuffix]"></ng-content>
+            </div>
+        }
+
+        @if(hasIconSuffix) {
+            <div class="realsoft-text-field-icon-suffix" #suffixIcon>
+                <ng-content select="[realsoftSuffix], [realsoftIconSuffix]"></ng-content>
+            </div>
+        }
+    </div>
+    @if(!_isOutline()) {
+        <div realsoftFormFieldLineRipple></div>
+    }
+</div>
+
+<div
+    class="realsoft-form-field-subscript-wrapper realsoft-form-field-bottom-align"
+    [class.realsoft-form-field-subscript-dynamic-size]="subscriptSizing === 'dynamic'"
+>
+    @switch (_getMessagesToDisplay()) {
+        @case ('error') {
+            <div class="realsoft-form-field-error-wrapper" [@transitionMessages]="_subscriptsAnimationState">
+                <ng-content select="realsoft-error, [realsoftError]"></ng-content>
+            </div>
+        }
+
+        @case('hint') {
+            <div class="realsoft-form-field-hint-wrapper" [@transitionMessages]="_subscriptsAnimationState">
+                @if(hintLabel) {
+                    <realsoft-hint [id]="_hintId">{{hintLabel}}</realsoft-hint>
+                }
+                <ng-content select="realsoft-hint:not([align='end'])"></ng-content>
+                <div class="realsoft-form-field-hint-spacer"></div>
+                <ng-content select="realsoft-hint[align='end']"></ng-content> 
+            </div>
+        }    
+    } 
+</div>
+
+  
