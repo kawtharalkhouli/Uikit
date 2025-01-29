@@ -1,0 +1,63 @@
+
+<!--Use cdkOverlayOrigin as a reference to overlay positioning to define where the overlay needs to be attached-->
+<div 
+    cdk-overlay-origin
+    class="realsoft-select-trigger"
+    (click)="open()"
+    #triggerSelect
+    #additionalOverlayOrigin="cdkOverlayOrigin">
+
+    <div class="realsoft-select-value" [attr.id]="_selectValueID">
+        @if(empty) {
+            <span class="realsoft-select-placeholder realsoft-select-min-line">{{placeholder}}</span>
+        } 
+        @else {
+            <span class="realsoft-select-value-text">
+                @if(customTrigger) {
+                    <ng-content select="realsoft-select-trigger"></ng-content>
+                } @else {
+                    <span class="realsoft-select-min-line">{{triggerValue}}</span>
+                }
+            </span>
+        }
+    </div>
+
+    <div class="realsoft-select-arrow-wrapper">
+        <div class="realsoft-select-arrow">
+            <svg viewBox="0 0 24 24" width="24px" height="24px" focusable="false" aria-hidden="true">
+                <path d="M7 10l5 5 5-5z"/>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<ng-template
+  cdk-connected-overlay
+  cdkConnectedOverlayLockPosition
+  [cdkConnectedOverlayPanelClass]="_overlayPanelClasses"
+  [cdkConnectedOverlayScrollStrategy]="_scrollStrategy"
+  [cdkConnectedOverlayOrigin]="_overlayOrigin || additionalOverlayOrigin"
+  [cdkConnectedOverlayOpen]="panelOpen"
+  [cdkConnectedOverlayWidth]="_overlayWidth"
+  cdkConnectedOverlayHasBackdrop
+  cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+  [cdkConnectedOverlayPositions]="_overlayPositions"
+  (attach)="_attached()"
+  (backdropClick)="close()"
+  (detach)="close()">
+  <div 
+    #selectPanel
+    role="listbox"
+    tabindex="-1"
+    class="realsoft-select-panel realsoft-menu-surface realsoft-menu-surface--open"
+    [attr.id]="_selectUniqueID + '-panel'"
+    [attr.aria-mutliselectable]="multiple"
+    [attr.aria-labelledby]="_panelARIALabeldby()"
+    [attr.aria-label]="ariaLabel || null"
+    [ngClass]="panelClass"
+    (keydown)="_handleKeydown($event)"
+    [@transformPanel]="'showing'"
+    >
+    <ng-content></ng-content> 
+  </div>
+</ng-template>

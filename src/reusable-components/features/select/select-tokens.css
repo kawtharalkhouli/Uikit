@@ -1,0 +1,17 @@
+:root {
+    --realsoft-select-enabled-trigger-text-color: #201a1b;
+    --realsoft-select-trigger-text-font: Roboto, sans-serif;
+    --realsoft-select-trigger-text-line-height: 1.5rem;
+    --realsoft-select-trigger-text-size: 1rem;
+    --realsoft-select-trigger-text-tracking: .031rem;
+    --realsoft-select-trigger-text-weight: 400;
+    --realsoft-select-arrow-transform: translateY(-8px);
+    --realsoft-select-enabled-arrow-color: #514346;
+    --realsoft-select-panel-background-color: #f7ebec;
+    --realsoft-select-disabled-trigger-text-color: rgba(32, 26, 27, .38);
+    --realsoft-select-placeholder-text-color: #514346;
+    --realsoft-select-disabled-arrow-color: rgba(32, 26, 27, .38);
+    --realsoft-select-focused-arrow-color: #ba005c;
+    --realsoft-select-invalid-arrow-color: #ba1a1a;
+    --realsoft-select-container-elevation-shadow: 0px 3px 1px -2px rgba(0, 0, 0, .2), 0px 2px 2px 0px rgba(0, 0, 0, .14), 0px 1px 5px 0px rgba(0, 0, 0, .12);
+}

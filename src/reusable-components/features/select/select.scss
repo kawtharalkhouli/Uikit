@@ -1,0 +1,190 @@
+@import './select-tokens.css';
+
+.realsoft-select {
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    color: var(--realsoft-select-enabled-trigger-text-color);
+    font-family: var(--realsoft-select-trigger-text-font);
+    line-height: var(--realsoft-select-trigger-text-line-height);
+    font-size: var(--realsoft-select-trigger-text-size);
+    font-weight: var(--realsoft-select-trigger-text-weight);
+    letter-spacing: var(--realsoft-select-trigger-text-tracking);
+}
+
+.realsoft-select-trigger {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.realsoft-select-value {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.realsoft-select-value-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.realsoft-select-trigger .realsoft-select-arrow-wrapper {
+    height: 24px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    // transform: var(--realsoft-select-arrow-transform);
+}
+
+.realsoft-select-trigger .realsoft-select-arrow-wrapper .realsoft-select-arrow {
+    width: 10px;
+    height: 5px;
+    position: relative;
+    color:  var(--realsoft-select-enabled-arrow-color);
+}
+
+.realsoft-select-arrow svg {
+    fill: currentColor;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div.realsoft-select-panel {
+    box-shadow: var(--realsoft-select-container-elevation-shadow);
+}
+
+.realsoft-select-disabled {
+    color: var(--realsoft-select-disabled-trigger-text-color);
+}
+
+.realsoft-select-disabled .realsoft-select-trigger {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+
+}
+
+.realsoft-form-field-appearance-fill .realsoft-text-field--no-label .realsoft-select-arrow-wrapper {
+    transform: none;
+}
+
+.realsoft-form-field .realsoft-select.realsoft-select-invalid .realsoft-select-arrow, .realsoft-form-field-invalid:not(.realsoft-form-field-disabled) .realsoft-form-field-infix::after {
+    color: var(--realsoft-select-invalid-arrow-color);
+}
+
+.realsoft-form-field.realsoft-focused .realsoft-select-arrow {
+    color: var(--realsoft-select-focused-arrow-color);
+}
+
+.realsoft-form-field .realsoft-select.realsoft-select-disabled .realsoft-select-arrow {
+    color: var(--realsoft-select-disabled-arrow-color);
+}
+
+.cdk-high-contrast-active .realsoft-select-arrow svg {
+    fill:CanvasText
+}
+
+.realsoft-select-disabled .cdk-high-contrast-active .realsoft-select-arrow svg{
+    fill:GrayText;
+}
+
+div.realsoft-select-panel {
+    width: 100%;
+    max-height: 275px;
+    outline: 0;
+    overflow: auto;
+    padding: 8px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    position: static;
+    background-color: var(--realsoft-select-panel-background-color);
+}
+
+.cdk-high-contrast-active div.realsoft-select-panel {
+    outline: solid 1px;
+}
+
+.cdk-overlay-pane:not(.realsoft-select-panel-above) div.realsoft-select-panel {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    transform-origin: top center;
+}
+
+.realsoft-select-above div.realsoft-select-panel {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transform-origin: bottom center;
+}
+
+div.realsoft-select-panel .realsoft-option {
+    --realsoft-list-list-item-container-color: var(--realsoft-select-panel-background-color);
+}
+
+.realsoft-select-placeholder {
+    transition: color 400ms 133.3333333333ms cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: var(--realsoft-select-placeholder-text-color);
+}
+
+.__realsoft-no-animation .realsoft-select-placeholder {
+    transition: none;
+}
+
+.realsoft-form-field-hide-placeholder .realsoft-select-placeholder {
+    color: rgba(0,0,0,0);
+    -webkit-text-fill-color: rgba(0,0,0,0);
+    transition: none;
+    display: block;
+}
+
+.realsoft-form-field-type-realsoft-select:not(.realsoft-form-field-disabled) .realsoft-text-field-wrapper {
+    cursor: pointer;
+}
+
+.realsoft-form-field-type-realsoft-select.realsoft-form-field-appearance-fill .realsoft-floating-label {
+    max-width: calc(100% - 18px);
+}
+
+
+.realsoft-form-field-type-realsoft-select.realsoft-form-field-appearance-fill .realsoft-floating-label--float-above {
+    max-width:calc(100%/0.75 - 24px);
+}
+
+.realsoft-form-field-type-realsoft-select.realsoft-form-field-appearance-outline .realsoft-notched-outline__notch {
+    max-width:calc(100% - 60px);
+}
+
+.realsoft-form-field-type-realsoft-select.realsoft-form-field-appearance-outline .realsoft-text-field--label-floating .realsoft-notched-outline__notch {
+    max-width:calc(100% - 24px);
+} 
+
+.realsoft-select-min-line:empty::before {
+    content: " ";
+    white-space: pre;
+    width: 1px;
+    display: inline-block;
+    visibility: hidden;
+}
+
+.realsoft-form-field-appearance-fill .realsoft-select-arrow-wrapper {
+    transform: var(--realsoft-select-arrow-transform);
+}
+
+.realsoft-notched-outline-notched .realsoft-notched-outline__notch {
+    padding-left: 0;
+    padding-right: 8px;
+    border-top: none;
+    --realsoft-form-field-notch-max-width: 100%;
+}
+
+.realsoft-form-field.realsoft-form-field-focused .realsoft-select-arrow {
+    color: var(--realsoft-select-focused-arrow-color);
+}
