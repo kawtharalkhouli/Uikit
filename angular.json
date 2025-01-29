@@ -1,25 +1,25 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "projects",
+  "newProjectRoot": "src",
   "projects": {
     "reusable-components": {
       "projectType": "library",
-      "root": "projects/reusable-components",
-      "sourceRoot": "projects/reusable-components/src",
+      "root": "src/reusable-components",
+      "sourceRoot": "src/reusable-components/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/reusable-components/ng-package.json"
+            "project": "src/reusable-components/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/reusable-components/tsconfig.lib.prod.json"
+              "tsConfig": "src/reusable-components/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/reusable-components/tsconfig.lib.json"
+              "tsConfig": "src/reusable-components/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -27,8 +27,9 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "tsConfig": "projects/reusable-components/tsconfig.spec.json",
-            "karmaConfig": "projects/reusable-components/karma.conf.js"
+            "main": "src/reusable-components/src/test.ts",
+            "tsConfig": "src/reusable-components/tsconfig.spec.json",
+            "karmaConfig": "src/reusable-components/karma.conf.js"
           }
         }
       }
