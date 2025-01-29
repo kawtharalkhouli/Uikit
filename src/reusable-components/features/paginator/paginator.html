@@ -1,0 +1,47 @@
+<div class="realsoft-paginator-outer-container">
+    <div class="realsoft-paginator-container">
+        <div class="realsoft-paginator-page-size">
+            <div class="realsoft-paginator-page-size-label">
+                Items Per Page
+            </div>
+
+            @if(_sortedPageSizeOptions.length > 1){
+                <select #select class="realsoft-paginator-page-size-select" [value]="pageSize" [disabled]="disabled">
+                    @for(pageSizeOption of _pageSizeOptions; track pageSizeOption){
+                        <option [value]="pageSizeOption" (change)="_updatePageSize(pageSizeOption)">{{pageSizeOption}}</option>
+                    }
+                </select>
+            }
+            @if(_sortedPageSizeOptions.length <= 1){
+                <div class="realsoft-paginator-page-size-value">{{pageSize}}</div>
+            }
+        </div>
+
+        <div class="realsoft-paginator-range-actions">
+            <div class="realsoft-paginator-range-label">{{_internationalization.getRangeLabel(pageIndex, pageSize, length)}}</div>
+            @if(showFirstLastButtons){
+                <span
+                (click)="firstPage()"
+                [disabled]="_previousButtonDisabled()"
+                class="material-icons realsoft-paginator-navigation-first">first_page</span>
+            }
+            <span 
+            class="material-icons realsoft-paginator-navigation-previous"
+            (click)="previousPage()"
+            >chevron_left</span>
+            <span 
+            class="material-icons realsoft-paginator-navigation-next"
+            (click)="nextPage()"
+            >chevron_right</span>
+
+            @if(showFirstLastButtons){
+                <span
+                class="material-icons realsoft-paginator-navigation-last"
+                (click)="lastPage()"
+                [disabled]="_nextButtonDisabled()"
+                >last_page</span>
+            }                
+        </div>
+
+    </div>
+</div>
