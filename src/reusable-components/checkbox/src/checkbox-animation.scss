@@ -1,0 +1,222 @@
+.realsoft-checkbox-no-animation .checkbox{
+    *, *::before {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+//From unchecked to checked key frame animation for the checkmark svg
+@keyframes realsoft-checkbox-unchecked-checked-checkmark-path {
+    0%, 50% {
+        stroke-dashoffset: 29.7833385;
+    }
+
+    50% {
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+//From checked to unchecked key frame animation for the checkmark svg
+@keyframes realsoft-checkbox-checked-unchecked-checkmark-path {
+    from {
+        animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+        opacity: 1;
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        opacity: 0;
+        stroke-dashoffset: -29.7833385;
+    }
+}
+
+//From unchecked to indeterminate key frame animation for the mixedmark
+@keyframes realsoft-checkbox-unchecked-indeterminate-mixedmark {
+    0%, 68.2% {
+        transform: scaleX(0);
+    }
+
+    68.2% {
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+    }
+
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+//From checked to indeterminate key frame animation for the checkmark 
+@keyframes realsoft-checkbox-checked-indeterminate-checkmark {
+    from {
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: rotate(45deg);
+        opacity: 0;
+    }
+}
+
+//From indeterminate to checked key frame animation for the checkmark
+@keyframes realsoft-checkbox-indeterminate-checked-checkmark {
+    from {
+        animation-timing-function: cubic-bezier(0.14, 0, 0, 1);
+        transform: rotate(45deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+
+//From checked to indeterminate key frame animation for the mixedmark 
+@keyframes realsoft-checkbox-checked-indeterminate-mixedmark {
+    from {
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        transform: rotate(-45deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+}
+
+//From indeterminate to checked key frame animation for the mixedmark
+@keyframes realsoft-checkbox-indeterminate-checked-mixedmark {
+    from {
+        animation-timing-function: cubic-bezier(0.14, 0, 0, 1);
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: rotate(315deg);
+        opacity: 0;
+    }
+}
+
+//From indeterminate to unchecked key frame animation for the mixedmark
+@keyframes realsoft-checkbox-indeterminate-unchecked-mixedmark {
+    0% {
+        animation-timing-function: linear;
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    32.8%, 100% {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+
+
+.realsoft-checkbox-unchecked-checked-animation, .realsoft-checkbox-unchecked-indeterminate-animation, .realsoft-checkbox-checked-unchecked-animation, .realsoft-checkbox-indeterminate-unchecked-animation {
+    .checkbox__background {
+        animation-duration: 180ms;
+        animation-timing-function: linear;
+    }
+}
+
+// The animation for the svg checkmark when transitioning from unchecked to checked
+.realsoft-checkbox-unchecked-checked-animation {
+    .checkbox__checkmark-path {
+        animation: realsoft-checkbox-unchecked-checked-checkmark-path 180ms linear ;
+        transition: none;
+    }
+}
+
+//The animation for the mixedmark when transitioning from unchecked to indeterminate
+.realsoft-checkbox-unchecked-indeterminate-animation {
+    .checkbox__mixedmark {
+        animation: realsoft-checkbox-unchecked-indeterminate-mixedmark 180ms linear;
+        transition: none;
+    }
+}
+
+//The animation for the checkmark when transitioning from checked to unchecked 
+.realsoft-checkbox-checked-unchecked-animation {
+    .checkbox__checkmark-path {
+        animation: realsoft-checkbox-checked-unchecked-checkmark-path 180ms linear;
+        transition: none;
+    }
+}
+
+//The animation for the checkmark and mixedmark when transitioning from checked to indeterminate
+.realsoft-checkbox-checked-indeterminate-animation {
+    .checkbox__checkmark {
+        animation: realsoft-checkbox-checked-indeterminate-checkmark 180ms linear;
+        transition: none;
+    }
+
+    .checkbox__mixedmark {
+        animation: realsoft-checkbox-checked-indeterminate-mixedmark 180ms linear;
+        transition: none;
+    }
+}
+
+//The animation for the checkmark and mixedmark when transitioning from indeterminate to checked
+.realsoft-checkbox-indeterminate-checked-animation {
+    .checkbox__checkmark {
+        animation: realsoft-checkbox-indeterminate-checked-checkmark 180ms linear;
+        transition: none;
+    }
+
+    .checkbox__mixedmark {
+        animation: realsoft-checkbox-indeterminate-checked-mixedmark 180ms linear;
+        transition: none;
+    }
+}
+
+//The animation for the mixedmark when transitioning from indeterminate to unchecked
+.realsoft-checkbox-indeterminate-unchecked-animation {
+    .checkbox__mixedmark {
+        animation: realsoft-checkbox-indeterminate-unchecked-mixedmark 180ms linear;
+        transition: none;
+    }
+}
+
+//The animations for the checkbox background when it's either in the checked or indeterminate state 
+.checkbox__native-control:checked ~ .checkbox__background, .checkbox__native-control:indeterminate ~ .checkbox__background {
+    transition: border-color  90ms cubic-bezier(0, 0, 0.2, 1), background-color 90ms cubic-bezier(0, 0, 0.2, 1);
+
+    .checkbox__checkmark-path {
+        stroke-dashoffset: 0;
+    }
+}
+
+.checkbox__native-control:checked ~ .checkbox__background {
+    .checkbox__checkmark {
+        transition: opacity 180ms cubic-bezier(0, 0, 0.2, 1), transform 180ms cubic-bezier(0, 0, 0.2, 1);
+        opacity: 1;
+    }
+
+    .checkbox__mixedmark {
+        transform: scaleX(1) rotate(-45deg);
+    }
+}
+
+
+.checkbox__native-control:indeterminate ~ .checkbox__background {
+    .checkbox__checkmark {
+        transform: rotate(45deg);
+        opacity: 0;
+        transition: opacity 90ms cubic-bezier(0.4, 0, 0.6, 1), transform 90ms cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    .checkbox__mixedmark {
+        transform: scaleX(1) rotate(0deg);
+        opacity: 1;
+    }
+
+}

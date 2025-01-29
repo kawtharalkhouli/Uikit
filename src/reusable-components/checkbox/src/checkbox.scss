@@ -1,0 +1,307 @@
+@use './checkbox-animation.scss';
+@import './checkbox.css';
+
+.checkbox {
+    display: inline-block;
+    position: relative;
+    flex: 0 0 18px;
+    height: 18px;
+    width: 18px;
+    line-height: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: bottom;
+    padding: 11px;
+    margin: 11px; //Check later for tokenssssssssssssssss
+}
+
+.checkbox:hover .checkbox__ripple {
+    opacity: var(--realsoft-checkbox-unselected-hover-state-layer-opacity);
+    background-color: var(--realsoft-checkbox-unselected-hover-state-layer-color);
+}
+.checkbox:hover .realsoft-checkbox-ripple .realsoft-ripple-element {
+    background-color: var(--realsoft-checkbox-unselected-hover-state-layer-color);
+}
+
+.checkbox .checkbox__native-control:focus~.checkbox__ripple {
+    opacity: var(--realsoft-checkbox-unselected-focus-state-layer-opacity);
+    background-color: var(--realsoft-checkbox-unselected-focus-state-layer-color);
+}
+
+.checkbox .checkbox__native-control:focus~.realsoft-checkbox-ripple .realsoft-ripple-element {
+    background-color: var(--realsoft-checkbox-unselected-focus-state-layer-color);
+}
+
+.checkbox:active .checkbox__native-control~.checkbox__ripple {
+    opacity: var(--realsoft-checkbox-unselected-pressed-state-layer-opacity);
+    background-color: var(--realsoft-checkbox-unselected-pressed-state-layer-color);
+}
+
+.checkbox:active .checkbox__native-control~.realsoft-checkbox-ripple .realsoft-ripple-element {
+    background-color: var(--realsoft-checkbox-unselected-pressed-state-layer-color);
+}
+
+.checkbox:hover .checkbox__native-control:checked~.checkbox__ripple {
+    opacity: var(--realsoft-checkbox-selected-hover-state-layer-opacity); 
+    background-color: var(--realsoft-checkbox-selected-hover-state-layer-color);
+}
+
+.checkbox:hover .checkbox__native-control:checked~.realsoft-checkbox-ripple .realsoft-ripple-element {
+    background-color: var(--realsoft-checkbox-selected-hover-state-layer-color); 
+}
+
+.checkbox .checkbox__native-control:focus:checked~.checkbox__ripple {
+    opacity: var(--realsoft-checkbox-selected-focus-state-layer-opacity);
+    background-color: var(--realsoft-checkbox-selected-focus-state-layer-color);
+}
+
+.checkbox .checkbox__native-control:focus:checked~.realsoft-checkbox-ripple .realsoft-ripple-element {
+    background-color: var(--realsoft-checkbox-selected-focus-state-layer-color);
+}
+
+
+.checkbox:active .checkbox__native-control:checked~.checkbox__ripple {
+    opacity: var(--realsoft-checkbox-selected-pressed-state-layer-opacity);
+    background-color: var(--realsoft-checkbox-selected-pressed-state-layer-color);
+}
+
+.checkbox:active .checkbox__native-control:checked~.realsoft-checkbox-ripple .realsoft-ripple-element {
+    background-color: var(--realsoft-checkbox-selected-pressed-state-layer-color);
+}
+
+
+.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox .checkbox__native-control~.realsoft-checkbox-ripple .realsoft-ripple-element,
+.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox .checkbox__native-control~.checkbox__ripple {
+    background-color: var(--realsoft-checkbox-unselected-hover-state-layer-color);
+}
+
+.checkbox .checkbox__native-control {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: inherit;
+    width: var(--realsoft-checkbox-state-layer-size);
+    height: var(--realsoft-checkbox-state-layer-size);
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.realsoft-checkbox-disabled {
+    cursor: default;
+    pointer-events: none;
+}
+
+.cdk-high-contrast-active .realsoft-checkbox-disabled{
+    opacity: 0.5;
+}
+
+.checkbox__background {
+    display: inline-flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    border: 2px solid currentColor;
+    border-radius: 2px;
+    background-color: rgba(0,0,0,0);
+    pointer-events: none;
+    will-change: background-color, border-color;
+    transition:  background-color 90ms cubic-bezier(0.4, 0, 0.6, 1),border-color 90ms cubic-bezier(0.4, 0, 0.6, 1);;
+    border-color: var(--realsoft-checkbox-unselected-icon-color);
+    top: 11px;
+    left: 11px;
+
+}
+
+.checkbox__native-control:enabled:checked~.checkbox__background, .checkbox__native-control:enabled:indeterminate~.checkbox__background {
+    border-color: var(--realsoft-checkbox-selected-icon-color);
+    background-color: var(--realsoft-checkbox-selected-icon-color);
+}
+
+.realsoft-checkbox-disabled .checkbox__background {
+    border-color: var(--realsoft-checkbox-disabled-unselected-icon-color);
+}
+
+.checkbox__native-control:disabled:checked~.checkbox__background, .checkbox__native-control:disabled:indeterminate~.checkbox__background {
+    background-color: var(--realsoft-checkbox-disabled-selected-icon-color);
+    border-color: rgba(0,0,-0,0);
+}
+
+.checkbox:hover .checkbox__native-control:not(:checked)~.checkbox__background, .checkbox:hover .checkbox__native-control:not(:indeterminate)~.checkbox__background {
+    border-color: var(--realsoft-checkbox-unselected-hover-icon-color);
+    background-color: rgba(0,0,0,0);
+}
+
+.checkbox:hover .checkbox__native-control:checked~.checkbox__background, .checkbox:hover .checkbox__native-control:indeterminate~.checkbox__background {
+    border-color: var(--realsoft-checkbox-selected-hover-icon-color);
+    background-color: var(--realsoft-checkbox-selected-hover-icon-color);
+}
+
+.checkbox__native-control:focus:not(:checked)~.checkbox__background, .checkbox__native-control:focus:not(:indeterminate)~.checkbox__background{
+    border-color: var(--realsoft-checkbox-unselected-focus-icon-color);
+}
+
+.checkbox__native-control:focus:checked~.checkbox__background, .checkbox__native-control:focus:indeterminate~.checkbox__background {
+    border-color: var(--realsoft-checkbox-selected-focus-icon-color);
+    background-color: var(--realsoft-checkbox-selected-focus-icon-color);
+}
+
+.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox:hover .checkbox__native-control~.checkbox__background,
+.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox .checkbox__native-control:focus~.checkbox__background, 
+.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox__background {
+    border-color: var(--realsoft-checkbox-disabled-unselected-icon-color);
+}
+
+.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox__native-control:checked~.checkbox__background, 
+.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox__native-control:indeterminate~.checkbox__background {
+    background-color: var(--realsoft-checkbox-disabled-selected-icon-color);
+    border-color:rgba(0,0,0,0)
+}
+
+.checkbox__checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 180ms cubic-bezier(0.4, 0, 0.6, 1);
+    color: var(--realsoft-checkbox-selected-checkmark-color);
+
+}
+
+
+.cdk-high-contrast-active .checkbox__checkmark{color:CanvasText}
+
+.realsoft-checkbox-disabled .checkbox__checkmark, .realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox__checkmark {
+    color: var(--realsoft-checkbox-disabled-selected-checkmark-color);
+}
+
+.checkbox__checkmark-path {
+    transition: stroke-dashoffset 180ms cubic-bezier(0.4, 0, 0.6, 1);
+    stroke: currentColor;
+    stroke-width: 3.12px;
+    stroke-dashoffset: 29.7833385;
+    stroke-dasharray:29.7833385
+}
+
+.checkbox__mixedmark {
+    width: 100%;
+    height: 0;
+    transform: scaleX(0) rotate(0deg);
+    border-width: 1px;
+    border-style: solid;
+    opacity: 0;
+    border-color: var(--realsoft-checkbox-selected-checkmark-color);
+}
+
+.cdk-high-contrast-active .checkbox__mixedmark{margin:0 1px}
+
+.realsoft-checkbox-disabled .checkbox__mixedmark, .realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive .checkbox__mixedmark {
+    border-color: var(--realsoft-checkbox-disabled-selected-checkmark-color);
+}
+
+
+
+
+
+// .cdk-high-contrast-active .mdc-checkbox--disabled .mdc-checkbox__checkmark,.cdk-high-contrast-active .mdc-checkbox--disabled.mat-mdc-checkbox-disabled-interactive .mdc-checkbox__checkmark
+// {color:CanvasText}
+
+.realsoft-checkbox {
+    display: inline-block;
+    position: relative;
+    -webkit-tap-highlight-color:rgba(0,0,0,0)
+}
+
+.realsoft-checkbox.realsoft-checkbox-no-animation .checkbox *, 
+.realsoft-checkbox.realsoft-checkbox-no-animation .checkbox *::before {
+    transition: none !important;
+    animation: none !important;
+}
+
+.realsoft-checkbox label {
+    cursor: pointer;
+}
+
+.realsoft-checkbox .realsoft-internal-form-field {
+    color: var(--realsoft-checkbox-label-text-color);
+    font-size: var(--realsoft-checkbox-label-text-size);
+    line-height: var(--realsoft-checkbox-label-text-line-height);
+    letter-spacing: var(--realsoft-checkbox-label-text-letter-spacing);
+    font-weight: var(--realsoft-checkbox-label-text-weight);
+}
+
+
+.realsoft-checkbox.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive {
+    pointer-events: auto;
+}
+
+.realsoft-checkbox.realsoft-checkbox-disabled.realsoft-checkbox-disabled-interactive input{
+    cursor: default;
+}
+
+.realsoft-checkbox.realsoft-checkbox-disabled label {
+    cursor: default;
+    color: var(--realsoft-checkbox-disabled-label-color);
+}
+.realsoft-checkbox label:empty {
+    display: none;
+}
+
+.realsoft-checkbox .checkbox__ripple {
+    opacity: 0;
+}
+
+.realsoft-checkbox-ripple, .checkbox__ripple {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.realsoft-checkbox-ripple:not(:empty), .checkbox__ripple:not(:empty){
+    transform: translateZ(0);
+}
+
+.realsoft-checkbox-ripple .realsoft-ripple-element {
+    opacity: 0.1;
+}
+
+.checkbox-touch-target {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 48px;
+    width: 48px;
+    transform: translate(-50%, -50%);
+    display: var(--realsoft-checkbox-touch-target-display);
+}
+
+.realsoft-checkbox-ripple::before {
+    border-radius: 50%;
+}
+
+.checkbox__native-control:focus~.realsoft-focus-indicator::before {
+    content: "";
+}
+
+.realsoft-checkbox__checkmark-path {
+    transition: stroke-dashoffset 180ms cubic-bezier(0.4, 0, 0.6, 1);
+    stroke: currentColor;
+    stroke-width: 3.12px;
+    stroke-dashoffset: 29.7833385;
+    stroke-dasharray: 29.7833385;
+}
+
+.checkbox__native-control:checked~.checkbox__background .checkbox__checkmark-path, .checkbox__native-control:indeterminate~.checkbox__background .checkbox__checkmark-path{
+    stroke-dashoffset: 0;
+}

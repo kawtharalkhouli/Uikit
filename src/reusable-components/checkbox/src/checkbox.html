@@ -1,0 +1,47 @@
+<div realsoft-internal-form-field class="realsoft-form-field" [labelPosition]="labelPosition">
+    <div #checkbox class="checkbox">
+        <div class="checkbox-touch-target" (click)="_touchTargetClick()"></div>
+        <input
+        #input
+        type="checkbox"
+        class="checkbox__native-control"
+        [class.realsoft-checkbox-selected]="checked"
+        [attr.aria-label]="ariaLabel || null"
+        [attr.aria-labelledby]="ariaLabelledby || null"
+        [attr.aria-describedby]="ariaDescribedby || null"
+        [attr.aria-checked]="indeterminate ? 'mixed' : null"
+        [attr.aria-disabled]="disabled && !disabledInteractive ? true : null"
+        [checked]="checked"
+        [attr.name]="name"
+        [attr.value]="value"
+        [id]="inputId"
+        [required]="required"
+        [tabIndex]="disabled && !disabledInteractive ? -1 : tabIndex"
+        [indeterminate]="indeterminate"
+        [disabled]="disabled && !disabledInteractive"
+        (blur)="_onBlur()"
+        (click)="_inputClick()"
+        (change)="$event.stopPropagation()" 
+        >
+        <div class="checkbox__ripple"></div>
+        <div class="checkbox__background">
+            <svg class="checkbox__checkmark"
+                focusable="false"
+                viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path class="checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+            </svg>
+            <!--For Indeterminate Mode-->
+            <div class="checkbox__mixedmark"></div>
+        </div>
+        <!--Ripple Comes Here-->
+        <!--Need to Disable Ripples-->
+        <div
+        class="realsoft-checkbox-ripple realsoft-focus-indicator"
+        ></div>     
+    </div>
+
+    <label [for]="inputId" #label class="realsoft-label">
+        <ng-content></ng-content>
+    </label>
+</div>

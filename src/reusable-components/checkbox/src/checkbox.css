@@ -1,0 +1,38 @@
+:root {
+    --realsoft-checkbox-label-text-color: #201a1b;
+    --realsoft-checkbox-label-text-font: Roboto, sans-serif;
+    --realsoft-checkbox-label-text-line-height: 1.25rem;
+    --realsoft-checkbox-label-text-size: 0.875rem;
+    --realsoft-checkbox-label-text-letter-spacing: 0.016rem;
+    --realsoft-checkbox-label-text-weight: 400;
+    --realsoft-checkbox-selected-checkmark-color: #ffffff;
+    --realsoft-checkbox-disabled-label-color: rgba(32, 26, 27, 0.38);
+    --realsoft-checkbox-state-layer-size: 40px;
+    --realsoft-checkbox-touch-target-display: block;
+    --realsoft-checkbox-background-width: 18px;
+    --realsoft-checkbox-background-height: 18px;
+    --realsoft-checkbox-background-border-color: #514346;
+    --realsoft-checkbox-disabled-unselected-icon-color: rgba(32, 26, 27, .38);
+    --realsoft-checkbox-disabled-selected-checkmark-color: #fff8f8;
+    
+    --realsoft-checkbox-selected-focus-state-layer-opacity: 0.12;
+    --realsoft-checkbox-selected-hover-state-layer-opacity: 0.08;
+    --realsoft-checkbox-selected-pressed-state-layer-opacity: 0.12;
+    --realsoft-checkbox-unselected-focus-state-layer-opacity: 0.12;
+    --realsoft-checkbox-unselected-hover-state-layer-opacity: 0.08;
+    --realsoft-checkbox-unselected-pressed-state-layer-opacity: 0.12;
+    --realsoft-checkbox-unselected-icon-color: #514346;
+    
+    --realsoft-checkbox-selected-focus-state-layer-color: #ba005c;
+    --realsoft-checkbox-selected-icon-color: #ba005c;
+    --realsoft-checkbox-selected-hover-state-layer-color: #ba005c;
+    --realsoft-checkbox-selected-pressed-state-layer-color: #201a1b;
+    --realsoft-checkbox-unselected-focus-state-layer-color: #201a1b;
+    --realsoft-checkbox-unselected-hover-state-layer-color: #201a1b;
+    --realsoft-checkbox-unselected-pressed-state-layer-color: #ba005c;
+    --realsoft-checkbox-disabled-selected-icon-color: rgba(32, 26, 27, .38);
+    --realsoft-checkbox-unselected-hover-icon-color: #201a1b;
+    --realsoft-checkbox-selected-hover-icon-color: #ba005c;
+    --realsoft-checkbox-unselected-focus-icon-color: #201a1b;
+    --realsoft-checkbox-selected-focus-icon-color: #ba005c;
+}
