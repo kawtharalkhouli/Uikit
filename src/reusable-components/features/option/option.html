@@ -1,0 +1,26 @@
+@if(multiple){
+    <realsoft-pseudo-checkbox
+    class="realsoft-option-pseudo-checkbox"
+    [disabled]="disabled"
+    [status]="selected ? 'checked' : 'unchecked'"
+    aria-hidden="true"
+    >
+    </realsoft-pseudo-checkbox>
+}
+
+<span class="realsoft-list-item__primary-text" #option><ng-content></ng-content></span>
+
+<!--Minimal Pseudo Checkbox to be rendered in single selection if not hidden by the user-->
+@if(!multiple && selected && !hideSingleSelectionIndicator) {
+    <realsoft-pseudo-checkbox
+    appearance="minimal"
+    aria-hidden="true"
+    status="checked"
+    class="realsoft-option-pseudo-checkbox"
+    >
+    </realsoft-pseudo-checkbox>
+}
+
+
+
+

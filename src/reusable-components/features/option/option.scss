@@ -1,0 +1,119 @@
+
+@import './option-tokens.css';
+
+.realsoft-option {
+    -webkit-user-select: none;
+    user-select: none;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-font-smoothing:antialiased;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    min-height: 48px;
+    padding: 0 16px;
+    cursor: pointer;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    color: var(--realsoft-option-label-text-color);
+    font-family: var(--realsoft-option-label-text-font);
+    line-height: var(--realsoft-option-label-text-line-height);
+    font-size: var(--realsoft-option-label-text-size);
+    letter-spacing: var(--realsoft-option-label-text-tracking);
+    font-weight: var(--realsoft-option-label-text-weight);
+}
+
+.realsoft-option:hover:not(.realsoft-list-item--disabled) {
+    background-color: var(--realsoft-option-hover-state-layer-color);
+}
+
+.realsoft-option:focus.realsoft-list-item, .realsoft-option.realsoft-list-item-active.realsoft-list-item {
+    background-color: var(--realsoft-option-focus-state-layer-color);
+    outline: 0;
+}
+
+.realsoft-option.realsoft-list-item-selected:not(.realsoft-list-item-disabled) .realsoft-list-item__primary-text {
+    color: var(--realsoft-option-selected-state-label-text-color);
+}
+
+.realsoft-option.realsoft-list-item-selected:not(.realsoft-list-item-disabled):not(.realsoft-option-multiple) {
+    background-color: var(--realsoft-option-selected-state-layer-color);
+}
+
+.realsoft-option .realsoft-pseudo-checkbox {
+    --realsoft-minimal-pseudo-checkbox-selected-checkmark-color: var(--realsoft-option-selected-state-label-text-color);
+}
+
+.realsoft-option.realsoft-list-item {
+    align-items: center;
+    background: rgba(0,0,0,0);
+}
+
+.realsoft-option.realsoft-list-item-disabled {
+    cursor: default;
+    pointer-events: none;
+}
+
+.realsoft-option.realsoft-list-item-disabled .realsoft-option-pseudo-checkbox, .realsoft-option.realsoft-list-item-disabled .realsoft-list-item__primary-text {
+    opacity: 0.38;
+}
+
+.realsoft-option .realsoft-pseudo-checkbox-full {
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+[dir=rtl] .realsoft-option .realsoft-pseudo-checkbox-full{
+    margin-right: 0;
+    margin-left: 16px;
+}
+
+
+.realsoft-option .realsoft-pseudo-checkbox-minimal {
+    margin-left: 16px;
+    flex-shrink: 0;
+}
+
+[dir=rtl] .realsoft-option .realsoft-pseudo-checkbox-minimal {
+    margin-left: 0;
+    margin-right: 16px;
+}
+
+
+.realsoft-option .realsoft-list-item__primary-text {
+    white-space: normal;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    text-decoration: inherit;
+    text-transform: inherit;
+    margin-right: auto;
+}
+
+[dir=rtl] .realsoft-option .realsoft-list-item__primary-text {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+.cdk-high-contrast-active .realsoft-option.realsoft-list-item-selected:not(.realsoft-option-multiple)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 0;
+    border-bottom: solid 10px;
+    border-radius: 10px;
+}
+
+[dir=rtl] .cdk-high-contrast-active .realsoft-option.realsoft-list-item-selected:not(.realsoft-option-multiple)::after {
+    right: auto;
+    left: 16px;
+}
+
+.realsoft-option-multiple {
+    --realsoft-list-list-item-selected-container-color : var(--realsoft-list-list-item-selected-container-color, transparent);
+}
