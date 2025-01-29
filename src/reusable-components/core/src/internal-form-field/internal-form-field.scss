@@ -1,0 +1,38 @@
+.realsoft-internal-form-field {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle; 
+
+    //Select the direct child label element 
+    & > label {
+        margin-left: 0;
+        margin-right: auto;
+        padding-left: 4px;
+        padding-right: 0;
+        order: 0;
+    }
+
+    [dir = 'rtl'] & > label {
+        margin-left: auto;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 4px;
+    }
+}
+
+.realsoft-form-field-align-end{
+    & > label {
+        margin-left: auto;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 4px;
+        order: -1;
+    }
+
+    [dir = 'rtl'] & > label {
+        margin-left: 0;
+        margin-right: auto;
+        padding-right: 4px;
+        padding-left: 0;
+    }
+}
