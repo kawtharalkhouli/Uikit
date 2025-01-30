@@ -584,10 +584,11 @@ export class RealsoftSelect implements RealsoftFormFieldControl<any> ,ControlVal
 
   //Opens the overlay panel and focuses the host element
   open(): void {
-    if(!this._panelOpen && !this.disabled && this.options?.length <= 0) return;
+    if(!(!this._panelOpen && !this.disabled && this.options?.length > 0 && !!this._overlayPanel)) return;
+    
       if(this._wrapperFormField){
         this._overlayOrigin = this._wrapperFormField.getConnectedOverlayOrigin(); 
-      }
+      } 
 
       this._overlayWidth = this._getOverlayWidth(this._overlayOrigin);
       const modal = this._elementRef.nativeElement.closest(

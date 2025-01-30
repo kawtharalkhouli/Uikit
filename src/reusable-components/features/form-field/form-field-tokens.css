@@ -1,9 +1,9 @@
 :root {
-    --realsoft-filled-text-field-caret-color: #ba005c;
+    --realsoft-filled-text-field-caret-color: #553f5d;
     --realsoft-filled-text-field-error-caret-color: #ba1a1a;
-    --realsoft-filled-text-field-focus-active-indicator-color: #ba005c;
-    --realsoft-filled-text-field-focus-label-text-color: #ba005c;
-    --realsoft-filled-text-field-container-color: #f3dde1;
+    --realsoft-filled-text-field-focus-active-indicator-color: #553f5d;
+    --realsoft-filled-text-field-focus-label-text-color: #553f5d;
+    --realsoft-filled-text-field-container-color: #e9e1ed;
     --realsoft-filled-text-field-disabled-container-color: rgba(32, 26, 27, .04);
     --realsoft-filled-text-field-label-text-color: #514346;
     --realsoft-filled-text-field-hover-label-text-color: #514346;
@@ -28,9 +28,9 @@
     --realsoft-filled-text-field-active-indicator-height: 1px;
     --realsoft-filled-text-field-focus-active-indicator-height: 2px;
     --realsoft-filled-text-field-container-shape: 4px;
-    --realsoft-outlined-text-field-caret-color: #ba005c;
-    --realsoft-outlined-text-field-focus-outline-color: #ba005c;
-    --realsoft-outlined-text-field-focus-label-text-color: #ba005c;
+    --realsoft-outlined-text-field-caret-color: #553f5d;
+    --realsoft-outlined-text-field-focus-outline-color: #553f5d;
+    --realsoft-outlined-text-field-focus-label-text-color: #553f5d;
     --realsoft-outlined-text-field-label-text-color: #514346;
     --realsoft-outlined-text-field-hover-label-text-color: #201a1b;
     --realsoft-outlined-text-field-disabled-label-text-color: rgba(32, 26, 27, .38);
@@ -53,7 +53,7 @@
     --realsoft-outlined-text-field-outline-width: 1px;
     --realsoft-outlined-text-field-focus-outline-width: 2px;
     --realsoft-outlined-text-field-container-shape: 4px;
-    --realsoft-form-field-focus-select-arrow-color: #ba005c;
+    --realsoft-form-field-focus-select-arrow-color: #553f5d;
     --realsoft-form-field-disabled-input-text-placeholder-color: rgba(32, 26, 27, .38);
     --realsoft-form-field-state-layer-color: #201a1b;
     --realsoft-form-field-error-text-color: #ba1a1a;
@@ -85,5 +85,6 @@
     --realsoft-form-field-filled-with-label-container-padding-top: 24px;
     --realsoft-form-field-filled-with-label-container-padding-bottom: 8px;
     --realsoft-form-field-focus-state-layer-opacity: 0;
-    --realsoft-form-field-floating-label-scale: 0.75;
+    --realsoft-form-field-floating-label-scale: .75;
+    --realsoft-field-notch-max-width: calc(100% - 28px);
 }

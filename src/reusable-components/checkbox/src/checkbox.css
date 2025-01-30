@@ -14,7 +14,6 @@
     --realsoft-checkbox-background-border-color: #514346;
     --realsoft-checkbox-disabled-unselected-icon-color: rgba(32, 26, 27, .38);
     --realsoft-checkbox-disabled-selected-checkmark-color: #fff8f8;
-    
     --realsoft-checkbox-selected-focus-state-layer-opacity: 0.12;
     --realsoft-checkbox-selected-hover-state-layer-opacity: 0.08;
     --realsoft-checkbox-selected-pressed-state-layer-opacity: 0.12;
@@ -22,17 +21,18 @@
     --realsoft-checkbox-unselected-hover-state-layer-opacity: 0.08;
     --realsoft-checkbox-unselected-pressed-state-layer-opacity: 0.12;
     --realsoft-checkbox-unselected-icon-color: #514346;
-    
-    --realsoft-checkbox-selected-focus-state-layer-color: #ba005c;
-    --realsoft-checkbox-selected-icon-color: #ba005c;
-    --realsoft-checkbox-selected-hover-state-layer-color: #ba005c;
+    --realsoft-checkbox-selected-focus-state-layer-color: #553f5d;
+    --realsoft-checkbox-selected-icon-color: #553f5d;
+    --realsoft-checkbox-selected-hover-state-layer-color: #553f5d;
     --realsoft-checkbox-selected-pressed-state-layer-color: #201a1b;
     --realsoft-checkbox-unselected-focus-state-layer-color: #201a1b;
     --realsoft-checkbox-unselected-hover-state-layer-color: #201a1b;
-    --realsoft-checkbox-unselected-pressed-state-layer-color: #ba005c;
+    --realsoft-checkbox-unselected-pressed-state-layer-color: #553f5d;
     --realsoft-checkbox-disabled-selected-icon-color: rgba(32, 26, 27, .38);
     --realsoft-checkbox-unselected-hover-icon-color: #201a1b;
-    --realsoft-checkbox-selected-hover-icon-color: #ba005c;
+    --realsoft-checkbox-selected-hover-icon-color: #553f5d;
     --realsoft-checkbox-unselected-focus-icon-color: #201a1b;
-    --realsoft-checkbox-selected-focus-icon-color: #ba005c;
+    --realsoft-checkbox-selected-focus-icon-color: #553f5d;
+    --uikit-docs-primary-button-background-hover-color: #3e3e51;
+    --uikit-docs-primary-button-border-hover-color: #3e3e51;
 }

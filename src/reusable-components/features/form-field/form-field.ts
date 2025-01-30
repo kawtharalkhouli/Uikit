@@ -1,20 +1,20 @@
-import { AfterContentChecked, AfterContentInit, afterRender, AfterViewInit, ANIMATION_MODULE_TYPE, booleanAttribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, contentChild, ContentChild, ContentChildren, ElementRef, inject, Injector, Input, OnDestroy, QueryList, ViewChild, ViewEncapsulation } from "@angular/core";
+import { AfterContentChecked, AfterContentInit, afterRender, AfterViewChecked, AfterViewInit, ANIMATION_MODULE_TYPE, booleanAttribute, ChangeDetectionStrategy, ChangeDetectorRef, Component, computed, contentChild, ContentChild, ContentChildren, ElementRef, inject, Injector, Input, OnDestroy, QueryList, ViewChild, ViewEncapsulation } from "@angular/core";
+import { REALSOFT_FORM_FIELD, REALSOFT_FORM_FIELD_DEFAULT_OPTIONS, RealsoftFloatLabelType, RealsoftFormFieldAppearance, RealsoftFormFieldDefaultOptions, RealsoftSubscriptSizing} from "./models";
+import { RealsoftFormFieldControl } from "./directives/form-field-control";
 import { Directionality } from "@angular/cdk/bidi";
-import { merge, Subject, Subscription, takeUntil } from "rxjs";
-import { AbstractControlDirective } from "@angular/forms";
-import { NgTemplateOutlet } from "@angular/common";
-import { REALSOFT_FORM_FIELD, REALSOFT_FORM_FIELD_DEFAULT_OPTIONS, RealsoftFloatLabelType, RealsoftFormFieldAppearance, RealsoftFormFieldDefaultOptions, RealsoftSubscriptSizing } from "./models";
-import { RealsoftFormFieldAnimations } from "./form-field-animations";
-import { getRealsoftFormFieldDuplicateHintError, getRealsoftFormFieldMissingControlError } from "./form-field-errors";
-import { REALSOFT_FLOATING_LABEL_PARENT, RealsoftFloatingLabelParent, RealsoftFormFieldFloatingLabel } from "./directives/floating-label";
 import { RealsoftFormFieldNotchedOutline } from "./directives/notched-outline";
 import { RealsoftFormFieldLineRipple } from "./directives/line-ripple";
-import { REALSOFT_HINT, RealsoftHint } from "./directives/hint";
-import { RealsoftFormFieldControl } from "./directives/form-field-control";
-import { REALSOFT_ERROR, RealsoftError } from "./directives/error";
-import { REALSOFT_SUFFIX, RealsoftSuffix } from "./directives/suffix";
 import { REALSOFT_PREFIX, RealsoftPrefix } from "./directives/prefix";
+import { REALSOFT_SUFFIX, RealsoftSuffix } from "./directives/suffix";
+import { REALSOFT_ERROR, RealsoftError } from "./directives/error";
+import { REALSOFT_HINT, RealsoftHint } from "./directives/hint";
 import { RealsoftLabel } from "./directives/label";
+import { merge, Subject, Subscription, takeUntil } from "rxjs";
+import { getRealsoftFormFieldDuplicateHintError, getRealsoftFormFieldMissingControlError } from "./form-field-errors";
+import { REALSOFT_FLOATING_LABEL_PARENT, RealsoftFloatingLabelParent, RealsoftFormFieldFloatingLabel } from "./directives/floating-label";
+import { AbstractControlDirective } from "@angular/forms";
+import { RealsoftFormFieldAnimations } from "./form-field-animations";
+import { NgTemplateOutlet } from "@angular/common";
 import { UniqueIdGeneratorService } from "../id-generator";
 
 
@@ -30,6 +30,7 @@ const REALSOFT_DEFAULT_APPEARANCE: RealsoftFormFieldAppearance = 'outline';
     selector: 'realsoft-form-field',
     templateUrl: './form-field.html',
     styleUrl: './form-field.scss',
+    standalone: true,
     animations: [RealsoftFormFieldAnimations.transitionMessages],
     host: {
         'class': 'realsoft-form-field',
@@ -58,16 +59,15 @@ const REALSOFT_DEFAULT_APPEARANCE: RealsoftFormFieldAppearance = 'outline';
     ],
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
     imports: [
         RealsoftFormFieldFloatingLabel,
         RealsoftFormFieldNotchedOutline,
         RealsoftFormFieldLineRipple,
         RealsoftHint,
         NgTemplateOutlet
-    ],  
+    ]
 })
-export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterViewInit, AfterContentInit, AfterContentChecked, OnDestroy{
+export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterViewInit, AfterViewChecked, AfterContentInit, AfterContentChecked, OnDestroy{
     _uniqueIDGenerator = inject(UniqueIdGeneratorService, {optional: true});
     _elementRef = inject(ElementRef);
     //For manual Change Detection
@@ -75,7 +75,6 @@ export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterView
     private _direction = inject(Directionality);
     private _defaultOptions = inject<RealsoftFormFieldDefaultOptions>(REALSOFT_FORM_FIELD_DEFAULT_OPTIONS, {optional: true});
     _animationMode = inject(ANIMATION_MODULE_TYPE, {optional: true});
-    private _injector = inject(Injector);
 
     private _destroy = new Subject<void>();
     private _changes : Subscription | undefined;
@@ -123,6 +122,8 @@ export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterView
     private _oultineLabelOffsetUpdateNeeded = false;
     private _subscriptSizing: RealsoftSubscriptSizing | null = null;
     _subscriptsAnimationState = ''; //state of the realsoft-hint and realsoft-error animations.
+
+
 
     //Class getters
     get hasIconPrefix(): boolean {
@@ -211,14 +212,24 @@ export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterView
     ngAfterViewInit(): void {
         this._updatingFormFieldFocusState();
         this._subscriptsAnimationState = 'enter';
+        // this._initializePrefixAndSuffix();
+        // this._initOutlineLabelOffset();
         this._changeDetectorRef.detectChanges();
+    }
+
+    ngAfterViewChecked(): void {
+      this._initializePrefixAndSuffix();
+      this._initOutlineLabelOffset();
+      this._changeDetectorRef.markForCheck();
     }
 
     ngAfterContentInit(): void {
         this._formControlPresenceCheck();
         this._initializeHintErrorSubscripts();
         this._initializePrefixAndSuffix();
-        this._initOutlineLabelOffset();
+      this._initOutlineLabelOffset();
+      this._changeDetectorRef.markForCheck();
+        
     }
 
     ngAfterContentChecked() {
@@ -342,7 +353,16 @@ export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterView
 
   }
 
- 
+  private _checkPrefixTypes() {
+    this._hasIconPrefix = !!this._prefixeElements.find(prefixElement => !prefixElement._isText);
+    this._hasTextPrefix = !!this._prefixeElements.find(prefixElement => prefixElement._isText);
+  }
+
+  private _checkSuffixTypes() {
+    this._hasIconSuffix = !!this._suffixElements.find(suffixElement => !suffixElement._isText);
+    this._hasTextSuffix = !!this._suffixElements.find(suffixElement => suffixElement._isText);
+  }
+
   private _initializePrefixAndSuffix() {
     this._checkPrefixTypes();
     this._checkSuffixTypes();
@@ -354,45 +374,26 @@ export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterView
     });
   }
 
-  private _checkPrefixTypes() {
-    this._hasIconPrefix = !!this._prefixeElements.find(prefixElement => !prefixElement._isText);
-    this._hasTextPrefix = !!this._prefixeElements.find(prefixElement => prefixElement._isText);
-  }
-
-  private _checkSuffixTypes() {
-    this._hasIconSuffix = !!this._suffixElements.find(suffixElement => !suffixElement._isText);
-    this._hasTextSuffix = !!this._suffixElements.find(suffixElement => suffixElement._isText);
-  }
-
 
   private _initOutlineLabelOffset() {
     this._prefixeElements.changes.subscribe(() => this._oultineLabelOffsetUpdateNeeded = true);
-    afterRender(
-        () => {
-          if (this._oultineLabelOffsetUpdateNeeded) {
-            this._oultineLabelOffsetUpdateNeeded = false;
-            this._updateOutlineLabelOffset();
-          }
-        },
-        {
-          injector: this._injector,
-        },
-      );
-
+      this._updateOutlineLabelOffset();
     this._direction.change.pipe(takeUntil(this._destroy)).subscribe(() => this._oultineLabelOffsetUpdateNeeded = true);
   }
 
   private _updateOutlineLabelOffset() {
-    if(this.appearance !== 'outline' || !this._floatingLabel) return;
+    if(!this._isOutline()) {
+      return;
+    };
 
     //Reset the outline label offset if no prefix is displayed
-    if(!(this._prefixText || this._prefixIcon)) {
+    if(!(this._prefixIcon || this._prefixText)) {
         this._resetFloatingLabel();
         return;
     }
 
     //Wait for the form field to be present in the DOM to triggere the label offset update 
-    if(!this._formFieldConnectedToDOM) {
+    if(!this._formFieldConnectedToDOM()) {
         this._oultineLabelOffsetUpdateNeeded = true;
         return;
     }
@@ -403,7 +404,8 @@ export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterView
   }
 
   private _resetFloatingLabel() {
-    this._floatingLabel.element.style.transform  = '';
+    if(this._floatingLabel) this._floatingLabel.element.style.transform  = '';
+    
   }
 
   private _formFieldConnectedToDOM() {
@@ -418,18 +420,20 @@ export class RealsoftFormField implements RealsoftFloatingLabelParent, AfterView
     //RTL Support 
     const direction = this._direction.value === 'rtl' ? '-1' : '1';
     const prefixWidth = `${iconPrefixContentWidth + textPrefixContentWidth}px`;
-    const labelOffset = `calc(${direction} * (${prefixWidth} + var(--realsoft-form-field-label-offset-x, 0px)))`;
+    const labelVariable = `var(--realsoft-form-field-label-offset-x, 0px)`;
+    const labelOffset = `calc(${direction} * (${prefixWidth} + ${labelVariable}))`;
 
     this._floatingLabel.element.style.transform = `var(--realsoft-form-field-label-transform, translateY(-50%) translateX(${labelOffset})`;
   }
 
   private _calculateNotchWidth() {
-    const prefixIconWidth = this._prefixIcon.nativeElement.getBoundingClientRect().width ?? 0;
-    const prefixTextWidth = this._prefixText.nativeElement.getBoundingClientRect().width ?? 0;
-    const suffixIconWidth = this._suffixIcon.nativeElement.getBoundingClientRect().width ?? 0;
-    const suffixTextWidth = this._suffixText.nativeElement.getBoundingClientRect().width ?? 0;
+    const prefixIconWidth = this._prefixIcon?.nativeElement.getBoundingClientRect().width ?? 0;
+    const prefixTextWidth = this._prefixText?.nativeElement.getBoundingClientRect().width ?? 0;
+    const suffixIconWidth = this._suffixIcon?.nativeElement.getBoundingClientRect().width ?? 0;
+    const suffixTextWidth = this._suffixText?.nativeElement.getBoundingClientRect().width ?? 0;
 
     const prefixAndSuffixWidth = prefixIconWidth + prefixTextWidth + suffixIconWidth + suffixTextWidth;
+
 
     this._elementRef.nativeElement.style.setProperty('--realsoft-form-field-notch-max-width', `calc(100% - ${prefixAndSuffixWidth}px)`);
   }

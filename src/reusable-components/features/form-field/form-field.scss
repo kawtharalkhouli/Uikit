@@ -678,3 +678,58 @@
     color: var(--realsoft-form-field-leading-icon-color);
 }
 
+[dir=rtl] .realsoft-text-field-outlined .realsoft-floating-label-float-above {
+    left: 4px;
+    right: auto;
+}
+
+[dir=rtl] .realsoft-text-field-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+[dir=rtl] .realsoft-form-field .realsoft-notched-outline__notch {
+    margin-left: 0;
+    margin-right: -1px;
+    -webkit-clip-path: inset(-9em 1px -9em -999em);
+    clip-path: inset(-9em 1px -9em -999em);
+}
+
+[dir=rtl] .realsoft-form-field-has-icon-prefix .realsoft-text-field-wrapper {
+    --realsoft-form-field-label-offset-x: 8px;
+}
+
+.realsoft-form-field-has-icon-prefix .realsoft-text-field-wrapper {
+    --realsoft-form-field-label-offset-x: 0px;
+}
+
+[dir=rtl] .realsoft-form-field {
+    text-align: right;
+}
+
+[dir=rtl] .realsoft-notched-outline {
+    text-align: right;
+}
+
+[dir=rtl] .realsoft-notched-outline__leading {
+    border-left: none;
+    border-right: 1px solid;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: var(--realsoft-outlined-text-field-container-shape);
+    border-bottom-right-radius: var(--realsoft-outlined-text-field-container-shape);
+}
+
+[dir=rtl] .realsoft-form-field.realsoft-form-field.realsoft-form-field.realsoft-form-field.realsoft-form-field.realsoft-form-field .realsoft-notched-outline__notch {
+    border-left: none;
+    border-right: 1px solid rgba(0, 0, 0, 0);
+}
+
+[dir=rtl] .realsoft-notched-outline__trailing {
+    border-left: 1px solid;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: var(--realsoft-outlined-text-field-container-shape);
+    border-bottom-left-radius: var(--realsoft-outlined-text-field-container-shape);
+}
